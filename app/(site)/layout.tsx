@@ -1,11 +1,19 @@
 import "../globals.css";
 import Link from "next/link";
 import Image from "next/image";
+import SearchModal from "../components/SearchModal";
+
 
 export const metadata = {
   title: "Elkaza Consulting – IT Consulting & Digital Transformation",
   description: "Professional IT consulting, enterprise architecture, and software engineering services in Austria.",
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
 };
+
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -42,12 +50,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
             {/* === Right: Search + Languages === */}
             <div className="flex items-center space-x-4">
-              <button
-                aria-label="Suche"
-                className="p-2 rounded-full hover:bg-gray-100 transition"
-              >
-                🔍
-              </button>
+              <SearchModal />
 
               <div className="flex items-center space-x-2">
                 <Link href="/de" className="font-semibold text-blue-700">
@@ -61,7 +64,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 </Link>
               </div>
             </div>
-          </div>
+          </div>  {/* ← this was missing! closes the big container div */}
+
         </header>
 
         {/* === Main page content === */}
