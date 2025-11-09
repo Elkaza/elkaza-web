@@ -1,9 +1,11 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import { Search } from "lucide-react";
 
 export default function SearchModal() {
   const [open, setOpen] = useState(false);
+  const triggerRef = useRef<HTMLButtonElement | null>(null);
 
   // Close with ESC key
   useEffect(() => {
@@ -12,28 +14,35 @@ export default function SearchModal() {
     return () => window.removeEventListener("keydown", handler);
   }, []);
 
+  // Return focus to trigger when closing
+  useEffect(() => {
+    if (!open && triggerRef.current) triggerRef.current.focus();
+  }, [open]);
+
   return (
     <>
-      {/* Trigger Button */}
       <button
+        ref={triggerRef}
         onClick={() => setOpen(true)}
-        aria-label="Search"
+        aria-label="Suche öffnen"
         className="p-2 rounded-full hover:bg-gray-100 transition"
       >
-        🔍
+        <Search size={18} aria-hidden="true" />
       </button>
 
-      {/* Overlay Modal */}
       {open && (
         <div
           onClick={() => setOpen(false)}
           className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-[999]"
         >
           <div
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="search-title"
             onClick={(e) => e.stopPropagation()}
             className="bg-white p-8 rounded-2xl shadow-xl w-full max-w-lg text-center"
           >
-            <h2 className="text-xl font-semibold mb-4 text-gray-800">
+            <h2 id="search-title" className="text-xl font-semibold mb-4 text-gray-800">
               Website durchsuchen
             </h2>
             <input
@@ -51,3 +60,4 @@ export default function SearchModal() {
     </>
   );
 }
+

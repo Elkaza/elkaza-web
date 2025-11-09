@@ -1,0 +1,14 @@
+title = "Custom Gitleaks Config"
+
+[[rules]]
+id = "google-api-key"
+description = "Google API Key"
+regex = '''AIza[0-9A-Za-z\-_]{35}'''
+tags = ["key","google","apikey"]
+
+[allowlist]
+description = "Allow examples"
+paths = [
+  '''\.env\.local\.example$'''
+]
+
