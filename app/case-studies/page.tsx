@@ -4,9 +4,9 @@ export const metadata = {
   title: "Case Studies – Elkaza Consulting",
   description: "Ergebnisse und Projekte mit messbarer Wirkung.",
 };
+
 const mockCases = [
-  { slug: "beispiel-projekt", title: "Automatisierung spart 50 Stunden/Monat", tag: "KI-Automatisierung" },
-  { slug: "plattform-redesign", title: "+40% Conversion durch UX-Redesign", tag: "Digitale Produkte" },
+  { slug: "logistik-automation", title: "Automatisierung spart 50 Stunden/Monat für Logistikunternehmen", tag: "KI-Automatisierung" },
 ];
 
 export default function CaseStudiesPage() {
@@ -24,3 +24,4 @@ export default function CaseStudiesPage() {
     </main>
   );
 }
+

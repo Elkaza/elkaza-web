@@ -37,15 +37,15 @@ export default function HomeEn() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <Link href="/en/services/ai-automation" className="p-6 rounded-xl border hover:border-blue-500 transition">
               <h3 className="text-xl font-semibold mb-2">AI & Intelligent Automation</h3>
-              <p className="text-gray-700">Accelerate processes, ensure quality, free teams.</p>
+              <p className="text-gray-700">Process automation, AI integration, data engineering, and IoT solutions.</p>
             </Link>
             <Link href="/en/services/digital-products" className="p-6 rounded-xl border hover:border-blue-500 transition">
               <h3 className="text-xl font-semibold mb-2">Digital Products & Platforms</h3>
-              <p className="text-gray-700">Modern web platforms with Next.js, scalable and fast.</p>
+              <p className="text-gray-700">Web platforms, UI/UX design, cloud-native development, and DevOps.</p>
             </Link>
             <Link href="/en/services/digital-strategy" className="p-6 rounded-xl border hover:border-blue-500 transition">
               <h3 className="text-xl font-semibold mb-2">Digital Strategy & Advisory</h3>
-              <p className="text-gray-700">From audit and workshop to a pragmatic roadmap.</p>
+              <p className="text-gray-700">Audit, workshops, technology roadmaps, and enterprise architecture.</p>
             </Link>
           </div>
         </div>
@@ -53,4 +53,3 @@ export default function HomeEn() {
     </main>
   );
 }
-

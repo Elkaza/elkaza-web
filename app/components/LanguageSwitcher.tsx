@@ -2,12 +2,12 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
+import { mapDeToEn, mapEnToDe } from "@/lib/i18nPaths";
 
 export default function LanguageSwitcher() {
   const pathname = usePathname();
   const isEnglish = pathname.startsWith("/en");
-  // Minimal safe toggle: from any German route (default at root) → /en, from /en/* → /
-  const href = isEnglish ? "/" : "/en";
+  const href = isEnglish ? mapEnToDe(pathname) : mapDeToEn(pathname);
 
   return (
     <Link href={href} className="flex items-center space-x-1 hover:opacity-80 transition">

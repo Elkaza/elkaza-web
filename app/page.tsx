@@ -42,15 +42,15 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <Link href="/leistungen/ki-automatisierung" className="p-6 rounded-xl border hover:border-blue-500 transition">
               <h3 className="text-xl font-semibold mb-2">KI & Intelligente Automatisierung</h3>
-              <p className="text-gray-700">Prozesse beschleunigen, Qualität sichern, Teams entlasten.</p>
+              <p className="text-gray-700">Prozessautomatisierung, KI‑Integration, Data Engineering und IoT‑Lösungen.</p>
             </Link>
             <Link href="/leistungen/digitale-produkte" className="p-6 rounded-xl border hover:border-blue-500 transition">
               <h3 className="text-xl font-semibold mb-2">Digitale Produkte & Plattformen</h3>
-              <p className="text-gray-700">Moderne Web-Plattformen mit Next.js, skalierbar und performant.</p>
+              <p className="text-gray-700">Web‑Plattformen, UI/UX Design, Cloud‑native Entwicklung und DevOps.</p>
             </Link>
             <Link href="/leistungen/digitalstrategie" className="p-6 rounded-xl border hover:border-blue-500 transition">
               <h3 className="text-xl font-semibold mb-2">Digitale Strategie & Beratung</h3>
-              <p className="text-gray-700">Von Audit und Workshop zur Roadmap – messbar und pragmatisch.</p>
+              <p className="text-gray-700">Audit, Workshops, Technologie‑Roadmaps und Enterprise Architecture.</p>
             </Link>
           </div>
         </div>

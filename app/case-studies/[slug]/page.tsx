@@ -1,12 +1,15 @@
 interface Props { params: { slug: string } }
 
 const mockDb: Record<string, { title: string; client?: string; challenge: string; solution: string; result: string; tech: string[] }> = {
-  "beispiel-projekt": {
-    title: "Automatisierung spart 50 Stunden/Monat",
-    client: "KMU (Produktion)",
-    challenge: "Manuelle, fehleranfällige Datenaufbereitung blockierte Teams.",
-    solution: "KI-gestützte Workflow-Automatisierung mit klaren Freigaben.",
-    result: "+50 Std./Monat eingespart, höhere Datenqualität.",
+  "logistik-automation": {
+    title: "Automatisierung spart 50 Stunden/Monat für Logistikunternehmen",
+    client: "KMU (Logistik)",
+    challenge:
+      "Ein österreichisches Logistikunternehmen verarbeitete hunderte Frachtrechnungen jeden Monat manuell. Das Finanzteam verbrachte über 50 Stunden mit einer fehleranfälligen Tätigkeit.",
+    solution:
+      "Mit unserer Leistung ‚KI & Intelligente Automatisierung‘ entwickelten wir eine Lösung, die PDF‑Rechnungen automatisch ausliest, relevante Felder validiert und die Daten direkt in die Buchhaltungssoftware übergibt – ohne manuelle Eingabe.",
+    result:
+      "Über 50 Stunden pro Monat eingespart, 98% weniger Erfassungsfehler, Fokus des Teams auf Analyse und Budgetsteuerung, ROI in unter 4 Monaten.",
     tech: ["Next.js", "TypeScript", "Gemini"],
   },
 };
@@ -49,4 +52,3 @@ export default function CaseStudyDetail({ params }: Props) {
     </main>
   );
 }
-

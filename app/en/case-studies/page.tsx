@@ -6,7 +6,7 @@ export const metadata = {
 };
 
 const mockCases = [
-  { slug: "sample-project", title: "Automation saves 50 hours/month", tag: "AI Automation" },
+  { slug: "automation-50h-logistics", title: "Automation Saves 50 Hours/Month for Logistics Firm", tag: "AI Automation" },
 ];
 
 export default function CaseStudiesEn() {
@@ -24,4 +24,3 @@ export default function CaseStudiesEn() {
     </main>
   );
 }
-
