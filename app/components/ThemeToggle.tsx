@@ -3,40 +3,31 @@
 import { useEffect, useState } from "react";
 import { Moon, Sun } from "lucide-react";
 
+type Theme = "light" | "dark";
+
 export default function ThemeToggle() {
-    const [theme, setTheme] = useState<"light" | "dark">("light");
-    const [mounted, setMounted] = useState(false);
+    const [theme, setTheme] = useState<Theme>(() => {
+        try {
+            if (typeof window === "undefined") return "light";
+            const stored = localStorage.getItem("theme");
+            if (stored === "light" || stored === "dark") return stored;
+            if (window.matchMedia("(prefers-color-scheme: dark)").matches) return "dark";
+        } catch {
+        }
+        return "light";
+    });
 
     useEffect(() => {
-        setMounted(true);
-        const stored = localStorage.getItem("theme") as "light" | "dark" | null;
-        if (stored) {
-            setTheme(stored);
-            document.documentElement.setAttribute("data-theme", stored);
-        } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-            setTheme("dark");
-            document.documentElement.setAttribute("data-theme", "dark");
+        try {
+            document.documentElement.setAttribute("data-theme", theme);
+            localStorage.setItem("theme", theme);
+        } catch {
         }
-    }, []);
+    }, [theme]);
 
     const toggleTheme = () => {
-        const newTheme = theme === "light" ? "dark" : "light";
-        setTheme(newTheme);
-        document.documentElement.setAttribute("data-theme", newTheme);
-        localStorage.setItem("theme", newTheme);
+        setTheme((prev) => (prev === "light" ? "dark" : "light"));
     };
-
-    // Avoid hydration mismatch
-    if (!mounted) {
-        return (
-            <button
-                className="p-2 rounded-lg border border-[var(--border)] bg-[var(--surface)] text-[var(--muted)] opacity-0"
-                aria-label="Toggle theme"
-            >
-                <Sun className="w-4 h-4" />
-            </button>
-        );
-    }
 
     return (
         <button

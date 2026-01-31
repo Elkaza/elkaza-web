@@ -10,7 +10,9 @@ const hits = new Map<string, { count: number; resetAt: number }>();
 function getClientIp(req: Request) {
   const xf = req.headers.get("x-forwarded-for");
   if (xf) return xf.split(",")[0].trim();
-  return (req as any).ip || "local";
+  const xr = req.headers.get("x-real-ip");
+  if (xr) return xr;
+  return "local";
 }
 
 function rateLimit(ip: string) {
@@ -42,14 +44,22 @@ export async function POST(req: Request) {
       });
     }
 
-    let body: any = null;
+    let body: unknown = null;
     try {
       body = await req.json();
     } catch {
       return NextResponse.json({ error: "Invalid JSON body" }, { status: 400 });
     }
 
-    const prompt = typeof body?.prompt === "string" ? body.prompt.trim() : "";
+    function getStringField(obj: unknown, key: string): string | undefined {
+      if (obj && typeof obj === "object" && key in obj) {
+        const val = (obj as Record<string, unknown>)[key];
+        if (typeof val === "string") return val;
+      }
+      return undefined;
+    }
+
+    const prompt = getStringField(body, "prompt")?.trim() ?? "";
     if (!prompt) {
       return NextResponse.json({ error: "Missing 'prompt'" }, { status: 400 });
     }

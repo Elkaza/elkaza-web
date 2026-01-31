@@ -1,5 +1,3 @@
-interface Props { params: { slug: string } }
-
 const mockPosts: Record<string, { title: string; date: string; content: string; author?: string }> = {
   "ki-strategie-fuer-kmus": {
     title: "KI-Strategie für KMUs: pragmatisch starten",
@@ -9,8 +7,9 @@ const mockPosts: Record<string, { title: string; date: string; content: string; 
   },
 };
 
-export default function InsightDetail({ params }: Props) {
-  const post = mockPosts[params.slug] || { title: "Beitrag", date: new Date().toISOString(), content: "Bald verfügbar." };
+export default async function InsightDetail({ params }: { params: { slug: string } }) {
+  const slug = params.slug;
+  const post = mockPosts[slug] || { title: "Beitrag", date: new Date().toISOString(), content: "Bald verfügbar." };
   return (
     <main className="min-h-screen bg-[var(--bg)]">
       <section className="py-10 md:py-14 hero-gradient">

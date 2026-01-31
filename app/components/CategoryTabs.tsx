@@ -1,7 +1,5 @@
 "use client";
 
-import { useState } from "react";
-
 interface CategoryTabsProps {
     locale: "de" | "en";
     onCategoryChange: (category: string) => void;
