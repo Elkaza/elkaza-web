@@ -1,54 +1,54 @@
-interface Props { params: { slug: string } }
+import { siteContent } from "@/lib/siteContent";
+import { notFound } from "next/navigation";
+import { Check } from "lucide-react";
+import CTA from "@/app/components/CTA";
 
-const mockDb: Record<string, { title: string; client?: string; challenge: string; solution: string; result: string; tech: string[] }> = {
-  "automation-50h-logistics": {
-    title: "Automation Saves 50 Hours/Month for Logistics Firm",
-    client: "Austrian SME (Logistics)",
-    challenge:
-      "A mid-sized logistics company processed hundreds of freight invoices manually each month. The finance team spent over 50 hours on this, with frequent data entry errors that prevented higher‑value analysis.",
-    solution:
-      "Using our AI & Intelligent Automation service, we deployed a system that reads, extracts, and validates key data (invoice numbers, amounts, dates) from incoming PDF invoices and feeds it directly into accounting — no manual entry.",
-    result:
-      "Saved over 50 hours per month, reduced data entry errors by 98%, freed the finance team for strategic analysis, and achieved ROI in under 4 months.",
-    tech: ["Next.js", "TypeScript", "Gemini"],
-  },
-};
+const cases = siteContent.caseStudies.en.items;
 
-export default function CaseStudyDetailEn({ params }: Props) {
-  const data = mockDb[params.slug] || {
-    title: "Case Study",
-    challenge: "Details to be added.",
-    solution: "",
-    result: "",
-    tech: [],
-  };
+export function generateStaticParams() {
+  return cases.map((c) => ({ slug: c.slug }));
+}
+
+export default async function CaseStudyDetailEnPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const cs = cases.find((c) => c.slug === slug);
+  if (!cs) notFound();
 
   return (
-    <main className="max-w-3xl mx-auto px-6 py-16">
-      <h1 className="text-4xl font-bold mb-2">{data.title}</h1>
-      {data.client && <p className="text-gray-600 mb-8">Client: {data.client}</p>}
-
-      <section className="mb-8">
-        <h2 className="text-2xl font-semibold mb-2">Challenge</h2>
-        <p className="text-gray-700">{data.challenge}</p>
+    <main>
+      <section className="py-10 md:py-14 hero-gradient">
+        <div className="max-w-4xl mx-auto px-6">
+          <span className="text-xs font-semibold text-[var(--primary-foreground)] bg-[var(--primary)] px-3 py-1 rounded-full">
+            {cs.tag}
+          </span>
+          <h1 className="text-4xl font-bold text-[var(--text)] mt-4 mb-3">{cs.title}</h1>
+          <p className="text-xl text-[var(--text-secondary)]">{cs.summary}</p>
+        </div>
       </section>
 
-      <section className="mb-8">
-        <h2 className="text-2xl font-semibold mb-2">Solution</h2>
-        <p className="text-gray-700">{data.solution}</p>
-      </section>
+      <section className="py-10 md:py-14 bg-[var(--surface)]">
+        <div className="max-w-4xl mx-auto px-6">
+          <h2 className="text-2xl font-semibold text-[var(--text)] mb-5">Results</h2>
+          <ul className="space-y-3 mb-8">
+            {cs.results.map((r, i) => (
+              <li key={i} className="flex items-start gap-3 text-[var(--text-secondary)]">
+                <Check className="w-5 h-5 text-[var(--primary)] mt-0.5 shrink-0" />
+                <span>{r}</span>
+              </li>
+            ))}
+          </ul>
 
-      <section className="mb-8">
-        <h2 className="text-2xl font-semibold mb-2">Result</h2>
-        <p className="text-gray-700">{data.result}</p>
-      </section>
+          <p className="text-[var(--muted)] text-sm mb-6">
+            More details available on request. Contact us for a conversation.
+          </p>
 
-      {data.tech.length > 0 && (
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-2">Tech Stack</h2>
-          <p className="text-gray-700">{data.tech.join(", ")}</p>
-        </section>
-      )}
+          <CTA href="/en/contact">Get in Touch</CTA>
+        </div>
+      </section>
     </main>
   );
 }

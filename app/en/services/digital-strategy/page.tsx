@@ -1,18 +1,38 @@
-export default function DigitalStrategyEn() {
+import CTA from "@/app/components/CTA";
+
+export default function DigitalStrategyPage() {
   return (
-    <main className="max-w-6xl mx-auto px-6 py-16">
-      <h1 className="text-4xl font-bold mb-6">Digital Strategy & Advisory</h1>
-      <p className="text-gray-700 mb-6">We provide the expert roadmap for your technological growth.</p>
-      <section className="mb-10">
-        <h2 className="text-2xl font-semibold mb-3">What we deliver</h2>
-        <ul className="list-disc pl-6 text-gray-700 space-y-1">
-          <li>Technology Audits & Workshops: Analyze current systems and identify opportunities.</li>
-          <li>Digital Roadmaps: Clear, pragmatic modernization plans.</li>
-          <li>Enterprise Architecture: Align business goals with technology, data, and processes.</li>
-          <li>Project Management (IPMA D): Deliver on time and on budget.</li>
-        </ul>
+    <main>
+      <section className="py-10 md:py-14 hero-gradient">
+        <div className="max-w-[1140px] mx-auto px-6">
+          <h1 className="text-4xl font-bold text-[var(--text)]">Digital Strategy & Consulting</h1>
+        </div>
       </section>
-      <a href="/en/contact" className="inline-block bg-blue-700 text-white px-6 py-3 rounded-lg hover:bg-blue-800">Learn more</a>
+
+      <section className="py-10 md:py-14 bg-[var(--surface)]">
+        <div className="max-w-[1140px] mx-auto px-6 space-y-8">
+          <div>
+            <h2 className="text-2xl font-semibold text-[var(--text)] mb-3">Business Value</h2>
+            <p className="text-[var(--text-secondary)] leading-relaxed">
+              We provide the expert roadmap for your technological growth.
+            </p>
+          </div>
+          <div>
+            <h2 className="text-2xl font-semibold text-[var(--text)] mb-3">Our Approach</h2>
+            <ul className="list-disc pl-6 text-[var(--text-secondary)] space-y-2">
+              <li>Audit: System and process analysis</li>
+              <li>Workshops: Align stakeholders, sharpen goals</li>
+              <li>Roadmap: Prioritize actions, define milestones</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-10 md:py-14 bg-[var(--bg)]">
+        <div className="max-w-[1140px] mx-auto px-6 text-center">
+          <CTA href="/en/contact">Learn More</CTA>
+        </div>
+      </section>
     </main>
   );
 }

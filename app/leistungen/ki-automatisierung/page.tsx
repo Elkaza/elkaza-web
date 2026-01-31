@@ -1,21 +1,38 @@
+import CTA from "@/app/components/CTA";
+
 export default function KIAutomatisierungPage() {
   return (
-    <main className="max-w-6xl mx-auto px-6 py-16">
-      <h1 className="text-4xl font-bold mb-6">KI & Intelligente Automatisierung</h1>
-      <section className="mb-10">
-        <h2 className="text-2xl font-semibold mb-2">Business Value</h2>
-        <p className="text-gray-700">Zeit sparen, Qualität erhöhen, Skalierung ermöglichen.</p>
+    <main>
+      <section className="py-10 md:py-14 hero-gradient">
+        <div className="max-w-[1140px] mx-auto px-6">
+          <h1 className="text-4xl font-bold text-[var(--text)]">KI & Automatisierung</h1>
+        </div>
       </section>
-      <section className="mb-10">
-        <h2 className="text-2xl font-semibold mb-3">Unser Ansatz</h2>
-        <ul className="list-disc pl-6 text-gray-700 space-y-1">
-          <li>Prozessautomatisierung (RPA/Workflows)</li>
-          <li>Gemini-Integration für Wissensarbeit</li>
-          <li>Datenanalyse & Assistenzwerkzeuge</li>
-        </ul>
+
+      <section className="py-10 md:py-14 bg-[var(--surface)]">
+        <div className="max-w-[1140px] mx-auto px-6 space-y-8">
+          <div>
+            <h2 className="text-2xl font-semibold text-[var(--text)] mb-3">Business Value</h2>
+            <p className="text-[var(--text-secondary)] leading-relaxed">
+              Zeit sparen, Qualität erhöhen, Skalierung ermöglichen.
+            </p>
+          </div>
+          <div>
+            <h2 className="text-2xl font-semibold text-[var(--text)] mb-3">Unser Ansatz</h2>
+            <ul className="list-disc pl-6 text-[var(--text-secondary)] space-y-2">
+              <li>Use-Cases identifizieren & priorisieren</li>
+              <li>PoC: Schnell zeigen, was möglich ist</li>
+              <li>Rollout: Stabil, dokumentiert, skalierbar</li>
+            </ul>
+          </div>
+        </div>
       </section>
-      <a href="/kontakt" className="inline-block bg-blue-700 text-white px-6 py-3 rounded-lg hover:bg-blue-800">Mehr erfahren</a>
+
+      <section className="py-10 md:py-14 bg-[var(--bg)]">
+        <div className="max-w-[1140px] mx-auto px-6 text-center">
+          <CTA href="/kontakt">Mehr erfahren</CTA>
+        </div>
+      </section>
     </main>
   );
 }
-

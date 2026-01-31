@@ -1,25 +1,74 @@
-export default function ContactEn() {
-  return (
-    <main className="max-w-3xl mx-auto px-6 py-16">
-      <h1 className="text-4xl font-bold mb-6">Book a free 30‑minute strategy analysis</h1>
-      <p className="text-gray-700 mb-8">We will get back within 24 hours.</p>
+import { siteContent } from "@/lib/siteContent";
 
-      <form className="space-y-4" method="post" action="#">
-        <div>
-          <label className="block text-sm font-medium mb-1">Name</label>
-          <input className="w-full border rounded-lg px-4 py-2" name="name" required />
+export const metadata = {
+  title: "Contact - Elkaza Consulting",
+  description: "Schedule a free initial consultation. We will get back to you within 24 hours.",
+};
+
+export default function ContactEnPage() {
+  const content = siteContent.contact.en;
+
+  return (
+    <main>
+      <section className="py-10 md:py-14 hero-gradient">
+        <div className="max-w-[1140px] mx-auto px-6">
+          <h1 className="text-4xl font-bold text-[var(--text)] mb-3">{content.title}</h1>
+          <p className="text-lg text-[var(--text-secondary)]">{content.subtitle}</p>
         </div>
-        <div>
-          <label className="block text-sm font-medium mb-1">Email</label>
-          <input type="email" className="w-full border rounded-lg px-4 py-2" name="email" required />
+      </section>
+
+      <section className="py-10 md:py-14 bg-[var(--surface)]">
+        <div className="max-w-xl mx-auto px-6">
+          <form className="space-y-5" method="post" action="#">
+            <div>
+              <label className="block text-sm font-medium text-[var(--text)] mb-2">
+                {content.form.name}
+              </label>
+              <input
+                className="w-full border border-[var(--border)] rounded-lg px-4 py-3 bg-[var(--elevated)] text-[var(--text)] placeholder:text-[var(--muted)] focus:outline-none focus:border-[var(--border-focus)] focus:ring-2 focus:ring-[var(--primary)]/20 hover:border-[var(--border-hover)] transition-all"
+                name="name"
+                required
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-[var(--text)] mb-2">
+                {content.form.email}
+              </label>
+              <input
+                type="email"
+                className="w-full border border-[var(--border)] rounded-lg px-4 py-3 bg-[var(--elevated)] text-[var(--text)] placeholder:text-[var(--muted)] focus:outline-none focus:border-[var(--border-focus)] focus:ring-2 focus:ring-[var(--primary)]/20 hover:border-[var(--border-hover)] transition-all"
+                name="email"
+                required
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-[var(--text)] mb-2">
+                {content.form.company}
+              </label>
+              <input
+                className="w-full border border-[var(--border)] rounded-lg px-4 py-3 bg-[var(--elevated)] text-[var(--text)] placeholder:text-[var(--muted)] focus:outline-none focus:border-[var(--border-focus)] focus:ring-2 focus:ring-[var(--primary)]/20 hover:border-[var(--border-hover)] transition-all"
+                name="company"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-[var(--text)] mb-2">
+                {content.form.message}
+              </label>
+              <textarea
+                className="w-full border border-[var(--border)] rounded-lg px-4 py-3 bg-[var(--elevated)] text-[var(--text)] placeholder:text-[var(--muted)] focus:outline-none focus:border-[var(--border-focus)] focus:ring-2 focus:ring-[var(--primary)]/20 hover:border-[var(--border-hover)] transition-all resize-none"
+                name="message"
+                rows={5}
+              />
+            </div>
+            <button
+              type="submit"
+              className="w-full bg-[var(--primary)] text-[var(--primary-foreground)] px-6 py-3 rounded-lg font-medium hover:bg-[var(--primary-hover)] transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--border-focus)] active:scale-[0.98]"
+            >
+              {content.form.submit}
+            </button>
+          </form>
         </div>
-        <div>
-          <label className="block text-sm font-medium mb-1">Message</label>
-          <textarea className="w-full border rounded-lg px-4 py-2" name="message" rows={5} />
-        </div>
-        <button className="bg-blue-700 text-white px-6 py-2 rounded-lg hover:bg-blue-800">Send</button>
-      </form>
+      </section>
     </main>
   );
 }
-

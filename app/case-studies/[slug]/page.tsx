@@ -1,3 +1,5 @@
+import CTA from "@/app/components/CTA";
+
 interface Props { params: { slug: string } }
 
 const mockDb: Record<string, { title: string; client?: string; challenge: string; solution: string; result: string; tech: string[] }> = {
@@ -7,7 +9,7 @@ const mockDb: Record<string, { title: string; client?: string; challenge: string
     challenge:
       "Ein österreichisches Logistikunternehmen verarbeitete hunderte Frachtrechnungen jeden Monat manuell. Das Finanzteam verbrachte über 50 Stunden mit einer fehleranfälligen Tätigkeit.",
     solution:
-      "Mit unserer Leistung ‚KI & Intelligente Automatisierung‘ entwickelten wir eine Lösung, die PDF‑Rechnungen automatisch ausliest, relevante Felder validiert und die Daten direkt in die Buchhaltungssoftware übergibt – ohne manuelle Eingabe.",
+      "Mit unserer Leistung ‚KI & Intelligente Automatisierung' entwickelten wir eine Lösung, die PDF‑Rechnungen automatisch ausliest, relevante Felder validiert und die Daten direkt in die Buchhaltungssoftware übergibt – ohne manuelle Eingabe.",
     result:
       "Über 50 Stunden pro Monat eingespart, 98% weniger Erfassungsfehler, Fokus des Teams auf Analyse und Budgetsteuerung, ROI in unter 4 Monaten.",
     tech: ["Next.js", "TypeScript", "Gemini"],
@@ -24,31 +26,49 @@ export default function CaseStudyDetail({ params }: Props) {
   };
 
   return (
-    <main className="max-w-3xl mx-auto px-6 py-16">
-      <h1 className="text-4xl font-bold mb-2">{data.title}</h1>
-      {data.client && <p className="text-gray-600 mb-8">Kunde: {data.client}</p>}
-
-      <section className="mb-8">
-        <h2 className="text-2xl font-semibold mb-2">Herausforderung</h2>
-        <p className="text-gray-700">{data.challenge}</p>
+    <main>
+      <section className="py-10 md:py-14 hero-gradient">
+        <div className="max-w-3xl mx-auto px-6">
+          <h1 className="text-4xl font-bold text-[var(--text)] mb-2">{data.title}</h1>
+          {data.client && <p className="text-[var(--muted)]">Kunde: {data.client}</p>}
+        </div>
       </section>
 
-      <section className="mb-8">
-        <h2 className="text-2xl font-semibold mb-2">Lösung</h2>
-        <p className="text-gray-700">{data.solution}</p>
+      <section className="py-10 md:py-14 bg-[var(--surface)]">
+        <div className="max-w-3xl mx-auto px-6 space-y-8">
+          <div>
+            <h2 className="text-2xl font-semibold text-[var(--text)] mb-3">Herausforderung</h2>
+            <p className="text-[var(--text-secondary)] leading-relaxed">{data.challenge}</p>
+          </div>
+
+          {data.solution && (
+            <div>
+              <h2 className="text-2xl font-semibold text-[var(--text)] mb-3">Lösung</h2>
+              <p className="text-[var(--text-secondary)] leading-relaxed">{data.solution}</p>
+            </div>
+          )}
+
+          {data.result && (
+            <div>
+              <h2 className="text-2xl font-semibold text-[var(--text)] mb-3">Ergebnis</h2>
+              <p className="text-[var(--text-secondary)] leading-relaxed">{data.result}</p>
+            </div>
+          )}
+
+          {data.tech.length > 0 && (
+            <div>
+              <h2 className="text-2xl font-semibold text-[var(--text)] mb-3">Tech Stack</h2>
+              <p className="text-[var(--text-secondary)]">{data.tech.join(", ")}</p>
+            </div>
+          )}
+        </div>
       </section>
 
-      <section className="mb-8">
-        <h2 className="text-2xl font-semibold mb-2">Ergebnis</h2>
-        <p className="text-gray-700">{data.result}</p>
+      <section className="py-10 md:py-14 bg-[var(--bg)]">
+        <div className="max-w-3xl mx-auto px-6 text-center">
+          <CTA href="/kontakt">Ähnliches Projekt besprechen</CTA>
+        </div>
       </section>
-
-      {data.tech.length > 0 && (
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-2">Tech Stack</h2>
-          <p className="text-gray-700">{data.tech.join(", ")}</p>
-        </section>
-      )}
     </main>
   );
 }

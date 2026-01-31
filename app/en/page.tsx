@@ -1,53 +1,124 @@
 import Link from "next/link";
+import { siteContent } from "@/lib/siteContent";
+import CTA from "@/app/components/CTA";
+import ServiceCards from "@/app/components/ServiceCards";
+import { Check } from "lucide-react";
 
 export const metadata = {
-  title: "Elkaza Consulting – Digital Transformation Partner",
-  description: "We combine AI, modern platforms, and strategic design to future‑proof your business.",
+  title: "Elkaza Consulting - Networking, Security & Automation for SMEs",
+  description:
+    "We build stable IT infrastructure for growing teams: networking, security, and automation from a single source.",
 };
 
-export default function HomeEn() {
+export default function HomeEN() {
+  const hero = siteContent.hero.en;
+  const painPoints = siteContent.painPoints.en;
+  const whyUs = siteContent.whyUs.en;
+  const caseStudies = siteContent.caseStudies.en;
+
   return (
     <main>
-      <section className="relative text-center py-24 md:py-32 bg-gradient-to-b from-blue-50 to-white">
-        <div className="max-w-4xl mx-auto px-6">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900 leading-tight">
-            Partner for Your Digital Transformation.
+      {/* Hero */}
+      <section className="relative text-center py-14 md:py-20 hero-gradient">
+        <div className="max-w-[1140px] mx-auto px-6">
+          <h1 className="text-4xl md:text-5xl font-bold mb-5 text-[var(--text)] leading-tight tracking-tight">
+            {hero.headline}
           </h1>
-          <p className="text-lg text-gray-700 max-w-2xl mx-auto mb-8">
-            We combine AI, modern platforms and strategic design to future‑proof your business.
+          <p className="text-lg text-[var(--text-secondary)] max-w-2xl mx-auto mb-8 leading-relaxed">
+            {hero.subheadline}
           </p>
-          <Link href="/en/contact" className="inline-block bg-blue-700 text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-800 transition">
-            Book an analysis
-          </Link>
-        </div>
-      </section>
-
-      <section className="max-w-6xl mx-auto px-6 py-16">
-        <h2 className="text-2xl font-semibold mb-6">Remove blockers, unlock growth</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-gray-700">
-          <div className="p-6 rounded-xl border bg-white">Legacy systems blocking growth?</div>
-          <div className="p-6 rounded-xl border bg-white">Manual processes wasting time?</div>
-          <div className="p-6 rounded-xl border bg-white">Lack of strategy slowing initiatives?</div>
-        </div>
-      </section>
-
-      <section className="py-16 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-2xl font-semibold mb-8">Service pillars</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <Link href="/en/services/ai-automation" className="p-6 rounded-xl border hover:border-blue-500 transition">
-              <h3 className="text-xl font-semibold mb-2">AI & Intelligent Automation</h3>
-              <p className="text-gray-700">Process automation, AI integration, data engineering, and IoT solutions.</p>
-            </Link>
-            <Link href="/en/services/digital-products" className="p-6 rounded-xl border hover:border-blue-500 transition">
-              <h3 className="text-xl font-semibold mb-2">Digital Products & Platforms</h3>
-              <p className="text-gray-700">Web platforms, UI/UX design, cloud-native development, and DevOps.</p>
-            </Link>
-            <Link href="/en/services/digital-strategy" className="p-6 rounded-xl border hover:border-blue-500 transition">
-              <h3 className="text-xl font-semibold mb-2">Digital Strategy & Advisory</h3>
-              <p className="text-gray-700">Audit, workshops, technology roadmaps, and enterprise architecture.</p>
-            </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <CTA href={hero.primaryCtaHref}>{hero.primaryCta}</CTA>
+            <CTA href={hero.secondaryCtaHref} variant="secondary">
+              {hero.secondaryCta}
+            </CTA>
           </div>
+        </div>
+      </section>
+
+      {/* Pain points */}
+      <section className="py-12 md:py-14 bg-[var(--surface)]">
+        <div className="max-w-[1140px] mx-auto px-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-[var(--text)] mb-6">
+            Sound familiar?
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {painPoints.map((point, i) => (
+              <div
+                key={i}
+                className="p-5 rounded-xl border border-[var(--border)] bg-[var(--elevated)] shadow-[var(--shadow-sm)]"
+              >
+                <h3 className="font-semibold text-[var(--text)] mb-2">{point.title}</h3>
+                <p className="text-sm text-[var(--muted)] leading-relaxed">{point.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Services */}
+      <section className="py-12 md:py-14 bg-[var(--bg)]">
+        <div className="max-w-[1140px] mx-auto px-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-[var(--text)] mb-6">
+            Our Services
+          </h2>
+          <ServiceCards locale="en" />
+        </div>
+      </section>
+
+      {/* Why us */}
+      <section className="py-12 md:py-14 bg-[var(--surface)]">
+        <div className="max-w-[1140px] mx-auto px-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-[var(--text)] mb-2">
+            {whyUs.title}
+          </h2>
+          <p className="text-[var(--text-secondary)] text-lg mb-2">{whyUs.lead}</p>
+          <p className="text-[var(--muted)] mb-6">We deliver solutions that work, not just concepts.</p>
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {whyUs.bullets.map((bullet, i) => (
+              <li key={i} className="flex items-start gap-3">
+                <Check className="w-5 h-5 text-[var(--primary)] mt-1 shrink-0" />
+                <span className="text-[var(--text-secondary)] text-base leading-relaxed">{bullet}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* Featured case studies */}
+      <section className="py-12 md:py-14 bg-[var(--bg)]">
+        <div className="max-w-[1140px] mx-auto px-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-[var(--text)] mb-6">
+            Case Studies
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {caseStudies.items.slice(0, 2).map((cs) => (
+              <Link
+                key={cs.slug}
+                href={`/en/case-studies/${cs.slug}`}
+                className="group block rounded-xl border border-[var(--border)] bg-[var(--surface)] p-5 shadow-[var(--shadow-sm)] hover:border-[var(--primary)] hover:shadow-[var(--shadow-glow)] hover:bg-[var(--elevated)] transition-all duration-200"
+              >
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="text-xs font-semibold text-[var(--primary-foreground)] bg-[var(--primary)] px-3 py-1 rounded-full">
+                    {cs.tag}
+                  </span>
+                  <span className="text-xs text-[var(--muted)]">{cs.meta}</span>
+                </div>
+                <h3 className="text-lg font-semibold text-[var(--text)] mb-2 group-hover:text-[var(--primary)] transition-colors">{cs.title}</h3>
+                <p className="text-[var(--muted)] text-sm leading-relaxed">{cs.summary}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="py-12 md:py-14 bg-[var(--surface)]">
+        <div className="max-w-[1140px] mx-auto px-6 text-center">
+          <h2 className="text-2xl md:text-3xl font-bold text-[var(--text)] mb-5">
+            Ready for stable infrastructure?
+          </h2>
+          <CTA href="/en/contact">Schedule a Free Consultation</CTA>
         </div>
       </section>
     </main>

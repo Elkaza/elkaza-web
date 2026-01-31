@@ -18,13 +18,13 @@ export async function generateMetadata() {
   return {
     title:
       locale === "de"
-        ? "Elkaza Consulting – Partner für digitale Transformation"
-        : "Elkaza Consulting – Digital Transformation Partner",
+        ? "Elkaza Consulting - Networking, Security & Automation"
+        : "Elkaza Consulting - Networking, Security & Automation",
     description:
       locale === "de"
-        ? "Wir verbinden KI, moderne Plattformen und strategisches Design, um Ihr Unternehmen zukunftsfähig zu machen."
-        : "We combine AI, modern platforms, and strategic design to future‑proof your business.",
-    icons: { icon: "/logo.png" },
+        ? "Stabile IT-Infrastruktur für wachsende Teams: Netzwerk, Sicherheit und Automatisierung aus einer Hand."
+        : "Stable IT infrastructure for growing teams: networking, security, and automation from a single source.",
+    icons: { icon: "/favicon.svg" },
     alternates: { canonical, languages },
     openGraph: {
       url: canonical,
@@ -41,18 +41,36 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const h = await headers();
   const locale = (h.get("x-locale") || "de") as "de" | "en";
   return (
-    <html lang={locale}>
-      <body className="min-h-screen flex flex-col bg-white text-gray-900">
+    <html lang={locale} suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var theme = localStorage.getItem('theme');
+                  if (theme) {
+                    document.documentElement.setAttribute('data-theme', theme);
+                  } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                  }
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
+      </head>
+      <body className="min-h-screen flex flex-col bg-[var(--bg)] text-[var(--text)]">
         <Header />
 
         <main className="flex-1">{children}</main>
 
-        <footer className="border-t bg-gray-50 mt-16">
-          <div className="max-w-7xl mx-auto px-6 py-8 text-sm text-gray-600 flex flex-col md:flex-row gap-4 md:items-center md:justify-between">
+        <footer className="border-t border-[var(--border)] bg-[var(--surface)]">
+          <div className="max-w-[1140px] mx-auto px-6 py-8 text-sm text-[var(--muted)] flex flex-col md:flex-row gap-4 md:items-center md:justify-between">
             <p>© {new Date().getFullYear()} Elkaza Consulting | Inh. Dipl.-Ing. Mohamed Elkaza</p>
-            <div className="flex items-center gap-4">
-              <Link href="/impressum" className="hover:text-blue-700">Impressum</Link>
-              <Link href="/datenschutz" className="hover:text-blue-700">Datenschutz</Link>
+            <div className="flex items-center gap-6">
+              <Link href="/impressum" className="hover:text-[var(--link)] transition-colors">Impressum</Link>
+              <Link href="/datenschutz" className="hover:text-[var(--link)] transition-colors">Datenschutz</Link>
             </div>
           </div>
         </footer>
@@ -60,4 +78,3 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     </html>
   );
 }
-

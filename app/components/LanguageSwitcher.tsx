@@ -17,7 +17,7 @@ export default function LanguageSwitcher() {
         width={22}
         height={22}
       />
-      <span className="text-sm">{isEnglish ? "Deutsch" : "English"}</span>
+      <span className="text-xs text-[var(--muted)]">{isEnglish ? "Deutsch" : "English"}</span>
     </Link>
   );
 }

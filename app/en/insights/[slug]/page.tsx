@@ -12,13 +12,18 @@ const mockPosts: Record<string, { title: string; date: string; content: string; 
 export default function InsightDetailEn({ params }: Props) {
   const post = mockPosts[params.slug] || { title: "Post", date: new Date().toISOString(), content: "Coming soon." };
   return (
-    <main className="max-w-3xl mx-auto px-6 py-16">
-      <h1 className="text-4xl font-bold mb-2">{post.title}</h1>
-      <div className="text-gray-500 mb-8">{new Date(post.date).toLocaleDateString("en-GB")}{post.author ? ` · ${post.author}` : ""}</div>
-      <article className="prose prose-blue max-w-none">
-        <p>{post.content}</p>
-      </article>
+    <main className="min-h-screen bg-[var(--bg)]">
+      <section className="py-10 md:py-14 hero-gradient">
+        <div className="max-w-3xl mx-auto px-6">
+          <h1 className="text-4xl font-bold text-[var(--text)] mb-2">{post.title}</h1>
+          <div className="text-[var(--muted)]">{new Date(post.date).toLocaleDateString("en-GB")}{post.author ? ` · ${post.author}` : ""}</div>
+        </div>
+      </section>
+      <section className="py-10 md:py-14 bg-[var(--surface)]">
+        <article className="max-w-3xl mx-auto px-6 text-[var(--text-secondary)] leading-relaxed">
+          <p>{post.content}</p>
+        </article>
+      </section>
     </main>
   );
 }
-

@@ -1,26 +1,338 @@
 @import "tailwindcss";
 
+/* ============================================
+   Design Tokens - Premium Dark Mode System
+   3 Surface Levels: background → surface → elevated
+   ============================================ */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Surfaces (3-level system) */
+  --bg: #F8FAFC;
+  --surface: #FFFFFF;
+  --elevated: #FFFFFF;
+  --surface-muted: #F1F5F9;
+
+  /* Text (WCAG AA compliant) */
+  --text: #0F172A;
+  --text-secondary: #334155;
+  --muted: #64748B;
+  --link: #4F46E5;
+  --link-hover: #4338CA;
+
+  /* Borders */
+  --border: #E2E8F0;
+  --border-hover: #CBD5E1;
+  --border-focus: #4F46E5;
+
+  /* Brand */
+  --primary: #4F46E5;
+  --primary-hover: #4338CA;
+  --primary-foreground: #FFFFFF;
+  --primary-light: #EEF2FF;
+  --accent: #06B6D4;
+
+  /* Shadows (light mode uses shadows) */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-glow: none;
+
+  /* Radius */
+  --radius: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+
+  /* Layout */
+  --container-max: 1140px;
+
+  /* Hero gradient */
+  --hero-from: #EEF2FF;
+  --hero-to: #F8FAFC;
 }
 
+[data-theme="dark"] {
+  /* Surfaces: layered dark grays, no pure black */
+  --bg: #0C1222;
+  --surface: #111827;
+  --elevated: #1E293B;
+  --surface-muted: #1E293B;
+
+  /* Text (high contrast for readability) */
+  --text: #F1F5F9;
+  --text-secondary: #CBD5E1;
+  --muted: #94A3B8;
+  --link: #818CF8;
+  --link-hover: #A5B4FC;
+
+  /* Borders (subtle but visible) */
+  --border: #1E293B;
+  --border-hover: #334155;
+  --border-focus: #6366F1;
+
+  /* Brand (brighter for dark backgrounds) */
+  --primary: #6366F1;
+  --primary-hover: #818CF8;
+  --primary-foreground: #FFFFFF;
+  --primary-light: #1E1B4B;
+  --accent: #22D3EE;
+
+  /* Shadows: use subtle glows instead */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.4);
+  --shadow-md: 0 0 0 1px rgb(255 255 255 / 0.05);
+  --shadow-lg: 0 0 0 1px rgb(255 255 255 / 0.08);
+  --shadow-glow: 0 0 20px 0 rgb(99 102 241 / 0.15);
+
+  /* Hero gradient (subtle dark variant) */
+  --hero-from: #111827;
+  --hero-to: #0C1222;
+}
+
+/* ============================================
+   Base Styles
+   ============================================ */
+
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-background: var(--bg);
+  --color-foreground: var(--text);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  color-scheme: light;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* ============================================
+   Typography Utilities
+   ============================================ */
+
+.text-primary {
+  color: var(--text);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.text-muted {
+  color: var(--muted);
+}
+
+.text-brand {
+  color: var(--primary);
+}
+
+/* ============================================
+   Surface Utilities (3-level system)
+   ============================================ */
+
+.bg-page {
+  background-color: var(--bg);
+}
+
+.bg-surface {
+  background-color: var(--surface);
+}
+
+.bg-elevated {
+  background-color: var(--elevated);
+}
+
+.bg-surface-muted {
+  background-color: var(--surface-muted);
+}
+
+/* ============================================
+   Hero Gradient
+   ============================================ */
+
+.hero-gradient {
+  background: linear-gradient(180deg, var(--hero-from) 0%, var(--hero-to) 100%);
+}
+
+/* ============================================
+   Card Component
+   ============================================ */
+
+.card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-md);
+}
+
+.card:focus-within {
+  border-color: var(--border-focus);
+  box-shadow: var(--shadow-glow);
+}
+
+/* ============================================
+   Button Components
+   ============================================ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  border-radius: var(--radius);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+.btn-secondary {
+  background-color: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  background-color: var(--primary-light);
+}
+
+/* ============================================
+   Links
+   ============================================ */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.link {
+  color: var(--link);
+  transition: color 0.15s ease;
+}
+
+.link:hover {
+  color: var(--link-hover);
+}
+
+/* ============================================
+   Form Inputs
+   ============================================ */
+
+input,
+textarea,
+select {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:hover,
+textarea:hover,
+select:hover {
+  border-color: var(--border-hover);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 3px rgb(99 102 241 / 0.15);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--muted);
+}
+
+/* ============================================
+   Focus States (Accessibility)
+   ============================================ */
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+}
+
+/* ============================================
+   Section Separator
+   ============================================ */
+
+.section-separator {
+  border-top: 1px solid var(--border);
+}
+
+/* ============================================
+   Badge Component
+   ============================================ */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+}
+
+.badge-outline {
+  background-color: transparent;
+  border: 1px solid var(--border);
+  color: var(--muted);
+}
+
+/* ============================================
+   Container
+   ============================================ */
+
+.container-main {
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }

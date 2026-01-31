@@ -1,51 +1,99 @@
 "use client";
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import LanguageSwitcher from "@/app/components/LanguageSwitcher";
+import ThemeToggle from "@/app/components/ThemeToggle";
+import { Menu, X } from "lucide-react";
 
 export default function Header() {
   const pathname = usePathname() || "/";
   const isEnglish = pathname.startsWith("/en");
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const homeHref = isEnglish ? "/en" : "/";
   const items = isEnglish
     ? [
-        { href: "/en/services", label: "Services" },
-        { href: "/en/case-studies", label: "Case Studies" },
-        { href: "/en/insights", label: "Insights" },
-        { href: "/en/about", label: "About" },
-        { href: "/en/contact", label: "Contact" },
-      ]
+      { href: "/en/services", label: "Services" },
+      { href: "/en/packages", label: "Packages" },
+      { href: "/en/case-studies", label: "Case Studies" },
+      { href: "/en/contact", label: "Contact" },
+    ]
     : [
-        { href: "/leistungen", label: "Leistungen" },
-        { href: "/case-studies", label: "Case Studies" },
-        { href: "/insights", label: "Insights" },
-        { href: "/ueber-uns", label: "Über uns" },
-        { href: "/kontakt", label: "Kontakt" },
-      ];
+      { href: "/leistungen", label: "Leistungen" },
+      { href: "/pakete", label: "Pakete" },
+      { href: "/referenzen", label: "Referenzen" },
+      { href: "/kontakt", label: "Kontakt" },
+    ];
 
   return (
-    <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
-        <Link href={homeHref} className="flex items-center gap-2">
-          <Image src="/logo.png" alt="Elkaza" width={36} height={36} />
-          <span className="text-xl font-semibold">
-            <span className="text-blue-700">Elkaza</span> Consulting
+    <header className="border-b border-[var(--border)] bg-[var(--surface)]/95 backdrop-blur-md sticky top-0 z-50">
+      <div className="max-w-[1140px] mx-auto px-6 py-4 flex items-center justify-between">
+        <Link href={homeHref} className="flex items-center gap-3 group">
+          <Image
+            src="/logo-mark.svg"
+            alt="Elkaza"
+            width={36}
+            height={36}
+            className="rounded-lg"
+          />
+          <span className="text-lg font-semibold text-[var(--text)]">
+            <span className="text-[var(--primary)] group-hover:text-[var(--primary-hover)] transition-colors">Elkaza</span>
           </span>
         </Link>
-        <nav className="hidden md:flex items-center gap-6 text-sm">
+
+        {/* Desktop nav */}
+        <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
           {items.map((it) => (
-            <Link key={it.href} href={it.href} className="hover:text-blue-700">
+            <Link
+              key={it.href}
+              href={it.href}
+              className="text-[var(--muted)] hover:text-[var(--text)] transition-colors duration-200"
+            >
               {it.label}
             </Link>
           ))}
         </nav>
-        <div className="ml-4">
-          <LanguageSwitcher />
+
+        <div className="flex items-center gap-3">
+          <div className="hidden md:block">
+            <LanguageSwitcher />
+          </div>
+          <ThemeToggle />
+          {/* Mobile menu button */}
+          <button
+            className="md:hidden p-2 text-[var(--muted)] hover:text-[var(--text)] rounded-lg hover:bg-[var(--elevated)] transition-colors"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            {mobileMenuOpen ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <Menu className="w-6 h-6" />
+            )}
+          </button>
         </div>
       </div>
+
+      {/* Mobile nav */}
+      {mobileMenuOpen && (
+        <nav className="md:hidden border-t border-[var(--border)] bg-[var(--surface)] px-6 py-4 space-y-1">
+          {items.map((it) => (
+            <Link
+              key={it.href}
+              href={it.href}
+              className="block py-3 text-[var(--text)] hover:text-[var(--primary)] font-medium transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {it.label}
+            </Link>
+          ))}
+          <div className="pt-3 border-t border-[var(--border)]">
+            <LanguageSwitcher />
+          </div>
+        </nav>
+      )}
     </header>
   );
 }
-
