@@ -34,6 +34,11 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  // Export static HTML for serving from static hosts (Apache, etc.)
+  output: "export",
+  images: {
+    unoptimized: true,
+  },
   turbopack: {},
   async headers() {
     return [
