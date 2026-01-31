@@ -32,6 +32,9 @@
     "lint-staged": "^16.2.7",
     "@next/bundle-analyzer": "^13.0.0"
   },
+  "engines": {
+    "node": ">=20.9.0"
+  },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
       "eslint --fix",
