@@ -7,8 +7,9 @@ const mockPosts: Record<string, { title: string; date: string; content: string; 
   },
 };
 
-export default async function InsightDetailEn({ params }: { params: { slug: string } }) {
-  const slug = params.slug;
+export default async function InsightDetailEn(props: { params: Promise<{ slug: string }> }) {
+  const resolved = await props.params;
+  const slug = resolved.slug;
   const post = mockPosts[slug] || { title: "Post", date: new Date().toISOString(), content: "Coming soon." };
   return (
     <main className="min-h-screen bg-[var(--bg)]">

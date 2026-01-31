@@ -14,8 +14,9 @@ const mockDb: Record<string, { title: string; client?: string; challenge: string
   },
 };
 
-export default async function CaseStudyDetail({ params }: { params: { slug: string } }) {
-  const slug = params.slug;
+export default async function CaseStudyDetail(props: { params: Promise<{ slug: string }> }) {
+  const resolved = await props.params;
+  const slug = resolved.slug;
   const data = mockDb[slug] || {
     title: "Case Study",
     challenge: "Noch keine Details hinterlegt.",
