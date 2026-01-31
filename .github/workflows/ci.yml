@@ -30,3 +30,9 @@ jobs:
         with:
           name: next-build
           path: .next
+        - name: Check client bundle size (PR only)
+          if: github.event_name == 'pull_request'
+          run: |
+            node ./.github/scripts/check-bundle-size.js
+          env:
+            BUNDLE_SIZE_THRESHOLD: ${{ secrets.BUNDLE_SIZE_THRESHOLD || '50000' }}
