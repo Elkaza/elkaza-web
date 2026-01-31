@@ -27,3 +27,7 @@ export default async function InsightDetailEn(props: { params: Promise<{ slug: s
     </main>
   );
 }
+
+export function generateStaticParams() {
+  return Object.keys(mockPosts).map((slug) => ({ slug }));
+}

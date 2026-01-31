@@ -72,3 +72,7 @@ export default async function CaseStudyDetail(props: { params: Promise<{ slug: s
     </main>
   );
 }
+
+export function generateStaticParams() {
+  return Object.keys(mockDb).map((slug) => ({ slug }));
+}
