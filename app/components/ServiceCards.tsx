@@ -1,12 +1,19 @@
 "use client";
-
-import { useState } from "react";
 import Link from "next/link";
-import { siteContent, type Locale } from "@/lib/siteContent";
+import type { Locale } from "@/lib/siteContent";
 import { ShieldCheck } from "lucide-react";
+
+type ServiceItem = {
+    slug: string;
+    title: string;
+    shortDescription?: string;
+    recommended?: boolean;
+    [key: string]: unknown;
+};
 
 interface ServiceCardsProps {
     locale: Locale;
+    items: ServiceItem[];
     basePath?: string;
     category?: string;
 }
@@ -21,13 +28,12 @@ const serviceCategories: Record<string, string[]> = {
     compliance: ["nis2-compliance", "ai-adoption"],
 };
 
-export default function ServiceCards({ locale, basePath, category = "all" }: ServiceCardsProps) {
-    const content = siteContent.services[locale];
+export default function ServiceCards({ locale, items, basePath, category = "all" }: ServiceCardsProps) {
     const path = basePath || (locale === "de" ? "/leistungen" : "/en/services");
 
     const filteredItems = category === "all"
-        ? content.items
-        : content.items.filter((service) =>
+        ? items
+        : items.filter((service) =>
             serviceCategories[category]?.includes(service.slug)
         );
 
@@ -37,7 +43,7 @@ export default function ServiceCards({ locale, basePath, category = "all" }: Ser
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {filteredItems.map((service) => {
-                const isRecommended = service.slug === recommendedSlug;
+                const isRecommended = service.slug === recommendedSlug || service.recommended;
                 return (
                     <Link
                         key={service.slug}

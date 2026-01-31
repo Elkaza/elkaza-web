@@ -1,5 +1,3 @@
-interface Props { params: { slug: string } }
-
 const mockPosts: Record<string, { title: string; date: string; content: string; author?: string }> = {
   "ai-strategy-for-smes": {
     title: "AI Strategy for SMEs: start pragmatically",
@@ -9,8 +7,10 @@ const mockPosts: Record<string, { title: string; date: string; content: string; 
   },
 };
 
-export default function InsightDetailEn({ params }: Props) {
-  const post = mockPosts[params.slug] || { title: "Post", date: new Date().toISOString(), content: "Coming soon." };
+export default async function InsightDetailEn(props: { params: Promise<{ slug: string }> }) {
+  const resolved = await props.params;
+  const slug = resolved.slug;
+  const post = mockPosts[slug] || { title: "Post", date: new Date().toISOString(), content: "Coming soon." };
   return (
     <main className="min-h-screen bg-[var(--bg)]">
       <section className="py-10 md:py-14 hero-gradient">

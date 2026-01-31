@@ -1,4 +1,7 @@
 import type { NextConfig } from "next";
+import withBundleAnalyzer from "@next/bundle-analyzer";
+
+const withAnalyzer = withBundleAnalyzer({ enabled: process.env.ANALYZE === "true" });
 
 const securityHeaders = [
   {
@@ -17,10 +20,21 @@ const securityHeaders = [
     key: "Permissions-Policy",
     value: "geolocation=(), microphone=(), camera=()",
   },
+  {
+    key: "Strict-Transport-Security",
+    value: "max-age=63072000; includeSubDomains; preload",
+  },
+  // Report-only CSP to start with — tune directives as needed.
+  {
+    key: "Content-Security-Policy-Report-Only",
+    value:
+      "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; connect-src 'self' https:; font-src 'self' data:; frame-ancestors 'self';",
+  },
 ];
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  turbopack: {},
   async headers() {
     return [
       {
@@ -78,4 +92,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+export default withAnalyzer(nextConfig);

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { Users, AlertTriangle, Cloud } from "lucide-react";
 
 interface DecisionHelperProps {
     locale: "de" | "en";
