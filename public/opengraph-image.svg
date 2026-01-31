@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="100%" height="100%" fill="#f8fafc" />
+  <g transform="translate(64,64)">
+    <text x="0" y="48" font-family="Inter, Arial, sans-serif" font-size="28" fill="#1d4ed8">Elkaza Consulting</text>
+    <text x="0" y="140" font-family="Inter, Arial, sans-serif" font-weight="700" font-size="56" fill="#0f172a">Networking, Security & Automation</text>
+    <text x="0" y="200" font-family="Inter, Arial, sans-serif" font-size="24" fill="#334155">Stabile IT‑Infrastruktur für wachsende Teams</text>
+  </g>
+</svg>

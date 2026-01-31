@@ -31,7 +31,8 @@ export async function generateMetadata() {
       siteName: "Elkaza Consulting",
       locale: locale === "de" ? "de_AT" : "en",
       type: "website",
-      images: [`${base}/og?path=${encodeURIComponent(pathname)}&lang=${locale}`],
+      // Use a static Open Graph image for static export
+      images: [`${base}/opengraph-image.svg`],
     },
     twitter: { card: "summary_large_image" },
   } as const;
