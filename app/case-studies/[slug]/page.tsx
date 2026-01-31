@@ -1,7 +1,5 @@
 import CTA from "@/app/components/CTA";
 
-interface Props { params: { slug: string } }
-
 const mockDb: Record<string, { title: string; client?: string; challenge: string; solution: string; result: string; tech: string[] }> = {
   "logistik-automation": {
     title: "Automatisierung spart 50 Stunden/Monat für Logistikunternehmen",
@@ -16,8 +14,10 @@ const mockDb: Record<string, { title: string; client?: string; challenge: string
   },
 };
 
-export default function CaseStudyDetail({ params }: Props) {
-  const data = mockDb[params.slug] || {
+export default async function CaseStudyDetail(props: { params: Promise<{ slug: string }> }) {
+  const resolved = await props.params;
+  const slug = resolved.slug;
+  const data = mockDb[slug] || {
     title: "Case Study",
     challenge: "Noch keine Details hinterlegt.",
     solution: "",

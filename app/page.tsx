@@ -62,7 +62,7 @@ export default function Home() {
           <h2 className="text-2xl md:text-3xl font-bold text-[var(--text)] mb-6">
             Unsere Leistungen
           </h2>
-          <ServiceCards locale="de" />
+          <ServiceCards locale="de" items={siteContent.services.de.items} />
         </div>
       </section>
 

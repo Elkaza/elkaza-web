@@ -1,7 +1,5 @@
-import Link from "next/link";
 import {
-    Check, Clock, FileText, Wrench, Users, HelpCircle, Shield,
-    ArrowRight, Building2, Search, Settings, Headphones, LucideIcon
+    Check, Clock, FileText, Wrench, Users, HelpCircle, Shield, Building2, LucideIcon
 } from "lucide-react";
 import CTA from "@/app/components/CTA";
 

@@ -21,7 +21,7 @@ export default function AIAutomationPage() {
             <h2 className="text-2xl font-semibold text-[var(--text)] mb-3">Our Approach</h2>
             <ul className="list-disc pl-6 text-[var(--text-secondary)] space-y-2">
               <li>Identify & prioritize use cases</li>
-              <li>PoC: Quickly show what's possible</li>
+              <li>PoC: Quickly show what&apos;s possible</li>
               <li>Rollout: Stable, documented, scalable</li>
             </ul>
           </div>
