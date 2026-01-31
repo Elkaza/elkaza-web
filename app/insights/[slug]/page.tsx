@@ -7,6 +7,10 @@ const mockPosts: Record<string, { title: string; date: string; content: string; 
   },
 };
 
+export function generateStaticParams() {
+  return Object.keys(mockPosts).map((slug) => ({ slug }));
+}
+
 export default async function InsightDetail(props: { params: Promise<{ slug: string }> }) {
   const resolved = await props.params;
   const slug = resolved.slug;
