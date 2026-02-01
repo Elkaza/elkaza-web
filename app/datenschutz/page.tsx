@@ -14,49 +14,42 @@ export default function DatenschutzPage() {
 
       <section className="py-10 md:py-14 bg-[var(--surface)]">
         <div className="max-w-[1140px] mx-auto px-6 prose prose-lg max-w-3xl">
-          <h2 className="text-lg font-semibold">Verantwortlicher</h2>
+          <p className="text-sm text-[var(--muted)] font-medium">Placeholders must be replaced before public launch.</p>
+
+          <h2 className="text-lg font-semibold">Verantwortliche Stelle</h2>
           <p className="text-[var(--text-secondary)]">Elkaza Consulting (in Gründung)</p>
-          <p>E-Mail: <a href="mailto:contact@elkaza.at">contact@elkaza.at</a></p>
-
-          <h2 className="text-lg font-semibold">Zwecke und Rechtsgrundlagen</h2>
           <p>
-            Wir verarbeiten personenbezogene Daten zur Beantwortung von Kontaktanfragen und zur
-            Durchführung vorvertraglicher Maßnahmen. Rechtsgrundlagen sind Art.6 Abs.1 lit.b und lit.f
-            DSGVO (Erfüllung von Anfragen, berechtigte Interessen).
+            ADDRESS_LINE
+            <br />
+            1200 Wien
+            <br />
+            Österreich
           </p>
+          <p>E‑Mail: <a href="mailto:contact@elkaza.at">contact@elkaza.at</a></p>
 
-          <h2 className="text-lg font-semibold">Server- und Hosting-Logdaten</h2>
-          <p>
-            Beim Besuch der Website werden technische Zugriffs- und Nutzungsdaten (Server-Logs)
-            verarbeitet. Diese Daten dienen dem Betrieb und der Sicherung des Angebots.
-          </p>
+          <h2 className="text-lg font-semibold">Zwecke der Verarbeitung und Rechtsgrundlagen</h2>
+          <ul>
+            <li>Bearbeitung von Kontaktanfragen und Kommunikation – Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Maßnahmen) bzw. Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse).</li>
+            <li>Betrieb der Website und IT-Sicherheit (Server-Logs) – Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO.</li>
+          </ul>
 
-          <h2 className="text-lg font-semibold">Weitergabe / Empfänger</h2>
-          <p>
-            Daten werden nur an notwendige Dienstleister weitergegeben (z. B. Hosting-Provider).
-          </p>
+          <h2 className="text-lg font-semibold">Server- und Betriebsdaten</h2>
+          <p>Beim Besuch der Website werden technische Zugriffs- und Nutzungsdaten (z. B. IP-Adresse, Datum/Uhrzeit, User-Agent) in Server-Logs verarbeitet. Diese Daten dienen dem sicheren und stabilen Betrieb der Website und zur Abwehr von Angriffen.</p>
+
+          <h2 className="text-lg font-semibold">Empfänger / Weitergabe</h2>
+          <p>Personenbezogene Daten werden nur an Dienstleister weitergegeben, die für den Betrieb der Website erforderlich sind (z. B. Hosting, E‑Mail-Versand). Übermittlungen an Empfänger in Drittländer erfolgen nur, wenn gesetzlich zulässig und mit geeigneten Garantien.</p>
 
           <h2 className="text-lg font-semibold">Speicherdauer</h2>
-          <p>
-            Kontaktdaten werden so lange gespeichert, wie es zur Bearbeitung der Anfrage oder zur
-            Erfüllung rechtlicher Pflichten erforderlich ist; ansonsten in der Regel nicht länger
-            als 12 Monate.
-          </p>
+          <p>Kontaktdaten werden so lange gespeichert, wie es zur Bearbeitung der Anfrage oder zur Erfüllung gesetzlicher Pflichten erforderlich ist. Server-Logs werden nur so lange gespeichert, wie dies für Sicherheits- und Betriebszwecke erforderlich ist.</p>
 
           <h2 className="text-lg font-semibold">Cookies / Tracking</h2>
-          <p>Auf dieser Website werden keine Analytics-Cookies verwendet.</p>
+          <p>Diese Website verwendet keine Analyse- oder Marketing-Cookies. Es werden nur technisch notwendige Cookies eingesetzt, soweit erforderlich.</p>
 
           <h2 className="text-lg font-semibold">Ihre Rechte</h2>
-          <p>
-            Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung,
-            Datenübertragbarkeit und Widerspruch sowie das Beschwerderecht bei der österreichischen
-            Datenschutzbehörde (www.dsb.gv.at).
-          </p>
+          <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit sowie das Recht, der Verarbeitung zu widersprechen. Zur Ausübung Ihrer Rechte kontaktieren Sie uns bitte per E‑Mail an <a href="mailto:contact@elkaza.at">contact@elkaza.at</a> oder über das Kontaktformular unter <code>/kontakt</code>.</p>
 
-          <p className="text-[var(--text-secondary)]">
-            Hinweis: Dies ist eine kurze, rechtskonforme Grundlage für eine kleine Dienstleister-Website.
-            Ergänzen Sie bei Bedarf technische Details (z. B. Mail-Provider, konkreten Hosting-Partner).
-          </p>
+          <h2 className="text-lg font-semibold">Beschwerderecht</h2>
+          <p>Sie haben das Recht, bei der österreichischen Datenschutzbehörde Beschwerde einzulegen: https://www.dsb.gv.at/</p>
         </div>
       </section>
     </main>
