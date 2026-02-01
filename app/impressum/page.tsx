@@ -24,7 +24,7 @@ export default function ImpressumPage() {
           <p>
             {L.operatorLine}
             <br />
-            Inhaber: {L.owner}
+            Verantwortlich: {L.owner}
           </p>
 
           <h3>Adresse</h3>
@@ -41,7 +41,9 @@ export default function ImpressumPage() {
             E-Mail:{' '}
             <a href={`mailto:${L.contact.email.replace(/\[|\]/g, '')}`}>{L.contact.email}</a>
             <br />
-            {L.contact.phone ? `Telefon: ${L.contact.phone}` : `Kontaktformular: ${L.contact.contactForm}`}
+            {L.contact.phone && !L.contact.phone.startsWith('TODO')
+              ? `Telefon: ${L.contact.phone}`
+              : `Kontaktformular: ${L.contact.contactForm}`}
           </p>
 
           <h3>Unternehmensgegenstand</h3>

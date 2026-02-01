@@ -24,7 +24,7 @@ export default function ImprintPage() {
           <p>
             {L.operatorLine}
             <br />
-            Owner: {L.owner}
+            Responsible: {L.owner}
           </p>
 
           <h3>Address</h3>
@@ -41,7 +41,9 @@ export default function ImprintPage() {
             E-Mail:{' '}
             <a href={`mailto:${L.contact.email.replace(/\[|\]/g, '')}`}>{L.contact.email}</a>
             <br />
-            {L.contact.phone ? `Phone: ${L.contact.phone}` : `Contact form: ${L.contact.contactForm}`}
+            {L.contact.phone && !L.contact.phone.startsWith('TODO')
+              ? `Phone: ${L.contact.phone}`
+              : `Contact form: ${L.contact.contactForm}`}
           </p>
 
           <h3>Business purpose</h3>
