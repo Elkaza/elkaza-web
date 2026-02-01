@@ -49,12 +49,15 @@ export default function ImprintPage() {
           <h3>Business purpose</h3>
           <p>{L.businessPurpose}</p>
 
-          <h3>Company register / Identifiers</h3>
-          <p>
-            Company register: {L.companyRegister}
-            <br />
-            VAT ID: {L.vatId}
-          </p>
+          { (L.companyRegister || L.vatId) && (
+            <>
+              <h3>Company register / Identifiers</h3>
+              <p>
+                {L.companyRegister ? <>Company register: {L.companyRegister}<br /></> : null}
+                {L.vatId ? <>VAT ID: {L.vatId}</> : null}
+              </p>
+            </>
+          ) }
 
           <h3>Supervisory authority / Trade authority</h3>
           <p>{L.authority}</p>
@@ -62,12 +65,6 @@ export default function ImprintPage() {
           <h3>Applicable regulations</h3>
           <p>
             Austrian Trade Regulation Act (GewO) — <a href={L.regulationsUrl}>RIS</a>
-          </p>
-
-          <p className="text-[var(--text-secondary)]">
-            Note: Please replace the placeholder fields with the final values (complete address,
-            e‑mail, phone). If the business is not yet registered, use the values shown above
-            (&quot;not registered&quot; / &quot;not available&quot;).
           </p>
         </div>
       </section>
