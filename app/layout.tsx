@@ -45,9 +45,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className="min-h-screen flex flex-col bg-[var(--bg)] text-[var(--text)]">
+        <a href="#content" className="skip-link">Skip to content</a>
         <Header />
 
-        <main className="flex-1">{children}</main>
+        <main id="content" className="flex-1">{children}</main>
 
         <Footer />
       </body>
