@@ -18,6 +18,7 @@ export default function ImprintPage() {
 
       <section className="py-10 md:py-14 bg-[var(--surface)]">
         <div className="max-w-[1140px] mx-auto px-6 prose prose-lg max-w-3xl">
+          <p className="text-sm text-[var(--muted)] font-medium">Placeholders must be replaced before public launch.</p>
           <h2>{L.title}</h2>
 
           <p className="text-[var(--text-secondary)]">Operator / Provider:</p>
@@ -31,19 +32,17 @@ export default function ImprintPage() {
           <p>
             {L.address.street}
             <br />
-            {L.address.postalCode} {L.address.city}
+            {L.address.cityLine}
             <br />
             {L.address.country}
           </p>
 
           <h3>Contact</h3>
           <p>
-            E-Mail:{' '}
+            E‑mail:{' '}
             <a href={`mailto:${L.contact.email.replace(/\[|\]/g, '')}`}>{L.contact.email}</a>
             <br />
-            {L.contact.phone && !L.contact.phone.startsWith('TODO')
-              ? `Phone: ${L.contact.phone}`
-              : `Contact form: ${L.contact.contactForm}`}
+            Contact form: {L.contact.contactForm}
           </p>
 
           <h3>Business purpose</h3>

@@ -18,6 +18,7 @@ export default function ImpressumPage() {
 
       <section className="py-10 md:py-14 bg-[var(--surface)]">
         <div className="max-w-[1140px] mx-auto px-6 prose prose-lg max-w-3xl">
+          <p className="text-sm text-[var(--muted)] font-medium">Placeholders must be replaced before public launch.</p>
           <h2>{L.title}</h2>
 
           <p className="text-[var(--text-secondary)]">Betreiber / Anbieter:</p>
@@ -31,19 +32,17 @@ export default function ImpressumPage() {
           <p>
             {L.address.street}
             <br />
-            {L.address.postalCode} {L.address.city}
+            {L.address.cityLine}
             <br />
             {L.address.country}
           </p>
 
           <h3>Kontakt</h3>
           <p>
-            E-Mail:{' '}
+            E‑Mail:{' '}
             <a href={`mailto:${L.contact.email.replace(/\[|\]/g, '')}`}>{L.contact.email}</a>
             <br />
-            {L.contact.phone && !L.contact.phone.startsWith('TODO')
-              ? `Telefon: ${L.contact.phone}`
-              : `Kontaktformular: ${L.contact.contactForm}`}
+            Kontaktformular: {L.contact.contactForm}
           </p>
 
           <h3>Unternehmensgegenstand</h3>

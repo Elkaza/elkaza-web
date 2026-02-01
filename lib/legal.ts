@@ -3,16 +3,13 @@ export const legal = {
     title: 'Angaben gemäß § 5 ECG',
     operatorLine: 'Elkaza Consulting (in Gründung)',
     owner: 'Mohamed Elkaza',
-    // NOTE: keep only a short placeholder in code; replace before public launch.
     address: {
-      street: '1200 Wien',
-      postalCode: '1200',
-      city: 'Wien',
+      street: 'ADDRESS_LINE',
+      cityLine: '1200 Wien',
       country: 'Österreich',
     },
     contact: {
       email: 'contact@elkaza.at',
-      // Leave phone empty until a number is available — pages will omit empty phone fields.
       phone: '',
       contactForm: '/kontakt',
     },
@@ -27,11 +24,9 @@ export const legal = {
     title: 'Legal disclosure (Austria)',
     operatorLine: 'Elkaza Consulting (in formation)',
     owner: 'Mohamed Elkaza',
-    // NOTE: keep only a short placeholder in code; replace before public launch.
     address: {
-      street: '1200 Wien',
-      postalCode: '1200',
-      city: 'Vienna',
+      street: 'ADDRESS_LINE',
+      cityLine: '1200 Vienna',
       country: 'Austria',
     },
     contact: {
