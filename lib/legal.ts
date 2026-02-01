@@ -1,44 +1,49 @@
 export const legal = {
   de: {
     title: 'Angaben gemäß § 5 ECG',
-    operatorLine: 'Elkaza Consulting (Einzelunternehmen in Gründung)',
-    owner: 'Dipl.-Ing. Mohamed Elkaza',
+    operatorLine: 'Elkaza Consulting (in Gründung)',
+    owner: 'Mohamed Elkaza',
+    // Temporary placeholder: use ONLY "1200 Wien" here in code until full address is available.
+    // TODO: Replace with full service address before public launch (vollständige ladungsfähige Anschrift).
     address: {
-      street: '[Straße und Hausnummer]',
-      postalCode: '[PLZ]',
+      street: '1200 Wien (TODO: vollständige ladungsfähige Anschrift ergänzen vor Launch)',
+      postalCode: '',
       city: 'Wien',
       country: 'Österreich',
     },
     contact: {
-      email: '[email@example.com]',
-      phone: '[Telefonnummer]',
+      email: 'contact@elkaza.at',
+      // TODO: add a real phone number before public launch, or remove this field.
+      phone: 'TODO: add phone before launch',
       contactForm: '/kontakt',
     },
     businessPurpose: 'IT-Infrastruktur, Netzwerk, Security, Automation',
-    companyRegister: 'nicht eingetragen',
-    vatId: 'nicht vorhanden',
+    companyRegister: 'entfällt (derzeit nicht eingetragen)',
+    vatId: 'entfällt (derzeit nicht vorhanden)',
     authority: 'zuständige Gewerbebehörde in Wien',
     regulationsUrl:
       'https://www.ris.bka.gv.at/GeltendeFassung.wxe?Abfrage=Bundesnormen&Gesetzesnummer=10001122',
   },
   en: {
     title: 'Legal disclosure (Austria)',
-    operatorLine: 'Elkaza Consulting (sole proprietorship, forming)',
-    owner: 'Dipl.-Ing. Mohamed Elkaza',
+    operatorLine: 'Elkaza Consulting (in formation)',
+    owner: 'Mohamed Elkaza',
+    // Temporary placeholder: use ONLY "1200 Wien" here in code until full address is available.
+    // TODO: Replace with full service address before public launch.
     address: {
-      street: '[Street and house number]',
-      postalCode: '[Postal code]',
+      street: '1200 Wien (TODO: replace with full service address before public launch)',
+      postalCode: '',
       city: 'Vienna',
       country: 'Austria',
     },
     contact: {
-      email: '[email@example.com]',
-      phone: '[phone number]',
+      email: 'contact@elkaza.at',
+      phone: 'TODO: add phone before launch',
       contactForm: '/en/contact',
     },
     businessPurpose: 'IT infrastructure, networking, security, automation',
-    companyRegister: 'not registered',
-    vatId: 'not available',
+    companyRegister: 'not registered (currently not registered)',
+    vatId: 'not available (currently not available)',
     authority: 'competent trade authority in Vienna',
     regulationsUrl:
       'https://www.ris.bka.gv.at/GeltendeFassung.wxe?Abfrage=Bundesnormen&Gesetzesnummer=10001122',
