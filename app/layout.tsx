@@ -55,6 +55,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <div className="flex items-center gap-6">
               <Link href="/impressum" className="hover:text-[var(--link)] transition-colors">Impressum</Link>
               <Link href="/datenschutz" className="hover:text-[var(--link)] transition-colors">Datenschutz</Link>
+              <span className="hidden md:inline">·</span>
+              <Link href="/en/imprint" className="hover:text-[var(--link)] transition-colors">Imprint</Link>
+              <Link href="/en/privacy" className="hover:text-[var(--link)] transition-colors">Privacy</Link>
             </div>
           </div>
         </footer>
