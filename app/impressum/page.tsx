@@ -49,12 +49,15 @@ export default function ImpressumPage() {
           <h3>Unternehmensgegenstand</h3>
           <p>{L.businessPurpose}</p>
 
-          <h3>Handelsregister / Unternehmenskennzahlen</h3>
-          <p>
-            Firmenbuch: {L.companyRegister}
-            <br />
-            UID: {L.vatId}
-          </p>
+          { (L.companyRegister || L.vatId) && (
+            <>
+              <h3>Handelsregister / Unternehmenskennzahlen</h3>
+              <p>
+                {L.companyRegister ? <>Firmenbuch: {L.companyRegister}<br /></> : null}
+                {L.vatId ? <>UID: {L.vatId}</> : null}
+              </p>
+            </>
+          ) }
 
           <h3>Aufsichtsbehörde / Gewerbebehörde</h3>
           <p>{L.authority}</p>
@@ -62,13 +65,6 @@ export default function ImpressumPage() {
           <h3>Anwendbare Vorschriften</h3>
           <p>
             GewO — <a href={L.regulationsUrl}>Austrian Trade Regulation Act (GewO) on RIS</a>
-          </p>
-
-          <p className="text-[var(--text-secondary)]">
-            Hinweis: Bitte ergänzen Sie die in eckigen Klammern stehenden Felder mit den
-            finalen Angaben (vollständige Adresse, E‑Mail, Telefon). Falls das Unternehmen noch
-            nicht eingetragen ist, lassen Sie die Felder wie angegeben (&quot;nicht eingetragen&quot; /
-            &quot;nicht vorhanden&quot;).
           </p>
         </div>
       </section>
