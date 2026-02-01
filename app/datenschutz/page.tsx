@@ -3,7 +3,16 @@ export const metadata = {
   description: "Datenschutzerklärung und Informationen zur Datenverarbeitung",
 };
 
+import { legal } from '@/lib/legal';
+
+export const metadata = {
+  title: "Datenschutzerklärung - Elkaza Consulting",
+  description: "Datenschutzerklärung und Informationen zur Datenverarbeitung",
+};
+
 export default function DatenschutzPage() {
+  const L = legal.de;
+
   return (
     <main>
       <section className="py-10 md:py-14 hero-gradient">
@@ -14,16 +23,19 @@ export default function DatenschutzPage() {
 
       <section className="py-10 md:py-14 bg-[var(--surface)]">
         <div className="max-w-[1140px] mx-auto px-6 prose prose-lg max-w-3xl">
-          <p className="text-sm text-[var(--muted)] font-medium">Placeholders must be replaced before public launch.</p>
 
           <h2 className="text-lg font-semibold">Verantwortliche Stelle</h2>
           <p className="text-[var(--text-secondary)]">Elkaza Consulting (in Gründung)</p>
           <p>
-            ADDRESS_LINE
+            {L.address.street && L.address.street !== 'ADDRESS_LINE' ? (
+              <>
+                {L.address.street}
+                <br />
+              </>
+            ) : null}
+            {L.address.cityLine}
             <br />
-            1200 Wien
-            <br />
-            Österreich
+            {L.address.country}
           </p>
           <p>E‑Mail: <a href="mailto:contact@elkaza.at">contact@elkaza.at</a></p>
 

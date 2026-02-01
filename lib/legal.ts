@@ -2,7 +2,7 @@ export const legal = {
   de: {
     title: 'Angaben gemäß § 5 ECG',
     operatorLine: 'Elkaza Consulting (in Gründung)',
-    owner: 'Mohamed Elkaza',
+    owner: '',
     address: {
       street: 'ADDRESS_LINE',
       cityLine: '1200 Wien',
@@ -23,7 +23,7 @@ export const legal = {
   en: {
     title: 'Legal disclosure (Austria)',
     operatorLine: 'Elkaza Consulting (in formation)',
-    owner: 'Mohamed Elkaza',
+    owner: '',
     address: {
       street: 'ADDRESS_LINE',
       cityLine: '1200 Vienna',

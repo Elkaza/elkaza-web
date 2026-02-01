@@ -18,20 +18,21 @@ export default function ImprintPage() {
 
       <section className="py-10 md:py-14 bg-[var(--surface)]">
         <div className="max-w-[1140px] mx-auto px-6 prose prose-lg max-w-3xl">
-          <p className="text-sm text-[var(--muted)] font-medium">Placeholders must be replaced before public launch.</p>
           <h2>{L.title}</h2>
 
           <p className="text-[var(--text-secondary)]">Operator / Provider:</p>
           <p>
             {L.operatorLine}
-            <br />
-            Responsible: {L.owner}
           </p>
 
           <h3>Address</h3>
           <p>
-            {L.address.street}
-            <br />
+            {L.address.street && L.address.street !== 'ADDRESS_LINE' ? (
+              <>
+                {L.address.street}
+                <br />
+              </>
+            ) : null}
             {L.address.cityLine}
             <br />
             {L.address.country}
