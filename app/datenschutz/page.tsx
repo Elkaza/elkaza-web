@@ -1,10 +1,4 @@
-export const metadata = {
-  title: "Datenschutzerklärung - Elkaza Consulting",
-  description: "Datenschutzerklärung und Informationen zur Datenverarbeitung",
-};
-
 import { legal } from '@/lib/legal';
-
 export const metadata = {
   title: "Datenschutzerklärung - Elkaza Consulting",
   description: "Datenschutzerklärung und Informationen zur Datenverarbeitung",
