@@ -5,6 +5,10 @@ export function middleware(request: NextRequest) {
   const url = request.nextUrl;
   const headers = new Headers(request.headers);
   const isEnglish = url.pathname.startsWith("/en");
+
+  // Note: We intentionally do NOT filter by User-Agent here to ensure crawlers (Googlebot, etc.) 
+  // can access all pages. Access control for bad bots should be handled at the web server (Apache) level.
+
   headers.set("x-locale", isEnglish ? "en" : "de");
   headers.set("x-pathname", url.pathname);
   return NextResponse.next({ request: { headers } });

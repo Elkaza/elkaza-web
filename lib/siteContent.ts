@@ -13,6 +13,38 @@ export const siteContent = {
     },
   },
 
+  // Hero auxiliary data (Trust Strip)
+  trust: {
+    de: [
+      "Dokumentation: hoch",
+      "Security by Design",
+      "Standort: Wien",
+      "Fokus: KMU",
+      "Stack: M365 / OPNsense / Veeam",
+    ],
+    en: [
+      "Documentation Level: High",
+      "Security-by-Design",
+      "Based in Vienna",
+      "Focus: SMEs",
+      "Stack: M365 / OPNsense / Veeam",
+    ],
+  },
+
+  // Outcomes for Stats Section
+  stats: {
+    de: [
+      { label: "Security-Lücken", value: "Minimiert", sub: "durch Baseline-Härtung" },
+      { label: "Wiederherstellung", value: "Schneller", sub: "dank getesteter Backups" },
+      { label: "VPN-Ausfälle", value: "Reduziert", sub: "durch Standardisierung" },
+    ],
+    en: [
+      { label: "Security Gaps", value: "Minimized", sub: "via baseline hardening" },
+      { label: "Recovery Time", value: "Faster", sub: "thanks to tested backups" },
+      { label: "VPN Outages", value: "Reduced", sub: "through standardization" },
+    ],
+  },
+
   // Homepage hero
   hero: {
     de: {
@@ -110,7 +142,7 @@ export const siteContent = {
           slug: "security-baseline",
           title: "Security Baseline",
           shortDescription:
-            "Praktische Sicherheit für KMUs: MFA, Patching, Backups, klare Zugriffsrechte.",
+            "Start hier: MFA, Patchen, Backups – die Basis für alles Weitere.",
           forWhom: [
             "Unternehmen ohne dediziertes Security-Team",
             "Teams, die Grundlagen absichern wollen",
@@ -314,7 +346,7 @@ export const siteContent = {
           slug: "nis2-compliance",
           title: "NIS2 / Compliance Readiness",
           shortDescription:
-            "Audit-fähige Sicherheitsbasis: Policies, Nachweise und Incident-Bereitschaft.",
+            "Audit-fähige Sicherheitsbasis: Policies, Nachweise und Incident-Bereitschaft (keine Garantie).",
           forWhom: [
             "Zulieferer kritischer Sektoren",
             "Firmen, die von Partnern Nachweise benötigen",
@@ -372,7 +404,7 @@ export const siteContent = {
           slug: "security-baseline",
           title: "Security Baseline",
           shortDescription:
-            "Practical security for SMEs: MFA, patching, backups, clear access rights.",
+            "Start here: Practical security for SMEs (MFA, patching, backups) – the foundation.",
           forWhom: [
             "Companies without dedicated security teams",
             "Teams looking to secure the basics",
@@ -576,7 +608,7 @@ export const siteContent = {
           slug: "nis2-compliance",
           title: "NIS2 / Compliance Readiness",
           shortDescription:
-            "Build audit-ready security basics: policies, evidence, and incident readiness.",
+            "Build audit-ready security basics: policies, evidence, and incident readiness (no guarantees).",
           forWhom: [
             "Suppliers of critical sectors",
             "Firms asked by partners for evidence",

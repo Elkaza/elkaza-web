@@ -77,6 +77,9 @@ export default function ServicesEnPage() {
               View Packages
             </Link>
           </div>
+          <p className="mt-6 text-sm text-[var(--muted)] font-medium">
+            Clear deliverables, documented handover, and a roadmap you can execute.
+          </p>
         </div>
       </section>
 
@@ -98,8 +101,8 @@ export default function ServicesEnPage() {
                 aria-selected={activeCategory === cat.id}
                 onClick={() => setActiveCategory(cat.id)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all focus:outline-none focus:ring-2 focus:ring-[var(--primary)] ${activeCategory === cat.id
-                    ? "bg-[var(--primary)] text-white"
-                    : "bg-[var(--surface)] text-[var(--text-secondary)] hover:bg-[var(--elevated)] hover:text-[var(--text)]"
+                  ? "bg-[var(--primary)] text-white"
+                  : "bg-[var(--surface)] text-[var(--text-secondary)] hover:bg-[var(--elevated)] hover:text-[var(--text)]"
                   }`}
               >
                 {cat.label}
@@ -118,8 +121,8 @@ export default function ServicesEnPage() {
                 key={service.slug}
                 href={`/en/services/${service.slug}`}
                 className={`group p-5 rounded-xl border bg-[var(--surface)] hover:bg-[var(--elevated)] transition-all relative ${service.recommended
-                    ? "border-[var(--primary)] ring-1 ring-[var(--primary)]"
-                    : "border-[var(--border)] hover:border-[var(--primary)]"
+                  ? "border-[var(--primary)] ring-1 ring-[var(--primary)]"
+                  : "border-[var(--border)] hover:border-[var(--primary)]"
                   }`}
               >
                 {service.recommended && (
@@ -162,8 +165,11 @@ export default function ServicesEnPage() {
           <h2 className="text-2xl md:text-3xl font-semibold text-[var(--text)] mb-4">
             Start with Security Baseline
           </h2>
-          <p className="text-[var(--text-secondary)] mb-6">
-            Most SMBs benefit from securing the basics first: MFA, patching, backups. This prevents 80% of common attacks. After that, you know where you stand.
+          <p className="text-[var(--text-secondary)] mb-4">
+            Most SMBs benefit from securing the basics first: MFA, patching, backups. This closes the most common baseline gaps. After that, you know where you stand.
+          </p>
+          <p className="text-sm text-[var(--primary)] font-medium mb-6">
+            Baseline first → then Zero Trust / Managed Ops / Ransomware Resilience.
           </p>
           <CTA href="/en/services/security-baseline">Start with Security Baseline</CTA>
         </div>
