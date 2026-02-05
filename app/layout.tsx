@@ -6,6 +6,7 @@ export function generateMetadata() {
   const base = "https://elkaza.at";
   const canonical = base;
   return {
+    metadataBase: new URL(base),
     title: "Elkaza Consulting - Networking, Security & Automation",
     description:
       "Stabile IT-Infrastruktur für wachsende Teams: Netzwerk, Sicherheit und Automatisierung aus einer Hand.",

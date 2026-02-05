@@ -36,6 +36,20 @@ export default function HomeEN() {
         </div>
       </section>
 
+      {/* Trust Strip */}
+      <div className="border-y border-[var(--border)] bg-[var(--surface)]/50 backdrop-blur-sm">
+        <div className="max-w-[1140px] mx-auto px-6 py-4">
+          <div className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm text-[var(--muted)] font-medium">
+            {siteContent.trust.en.map((item, i) => (
+              <div key={i} className="flex items-center gap-2">
+                <Check className="w-3.5 h-3.5 text-[var(--primary)]" />
+                <span>{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
       {/* Pain points */}
       <section className="py-12 md:py-14 bg-[var(--surface)]">
         <div className="max-w-[1140px] mx-auto px-6">
@@ -69,19 +83,33 @@ export default function HomeEN() {
       {/* Why us */}
       <section className="py-12 md:py-14 bg-[var(--surface)]">
         <div className="max-w-[1140px] mx-auto px-6">
-          <h2 className="text-2xl md:text-3xl font-bold text-[var(--text)] mb-2">
-            {whyUs.title}
-          </h2>
-          <p className="text-[var(--text-secondary)] text-lg mb-2">{whyUs.lead}</p>
-          <p className="text-[var(--muted)] mb-6">We deliver solutions that work, not just concepts.</p>
-          <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {whyUs.bullets.map((bullet, i) => (
-              <li key={i} className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-[var(--primary)] mt-1 shrink-0" />
-                <span className="text-[var(--text-secondary)] text-base leading-relaxed">{bullet}</span>
-              </li>
-            ))}
-          </ul>
+          <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
+            <div>
+              <h2 className="text-2xl md:text-3xl font-bold text-[var(--text)] mb-4">
+                {whyUs.title}
+              </h2>
+              <p className="text-[var(--text-secondary)] text-lg mb-2">{whyUs.lead}</p>
+              <p className="text-[var(--muted)] mb-6">We deliver solutions that work, not just concepts.</p>
+              <ul className="space-y-3">
+                {whyUs.bullets.map((bullet, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <Check className="w-5 h-5 text-[var(--primary)] mt-1 shrink-0" />
+                    <span className="text-[var(--text-secondary)] text-base leading-relaxed">{bullet}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            {/* Stats Block */}
+            <div className="grid grid-cols-1 gap-4">
+              {siteContent.stats.en.map((stat, i) => (
+                <div key={i} className="p-5 rounded-xl bg-[var(--elevated)] border border-[var(--border)] shadow-[var(--shadow-sm)] flex flex-col items-center text-center">
+                  <span className="text-sm font-medium text-[var(--muted)] uppercase tracking-wider mb-1">{stat.label}</span>
+                  <span className="text-2xl md:text-3xl font-bold text-[var(--primary)] mb-1">{stat.value}</span>
+                  <span className="text-xs text-[var(--text-secondary)]">{stat.sub}</span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
