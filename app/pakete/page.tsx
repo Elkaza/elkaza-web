@@ -1,5 +1,7 @@
 import { siteContent } from "@/lib/siteContent";
 import PackageCards from "@/app/components/PackageCards";
+import CTA from "@/app/components/CTA";
+import { HelpCircle } from "lucide-react";
 
 export const metadata = {
     title: "Preise & Pakete – IT-Support & Security für KMUs | Elkaza",
@@ -22,6 +24,13 @@ export default function PaketePage() {
             <section className="py-10 md:py-14 bg-[var(--surface)]">
                 <div className="max-w-[1140px] mx-auto px-6">
                     <PackageCards locale="de" />
+
+                    {/* Custom / Enterprise Callout */}
+                    <div className="mt-8 p-8 rounded-2xl bg-[var(--elevated)] border border-[var(--border)] text-center max-w-3xl mx-auto shadow-sm">
+                        <h3 className="text-xl font-bold text-[var(--text)] mb-3">{content.custom.title}</h3>
+                        <p className="text-[var(--text-secondary)] mb-6">{content.custom.desc}</p>
+                        <CTA href={content.custom.href} variant="secondary">{content.custom.cta}</CTA>
+                    </div>
                 </div>
             </section>
 
@@ -72,6 +81,24 @@ export default function PaketePage() {
                                 </tr>
                             </tbody>
                         </table>
+                    </div>
+                </div>
+            </section>
+
+            {/* FAQ */}
+            <section className="py-12 md:py-16 bg-[var(--surface)]">
+                <div className="max-w-[800px] mx-auto px-6">
+                    <div className="flex items-center justify-center gap-2 mb-8">
+                        <HelpCircle className="w-6 h-6 text-[var(--primary)]" />
+                        <h2 className="text-2xl font-bold text-[var(--text)]">Häufige Fragen</h2>
+                    </div>
+                    <div className="space-y-4">
+                        {content.faq.map((item, i) => (
+                            <div key={i} className="p-5 rounded-xl bg-[var(--bg)] border border-[var(--border)]">
+                                <h3 className="font-semibold text-[var(--text)] mb-2">{item.q}</h3>
+                                <p className="text-sm text-[var(--text-secondary)] leading-relaxed">{item.a}</p>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </section>

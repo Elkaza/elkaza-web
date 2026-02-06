@@ -1,0 +1,17 @@
+
+> elkaza-web@0.1.0 lint
+> eslint . --max-warnings=0
+
+
+C:\Users\Mo\Documents\elkaza-web\app\en\about\page.tsx
+  57:16  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`                                                                                                        react/no-unescaped-entities
+  63:13  error  Do not use an `<a>` element to navigate to `/en/case-studies/`. Use `<Link />` from `next/link` instead. See: https://nextjs.org/docs/messages/no-html-link-for-pages  @next/next/no-html-link-for-pages
+
+C:\Users\Mo\Documents\elkaza-web\app\pakete\page.tsx
+  4:22  warning  'ShieldCheck' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\Mo\Documents\elkaza-web\app\ueber-uns\page.tsx
+  63:13  error  Do not use an `<a>` element to navigate to `/referenzen/`. Use `<Link />` from `next/link` instead. See: https://nextjs.org/docs/messages/no-html-link-for-pages  @next/next/no-html-link-for-pages
+
+✖ 4 problems (3 errors, 1 warning)
+
