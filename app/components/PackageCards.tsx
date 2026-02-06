@@ -29,7 +29,7 @@ export default function PackageCards({ locale }: PackageCardsProps) {
                     <p className="text-sm text-[var(--muted)] mb-4">{pkg.subtitle}</p>
                     <div className="mb-4 flex items-baseline flex-wrap">
                         <span className="text-3xl font-bold text-[var(--text)]">{pkg.price}</span>
-                        <span className="text-sm text-[var(--muted)] ml-2">{pkg.priceNote}</span>
+                        <span className="text-sm text-[var(--muted)]">&nbsp;{pkg.priceNote}</span>
                     </div>
                     <p className="text-[var(--text-secondary)] text-sm mb-2">{pkg.description}</p>
                     <p className="text-xs text-[var(--muted)] mb-4">{pkg.duration}</p>

@@ -37,9 +37,11 @@ export default function NIS2Page() {
                 "Implementierung technischer Maßnahmen (MFA, Verschlüsselung)",
             ]}
             deliverables={[
-                "Gap-Analyse-Bericht & Maßnahmenplan",
-                "ISMS-Handbuch (Light-Version für KMU)",
-                "Verzeichnis der Verarbeitungstätigkeiten (VVT) Updates",
+                "Vollständiges Asset-Register",
+                "Risikoanalyse nach NIS-2",
+                "ISMS-Handbuch (Light-Version für KMUs)",
+                "Schulungsplan für Mitarbeiter",
+                "Meldeprozess für Vorfälle",
                 "Notfall-Kontaktliste und Meldeformulare",
                 "Schulungsnachweise für Mitarbeiter",
             ]}
