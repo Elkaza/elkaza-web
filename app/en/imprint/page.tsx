@@ -49,7 +49,7 @@ export default function ImprintPage() {
           <h3>Business purpose</h3>
           <p>{L.businessPurpose}</p>
 
-          { (L.companyRegister || L.vatId) && (
+          {(L.companyRegister || L.vatId) && (
             <>
               <h3>Company register / Identifiers</h3>
               <p>
@@ -57,14 +57,14 @@ export default function ImprintPage() {
                 {L.vatId ? <>VAT ID: {L.vatId}</> : null}
               </p>
             </>
-          ) }
+          )}
 
           <h3>Supervisory authority / Trade authority</h3>
           <p>{L.authority}</p>
 
           <h3>Applicable regulations</h3>
           <p>
-            Austrian Trade Regulation Act (GewO) — <a href={L.regulationsUrl}>RIS</a>
+            Austrian Trade Regulation Act (GewO) – <a href={L.regulationsUrl}>RIS</a>
           </p>
         </div>
       </section>

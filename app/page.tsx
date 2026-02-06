@@ -79,8 +79,11 @@ export default function Home() {
           <h2 className="text-2xl md:text-3xl font-bold text-[var(--text)] mb-2">
             Unsere Leistungen
           </h2>
-          <p className="text-[var(--muted)] mb-6">
-            Die meisten Kunden starten mit Security Baseline. Von dort aus bauen wir weiter.
+          <p className="text-[var(--muted)] mb-2">
+            <strong>Startpunkt für die meisten: Security Baseline.</strong>
+          </p>
+          <p className="text-sm text-[var(--text-secondary)] mb-6">
+            Vier Bereiche: Stabilität · Security-Basis · Resilience · Betrieb & Automatisierung
           </p>
           <ServiceCards locale="de" items={siteContent.services.de.items} />
         </div>
