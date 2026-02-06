@@ -2,8 +2,9 @@ import { siteContent } from "@/lib/siteContent";
 import PackageCards from "@/app/components/PackageCards";
 
 export const metadata = {
-    title: "Pakete - Elkaza Consulting",
-    description: "Klare Leistungen, faire Preise. Assessment, Umsetzung oder laufende Betreuung.",
+    title: "Preise & Pakete – IT-Support & Security für KMUs | Elkaza",
+    description: "Transparente IT-Pakete für Unternehmen in Wien: Assessment, Umsetzung oder laufende Betreuung. Starten Sie ab 490 € mit unserem Basis-Check.",
+    alternates: { canonical: "/pakete" },
 };
 
 export default function PaketePage() {

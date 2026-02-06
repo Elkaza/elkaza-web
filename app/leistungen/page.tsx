@@ -10,6 +10,12 @@ import {
 import TrustBar from "@/app/components/TrustBar";
 import CTA from "@/app/components/CTA";
 
+export const metadata = {
+  title: "Unsere Leistungen – Netzwerk & Security aus Wien | Elkaza",
+  description: "Von Security Baseline bis Managed Operations: Wir sorgen für stabile Netzwerke und sichere IT-Umgebungen für KMUs in Wien und Umgebung.",
+  alternates: { canonical: "/leistungen" },
+};
+
 // Service data with icons and categories
 const services = [
   { slug: "networking", icon: Network, title: "Netzwerk & Infrastruktur", benefit: "Stabile Verbindungen für wachsende Teams.", bullets: ["Zuverlässiges Wi-Fi und VPN", "Saubere Netzwerksegmentierung", "Dokumentierte Topologie"], categories: ["networking"] },
@@ -98,8 +104,8 @@ export default function LeistungenPage() {
                 aria-selected={activeCategory === cat.id}
                 onClick={() => setActiveCategory(cat.id)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all focus:outline-none focus:ring-2 focus:ring-[var(--primary)] ${activeCategory === cat.id
-                    ? "bg-[var(--primary)] text-white"
-                    : "bg-[var(--surface)] text-[var(--text-secondary)] hover:bg-[var(--elevated)] hover:text-[var(--text)]"
+                  ? "bg-[var(--primary)] text-white"
+                  : "bg-[var(--surface)] text-[var(--text-secondary)] hover:bg-[var(--elevated)] hover:text-[var(--text)]"
                   }`}
               >
                 {cat.label}
@@ -118,8 +124,8 @@ export default function LeistungenPage() {
                 key={service.slug}
                 href={`/leistungen/${service.slug}`}
                 className={`group p-5 rounded-xl border bg-[var(--surface)] hover:bg-[var(--elevated)] transition-all relative ${service.recommended
-                    ? "border-[var(--primary)] ring-1 ring-[var(--primary)]"
-                    : "border-[var(--border)] hover:border-[var(--primary)]"
+                  ? "border-[var(--primary)] ring-1 ring-[var(--primary)]"
+                  : "border-[var(--border)] hover:border-[var(--primary)]"
                   }`}
               >
                 {service.recommended && (

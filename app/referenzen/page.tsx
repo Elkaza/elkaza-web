@@ -2,8 +2,9 @@ import Link from "next/link";
 import { siteContent } from "@/lib/siteContent";
 
 export const metadata = {
-    title: "Referenzen - Elkaza Consulting",
-    description: "Projekte mit messbarer Wirkung. Netzwerk-Modernisierung und Security für KMUs.",
+    title: "Referenzen & Case Studies – Erfolgreiche IT-Projekte | Elkaza",
+    description: "Sehen Sie, wie wir KMUs in Wien geholfen haben: Stabilere Netzwerke, sichere Backups und weniger Ausfälle. Echte Ergebnisse, keine Theorie.",
+    alternates: { canonical: "/referenzen" },
 };
 
 export default function ReferenzenPage() {

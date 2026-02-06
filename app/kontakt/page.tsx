@@ -1,8 +1,9 @@
 import { siteContent } from "@/lib/siteContent";
 
 export const metadata = {
-  title: "Kontakt - Elkaza Consulting",
-  description: "Kostenloses Erstgespräch vereinbaren. Wir melden uns innerhalb von 24 Stunden.",
+  title: "Kontakt – Kostenloses Erstgespräch vereinbaren | Elkaza",
+  description: "Sprechen Sie mit uns über Ihre IT-Herausforderungen. Kostenlose Erstberatung für KMUs in Wien. Antwort innerhalb von 24 Stunden.",
+  alternates: { canonical: "/kontakt" },
 };
 
 export default function KontaktPage() {
@@ -19,6 +20,9 @@ export default function KontaktPage() {
 
       <section className="py-10 md:py-14 bg-[var(--surface)]">
         <div className="max-w-xl mx-auto px-6">
+          <p className="text-sm text-[var(--muted)] mb-6 text-center">
+            Für KMU in Wien und Umgebung. Remote nach Absprache.
+          </p>
           <form className="space-y-5" method="post" action="#">
             <div>
               <label className="block text-sm font-medium text-[var(--text)] mb-2">
