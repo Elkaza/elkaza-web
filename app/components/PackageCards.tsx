@@ -16,8 +16,8 @@ export default function PackageCards({ locale }: PackageCardsProps) {
                 <div
                     key={pkg.name}
                     className={`p-5 rounded-xl border bg-[var(--surface)] flex flex-col shadow-[var(--shadow-sm)] transition-all duration-200 hover:shadow-[var(--shadow-md)] ${pkg.popular
-                            ? "border-[var(--primary)] ring-2 ring-[var(--primary)]/20"
-                            : "border-[var(--border)] hover:border-[var(--border-hover)]"
+                        ? "border-[var(--primary)] ring-2 ring-[var(--primary)]/20"
+                        : "border-[var(--border)] hover:border-[var(--border-hover)]"
                         }`}
                 >
                     {pkg.popular && (
@@ -27,7 +27,7 @@ export default function PackageCards({ locale }: PackageCardsProps) {
                     )}
                     <h3 className="text-xl font-bold text-[var(--text)]">{pkg.name}</h3>
                     <p className="text-sm text-[var(--muted)] mb-4">{pkg.subtitle}</p>
-                    <div className="mb-4">
+                    <div className="mb-4 flex items-baseline flex-wrap">
                         <span className="text-3xl font-bold text-[var(--text)]">{pkg.price}</span>
                         <span className="text-sm text-[var(--muted)] ml-2">{pkg.priceNote}</span>
                     </div>
@@ -44,8 +44,8 @@ export default function PackageCards({ locale }: PackageCardsProps) {
                     <Link
                         href={contactPath}
                         className={`block text-center py-3 px-4 rounded-lg font-medium transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--border-focus)] active:scale-[0.98] ${pkg.popular
-                                ? "bg-[var(--primary)] text-[var(--primary-foreground)] hover:bg-[var(--primary-hover)]"
-                                : "border border-[var(--border)] text-[var(--text)] hover:border-[var(--primary)] hover:text-[var(--primary)] hover:bg-[var(--primary-light)]"
+                            ? "bg-[var(--primary)] text-[var(--primary-foreground)] hover:bg-[var(--primary-hover)]"
+                            : "border border-[var(--border)] text-[var(--text)] hover:border-[var(--primary)] hover:text-[var(--primary)] hover:bg-[var(--primary-light)]"
                             }`}
                     >
                         {pkg.cta}

@@ -31,8 +31,8 @@ export default function PrivacyEn() {
 
           <h2 className="text-lg font-semibold">Purposes and legal basis</h2>
           <ul>
-            <li>Handling contact requests and pre-contractual measures — Article 6(1)(b) GDPR or, where applicable, Article 6(1)(f) GDPR (legitimate interest).</li>
-            <li>Operation, maintenance and security of the website (server logs) — Article 6(1)(f) GDPR.</li>
+            <li>Handling contact requests and pre-contractual measures – Article 6(1)(b) GDPR or, where applicable, Article 6(1)(f) GDPR (legitimate interest).</li>
+            <li>Operation, maintenance and security of the website (server logs) – Article 6(1)(f) GDPR.</li>
           </ul>
 
           <h2 className="text-lg font-semibold">Server / hosting logs</h2>

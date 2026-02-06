@@ -49,7 +49,7 @@ export default function ImpressumPage() {
           <h3>Unternehmensgegenstand</h3>
           <p>{L.businessPurpose}</p>
 
-          { (L.companyRegister || L.vatId) && (
+          {(L.companyRegister || L.vatId) && (
             <>
               <h3>Handelsregister / Unternehmenskennzahlen</h3>
               <p>
@@ -57,14 +57,14 @@ export default function ImpressumPage() {
                 {L.vatId ? <>UID: {L.vatId}</> : null}
               </p>
             </>
-          ) }
+          )}
 
           <h3>Aufsichtsbehörde / Gewerbebehörde</h3>
           <p>{L.authority}</p>
 
           <h3>Anwendbare Vorschriften</h3>
           <p>
-            GewO — <a href={L.regulationsUrl}>Austrian Trade Regulation Act (GewO) on RIS</a>
+            GewO – <a href={L.regulationsUrl}>Austrian Trade Regulation Act (GewO) on RIS</a>
           </p>
         </div>
       </section>

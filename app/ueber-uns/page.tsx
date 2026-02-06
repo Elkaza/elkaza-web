@@ -36,10 +36,10 @@ export default function UeberUnsPage() {
             <h2 className="text-2xl font-semibold text-[var(--text)] mb-3">Über den Gründer</h2>
             <p className="text-[var(--text-secondary)] leading-relaxed mb-4">
               Elkaza Consulting wird von seinem Gründer, Dipl.-Ing. Mohamed Elkaza, geleitet. Als Absolvent der TU Wien mit Schwerpunkt
-              Wirtschaftsinformatik und Enterprise Architecture arbeite ich direkt mit Klienten zusammen, um deren Technologiestrategien zu entwerfen und umzusetzen.
+              Wirtschaftsinformatik und Enterprise Architecture arbeitet er direkt mit Klienten zusammen, um deren Technologiestrategien zu entwerfen und umzusetzen.
             </p>
             <p className="text-[var(--text-secondary)] leading-relaxed mb-4">
-              Meine technische Expertise wird durch eine professionelle Projektmanagement‑Zertifizierung (IPMA Level D) ergänzt. Dies stellt sicher,
+              Seine technische Expertise wird durch eine professionelle Projektmanagement‑Zertifizierung (IPMA Level D) ergänzt. Dies stellt sicher,
               dass Ihre Projekte präzise, termingerecht und im Budgetrahmen geliefert werden.
             </p>
             <p className="text-[var(--text-secondary)] leading-relaxed">
