@@ -676,6 +676,17 @@ export const siteContent = {
     de: {
       title: "Pakete",
       subtitle: "Klare Leistungen, faire Preise.",
+      custom: {
+        title: "Individuell / Enterprise",
+        desc: "Sie brauchen mehr? Dedizierte Teams, 24/7 SLA oder Compliance-Support (ISO, TISAX)?",
+        cta: "Individuelles Angebot anfordern",
+        href: "/kontakt",
+      },
+      faq: [
+        { q: "Wie wird abgerechnet?", a: "Starter & Growth sind Fixpreis-Projekte. Managed Services werden monatlich abgerechnet, kündbar zum Monatsende." },
+        { q: "Wie schnell ist die Reaktion?", a: "Im Managed-Paket garantieren wir < 4 Stunden Reaktionszeit bei kritischen Problemen. Für Projekte gelten vereinbarte Meilensteine." },
+        { q: "Was zählt als Notfall?", a: "Ausfall kritischer Systeme (Server, Firewall, komplettes Netzwerk). Einzelne User-Probleme werden priorisiert behandelt." },
+      ],
       items: [
         {
           name: "Starter",
@@ -754,6 +765,17 @@ export const siteContent = {
     en: {
       title: "Packages",
       subtitle: "Clear services, fair prices.",
+      custom: {
+        title: "Custom / Enterprise",
+        desc: "Need more? Dedicated teams, 24/7 SLA, or compliance support (ISO, TISAX)?",
+        cta: "Request Custom Quote",
+        href: "/en/contact",
+      },
+      faq: [
+        { q: "How is billing handled?", a: "Starter & Growth are fixed-price projects. Managed Services are billed monthly, cancelable at month-end." },
+        { q: "What is the response time?", a: "In the Managed package, we guarantee < 4 hours response time for critical issues. Projects follow agreed milestones." },
+        { q: "What counts as an emergency?", a: "Outage of critical systems (Server, Firewall, complete network). Individual user issues are prioritized." },
+      ],
       items: [
         {
           name: "Starter",

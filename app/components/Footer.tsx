@@ -11,13 +11,13 @@ export default function Footer() {
 
   const items = isEn
     ? [
-        { href: "/en/imprint", label: "Imprint" },
-        { href: "/en/privacy", label: "Privacy" },
-      ]
+      { href: "/en/imprint", label: "Imprint" },
+      { href: "/en/privacy", label: "Privacy" },
+    ]
     : [
-        { href: "/impressum", label: "Impressum" },
-        { href: "/datenschutz", label: "Datenschutz" },
-      ];
+      { href: "/impressum", label: "Impressum" },
+      { href: "/datenschutz", label: "Datenschutz" },
+    ];
 
   return (
     <footer className="border-t border-[var(--border)] bg-[var(--surface)]">
@@ -34,6 +34,19 @@ export default function Footer() {
             </React.Fragment>
           ))}
         </nav>
+      </div>
+
+      {/* Contact Info Row */}
+      <div className="border-t border-[var(--border)] bg-[var(--bg)]">
+        <div className="max-w-[1140px] mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center text-xs text-[var(--muted)]">
+          <div className="flex gap-4">
+            <span>office@elkaza.at</span>
+            <span>+43 1 234 567 89</span>
+          </div>
+          <div className="mt-2 md:mt-0">
+            <span>Vienna, Austria</span>
+          </div>
+        </div>
       </div>
     </footer>
   );
