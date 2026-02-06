@@ -32,18 +32,27 @@ export default function ReferenzenPage() {
                                     <span className="text-xs font-semibold text-[var(--primary-foreground)] bg-[var(--primary)] px-3 py-1 rounded-full">
                                         {cs.tag}
                                     </span>
-                                    <span className="text-xs text-[var(--muted)]">{cs.meta}</span>
+                                    <span className="text-xs text-[var(--text-secondary)] font-medium">{cs.context}</span>
                                 </div>
-                                <h2 className="text-lg font-semibold text-[var(--text)] mb-2 group-hover:text-[var(--primary)] transition-colors">{cs.title}</h2>
-                                <p className="text-[var(--muted)] text-sm mb-4 leading-relaxed">{cs.summary}</p>
-                                <ul className="text-sm text-[var(--text-secondary)] space-y-1">
-                                    {cs.results.map((r, i) => (
-                                        <li key={i} className="flex items-center gap-2">
-                                            <span className="text-[var(--primary)]">✓</span>
-                                            <span>{r}</span>
-                                        </li>
-                                    ))}
-                                </ul>
+                                <h2 className="text-lg font-semibold text-[var(--text)] mb-4 group-hover:text-[var(--primary)] transition-colors">{cs.title}</h2>
+
+                                <div className="space-y-2 text-sm text-[var(--text-secondary)]">
+                                    <div className="flex gap-2">
+                                        <span className="font-semibold text-[var(--text)] min-w-[70px]">Problem:</span>
+                                        <span>{cs.problem}</span>
+                                    </div>
+                                    <div className="flex gap-2">
+                                        <span className="font-semibold text-[var(--text)] min-w-[70px]">Lösung:</span>
+                                        <span>{cs.approach}</span>
+                                    </div>
+                                    <div className="flex gap-2">
+                                        <span className="font-semibold text-[var(--text)] min-w-[70px]">Ergebnis:</span>
+                                        <span>{cs.result}</span>
+                                    </div>
+                                </div>
+                                <div className="mt-4 pt-3 border-t border-[var(--border)] text-xs text-[var(--muted)]">
+                                    <span className="font-medium">Tools:</span> {cs.tools}
+                                </div>
                             </Link>
                         ))}
                     </div>

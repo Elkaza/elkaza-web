@@ -2,6 +2,7 @@ import Link from "next/link";
 import { siteContent } from "@/lib/siteContent";
 import CTA from "@/app/components/CTA";
 import ServiceCards from "@/app/components/ServiceCards";
+import PackageCards from "@/app/components/PackageCards";
 import { Check } from "lucide-react";
 
 export const metadata = {
@@ -15,6 +16,7 @@ export default function HomeEN() {
   const painPoints = siteContent.painPoints.en;
   const whyUs = siteContent.whyUs.en;
   const caseStudies = siteContent.caseStudies.en;
+  const process = siteContent.process.en;
 
   return (
     <main>
@@ -80,6 +82,34 @@ export default function HomeEN() {
         </div>
       </section>
 
+      {/* Process */}
+      <section className="py-12 md:py-14 bg-[var(--surface)]">
+        <div className="max-w-[1140px] mx-auto px-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-[var(--text)] mb-8 md:text-center">
+            How it works
+          </h2>
+          <div className="flex flex-wrap justify-center gap-6">
+            {process.map((step, i) => (
+              <div key={i} className="flex-1 min-w-[200px] max-w-[250px] p-6 rounded-xl bg-[var(--elevated)] border border-[var(--border)] text-center">
+                <div className="w-10 h-10 rounded-full bg-[var(--primary)] text-white flex items-center justify-center mx-auto mb-4 font-bold">{step.step}</div>
+                <h3 className="text-lg font-semibold text-[var(--text)] mb-2">{step.title}</h3>
+                <p className="text-sm text-[var(--text-secondary)]">{step.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Packages */}
+      <section className="py-12 md:py-14 bg-[var(--bg)]">
+        <div className="max-w-[1140px] mx-auto px-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-[var(--text)] mb-6 text-center">
+            Our Packages
+          </h2>
+          <PackageCards locale="en" />
+        </div>
+      </section>
+
       {/* Why us */}
       <section className="py-12 md:py-14 bg-[var(--surface)]">
         <div className="max-w-[1140px] mx-auto px-6">
@@ -130,10 +160,27 @@ export default function HomeEN() {
                   <span className="text-xs font-semibold text-[var(--primary-foreground)] bg-[var(--primary)] px-3 py-1 rounded-full">
                     {cs.tag}
                   </span>
-                  <span className="text-xs text-[var(--muted)]">{cs.meta}</span>
+                  <span className="text-xs text-[var(--text-secondary)] font-medium">{cs.context}</span>
                 </div>
-                <h3 className="text-lg font-semibold text-[var(--text)] mb-2 group-hover:text-[var(--primary)] transition-colors">{cs.title}</h3>
-                <p className="text-[var(--muted)] text-sm leading-relaxed">{cs.summary}</p>
+                <h3 className="text-lg font-semibold text-[var(--text)] mb-4 group-hover:text-[var(--primary)] transition-colors">{cs.title}</h3>
+
+                <div className="space-y-2 text-sm">
+                  <div className="flex gap-2">
+                    <span className="font-semibold text-[var(--text)] min-w-[70px]">Problem:</span>
+                    <span className="text-[var(--text-secondary)]">{cs.problem}</span>
+                  </div>
+                  <div className="flex gap-2">
+                    <span className="font-semibold text-[var(--text)] min-w-[70px]">Solution:</span>
+                    <span className="text-[var(--text-secondary)]">{cs.approach}</span>
+                  </div>
+                  <div className="flex gap-2">
+                    <span className="font-semibold text-[var(--text)] min-w-[70px]">Result:</span>
+                    <span className="text-[var(--text-secondary)]">{cs.result}</span>
+                  </div>
+                </div>
+                <div className="mt-4 pt-3 border-t border-[var(--border)] text-xs text-[var(--muted)]">
+                  <span className="font-medium">Tools:</span> {cs.tools}
+                </div>
               </Link>
             ))}
           </div>

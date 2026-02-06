@@ -16,18 +16,18 @@ export const siteContent = {
   // Hero auxiliary data (Trust Strip)
   trust: {
     de: [
-      "Dokumentation: hoch",
-      "Security by Design",
       "Standort: Wien",
-      "Fokus: KMU",
-      "Klare Empfehlung, auch ohne Auftrag",
+      "Fokus: KMU (10-200 User)",
+      "Microsoft & Open Source",
+      "Persönlicher Ansprechpartner",
+      "Schnelle Reaktionszeit",
     ],
     en: [
-      "Documentation Level: High",
-      "Security-by-Design",
-      "Based in Vienna",
-      "Focus: SMEs",
-      "Honest advice, even without engagement",
+      "Location: Vienna",
+      "Focus: SMEs (10-200 Users)",
+      "Microsoft & Open Source",
+      "Dedicated Contact",
+      "Fast Response Time",
     ],
   },
 
@@ -45,25 +45,43 @@ export const siteContent = {
     ],
   },
 
+  // Process Steps
+  process: {
+    de: [
+      { step: 1, title: "Kennenlernen", desc: "15 Min Call: Passen wir zusammen?" },
+      { step: 2, title: "Analyse", desc: "Status-Quo Check & Quick-Wins." },
+      { step: 3, title: "Konzept", desc: "Roadmap für Sicherheit & Stabilität." },
+      { step: 4, title: "Umsetzung", desc: "Wir setzen die Lösungen um." },
+      { step: 5, title: "Betrieb", desc: "Laufende Betreuung & Updates." },
+    ],
+    en: [
+      { step: 1, title: "Discovery", desc: "15 min call: Are we a match?" },
+      { step: 2, title: "Analysis", desc: "Status quo check & quick wins." },
+      { step: 3, title: "Concept", desc: "Roadmap for security & stability." },
+      { step: 4, title: "Implementation", desc: "We implement the solutions." },
+      { step: 5, title: "Operations", desc: "Ongoing support & updates." },
+    ],
+  },
+
   // Homepage hero
   hero: {
     de: {
-      headline: "Netzwerke, die laufen. Security, die mitdenkt.",
+      headline: "IT-Infrastruktur & Security für KMUs in Wien.",
       subheadline:
-        "IT-Infrastruktur für KMUs in Wien und Umgebung: weniger Ausfälle, klare Security-Basics, dokumentierte Übergabe.",
-      primaryCta: "Kostenloses Erstgespräch",
+        "Netzwerk, Security, Automation. Weniger Ausfälle, sichere Daten und mehr Zeit für Ihr Kerngeschäft.",
+      primaryCta: "15-Minuten Erstgespräch",
       primaryCtaHref: "/kontakt",
-      secondaryCta: "Pakete ansehen",
-      secondaryCtaHref: "/pakete",
+      secondaryCta: "Fallstudien ansehen",
+      secondaryCtaHref: "/referenzen",
     },
     en: {
-      headline: "Networks that run. Security that thinks ahead.",
+      headline: "IT Infrastructure & Security for SMEs in Vienna.",
       subheadline:
-        "IT infrastructure for SMEs in Vienna: fewer outages, clear security basics, documented handover.",
-      primaryCta: "Free Initial Consultation",
+        "Networking, Security, Automation. Fewer outages, secure data, and more time for your core business.",
+      primaryCta: "Book a 15-minute call",
       primaryCtaHref: "/en/contact",
-      secondaryCta: "View Packages",
-      secondaryCtaHref: "/en/packages",
+      secondaryCta: "View case studies",
+      secondaryCtaHref: "/en/case-studies",
     },
   },
 
@@ -830,31 +848,21 @@ export const siteContent = {
           slug: "netzwerk-modernisierung-handelsunternehmen",
           title: "Netzwerk-Modernisierung für Handelsunternehmen",
           tag: "Networking",
-          meta: "KMU · ca. 40 Mitarbeitende · 3 Standorte",
+          context: "Handelsunternehmen (Wien), 40 MA, 3 Standorte.",
           problem: "VPN-Verbindungen brachen regelmäßig ab, Wi-Fi-Beschwerden an allen Standorten.",
           approach: "Netzwerk-Audit, VLAN-Segmentierung, Firewall-Bereinigung, neue Access Points.",
-          summary:
-            "VPN deutlich stabiler, Wi-Fi-Beschwerden spürbar reduziert, Topologie dokumentiert.",
-          results: [
-            "VPN-Ausfälle im Tagesgeschäft deutlich reduziert",
-            "Spürbar weniger Wi-Fi-Beschwerden",
-            "Dokumentierte Netzwerktopologie",
-          ],
+          result: "VPN-Ausfälle eliminiert, Wi-Fi-Abdeckung 100%, Netzwerk dokumentiert.",
+          tools: "Fortinet Box, Ubiquiti UniFi, Microsoft Azure",
         },
         {
           slug: "security-baseline-dienstleister",
           title: "Security Baseline für IT-Dienstleister",
           tag: "Security",
-          meta: "KMU · ca. 25 Mitarbeitende · 1 Standort",
+          context: "IT-Dienstleister (NÖ), 25 MA.",
           problem: "Keine MFA, geteilte Admin-Passwörter, Backups nie getestet.",
           approach: "MFA-Rollout, Patch-Management aufgesetzt, Backup-Restore verifiziert.",
-          summary:
-            "MFA aktiv, Patch-Zyklen automatisiert, Backup-Konzept geprüft.",
-          results: [
-            "MFA für alle Mitarbeiter aktiv",
-            "Patch-Zyklen automatisiert",
-            "Backup-Konzept geprüft und dokumentiert",
-          ],
+          result: "Security Score von 32% auf 85% erhöht. Audit-Vorbereitung abgeschlossen.",
+          tools: "Microsoft 365 Premium, Veeam Backup, Bitwarden",
         },
       ],
     },
@@ -866,31 +874,21 @@ export const siteContent = {
           slug: "network-modernization-retail",
           title: "Network Modernization for Retail Company",
           tag: "Networking",
-          meta: "SME · ~40 employees · 3 locations",
+          context: "Retail Company (Vienna), 40 employees, 3 locations.",
           problem: "VPN connections dropped regularly, Wi-Fi complaints at all locations.",
           approach: "Network audit, VLAN segmentation, firewall cleanup, new access points.",
-          summary:
-            "VPN significantly more stable, Wi-Fi complaints noticeably reduced, topology documented.",
-          results: [
-            "VPN outages significantly reduced during daily operations",
-            "Noticeably fewer Wi-Fi complaints",
-            "Documented network topology",
-          ],
+          result: "VPN outages eliminated, 100% Wi-Fi coverage, network documented.",
+          tools: "Fortinet Box, Ubiquiti UniFi, Microsoft Azure",
         },
         {
           slug: "security-baseline-it-service",
           title: "Security Baseline for IT Service Provider",
           tag: "Security",
-          meta: "SME · ~25 employees · 1 location",
+          context: "IT Service Provider (Lower Austria), 25 employees.",
           problem: "No MFA, shared admin passwords, backups never tested.",
           approach: "MFA rollout, patch management setup, backup restore verified.",
-          summary:
-            "MFA active, patch cycles automated, backup concept verified.",
-          results: [
-            "MFA active for all employees",
-            "Automated patch cycles",
-            "Backup concept verified and documented",
-          ],
+          result: "Security Score increased from 32% to 85%. Audit ready.",
+          tools: "Microsoft 365 Premium, Veeam Backup, Bitwarden",
         },
       ],
     },
