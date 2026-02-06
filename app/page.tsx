@@ -5,9 +5,10 @@ import ServiceCards from "@/app/components/ServiceCards";
 import { Check } from "lucide-react";
 
 export const metadata = {
-  title: "Elkaza Consulting - Networking, Security & Automation für KMUs",
+  title: "Elkaza Consulting – IT-Infrastruktur & Security für KMUs",
   description:
-    "Wir bauen stabile IT-Infrastruktur für wachsende Teams: Netzwerk, Sicherheit und Automatisierung aus einer Hand.",
+    "Wir sind Ihr Partner für stabile IT-Infrastruktur in Wien. Netzwerk, Security & Automatisierung für KMU – zuverlässig, sicher und dokumentiert.",
+  alternates: { canonical: "/" },
 };
 
 export default function Home() {
