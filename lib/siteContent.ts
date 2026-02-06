@@ -20,14 +20,14 @@ export const siteContent = {
       "Security by Design",
       "Standort: Wien",
       "Fokus: KMU",
-      "Stack: M365 / OPNsense / Veeam",
+      "Klare Empfehlung, auch ohne Auftrag",
     ],
     en: [
       "Documentation Level: High",
       "Security-by-Design",
       "Based in Vienna",
       "Focus: SMEs",
-      "Stack: M365 / OPNsense / Veeam",
+      "Honest advice, even without engagement",
     ],
   },
 
@@ -50,7 +50,7 @@ export const siteContent = {
     de: {
       headline: "Netzwerke, die laufen. Security, die mitdenkt.",
       subheadline:
-        "Wir bauen stabile IT-Infrastruktur für wachsende Teams: Netzwerk, Sicherheit und Automatisierung aus einer Hand.",
+        "IT-Infrastruktur für KMUs in Wien und Umgebung: weniger Ausfälle, klare Security-Basics, dokumentierte Übergabe.",
       primaryCta: "Kostenloses Erstgespräch",
       primaryCtaHref: "/kontakt",
       secondaryCta: "Pakete ansehen",
@@ -59,7 +59,7 @@ export const siteContent = {
     en: {
       headline: "Networks that run. Security that thinks ahead.",
       subheadline:
-        "We build stable IT infrastructure for growing teams: networking, security, and automation from a single source.",
+        "IT infrastructure for SMEs in Vienna: fewer outages, clear security basics, documented handover.",
       primaryCta: "Free Initial Consultation",
       primaryCtaHref: "/en/contact",
       secondaryCta: "View Packages",
@@ -71,36 +71,56 @@ export const siteContent = {
   painPoints: {
     de: [
       {
-        title: "Netzwerk instabil?",
+        title: "VPN bricht ab",
         description:
-          "Wi-Fi-Ausfälle, langsame VPN-Verbindungen, ständige Beschwerden vom Team.",
+          "Homeoffice-Ausfälle, Beschwerden vom Team, Produktivitätsverlust.",
       },
       {
-        title: "Security unübersichtlich?",
+        title: "Firewall-Wildwuchs",
         description:
-          "Firewall-Regeln gewachsen, VLANs unklar, Zugriffsrechte schwer nachvollziehbar.",
+          "Keiner weiß mehr, welche Regeln aktiv sind und warum.",
       },
       {
-        title: "Kein Überblick bei Störungen?",
+        title: "Keine Runbooks",
         description:
-          "Fehlende Überwachung, keine Runbooks, Incidents dauern zu lange.",
+          "Incidents dauern zu lange. Jeder Ausfall ist Improvisation.",
+      },
+      {
+        title: "Zugriffsrechte unklar",
+        description:
+          "Ex-Mitarbeiter haben noch Zugang. Wer darf was, ist nicht dokumentiert.",
+      },
+      {
+        title: "Backups nie getestet",
+        description:
+          "Sicherung läuft, aber ob Restore funktioniert, weiß keiner.",
       },
     ],
     en: [
       {
-        title: "Unstable network?",
+        title: "VPN keeps dropping",
         description:
-          "Wi-Fi outages, slow VPN connections, constant complaints from the team.",
+          "Home office outages, team complaints, lost productivity.",
       },
       {
-        title: "Security unclear?",
+        title: "Firewall sprawl",
         description:
-          "Firewall rules grown over time, VLANs unclear, access rights hard to track.",
+          "No one knows which rules are active or why.",
       },
       {
-        title: "No incident overview?",
+        title: "No runbooks",
         description:
-          "Missing monitoring, no runbooks, incidents take too long to resolve.",
+          "Incidents take too long. Every outage is improvisation.",
+      },
+      {
+        title: "Access rights unclear",
+        description:
+          "Former employees still have access. Who can do what is not documented.",
+      },
+      {
+        title: "Backups never tested",
+        description:
+          "Backup runs, but no one knows if restore actually works.",
       },
     ],
   },
@@ -782,11 +802,13 @@ export const siteContent = {
           title: "Netzwerk-Modernisierung für Handelsunternehmen",
           tag: "Networking",
           meta: "KMU · ca. 40 Mitarbeitende · 3 Standorte",
+          problem: "VPN-Verbindungen brachen regelmäßig ab, Wi-Fi-Beschwerden an allen Standorten.",
+          approach: "Netzwerk-Audit, VLAN-Segmentierung, Firewall-Bereinigung, neue Access Points.",
           summary:
-            "Stabile Verbindungen für 3 Standorte, Wi-Fi-Abdeckung optimiert, VPN-Ausfälle eliminiert.",
+            "VPN deutlich stabiler, Wi-Fi-Beschwerden spürbar reduziert, Topologie dokumentiert.",
           results: [
-            "Keine VPN-Ausfälle mehr im Tagesgeschäft",
-            "Deutlich weniger Wi-Fi-Beschwerden",
+            "VPN-Ausfälle im Tagesgeschäft deutlich reduziert",
+            "Spürbar weniger Wi-Fi-Beschwerden",
             "Dokumentierte Netzwerktopologie",
           ],
         },
@@ -795,8 +817,10 @@ export const siteContent = {
           title: "Security Baseline für IT-Dienstleister",
           tag: "Security",
           meta: "KMU · ca. 25 Mitarbeitende · 1 Standort",
+          problem: "Keine MFA, geteilte Admin-Passwörter, Backups nie getestet.",
+          approach: "MFA-Rollout, Patch-Management aufgesetzt, Backup-Restore verifiziert.",
           summary:
-            "Grundlegende Absicherung: MFA, Patching, Backups und klare Zugriffsrechte.",
+            "MFA aktiv, Patch-Zyklen automatisiert, Backup-Konzept geprüft.",
           results: [
             "MFA für alle Mitarbeiter aktiv",
             "Patch-Zyklen automatisiert",
@@ -814,11 +838,13 @@ export const siteContent = {
           title: "Network Modernization for Retail Company",
           tag: "Networking",
           meta: "SME · ~40 employees · 3 locations",
+          problem: "VPN connections dropped regularly, Wi-Fi complaints at all locations.",
+          approach: "Network audit, VLAN segmentation, firewall cleanup, new access points.",
           summary:
-            "Stable connections for 3 locations, optimized Wi-Fi coverage, eliminated VPN outages.",
+            "VPN significantly more stable, Wi-Fi complaints noticeably reduced, topology documented.",
           results: [
-            "No more VPN outages during daily operations",
-            "Significantly fewer Wi-Fi complaints",
+            "VPN outages significantly reduced during daily operations",
+            "Noticeably fewer Wi-Fi complaints",
             "Documented network topology",
           ],
         },
@@ -827,8 +853,10 @@ export const siteContent = {
           title: "Security Baseline for IT Service Provider",
           tag: "Security",
           meta: "SME · ~25 employees · 1 location",
+          problem: "No MFA, shared admin passwords, backups never tested.",
+          approach: "MFA rollout, patch management setup, backup restore verified.",
           summary:
-            "Basic security: MFA, patching, backups, and clear access rights.",
+            "MFA active, patch cycles automated, backup concept verified.",
           results: [
             "MFA active for all employees",
             "Automated patch cycles",
@@ -873,23 +901,23 @@ export const siteContent = {
       title: "Warum Elkaza?",
       lead: "Pragmatisch, partnerschaftlich, technisch fundiert.",
       bullets: [
-        "Dokumentation und Übergabe inklusive",
-        "Saubere Segmentierung (VLANs) statt Flat Network",
-        "Monitoring und klare Runbooks für Störungen",
-        "Security-Baseline: MFA, Patch, Backup, Logging",
-        "Klare Kommunikation, feste Ansprechpartner",
-        "Messbare Ergebnisse, wo möglich",
+        "Übergabepaket: Dokumentation, Runbooks, Zugangsliste",
+        "Baseline-Metriken: Patch-Stand, Backup-Status, MFA-Quote",
+        "Saubere Segmentierung statt Flat Network",
+        "Monitoring ab Tag 1, Alerting bei kritischen Events",
+        "Fester Ansprechpartner, klare Kommunikation",
+        "Ergebnisse messbar, wo möglich",
       ],
     },
     en: {
       title: "Why Elkaza?",
       lead: "Pragmatic, partnership-oriented, technically sound.",
       bullets: [
-        "Documentation and handover included",
-        "Clean segmentation (VLANs) instead of flat network",
-        "Monitoring and clear runbooks for incidents",
-        "Security baseline: MFA, patching, backup, logging",
-        "Clear communication, dedicated contacts",
+        "Handover pack: documentation, runbooks, access list",
+        "Baseline metrics: patch status, backup health, MFA coverage",
+        "Clean segmentation instead of flat network",
+        "Monitoring from day 1, alerting on critical events",
+        "Dedicated contact, clear communication",
         "Measurable results where possible",
       ],
     },

@@ -59,7 +59,7 @@ export default function Home() {
           <h2 className="text-2xl md:text-3xl font-bold text-[var(--text)] mb-6">
             Kommt Ihnen das bekannt vor?
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
             {painPoints.map((point, i) => (
               <div
                 key={i}
@@ -76,10 +76,30 @@ export default function Home() {
       {/* Services - background level */}
       <section className="py-12 md:py-14 bg-[var(--bg)]">
         <div className="max-w-[1140px] mx-auto px-6">
-          <h2 className="text-2xl md:text-3xl font-bold text-[var(--text)] mb-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-[var(--text)] mb-2">
             Unsere Leistungen
           </h2>
+          <p className="text-[var(--muted)] mb-6">
+            Die meisten Kunden starten mit Security Baseline. Von dort aus bauen wir weiter.
+          </p>
           <ServiceCards locale="de" items={siteContent.services.de.items} />
+        </div>
+      </section>
+
+      {/* Security Baseline Highlight */}
+      <section className="py-10 md:py-12 bg-[var(--surface)]">
+        <div className="max-w-[800px] mx-auto px-6 text-center">
+          <div className="p-6 rounded-xl border-2 border-[var(--primary)] bg-[var(--elevated)]">
+            <h3 className="text-xl font-semibold text-[var(--text)] mb-3">
+              Empfohlener Einstieg: Security Baseline
+            </h3>
+            <p className="text-sm text-[var(--text-secondary)] mb-4">
+              <strong>Für wen:</strong> KMUs ohne eigenes Security-Team.<br />
+              <strong>Dauer:</strong> 3-6 Wochen.<br />
+              <strong>Am Ende:</strong> MFA aktiv, Backups getestet, Dokumentation übergeben.
+            </p>
+            <CTA href="/leistungen/security-baseline">Security Baseline starten</CTA>
+          </div>
         </div>
       </section>
 
@@ -175,6 +195,22 @@ export default function Home() {
         </div>
       </section>
 
+      {/* What You Get */}
+      <section className="py-10 md:py-12 bg-[var(--surface)]">
+        <div className="max-w-[1140px] mx-auto px-6">
+          <h2 className="text-xl font-semibold text-[var(--text)] mb-4 text-center">
+            Was Sie bei jedem Projekt erhalten
+          </h2>
+          <div className="flex flex-wrap justify-center gap-4 text-sm text-[var(--text-secondary)]">
+            <span className="flex items-center gap-2"><Check className="w-4 h-4 text-[var(--primary)]" />Dokumentation</span>
+            <span className="flex items-center gap-2"><Check className="w-4 h-4 text-[var(--primary)]" />Runbooks</span>
+            <span className="flex items-center gap-2"><Check className="w-4 h-4 text-[var(--primary)]" />Übergabegespräch</span>
+            <span className="flex items-center gap-2"><Check className="w-4 h-4 text-[var(--primary)]" />Zugangsliste</span>
+            <span className="flex items-center gap-2"><Check className="w-4 h-4 text-[var(--primary)]" />Baseline-Report</span>
+          </div>
+        </div>
+      </section>
+
       {/* Final CTA - surface level */}
       <section className="py-12 md:py-14 bg-[var(--surface)]">
         <div className="max-w-[1140px] mx-auto px-6 text-center">
@@ -182,6 +218,9 @@ export default function Home() {
             Bereit für stabile Infrastruktur?
           </h2>
           <CTA href="/kontakt">Kostenloses Erstgespräch vereinbaren</CTA>
+          <p className="mt-3 text-sm text-[var(--muted)]">
+            Sie erhalten eine klare Empfehlung – auch wenn wir nicht zusammenarbeiten.
+          </p>
         </div>
       </section>
     </main>
