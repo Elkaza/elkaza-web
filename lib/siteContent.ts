@@ -662,19 +662,23 @@ export const siteContent = {
         {
           name: "Starter",
           subtitle: "Assessment",
+
+          best_for: "Status Quo Check",
           price: "ab 490 €",
           priceNote: "einmalig",
           duration: "1-2 Wochen",
           description:
             "Bestandsaufnahme Ihrer IT-Infrastruktur mit konkreten Handlungsempfehlungen.",
           features: [
-            "Netzwerk-Audit",
-            "Security-Quickcheck",
-            "Endpoint-Baseline-Check (optional)",
-            "M365-Berechtigungen Quickscan (optional)",
-            "Dokumentation des Ist-Zustands",
-            "Priorisierte Maßnahmenliste",
-            "Abschlussbesprechung",
+            "Netzwerk-Audit (WLAN, LAN, Firewall)",
+            "Security-Quickcheck (MFA, Backups)",
+            "Dokumentation der Ist-Situation",
+            "Konkreter Maßnahmenplan (Roadmap)",
+            "Abschluss-Call zur Besprechung",
+
+            "---",
+
+            "Nicht enthalten: Technische Umsetzung / Fixes",
           ],
           cta: "Assessment anfragen",
           popular: false,
@@ -682,40 +686,47 @@ export const siteContent = {
         {
           name: "Growth",
           subtitle: "Umsetzung",
+
+          best_for: "Problemlösung & Modernisierung",
           price: "ab 2.900 €",
           priceNote: "projektbasiert",
           duration: "2-6 Wochen",
           description:
-            "Wir setzen die wichtigsten Verbesserungen direkt um.",
+            "Wir setzen die wichtigsten Verbesserungen direkt um (Done-For-You).",
           features: [
-            "Alles aus Starter",
-            "VLAN-Segmentierung",
-            "Firewall-Optimierung",
-            "Wi-Fi-Verbesserungen",
-            "MFA-Rollout",
-            "Backup-Konzept",
-            "MDM/EDR-Rollout oder Copilot-Readiness-Pilot (wählbar)",
-            "Übergabe und Dokumentation",
+            "VLAN-Segmentierung & Firewall-Härtung",
+            "Wi-Fi-Optimierung (Abdeckung & Security)",
+            "MFA-Rollout & Admin-Absicherung",
+            "Backup-Konzept Prüfung & Anpassung",
+            "Dokumentation & Übergabe",
+
+            "---",
+
+            "Nicht enthalten: Laufender Support",
           ],
-          cta: "Projekt besprechen",
+          cta: "15-Min Erstgespräch",
           popular: true,
         },
         {
           name: "Managed",
           subtitle: "Laufende Betreuung",
+
+          best_for: "Sicherheit & Ruhe",
           price: "ab 890 €",
           priceNote: "pro Monat",
-          duration: "fortlaufend",
+          duration: "fortlaufend (mtl. kündbar)",
           description:
-            "Wir kümmern uns dauerhaft um Ihre Infrastruktur.",
+            "Wir kümmern uns dauerhaft im Hintergrund um Ihre Infrastruktur.",
           features: [
-            "24/7 Monitoring",
-            "Patch-Management",
-            "Backup-Verifizierung",
-            "Incident-Response (SLA)",
+            "24/7 Monitoring (Netzwerk & Server)",
+            "Patch-Management (OS & 3rd Party)",
+            "Backup-Verifizierung (Restore-Tests)",
+            "Schnelle Reaktion bei Störungen",
             "Monatliches Reporting",
-            "Fester Ansprechpartner",
-            "Add-on: Endpoint-Monitoring + Patch-Compliance",
+
+            "---",
+
+            "Nicht enthalten: Hardware-Kosten",
           ],
           cta: "Angebot anfordern",
           popular: false,
@@ -729,6 +740,8 @@ export const siteContent = {
         {
           name: "Starter",
           subtitle: "Assessment",
+
+          best_for: "Status Quo Check",
           price: "from €490",
           priceNote: "one-time",
           duration: "1-2 weeks",
@@ -742,6 +755,10 @@ export const siteContent = {
             "Current state documentation",
             "Prioritized action list",
             "Final meeting",
+
+            "---",
+
+            "Not included: Implementation / Fixes",
           ],
           cta: "Request Assessment",
           popular: false,
@@ -749,6 +766,8 @@ export const siteContent = {
         {
           name: "Growth",
           subtitle: "Implementation",
+
+          best_for: "Problem Solving & Modernization",
           price: "from €2,900",
           priceNote: "project-based",
           duration: "2-6 weeks",
@@ -763,6 +782,10 @@ export const siteContent = {
             "Backup concept",
             "MDM/EDR rollout or Copilot readiness pilot (selectable)",
             "Handover and documentation",
+
+            "---",
+
+            "Not included: Ongoing Support",
           ],
           cta: "Discuss Project",
           popular: true,
@@ -770,6 +793,8 @@ export const siteContent = {
         {
           name: "Managed",
           subtitle: "Ongoing Support",
+
+          best_for: "Security & Peace of Mind",
           price: "from €890",
           priceNote: "per month",
           duration: "ongoing",
@@ -783,6 +808,10 @@ export const siteContent = {
             "Monthly reporting",
             "Dedicated contact person",
             "Add-on: Endpoint monitoring + patch compliance",
+
+            "---",
+
+            "Not included: Hardware costs",
           ],
           cta: "Request Quote",
           popular: false,
