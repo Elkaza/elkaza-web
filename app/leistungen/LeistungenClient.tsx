@@ -67,23 +67,81 @@ export default function LeistungenClient() {
             {/* Hero */}
             <section className="py-14 md:py-20 hero-gradient">
                 <div className="max-w-[1140px] mx-auto px-6">
-                    <h1 className="text-4xl md:text-5xl font-bold text-[var(--text)] mb-4">Leistungen</h1>
-                    <p className="text-xl text-[var(--text-secondary)] max-w-2xl mb-8">
-                        IT-Infrastruktur und Security für wachsende KMUs. Klar definierte Projekte mit messbaren Ergebnissen.
-                    </p>
-                    <div className="flex flex-wrap gap-4">
-                        <CTA href="/kontakt">Kostenloses Erstgespräch</CTA>
-                        <Link href="/pakete" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-[var(--border)] text-[var(--text)] hover:bg-[var(--surface)] transition-colors">
-                            Pakete ansehen
-                        </Link>
+                    <div className="md:flex md:items-center md:justify-between gap-10">
+                        <div className="md:w-3/5">
+                            <h1 className="text-4xl md:text-5xl font-bold text-[var(--text)] mb-4">
+                                IT-Infrastruktur für Wiener KMUs. <br />
+                                Stabil. Sicher. Skalierbar.
+                            </h1>
+                            <p className="text-xl text-[var(--text-secondary)] mb-8">
+                                Kein Technik-Kauderwelsch. Wir sorgen dafür, dass Ihr Netzwerk läuft, Ihre Daten sicher sind und Sie sich auf Ihr Geschäft konzentrieren können. Ihr persönlicher Ansprechpartner vor Ort in Wien.
+                            </p>
+                            <div className="flex flex-wrap gap-4 mb-8">
+                                <CTA href="/kontakt">Erstgespräch vereinbaren</CTA>
+                                <Link href="/pakete" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-[var(--border)] text-[var(--text)] hover:bg-[var(--surface)] transition-colors">
+                                    Pakete ansehen
+                                </Link>
+                            </div>
+
+                            {/* Trust Block - Why Elkaza */}
+                            <ul className="text-sm text-[var(--muted)] space-y-2">
+                                <li className="flex items-center gap-2">
+                                    <CheckCircle className="w-4 h-4 text-[var(--primary)]" />
+                                    <span>Über 10 Jahre Erfahrung in Enterprise-IT & Security</span>
+                                </li>
+                                <li className="flex items-center gap-2">
+                                    <CheckCircle className="w-4 h-4 text-[var(--primary)]" />
+                                    <span>Zertifiziert (Cisco, Microsoft, Fortinet)</span>
+                                </li>
+                                <li className="flex items-center gap-2">
+                                    <CheckCircle className="w-4 h-4 text-[var(--primary)]" />
+                                    <span><span className="font-medium text-[var(--text)]">Antwortzeit &lt; 4 Stunden</span> bei Managed Services</span>
+                                </li>
+                            </ul>
+                        </div>
+                        {/* Right side visual placeholder or breathing room */}
+                        <div className="hidden md:block md:w-2/5">
+                            {/* Abstract visual/icon could go here, currently clean space */}
+                        </div>
                     </div>
                 </div>
             </section>
 
-            {/* Trust Strip */}
-            <section className="py-5 bg-[var(--surface)] border-y border-[var(--border)]">
+            {/* For Whom / When Useful Block */}
+            <section className="py-10 bg-[var(--surface)] border-y border-[var(--border)]">
                 <div className="max-w-[1140px] mx-auto px-6">
-                    <TrustBar locale="de" />
+                    <div className="grid md:grid-cols-3 gap-8">
+                        <div>
+                            <h3 className="font-semibold text-[var(--text)] mb-3 flex items-center gap-2">
+                                <Settings className="w-5 h-5 text-[var(--primary)]" /> Für wen?
+                            </h3>
+                            <ul className="space-y-2 text-sm text-[var(--text-secondary)]">
+                                <li className="flex gap-2"><div className="w-1.5 h-1.5 rounded-full bg-[var(--primary)] mt-1.5" />Kleine & mittlere Unternehmen (10-200 User)</li>
+                                <li className="flex gap-2"><div className="w-1.5 h-1.5 rounded-full bg-[var(--primary)] mt-1.5" />Agenturen, Kanzleien & Praxen</li>
+                                <li className="flex gap-2"><div className="w-1.5 h-1.5 rounded-full bg-[var(--primary)] mt-1.5" />Firmen mit hybriden Teams (Office/Remote)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 className="font-semibold text-[var(--text)] mb-3 flex items-center gap-2">
+                                <ShieldAlert className="w-5 h-5 text-[var(--primary)]" /> Wann sinnvoll?
+                            </h3>
+                            <ul className="space-y-2 text-sm text-[var(--text-secondary)]">
+                                <li className="flex gap-2"><div className="w-1.5 h-1.5 rounded-full bg-[var(--primary)] mt-1.5" />Das Netzwerk ist langsam oder fällt aus</li>
+                                <li className="flex gap-2"><div className="w-1.5 h-1.5 rounded-full bg-[var(--primary)] mt-1.5" />Sorge vor Ransomware & Datenverlust</li>
+                                <li className="flex gap-2"><div className="w-1.5 h-1.5 rounded-full bg-[var(--primary)] mt-1.5" />Keine Übersicht über Geräte & Zugriffe</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 className="font-semibold text-[var(--text)] mb-3 flex items-center gap-2">
+                                <Sparkles className="w-5 h-5 text-[var(--primary)]" /> Ihr Vorteil
+                            </h3>
+                            <ul className="space-y-2 text-sm text-[var(--text-secondary)]">
+                                <li className="flex gap-2"><div className="w-1.5 h-1.5 rounded-full bg-[var(--primary)] mt-1.5" />Ein Ansprechpartner für alles Technische</li>
+                                <li className="flex gap-2"><div className="w-1.5 h-1.5 rounded-full bg-[var(--primary)] mt-1.5" />Security-Basics ohne Komplexitäts-Monster</li>
+                                <li className="flex gap-2"><div className="w-1.5 h-1.5 rounded-full bg-[var(--primary)] mt-1.5" />Planbare IT-Kosten</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -153,7 +211,7 @@ export default function LeistungenClient() {
                 </div>
             </section>
 
-            {/* Recommended Start */}
+            {/* Recommended Start (Security Baseline) */}
             <section className="py-12 md:py-16 bg-[var(--surface)]">
                 <div className="max-w-[800px] mx-auto px-6 text-center">
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--primary-light)] text-[var(--primary)] text-sm font-medium mb-4">
@@ -163,40 +221,86 @@ export default function LeistungenClient() {
                         Starten Sie mit Security Baseline
                     </h2>
                     <p className="text-[var(--text-secondary)] mb-6">
-                        Die meisten KMUs profitieren davon, zuerst Grundlagen zu sichern: MFA, Patching, Backups. Das verhindert 80% der häufigsten Angriffe. Danach wissen Sie, wo Sie stehen.
+                        Die meisten erfolgreichen Angriffe nutzen einfache Lücken wie fehlende Updates oder schwache Passwörter. Wir schließen diese Tore zuerst: MFA, Patch-Management und sichere Backups bilden das Fundament jeder stabilen IT.
                     </p>
                     <CTA href="/leistungen/security-baseline">Mit Security Baseline starten</CTA>
                 </div>
             </section>
 
-            {/* How We Work */}
+            {/* Process - So läuft es ab */}
             <section className="py-12 md:py-16 bg-[var(--bg)]">
                 <div className="max-w-[1140px] mx-auto px-6">
-                    <h2 className="text-2xl font-semibold text-[var(--text)] mb-8 text-center">So arbeiten wir</h2>
-                    <div className="grid md:grid-cols-3 gap-6">
-                        {processSteps.map((step, i) => (
-                            <div key={i} className="p-6 rounded-xl bg-[var(--surface)] border border-[var(--border)] text-center">
-                                <div className="w-12 h-12 rounded-full bg-[var(--primary-light)] flex items-center justify-center mx-auto mb-4">
-                                    <step.icon className="w-6 h-6 text-[var(--primary)]" />
-                                </div>
-                                <h3 className="text-lg font-semibold text-[var(--text)] mb-2">{step.name}</h3>
-                                <p className="text-sm text-[var(--text-secondary)] mb-2">{step.desc}</p>
-                                <span className="text-xs text-[var(--muted)] flex items-center justify-center gap-1">
-                                    <Clock className="w-3 h-3" /> {step.time}
-                                </span>
+                    <h2 className="text-2xl font-semibold text-[var(--text)] mb-8 text-center">So läuft es ab</h2>
+                    <div className="grid md:grid-cols-4 gap-4 relative">
+                        {/* Steps */}
+                        <div className="p-6 rounded-xl bg-[var(--surface)] border border-[var(--border)] relative z-10">
+                            <span className="text-4xl font-bold text-[var(--primary-light)] absolute top-4 right-4 opacity-50">1</span>
+                            <h3 className="text-lg font-semibold text-[var(--text)] mb-2">Analyse</h3>
+                            <p className="text-sm text-[var(--text-secondary)]">Wir prüfen Ihren Status Quo (Infrastruktur, Security, Prozesse). Kein Fachchinesisch, nur Fakten.</p>
+                        </div>
+                        <div className="p-6 rounded-xl bg-[var(--surface)] border border-[var(--border)] relative z-10">
+                            <span className="text-4xl font-bold text-[var(--primary-light)] absolute top-4 right-4 opacity-50">2</span>
+                            <h3 className="text-lg font-semibold text-[var(--text)] mb-2">Konzept</h3>
+                            <p className="text-sm text-[var(--text-secondary)]">Sie erhalten einen klaren Plan mit priorisierten Maßnahmen. Sie entscheiden, was wir umsetzen.</p>
+                        </div>
+                        <div className="p-6 rounded-xl bg-[var(--surface)] border border-[var(--border)] relative z-10">
+                            <span className="text-4xl font-bold text-[var(--primary-light)] absolute top-4 right-4 opacity-50">3</span>
+                            <h3 className="text-lg font-semibold text-[var(--text)] mb-2">Umsetzung</h3>
+                            <p className="text-sm text-[var(--text-secondary)]">Wir implementieren die Lösungen – minimaler Impact auf Ihren laufenden Betrieb.</p>
+                        </div>
+                        <div className="p-6 rounded-xl bg-[var(--surface)] border border-[var(--border)] relative z-10">
+                            <span className="text-4xl font-bold text-[var(--primary-light)] absolute top-4 right-4 opacity-50">4</span>
+                            <h3 className="text-lg font-semibold text-[var(--text)] mb-2">Betrieb</h3>
+                            <p className="text-sm text-[var(--text-secondary)]">Übergabe an Ihr Team oder laufende Betreuung durch uns (Managed Services).</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Case Studies */}
+            <section className="py-12 md:py-16 bg-[var(--surface)]">
+                <div className="max-w-[1140px] mx-auto px-6">
+                    <h2 className="text-2xl font-semibold text-[var(--text)] mb-8 text-center">Erfolgsbeispiele aus der Praxis</h2>
+                    <div className="grid md:grid-cols-2 gap-6">
+                        {/* Case 1 */}
+                        <div className="p-6 rounded-xl bg-[var(--bg)] border border-[var(--border)]">
+                            <div className="flex items-center gap-2 mb-4">
+                                <span className="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs font-semibold">Rechtsanwaltskanzlei (Wien)</span>
                             </div>
-                        ))}
+                            <h3 className="text-lg font-semibold text-[var(--text)] mb-2">Situation</h3>
+                            <p className="text-sm text-[var(--text-secondary)] mb-3">VPN-Verbindung war langsam und instabil. Sorge vor Ransomware und Datenverlust bei sensiblen Klienten-Akten.</p>
+                            <h3 className="text-lg font-semibold text-[var(--text)] mb-2">Lösung & Ergebnis</h3>
+                            <ul className="text-sm text-[var(--text-secondary)] space-y-1">
+                                <li className="flex gap-2"><CheckCircle className="w-4 h-4 text-[var(--primary)] mt-0.5" /> Netzwerk segmentiert (Gäste vs. Intern)</li>
+                                <li className="flex gap-2"><CheckCircle className="w-4 h-4 text-[var(--primary)] mt-0.5" /> Robuste Firewall & MFA eingeführt</li>
+                                <li className="flex gap-2"><CheckCircle className="w-4 h-4 text-[var(--primary)] mt-0.5" /> <strong>Ergebnis:</strong> Schneller Fernzugriff und ruhiges Gewissen dank Immutable Backups.</li>
+                            </ul>
+                        </div>
+                        {/* Case 2 */}
+                        <div className="p-6 rounded-xl bg-[var(--bg)] border border-[var(--border)]">
+                            <div className="flex items-center gap-2 mb-4">
+                                <span className="px-2 py-1 bg-green-100 text-green-700 rounded text-xs font-semibold">Marketing-Agentur (Remote)</span>
+                            </div>
+                            <h3 className="text-lg font-semibold text-[var(--text)] mb-2">Situation</h3>
+                            <p className="text-sm text-[var(--text-secondary)] mb-3">Onboarding neuer Mitarbeiter dauerte Tage. Zugriffsrechte waren chaotisch verteilt ("Wildwuchs").</p>
+                            <h3 className="text-lg font-semibold text-[var(--text)] mb-2">Lösung & Ergebnis</h3>
+                            <ul className="text-sm text-[var(--text-secondary)] space-y-1">
+                                <li className="flex gap-2"><CheckCircle className="w-4 h-4 text-[var(--primary)] mt-0.5" /> Microsoft 365 Tenant gehärtet & aufgeräumt</li>
+                                <li className="flex gap-2"><CheckCircle className="w-4 h-4 text-[var(--primary)] mt-0.5" /> Automatisches Device-Setup (Mac & Windows)</li>
+                                <li className="flex gap-2"><CheckCircle className="w-4 h-4 text-[var(--primary)] mt-0.5" /> <strong>Ergebnis:</strong> Neue Laptops sind in 30 Minuten einsatzbereit. Safe Offboarding per Knopfdruck.</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </section>
 
             {/* What You Get */}
-            <section className="py-12 md:py-16 bg-[var(--surface)]">
+            <section className="py-12 md:py-16 bg-[var(--bg)]">
                 <div className="max-w-[1140px] mx-auto px-6">
-                    <h2 className="text-2xl font-semibold text-[var(--text)] mb-8 text-center">Was Sie immer bekommen</h2>
+                    <h2 className="text-2xl font-semibold text-[var(--text)] mb-8 text-center">Standards bei jedem Projekt</h2>
                     <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
                         {deliverables.map((item, i) => (
-                            <div key={i} className="p-5 rounded-xl bg-[var(--bg)] border border-[var(--border)]">
+                            <div key={i} className="p-5 rounded-xl bg-[var(--surface)] border border-[var(--border)]">
                                 <item.icon className="w-5 h-5 text-[var(--primary)] mb-3" />
                                 <h3 className="text-base font-semibold text-[var(--text)] mb-1">{item.name}</h3>
                                 <p className="text-sm text-[var(--muted)]">{item.desc}</p>
@@ -207,15 +311,16 @@ export default function LeistungenClient() {
             </section>
 
             {/* FAQ */}
-            <section className="py-12 md:py-16 bg-[var(--bg)]">
+            <section className="py-12 md:py-16 bg-[var(--surface)]">
                 <div className="max-w-[1140px] mx-auto px-6">
                     <div className="flex items-center justify-center gap-2 mb-8">
                         <HelpCircle className="w-6 h-6 text-[var(--primary)]" />
                         <h2 className="text-2xl font-semibold text-[var(--text)]">Häufige Fragen</h2>
                     </div>
                     <div className="max-w-3xl mx-auto space-y-4">
+                        {/* Using existing FAQ data but rendering styled */}
                         {faqs.map((faq, i) => (
-                            <div key={i} className="p-5 rounded-xl bg-[var(--surface)] border border-[var(--border)]">
+                            <div key={i} className="p-5 rounded-xl bg-[var(--bg)] border border-[var(--border)]">
                                 <h3 className="text-base font-medium text-[var(--text)] mb-2">{faq.q}</h3>
                                 <p className="text-sm text-[var(--text-secondary)]">{faq.a}</p>
                             </div>
@@ -225,12 +330,12 @@ export default function LeistungenClient() {
             </section>
 
             {/* Final CTA */}
-            <section className="py-12 md:py-16 bg-[var(--surface)]">
+            <section className="py-12 md:py-16 bg-[var(--bg)]">
                 <div className="max-w-[1140px] mx-auto px-6 text-center">
-                    <h2 className="text-2xl font-semibold text-[var(--text)] mb-4">Bereit für stabile IT?</h2>
-                    <p className="text-[var(--text-secondary)] mb-6">Lassen Sie uns in 30 Minuten besprechen, was Sie brauchen.</p>
-                    <CTA href="/kontakt">Kostenloses Erstgespräch</CTA>
-                    <p className="text-sm text-[var(--muted)] mt-4">Keine Verpflichtung. Kein Verkaufsdruck.</p>
+                    <h2 className="text-2xl font-semibold text-[var(--text)] mb-4">Bereit für professionelle IT?</h2>
+                    <p className="text-[var(--text-secondary)] mb-6">Lassen Sie uns herausfinden, ob wir zusammenpassen. Ein kurzes Gespräch kostet nichts.</p>
+                    <CTA href="/kontakt">15-Minuten Erstgespräch vereinbaren</CTA>
+                    <p className="text-sm text-[var(--muted)] mt-4">Kein Verkaufsdruck. Nur Beratung.</p>
                 </div>
             </section>
         </main>
