@@ -1,6 +1,5 @@
 import { siteContent } from "@/lib/siteContent";
 import { notFound } from "next/navigation";
-import { Check } from "lucide-react";
 import CTA from "@/app/components/CTA";
 
 const cases = siteContent.caseStudies.de.items;
@@ -26,21 +25,34 @@ export default async function ReferenzDetailPage({
                         {cs.tag}
                     </span>
                     <h1 className="text-4xl font-bold text-[var(--text)] mt-4 mb-3">{cs.title}</h1>
-                    <p className="text-xl text-[var(--text-secondary)]">{cs.summary}</p>
+                    <p className="text-xl text-[var(--text-secondary)]">{cs.result}</p>
                 </div>
             </section>
 
             <section className="py-10 md:py-14 bg-[var(--surface)]">
                 <div className="max-w-4xl mx-auto px-6">
-                    <h2 className="text-2xl font-semibold text-[var(--text)] mb-5">Ergebnisse</h2>
-                    <ul className="space-y-3 mb-8">
-                        {cs.results.map((r, i) => (
-                            <li key={i} className="flex items-start gap-3 text-[var(--text-secondary)]">
-                                <Check className="w-5 h-5 text-[var(--primary)] mt-0.5 shrink-0" />
-                                <span>{r}</span>
-                            </li>
-                        ))}
-                    </ul>
+                    <div className="space-y-6">
+                        <div>
+                            <h2 className="text-xl font-bold text-[var(--text)] mb-2">Ausgangslage</h2>
+                            <p className="text-[var(--text-secondary)]">{cs.context}</p>
+                            <p className="text-[var(--text-secondary)] mt-1">{cs.problem}</p>
+                        </div>
+
+                        <div>
+                            <h2 className="text-xl font-bold text-[var(--text)] mb-2">Lösung</h2>
+                            <p className="text-[var(--text-secondary)]">{cs.approach}</p>
+                        </div>
+
+                        <div>
+                            <h2 className="text-xl font-bold text-[var(--text)] mb-2">Ergebnisse</h2>
+                            <p className="text-[var(--text-secondary)] font-medium text-[var(--primary)]">{cs.result}</p>
+                        </div>
+
+                        <div className="pt-4 border-t border-[var(--border)]">
+                            <span className="font-bold text-[var(--text)]">Eingesetzte Tools:</span>
+                            <span className="ml-2 text-[var(--muted)]">{cs.tools}</span>
+                        </div>
+                    </div>
 
                     <p className="text-[var(--muted)] text-sm mb-6">
                         Mehr Details auf Anfrage. Kontaktieren Sie uns für ein Gespräch.

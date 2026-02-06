@@ -4,10 +4,9 @@ import { useState } from "react";
 import Link from "next/link";
 import {
     Network, ShieldCheck, Lock, ShieldAlert, Cog, Headphones, Cloud,
-    Laptop, Sparkles, ClipboardCheck, FileText, Clock, CheckCircle,
-    ArrowRight, Search, Settings, BookOpen, Presentation, MessageSquare, HelpCircle
+    Laptop, Sparkles, ClipboardCheck, FileText, CheckCircle,
+    ArrowRight, Settings, BookOpen, Presentation, MessageSquare, HelpCircle
 } from "lucide-react";
-import TrustBar from "@/app/components/TrustBar";
 import CTA from "@/app/components/CTA";
 
 // Service data with icons and categories
@@ -34,11 +33,7 @@ const categories = [
     { id: "compliance", label: "Compliance" },
 ];
 
-const processSteps = [
-    { icon: Search, name: "Analyse", desc: "Wir erfassen den aktuellen Stand.", time: "1-2 Wochen" },
-    { icon: Settings, name: "Umsetzung", desc: "Wir implementieren die Änderungen.", time: "2-6 Wochen" },
-    { icon: Headphones, name: "Betrieb", desc: "Übergabe an Ihr Team.", time: "Laufend" },
-];
+
 
 const deliverables = [
     { icon: FileText, name: "Dokumentation", desc: "Jede Änderung dokumentiert." },
@@ -282,7 +277,7 @@ export default function LeistungenClient() {
                                 <span className="px-2 py-1 bg-green-100 text-green-700 rounded text-xs font-semibold">Marketing-Agentur (Remote)</span>
                             </div>
                             <h3 className="text-lg font-semibold text-[var(--text)] mb-2">Situation</h3>
-                            <p className="text-sm text-[var(--text-secondary)] mb-3">Onboarding neuer Mitarbeiter dauerte Tage. Zugriffsrechte waren chaotisch verteilt ("Wildwuchs").</p>
+                            <p className="text-sm text-[var(--text-secondary)] mb-3">Onboarding neuer Mitarbeiter dauerte Tage. Zugriffsrechte waren chaotisch verteilt (&quot;Wildwuchs&quot;).</p>
                             <h3 className="text-lg font-semibold text-[var(--text)] mb-2">Lösung & Ergebnis</h3>
                             <ul className="text-sm text-[var(--text-secondary)] space-y-1">
                                 <li className="flex gap-2"><CheckCircle className="w-4 h-4 text-[var(--primary)] mt-0.5" /> Microsoft 365 Tenant gehärtet & aufgeräumt</li>
