@@ -3,7 +3,7 @@ import CTA from "@/app/components/CTA";
 export default function DigitalProductsPage() {
   return (
     <main>
-      <section className="py-10 md:py-14 hero-gradient">
+      <section className="py-10 md:py-14 hero-gradient-enhanced">
         <div className="max-w-[1140px] mx-auto px-6">
           <h1 className="text-4xl font-bold text-[var(--text)]">Digital Products & Platforms</h1>
         </div>

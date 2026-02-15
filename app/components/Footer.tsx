@@ -40,8 +40,7 @@ export default function Footer() {
       <div className="border-t border-[var(--border)] bg-[var(--bg)]">
         <div className="max-w-[1140px] mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center text-xs text-[var(--muted)]">
           <div className="flex gap-4">
-            <span>office@elkaza.at</span>
-            <span>+43 1 234 567 89</span>
+            <a href="mailto:office@elkaza.at" className="hover:text-[var(--link)] transition-colors">office@elkaza.at</a>
           </div>
           <div className="mt-2 md:mt-0">
             <span>Vienna, Austria</span>

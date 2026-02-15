@@ -60,7 +60,7 @@ export default function LeistungenClient() {
     return (
         <main className="scroll-smooth">
             {/* Hero */}
-            <section className="py-14 md:py-20 hero-gradient">
+            <section className="py-14 md:py-20 hero-gradient-enhanced">
                 <div className="max-w-[1140px] mx-auto px-6">
                     <div className="md:flex md:items-center md:justify-between gap-10">
                         <div className="md:w-3/5">

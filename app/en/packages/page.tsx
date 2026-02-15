@@ -13,7 +13,7 @@ export default function PackagesEnPage() {
 
     return (
         <main>
-            <section className="py-10 md:py-14 hero-gradient">
+            <section className="py-10 md:py-14 hero-gradient-enhanced">
                 <div className="max-w-[1140px] mx-auto px-6 text-center">
                     <h1 className="text-4xl font-bold text-[var(--text)] mb-3">{content.title}</h1>
                     <p className="text-lg text-[var(--text-secondary)] max-w-2xl mx-auto">{content.subtitle}</p>

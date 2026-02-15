@@ -3,6 +3,7 @@ import { siteContent } from "@/lib/siteContent";
 import CTA from "@/app/components/CTA";
 import ServiceCards from "@/app/components/ServiceCards";
 import PackageCards from "@/app/components/PackageCards";
+import InteractiveHero from "@/app/components/InteractiveHero";
 import { Check } from "lucide-react";
 
 export const metadata = {
@@ -21,25 +22,27 @@ export default function HomeEN() {
   return (
     <main>
       {/* Hero */}
-      <section className="relative text-center py-14 md:py-20 hero-gradient">
-        <div className="max-w-[1140px] mx-auto px-6">
-          <h1 className="text-4xl md:text-5xl font-bold mb-5 text-[var(--text)] leading-tight tracking-tight">
-            {hero.headline}
-          </h1>
-          <p className="text-lg text-[var(--text-secondary)] max-w-2xl mx-auto mb-8 leading-relaxed">
-            {hero.subheadline}
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <CTA href={hero.primaryCtaHref}>{hero.primaryCta}</CTA>
-            <CTA href={hero.secondaryCtaHref} variant="secondary">
-              {hero.secondaryCta}
-            </CTA>
+      <InteractiveHero>
+        <section className="relative text-center py-14 md:py-20">
+          <div className="max-w-[1140px] mx-auto px-6">
+            <h1 className="text-4xl md:text-5xl font-bold mb-5 text-[var(--text)] leading-tight tracking-tight">
+              {hero.headline}
+            </h1>
+            <p className="text-lg text-[var(--text-secondary)] max-w-2xl mx-auto mb-8 leading-relaxed">
+              {hero.subheadline}
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <CTA href={hero.primaryCtaHref}>{hero.primaryCta}</CTA>
+              <CTA href={hero.secondaryCtaHref} variant="secondary">
+                {hero.secondaryCta}
+              </CTA>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </InteractiveHero>
 
       {/* Trust Strip */}
-      <div className="border-y border-[var(--border)] bg-[var(--surface)]/50 backdrop-blur-sm">
+      <div className="trust-strip">
         <div className="max-w-[1140px] mx-auto px-6 py-4">
           <div className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm text-[var(--muted)] font-medium">
             {siteContent.trust.en.map((item, i) => (

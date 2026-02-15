@@ -9,7 +9,7 @@ export const metadata = {
 export default function NotFound() {
     return (
         <main>
-            <section className="py-20 md:py-28 hero-gradient min-h-[60vh] flex items-center">
+            <section className="py-20 md:py-28 hero-gradient-enhanced min-h-[60vh] flex items-center">
                 <div className="max-w-[800px] mx-auto px-6 text-center">
                     <div className="text-7xl md:text-9xl font-bold text-[var(--primary)] mb-6 opacity-20">
                         404

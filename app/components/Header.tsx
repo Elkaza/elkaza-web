@@ -45,15 +45,22 @@ export default function Header() {
 
         {/* Desktop nav */}
         <nav aria-label="Primary navigation" className="hidden md:flex items-center gap-8 text-sm font-medium">
-          {items.map((it) => (
-            <Link
-              key={it.href}
-              href={it.href}
-              className="text-[var(--muted)] hover:text-[var(--text)] transition-colors duration-200"
-            >
-              {it.label}
-            </Link>
-          ))}
+          {items.map((it) => {
+            const isActive = pathname === it.href || pathname.startsWith(it.href + "/");
+            return (
+              <Link
+                key={it.href}
+                href={it.href}
+                className={`transition-colors duration-200 py-1 ${isActive
+                    ? "text-[var(--primary)] border-b-2 border-[var(--primary)]"
+                    : "text-[var(--muted)] hover:text-[var(--text)]"
+                  }`}
+                aria-current={isActive ? "page" : undefined}
+              >
+                {it.label}
+              </Link>
+            );
+          })}
         </nav>
 
         <div className="flex items-center gap-3">

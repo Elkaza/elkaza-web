@@ -19,7 +19,7 @@ export function generateMetadata() {
       siteName: "Elkaza Consulting",
       locale: "de_AT",
       type: "website",
-      images: [`${base}/opengraph-image.svg`],
+      images: [{ url: `${base}/opengraph-image.svg`, width: 1200, height: 630, alt: "Elkaza Consulting" }],
     },
     twitter: { card: "summary_large_image" },
   } as const;
@@ -42,6 +42,49 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 } catch (e) {}
               })();
             `,
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "Organization",
+                  "@id": "https://elkaza.at/#organization",
+                  name: "Elkaza Consulting",
+                  url: "https://elkaza.at",
+                  logo: "https://elkaza.at/logo.png",
+                  description: "IT-Infrastruktur, Sicherheit und Automatisierung für KMU in Wien und Österreich.",
+                  email: "office@elkaza.at",
+                  areaServed: { "@type": "Country", name: "Austria" },
+                  sameAs: [],
+                },
+                {
+                  "@type": "LocalBusiness",
+                  "@id": "https://elkaza.at/#localbusiness",
+                  name: "Elkaza Consulting",
+                  url: "https://elkaza.at",
+                  email: "office@elkaza.at",
+                  address: {
+                    "@type": "PostalAddress",
+                    addressLocality: "Vienna",
+                    addressCountry: "AT",
+                  },
+                  priceRange: "€€",
+                  openingHours: "Mo-Fr 09:00-18:00",
+                },
+                {
+                  "@type": "WebSite",
+                  "@id": "https://elkaza.at/#website",
+                  url: "https://elkaza.at",
+                  name: "Elkaza Consulting",
+                  publisher: { "@id": "https://elkaza.at/#organization" },
+                  inLanguage: ["de-AT", "en"],
+                },
+              ],
+            }),
           }}
         />
       </head>
