@@ -12,7 +12,7 @@ const mockPosts = [
 export default function InsightsPage() {
   return (
     <main>
-      <section className="py-10 md:py-14 hero-gradient">
+      <section className="py-10 md:py-14 hero-gradient-enhanced">
         <div className="max-w-[1140px] mx-auto px-6">
           <h1 className="text-4xl font-bold text-[var(--text)]">Insights</h1>
         </div>

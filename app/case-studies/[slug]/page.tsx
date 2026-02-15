@@ -27,7 +27,7 @@ export default async function CaseStudyDetail(props: { params: Promise<{ slug: s
 
   return (
     <main>
-      <section className="py-10 md:py-14 hero-gradient">
+      <section className="py-10 md:py-14 hero-gradient-enhanced">
         <div className="max-w-3xl mx-auto px-6">
           <h1 className="text-4xl font-bold text-[var(--text)] mb-2">{data.title}</h1>
           {data.client && <p className="text-[var(--muted)]">Kunde: {data.client}</p>}

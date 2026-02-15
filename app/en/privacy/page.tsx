@@ -10,7 +10,7 @@ export default function PrivacyEn() {
 
   return (
     <main>
-      <section className="py-10 md:py-14 hero-gradient">
+      <section className="py-10 md:py-14 hero-gradient-enhanced">
         <div className="max-w-3xl mx-auto px-6">
           <h1 className="text-4xl font-bold text-[var(--text)]">Privacy Policy</h1>
         </div>

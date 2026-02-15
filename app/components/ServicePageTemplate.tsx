@@ -82,7 +82,7 @@ export default function ServicePageTemplate({
     return (
         <main className="scroll-smooth">
             {/* Hero */}
-            <section className="py-12 md:py-20 hero-gradient">
+            <section className="py-12 md:py-20 hero-gradient-enhanced">
                 <div className="max-w-[1140px] mx-auto px-6">
                     <div className="flex items-center gap-3 mb-4">
                         <div className="p-3 rounded-xl bg-[var(--primary-light)]">

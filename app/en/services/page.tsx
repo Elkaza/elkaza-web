@@ -65,7 +65,7 @@ export default function ServicesEnPage() {
   return (
     <main className="scroll-smooth">
       {/* Hero */}
-      <section className="py-14 md:py-20 hero-gradient">
+      <section className="py-14 md:py-20 hero-gradient-enhanced">
         <div className="max-w-[1140px] mx-auto px-6">
           <h1 className="text-4xl md:text-5xl font-bold text-[var(--text)] mb-4">Services</h1>
           <p className="text-xl text-[var(--text-secondary)] max-w-2xl mb-8">

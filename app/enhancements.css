@@ -199,3 +199,33 @@
     height: 100%;
     color: white;
 }
+
+/* Accessibility: Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+
+    .card-enhanced,
+    .btn-enhanced,
+    .hero-gradient-enhanced,
+    .interactive-hero,
+    .scroll-progress-bar {
+        animation: none !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .card-enhanced:hover {
+        transform: none;
+    }
+
+    .btn-enhanced::before {
+        display: none;
+    }
+
+    .btn-enhanced:active {
+        transform: none;
+    }
+
+    .btn-enhanced:hover svg,
+    .btn-enhanced:hover .icon {
+        transform: none;
+    }
+}
