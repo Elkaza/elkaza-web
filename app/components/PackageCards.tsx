@@ -15,15 +15,15 @@ export default function PackageCards({ locale }: PackageCardsProps) {
             {content.items.map((pkg) => (
                 <div
                     key={pkg.name}
-                    className={`p-5 rounded-xl border bg-[var(--surface)] flex flex-col shadow-[var(--shadow-sm)] transition-all duration-200 hover:shadow-[var(--shadow-md)] ${pkg.popular
+                    className={`card-enhanced p-5 flex flex-col relative overflow-visible ${pkg.popular
                         ? "border-[var(--primary)] ring-2 ring-[var(--primary)]/20"
-                        : "border-[var(--border)] hover:border-[var(--border-hover)]"
+                        : ""
                         }`}
                 >
                     {pkg.popular && (
-                        <span className="inline-block self-start text-xs font-semibold text-[var(--primary-foreground)] bg-[var(--primary)] px-3 py-1 rounded-full mb-3">
-                            {locale === "de" ? "Beliebt" : "Popular"}
-                        </span>
+                        <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-indigo-500 to-purple-500 text-white text-sm font-semibold rounded-full shadow-lg z-10">
+                            {locale === "de" ? "Am beliebtesten" : "Most Popular"}
+                        </div>
                     )}
 
                     {pkg.best_for && (
@@ -61,7 +61,7 @@ export default function PackageCards({ locale }: PackageCardsProps) {
                     </ul>
                     <Link
                         href={contactPath}
-                        className={`block text-center py-3 px-4 rounded-lg font-medium transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--border-focus)] active:scale-[0.98] ${pkg.popular
+                        className={`btn-enhanced block text-center py-3 px-4 rounded-lg font-medium transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--border-focus)] active:scale-[0.98] ${pkg.popular
                             ? "bg-[var(--primary)] text-[var(--primary-foreground)] hover:bg-[var(--primary-hover)]"
                             : "border border-[var(--border)] text-[var(--text)] hover:border-[var(--primary)] hover:text-[var(--primary)] hover:bg-[var(--primary-light)]"
                             }`}

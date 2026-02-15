@@ -1,5 +1,10 @@
 import { legal } from '@/lib/legal';
 
+export const metadata = {
+  title: "Privacy Policy - Elkaza Consulting",
+  description: "Privacy policy and data processing information in accordance with GDPR",
+};
+
 export default function PrivacyEn() {
   const L = legal.en;
 
