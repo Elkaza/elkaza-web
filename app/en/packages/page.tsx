@@ -33,6 +33,57 @@ export default function PackagesEnPage() {
                 </div>
             </section>
 
+            {/* Comparison Table */}
+            <section className="py-12 md:py-16 bg-[var(--bg)]">
+                <div className="max-w-[900px] mx-auto px-6">
+                    <h2 className="text-2xl font-bold text-[var(--text)] mb-8 text-center">Deliverables Comparison</h2>
+                    <div className="overflow-x-auto">
+                        <table className="w-full text-sm text-[var(--text)] border-collapse border border-[var(--border)] bg-[var(--surface)]">
+                            <thead>
+                                <tr className="bg-[var(--elevated)] text-left">
+                                    <th className="p-4 border-b border-r border-[var(--border)] w-1/4">Feature</th>
+                                    <th className="p-4 border-b border-r border-[var(--border)] w-1/4 text-center">Starter</th>
+                                    <th className="p-4 border-b border-r border-[var(--border)] w-1/4 text-center">Growth</th>
+                                    <th className="p-4 border-b border-[var(--border)] w-1/4 text-center">Managed</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr className="border-b border-[var(--border)]">
+                                    <td className="p-4 border-r border-[var(--border)] font-medium">Audit & Analysis</td>
+                                    <td className="p-4 border-r border-[var(--border)] text-center text-[var(--primary)]">✔</td>
+                                    <td className="p-4 border-r border-[var(--border)] text-center text-[var(--primary)]">✔</td>
+                                    <td className="p-4 border-[var(--border)] text-center text-[var(--primary)]">✔</td>
+                                </tr>
+                                <tr className="border-b border-[var(--border)]">
+                                    <td className="p-4 border-r border-[var(--border)] font-medium">Documentation</td>
+                                    <td className="p-4 border-r border-[var(--border)] text-center text-[var(--primary)]">Status Quo</td>
+                                    <td className="p-4 border-r border-[var(--border)] text-center text-[var(--primary)]">Complete</td>
+                                    <td className="p-4 border-[var(--border)] text-center text-[var(--primary)]">Ongoing</td>
+                                </tr>
+                                <tr className="border-b border-[var(--border)]">
+                                    <td className="p-4 border-r border-[var(--border)] font-medium">Implementation/Fixes</td>
+                                    <td className="p-4 border-r border-[var(--border)] text-center text-[var(--muted)]">–</td>
+                                    <td className="p-4 border-r border-[var(--border)] text-center text-[var(--primary)]">✔</td>
+                                    <td className="p-4 border-[var(--border)] text-center text-[var(--primary)]">Maintenance</td>
+                                </tr>
+                                <tr className="border-b border-[var(--border)]">
+                                    <td className="p-4 border-r border-[var(--border)] font-medium">Monitoring (24/7)</td>
+                                    <td className="p-4 border-r border-[var(--border)] text-center text-[var(--muted)]">–</td>
+                                    <td className="p-4 border-r border-[var(--border)] text-center text-[var(--muted)]">–</td>
+                                    <td className="p-4 border-[var(--border)] text-center text-[var(--primary)]">✔</td>
+                                </tr>
+                                <tr>
+                                    <td className="p-4 border-r border-[var(--border)] font-medium">Response Time (SLA)</td>
+                                    <td className="p-4 border-r border-[var(--border)] text-center text-[var(--muted)]">–</td>
+                                    <td className="p-4 border-r border-[var(--border)] text-center text-[var(--muted)]">Project</td>
+                                    <td className="p-4 border-[var(--border)] text-center text-[var(--primary)]">&lt; 4h</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
             {/* FAQ */}
             <section className="py-12 md:py-16 bg-[var(--surface)] border-t border-[var(--border)]">
                 <div className="max-w-[800px] mx-auto px-6">
@@ -47,6 +98,43 @@ export default function PackagesEnPage() {
                                 <p className="text-sm text-[var(--text-secondary)] leading-relaxed">{item.a}</p>
                             </div>
                         ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Next Steps */}
+            <section className="py-12 md:py-16 bg-[var(--surface)] border-y border-[var(--border)]">
+                <div className="max-w-[1140px] mx-auto px-6 text-center">
+                    <h2 className="text-2xl font-bold text-[var(--text)] mb-8">Next Steps</h2>
+                    <div className="grid md:grid-cols-4 gap-6 text-left max-w-4xl mx-auto">
+                        <div className="flex gap-4">
+                            <div className="w-8 h-8 rounded-full bg-[var(--primary-light)] text-[var(--primary)] flex items-center justify-center font-bold shrink-0">1</div>
+                            <div>
+                                <h3 className="font-semibold text-[var(--text)]">Inquiry</h3>
+                                <p className="text-sm text-[var(--text-secondary)]">Fill out the contact form or give us a call.</p>
+                            </div>
+                        </div>
+                        <div className="flex gap-4">
+                            <div className="w-8 h-8 rounded-full bg-[var(--primary-light)] text-[var(--primary)] flex items-center justify-center font-bold shrink-0">2</div>
+                            <div>
+                                <h3 className="font-semibold text-[var(--text)]">Quick Call</h3>
+                                <p className="text-sm text-[var(--text-secondary)]">15 min. clarification: Is it a fit? Which package?</p>
+                            </div>
+                        </div>
+                        <div className="flex gap-4">
+                            <div className="w-8 h-8 rounded-full bg-[var(--primary-light)] text-[var(--primary)] flex items-center justify-center font-bold shrink-0">3</div>
+                            <div>
+                                <h3 className="font-semibold text-[var(--text)]">Proposal</h3>
+                                <p className="text-sm text-[var(--text-secondary)]">Transparent, fixed pricing, no surprises.</p>
+                            </div>
+                        </div>
+                        <div className="flex gap-4">
+                            <div className="w-8 h-8 rounded-full bg-[var(--primary-light)] text-[var(--primary)] flex items-center justify-center font-bold shrink-0">4</div>
+                            <div>
+                                <h3 className="font-semibold text-[var(--text)]">Kick-off</h3>
+                                <p className="text-sm text-[var(--text-secondary)]">Scheduled kick-off and immediate implementation.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
