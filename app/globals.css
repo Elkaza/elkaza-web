@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "./enhancements.css";
 
 /* ============================================
    Design Tokens - Premium Dark Mode System
@@ -30,6 +31,15 @@
   --primary-foreground: #FFFFFF;
   --primary-light: #EEF2FF;
   --accent: #06B6D4;
+
+  /* Semantic colors */
+  --success: #10B981;
+  --warning: #F59E0B;
+  --error: #EF4444;
+
+  /* Accent variations */
+  --accent-purple: #A855F7;
+  --accent-pink: #EC4899;
 
   /* Shadows (light mode uses shadows) */
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
@@ -346,6 +356,7 @@ button:focus-visible {
   height: 1px;
   overflow: hidden;
 }
+
 .skip-link:focus {
   position: fixed;
   left: 1rem;

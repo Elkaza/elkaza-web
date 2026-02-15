@@ -1,6 +1,8 @@
 import "./globals.css";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
+import BackToTop from "@/app/components/BackToTop";
+import ScrollProgress from "@/app/components/ScrollProgress";
 
 export function generateMetadata() {
   const base = "https://elkaza.at";
@@ -50,6 +52,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main id="content" className="flex-1">{children}</main>
 
         <Footer />
+        <BackToTop />
+        <ScrollProgress />
       </body>
     </html>
   );

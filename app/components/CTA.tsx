@@ -14,7 +14,7 @@ export default function CTA({
     className = "",
 }: CTAProps) {
     const baseStyles =
-        "inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--border-focus)] active:scale-[0.98]";
+        "btn-enhanced inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--border-focus)] active:scale-[0.98]";
     const variants = {
         primary: "bg-[var(--primary)] text-[var(--primary-foreground)] hover:bg-[var(--primary-hover)] shadow-[var(--shadow-sm)]",
         secondary:

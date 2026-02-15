@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import type { Locale } from "@/lib/siteContent";
-import { ShieldCheck } from "lucide-react";
+import { ShieldCheck, Shield, Network, Cloud, Workflow, LifeBuoy, FileCheck, Laptop, Brain, Scale } from "lucide-react";
 
 type ServiceItem = {
     slug: string;
@@ -40,17 +40,48 @@ export default function ServiceCards({ locale, items, basePath, category = "all"
     const recommendedSlug = "security-baseline";
     const recommendedLabel = locale === "de" ? "Empfohlener Einstieg" : "Recommended start";
 
+    // Icon mapping
+    const iconMap: Record<string, React.ElementType> = {
+        "security-baseline": Shield,
+        "zero-trust": ShieldCheck,
+        "ransomware-resilience": Shield,
+        "networking": Network,
+        "cloud-saas-security": Cloud,
+        "automation": Workflow,
+        "managed-ops": LifeBuoy,
+        "endpoint-security": Laptop,
+        "ai-adoption": Brain,
+        "nis2-compliance": Scale,
+    };
+
+    // Gradient mapping
+    const gradientMap: Record<string, string> = {
+        "security-baseline": "bg-gradient-to-br from-indigo-500 to-purple-600",
+        "zero-trust": "bg-gradient-to-br from-purple-500 to-pink-600",
+        "ransomware-resilience": "bg-gradient-to-br from-red-500 to-orange-600",
+        "networking": "bg-gradient-to-br from-blue-500 to-cyan-600",
+        "cloud-saas-security": "bg-gradient-to-br from-cyan-500 to-teal-600",
+        "automation": "bg-gradient-to-br from-green-500 to-emerald-600",
+        "managed-ops": "bg-gradient-to-br from-orange-500 to-amber-600",
+        "endpoint-security": "bg-gradient-to-br from-violet-500 to-indigo-600",
+        "ai-adoption": "bg-gradient-to-br from-pink-500 to-rose-600",
+        "nis2-compliance": "bg-gradient-to-br from-slate-500 to-gray-600",
+    };
+
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {filteredItems.map((service) => {
                 const isRecommended = service.slug === recommendedSlug || service.recommended;
+                const Icon = iconMap[service.slug] || Shield;
+                const gradient = gradientMap[service.slug] || "bg-gradient-to-br from-indigo-500 to-purple-600";
+
                 return (
                     <Link
                         key={service.slug}
                         href={`${path}/${service.slug}`}
-                        className={`group p-5 rounded-xl border bg-[var(--surface)] shadow-[var(--shadow-sm)] hover:shadow-lg hover:bg-[var(--elevated)] transition-all duration-200 flex flex-col relative ${isRecommended
-                                ? "border-[var(--primary)] ring-1 ring-[var(--primary)]"
-                                : "border-[var(--border)] hover:border-[var(--primary)]"
+                        className={`card-enhanced group p-5 flex flex-col relative ${isRecommended
+                            ? "border-[var(--primary)] ring-1 ring-[var(--primary)]"
+                            : ""
                             }`}
                     >
                         {isRecommended && (
@@ -59,6 +90,12 @@ export default function ServiceCards({ locale, items, basePath, category = "all"
                                 {recommendedLabel}
                             </div>
                         )}
+
+                        {/* Gradient Icon */}
+                        <div className={`w-12 h-12 rounded-lg ${gradient} p-2.5 mb-4 shadow-lg group-hover:scale-105 transition-transform duration-300`}>
+                            <Icon className="w-full h-full text-white" aria-hidden="true" />
+                        </div>
+
                         <h3 className="text-lg font-semibold text-[var(--text)] mb-2 group-hover:text-[var(--primary)] transition-colors">
                             {service.title}
                         </h3>
