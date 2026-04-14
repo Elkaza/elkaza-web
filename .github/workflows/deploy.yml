@@ -1,0 +1,24 @@
+name: Deploy to Enterprise Cloud
+
+# This tells GitHub to run this script every time you push code to the "main" branch
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_IP }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          port: 22
+          # This is the exact sequence of commands the robot will type into your server
+          script: |
+            cd ~/elkaza-web
+            echo "Starting..."
+            # We use 'bash' to ensure the script runs correctly
+            bash ~/elkaza-web/deploy-elkaza.sh
