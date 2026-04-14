@@ -8,9 +8,9 @@ import ScrollReveal from "@/app/components/ScrollReveal";
 import { Check } from "lucide-react";
 
 export const metadata = {
-  title: "Elkaza Consulting – IT-Infrastruktur & Excellence für KMUs",
+  title: "Elkaza Consulting – IT-Infrastruktur & Excellence für KMUs....",
   description:
-    "Wir sind Ihr Partner für stabile IT-Infrastruktur & Excellence in Wien. Netzwerk, Security & Automatisierung für KMU – zuverlässig, sicher und dokumentiert.",
+    "Wir sind Ihr Partner für stabile IT-Infrastruktur & Excellence in Wien... Netzwerk, Security & Automatisierung für KMU – zuverlässig, sicher und dokumentiert.",
   alternates: { canonical: "/" },
 };
 
