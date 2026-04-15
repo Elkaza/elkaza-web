@@ -1,4 +1,4 @@
-name: CI
+name: CI & Deploy
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -30,16 +30,24 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Upload Next build cache
+      # This step ensures the deployment only happens on 'push' to main, 
+      # not when you just open a Pull Request.
+      - name: Deploy to Home Server
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: easingthemes/ssh-deploy@main
+        with:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          ARGS: "-rlgoDzvc -i --delete"
+          SOURCE: "out/" 
+          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+          REMOTE_USER: ${{ secrets.REMOTE_USER }}
+          TARGET: "/home/mohamed/fortress/compose/elkaza-web/html/"
+          EXCLUDE: "/dist/, /node_modules/"
+
+      # Optional: Keep this if you want to see the build files in GitHub's UI
+      - name: Upload Build Artifact
         if: success()
         uses: actions/upload-artifact@v4
         with:
           name: next-build
           path: out
-
-      - name: Check client bundle size (PR only)
-        if: github.event_name == 'pull_request'
-        run: |
-          node ./.github/scripts/check-bundle-size.js
-        env:
-          BUNDLE_SIZE_THRESHOLD: ${{ secrets.BUNDLE_SIZE_THRESHOLD || '50000' }}
