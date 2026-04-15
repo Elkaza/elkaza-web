@@ -11,28 +11,35 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '22.x'
           cache: "npm"
+
       - name: Install dependencies
         run: npm ci
+
       - name: Lint
         run: npm run lint
+
       - name: Typecheck
         run: npm run typecheck
+
       - name: Build
         run: npm run build
+
       - name: Upload Next build cache
         if: success()
         uses: actions/upload-artifact@v4
         with:
           name: next-build
           path: .next
-        - name: Check client bundle size (PR only)
-          if: github.event_name == 'pull_request'
-          run: |
-            node ./.github/scripts/check-bundle-size.js
-          env:
-            BUNDLE_SIZE_THRESHOLD: ${{ secrets.BUNDLE_SIZE_THRESHOLD || '50000' }}
+
+      - name: Check client bundle size (PR only)
+        if: github.event_name == 'pull_request'
+        run: |
+          node ./.github/scripts/check-bundle-size.js
+        env:
+          BUNDLE_SIZE_THRESHOLD: ${{ secrets.BUNDLE_SIZE_THRESHOLD || '50000' }}
