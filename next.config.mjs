@@ -5,6 +5,10 @@ const nextConfig = {
     images: {
         unoptimized: true,
     },
+    experimental: {
+        // Enable instrumentation for Sentry and performance monitoring
+        instrumentationHook: true,
+    },
     async headers() {
         return [
             {

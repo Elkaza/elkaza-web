@@ -13,6 +13,15 @@ export function generateMetadata() {
     description:
       "Stabile IT-Infrastruktur für wachsende Teams: Netzwerk, Sicherheit und Automatisierung aus einer Hand.",
     icons: { icon: "/favicon.svg" },
+    manifest: "/manifest.json",
+    appleWebApp: {
+      capable: true,
+      statusBarStyle: "black-translucent",
+      title: "Elkaza Consulting",
+    },
+    formatDetection: {
+      telephone: false,
+    },
     alternates: { canonical, languages: { "de-AT": `${base}/`, en: `${base}/en` } },
     openGraph: {
       url: canonical,
