@@ -54,7 +54,7 @@ if (SENTRY_DSN) {
 /**
  * Capture an error to Sentry
  */
-export function captureError(error: Error | string, context?: ContextRecord) {
+export function captureError(error: Error | string, context?: ContextRecord | undefined) {
   if (!SENTRY_DSN) {
     console.error(error);
     return;

@@ -24,6 +24,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { execSync } from 'child_process';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const projectRoot = path.resolve(__dirname, '..');
@@ -36,7 +37,7 @@ console.log('============================\n');
 // Check if ImageMagick is available
 function hasImageMagick() {
   try {
-    require('child_process').execSync('convert --version', { stdio: 'ignore' });
+    execSync('convert --version', { stdio: 'ignore' });
     return true;
   } catch {
     return false;
