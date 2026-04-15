@@ -41,7 +41,8 @@ jobs:
           SOURCE: "out/" 
           REMOTE_HOST: ${{ secrets.VPS_IP }}
           REMOTE_USER: ${{ secrets.VPS_USERNAME }}
-          TARGET: "/home/mohamed/fortress/compose/elkaza-web/html/"
+          # RELATIVE PATH: SSH defaults to ~/ (/home/user/), so this avoids secret masking of "mohamed"
+          TARGET: "fortress/compose/elkaza-web/html/" 
           EXCLUDE: "/dist/, /node_modules/"
 
       # Optional: Keep this if you want to see the build files in GitHub's UI
