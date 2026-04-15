@@ -32,13 +32,14 @@ jobs:
 
       # Deploy using proven appleboy/scp-action (same author as working ssh-action)
       # Only runs on 'push' to main, not on pull requests
-      - name: Deploy files via SCP
+      - name: Deploy files via SCP to Home Server
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         uses: appleboy/scp-action@master
         with:
-          host: ${{ secrets.VPS_IP }}
-          username: ${{ secrets.VPS_USERNAME }}
-          key: ${{ secrets.VPS_SSH_KEY }}
+          # Use the Home Server secrets (over Tailscale tunnel), NOT the VPS secrets
+          host: ${{ secrets.REMOTE_HOST }}
+          username: ${{ secrets.REMOTE_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
           source: "out/"
           target: "/home/mohamed/fortress/compose/elkaza-web/html/"
           strip_components: 1
