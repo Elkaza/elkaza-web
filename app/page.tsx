@@ -4,7 +4,6 @@ import CTA from "@/app/components/CTA";
 import ServiceCards from "@/app/components/ServiceCards";
 import PackageCards from "@/app/components/PackageCards";
 import InteractiveHero from "@/app/components/InteractiveHero";
-import ScrollReveal from "@/app/components/ScrollReveal";
 import { Check } from "lucide-react";
 
 export const metadata = {

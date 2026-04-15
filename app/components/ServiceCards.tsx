@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import type { Locale } from "@/lib/siteContent";
-import { ShieldCheck, Shield, Network, Cloud, Workflow, LifeBuoy, FileCheck, Laptop, Brain, Scale } from "lucide-react";
+import { ShieldCheck, Shield, Network, Cloud, Workflow, LifeBuoy, Laptop, Brain, Scale } from "lucide-react";
 
 type ServiceItem = {
     slug: string;
