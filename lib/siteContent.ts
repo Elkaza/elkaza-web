@@ -66,7 +66,7 @@ export const siteContent = {
   // Homepage hero
   hero: {
     de: {
-      headline: "IT-Infrastruktur & Security für KMUs in Wien.",
+      headline: "IT-Infrastruktur & Security -- SYNC_VERIFIED_2230",
       subheadline:
         "Netzwerk, Security, Automation. Weniger Ausfälle, sichere Daten und mehr Zeit für Ihr Kerngeschäft.",
       primaryCta: "15-Minuten Erstgespräch",
