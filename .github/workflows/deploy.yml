@@ -18,7 +18,10 @@ jobs:
           port: 22
           # This is the exact sequence of commands the robot will type into your server
           script: |
+            set -e
             cd ~/elkaza-web
+            git fetch origin main
+            git reset --hard origin/main
             echo "Starting..."
             # We use 'bash' to ensure the script runs correctly
             bash ~/elkaza-web/deploy-elkaza.sh
