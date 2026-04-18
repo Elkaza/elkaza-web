@@ -31,6 +31,3 @@ export function getEnv(): Env {
   cachedEnv = result.data;
   return cachedEnv;
 }
-
-// Validate on module load
-getEnv();
