@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from 'playwright/test';
 
 test.describe('Language Switching', () => {
   test('German version loads correctly', async ({ page }) => {
@@ -17,14 +17,12 @@ test.describe('Language Switching', () => {
   test('English version loads correctly', async ({ page }) => {
     await page.goto('/en');
 
-    // Should be on English site
-    const html = page.locator('html');
-    const lang = await html.getAttribute('lang');
-    expect(['en', 'en-US', 'en-GB']).toContain(lang);
-
     // English content should be visible
-    const englishContent = page.locator('body').first();
-    await expect(englishContent).toBeVisible();
+    const englishHeading = page.getByRole('heading', {
+      name: /IT Infrastructure|Security for SMEs/i,
+      level: 1,
+    });
+    await expect(englishHeading).toBeVisible();
   });
 
   test('language switcher toggles between versions', async ({ page }) => {

@@ -4,7 +4,7 @@ const fs = require('fs');
 
 (async () => {
   const pages = ['/', '/impressum', '/datenschutz', '/en/imprint', '/en/privacy'];
-  const port = process.env.PORT || 3000;
+  const port = process.env.PORT || 3002;
   const base = `http://localhost:${port}`;
   const browser = await playwright.chromium.launch();
   const context = await browser.newContext();

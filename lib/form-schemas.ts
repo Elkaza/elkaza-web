@@ -68,10 +68,10 @@ export const quoteRequestSchema = z.object({
     .min(5, 'Project title must be at least 5 characters')
     .max(200, 'Project title must be less than 200 characters'),
   budget: z.enum(['under-5k', '5k-20k', '20k-50k', '50k-plus'], {
-    errorMap: () => ({ message: 'Please select a budget range' }),
+    error: 'Please select a budget range',
   }),
   timeline: z.enum(['urgent', '1-3-months', '3-6-months', 'flexible'], {
-    errorMap: () => ({ message: 'Please select a timeline' }),
+    error: 'Please select a timeline',
   }),
   description: z
     .string()

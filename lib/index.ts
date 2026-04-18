@@ -1,8 +1,10 @@
 export { getEnv } from './env';
-export { getI18nPaths } from './i18nPaths';
-export { getLegalContent } from './legal';
-export { getSiteContent } from './siteContent';
-export { colors, spacing, breakpoints, fontSize } from './theme';
+export { mapDeToEn, mapEnToDe, getAlternates } from './i18nPaths';
+export { legal } from './legal';
+export type { Legal } from './legal';
+export { siteContent } from './siteContent';
+export type { Locale } from './siteContent';
+export { colors, spacing, shadows, radii, transitions, presets } from './theme';
 export { generateServiceMetadata, generateServiceSchema } from './metadata';
 export type { ServiceMetadataProps } from './metadata';
 export { validateOrigin, validateContentType, extractClientIp, addSecurityHeaders } from './security';

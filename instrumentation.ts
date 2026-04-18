@@ -17,14 +17,6 @@ export async function register() {
       dsn: process.env.NEXT_PUBLIC_SENTRY_DSN,
       environment: process.env.SENTRY_ENVIRONMENT || 'development',
       tracesSampleRate: process.env.NODE_ENV === 'production' ? 0.1 : 1.0,
-      integrations: [
-        new Sentry.Replay({
-          maskAllText: false,
-          blockAllMedia: false,
-        }),
-      ],
-      replaysSessionSampleRate: process.env.NODE_ENV === 'production' ? 0.1 : 1.0,
-      replaysOnErrorSampleRate: 1.0,
     });
 
     console.log('[Sentry] Initialized');

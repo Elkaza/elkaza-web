@@ -15,6 +15,18 @@ import Script from 'next/script';
 
 const PLAUSIBLE_DOMAIN = process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN;
 
+type PlausibleEventProperties = Record<string, string | number | boolean | null | undefined>;
+type PlausibleFunction = (
+  eventName: string,
+  options?: { props?: PlausibleEventProperties }
+) => void;
+
+declare global {
+  interface Window {
+    plausible?: PlausibleFunction;
+  }
+}
+
 export function PlausibleAnalytics() {
   if (!PLAUSIBLE_DOMAIN) {
     return null;
@@ -34,11 +46,11 @@ export function PlausibleAnalytics() {
  * Track custom events with Plausible
  * Usage: trackEvent('form_submitted', { value: 'contact-form' });
  */
-export function trackEvent(eventName: string, properties?: Record<string, any>) {
+export function trackEvent(eventName: string, properties?: PlausibleEventProperties) {
   if (typeof window === 'undefined') return;
 
   // Plausible exposes window.plausible function
-  const plausible = (window as any).plausible;
+  const { plausible } = window;
   if (!plausible) {
     console.warn('Plausible Analytics not loaded');
     return;

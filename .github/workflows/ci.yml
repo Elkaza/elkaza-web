@@ -21,6 +21,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+
       - name: Lint
         run: npm run lint
 
@@ -30,19 +33,16 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Start Server & Run E2E Tests
-        run: |
-          npm run start &
-          sleep 3
-          npm run test:e2e
-          kill %1 || true
+      - name: Run E2E Tests
+        run: npm run test:e2e
 
       - name: Start Server & Run A11y Audit
         run: |
-          npm run start &
+          node scripts/serve-static-export.mjs out 3002 &
+          SERVER_PID=$!
           sleep 3
-          npm run a11y-audit || echo "A11y audit completed with warnings"
-          kill %1 || true
+          PORT=3002 npm run a11y-audit || echo "A11y audit completed with warnings"
+          kill "$SERVER_PID" || true
 
       # Upload a11y report
       - name: Upload A11y Report

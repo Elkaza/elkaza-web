@@ -25,17 +25,14 @@ if (SENTRY_DSN) {
     environment: SENTRY_ENVIRONMENT,
     // Set sample rate to 100% for errors (all errors captured)
     // and 10% for transactions (1 in 10 requests profiled)
-    integrations: [
-      new Sentry.Replay({
-        maskAllText: false,
-        blockAllMedia: false,
-      }),
-      // Capture unhandled promise rejections
-      new Sentry.OnUncaughtExceptionIntegration(),
-    ],
+    integrations:
+      typeof window === 'undefined'
+        ? [
+            // Capture unhandled promise rejections on the server.
+            Sentry.onUncaughtExceptionIntegration(),
+          ]
+        : [],
     tracesSampleRate: IS_PRODUCTION ? 0.1 : 1.0,
-    replaysSessionSampleRate: IS_PRODUCTION ? 0.1 : 1.0,
-    replaysOnErrorSampleRate: 1.0, // Always capture replays on errors
     // Ignore specific errors
     ignoreErrors: [
       // Browser extensions
@@ -116,10 +113,10 @@ export function clearUserContext() {
 export function startTransaction(name: string, op: string) {
   if (!SENTRY_DSN) return null;
 
-  return Sentry.startTransaction({
+  return Sentry.startInactiveSpan({
     name,
     op,
-    sampled: IS_PRODUCTION ? Math.random() < 0.1 : true,
+    forceTransaction: true,
   });
 }
 
