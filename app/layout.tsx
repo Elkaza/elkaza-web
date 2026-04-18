@@ -101,15 +101,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="min-h-screen flex flex-col bg-[var(--bg)] text-[var(--text)]">
         {/* Privacy-friendly analytics by Plausible */}
         <Script
-          src="https://analytics.elkaza.at/js/pa-SYCb6pRsVRKs8--QJcL8X.js"
+          defer
+          data-domain="elkaza.at"
+          src="https://analytics.elkaza.at/js/script.js"
           strategy="afterInteractive"
         />
-        <Script id="plausible-init" strategy="afterInteractive">
-          {`
-            window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
-            plausible.init();
-          `}
-        </Script>
         <a href="#content" className="skip-link">Skip to content</a>
         <Header />
 
