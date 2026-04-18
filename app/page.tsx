@@ -9,7 +9,7 @@ import InteractiveHero from "@/app/components/InteractiveHero";
 import { Check, Clock, Lock, Users } from "lucide-react";
 
 export const metadata = {
-  title: "VERIFIED BUILD - IT Infrastructure & Security",
+  title: "IT-Infrastruktur & Security",
   description:
     "Wir sind Ihr Partner für stabile IT-Infrastruktur & Excellence in Wien... Netzwerk, Security & Automatisierung für KMU – zuverlässig, sicher und dokumentiert.",
   alternates: { canonical: "/" },
@@ -281,5 +281,3 @@ export default function Home() {
     </main>
   );
 }
-
-// DEPLOY_CHECK_TIMESTAMP_2200

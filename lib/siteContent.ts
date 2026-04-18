@@ -66,7 +66,7 @@ export const siteContent = {
   // Homepage hero
   hero: {
     de: {
-      headline: "IT-Infrastruktur & Security -- SYNC_VERIFIED_2230",
+      headline: "IT-Infrastruktur & Security",
       subheadline:
         "Netzwerk, Security, Automation. Weniger Ausfälle, sichere Daten und mehr Zeit für Ihr Kerngeschäft.",
       primaryCta: "15-Minuten Erstgespräch",

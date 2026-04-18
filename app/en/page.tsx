@@ -9,7 +9,7 @@ import InteractiveHero from "@/app/components/InteractiveHero";
 import { Check, Clock, Lock, Users } from "lucide-react";
 
 export const metadata = {
-  title: "VERIFIED BUILD - Elkaza Consulting - Networking & Security",
+  title: "Elkaza Consulting - Networking & Security",
   description:
     "We build stable IT infrastructure for growing teams: networking, security, and automation from a single source.",
 };
