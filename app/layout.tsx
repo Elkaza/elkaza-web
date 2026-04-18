@@ -3,6 +3,7 @@ import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import BackToTop from "@/app/components/BackToTop";
 import ScrollProgress from "@/app/components/ScrollProgress";
+import Script from "next/script";
 
 export function generateMetadata() {
   const base = "https://elkaza.at";
@@ -98,6 +99,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className="min-h-screen flex flex-col bg-[var(--bg)] text-[var(--text)]">
+        {/* Privacy-friendly analytics by Plausible */}
+        <Script
+          src="https://analytics.elkaza.at/js/pa-SYCb6pRsVRKs8--QJcL8X.js"
+          strategy="afterInteractive"
+        />
+        <Script id="plausible-init" strategy="afterInteractive">
+          {`
+            window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+            plausible.init();
+          `}
+        </Script>
         <a href="#content" className="skip-link">Skip to content</a>
         <Header />
 
