@@ -6,7 +6,8 @@ import PackageCards from "@/app/components/PackageCards";
 import Resources from "@/app/components/Resources";
 import FAQ from "@/app/components/FAQ";
 import InteractiveHero from "@/app/components/InteractiveHero";
-import { Check, Clock, Lock, Users } from "lucide-react";
+import HomeTrustStrip from "@/app/components/HomeTrustStrip";
+import { Check } from "lucide-react";
 
 export const metadata = {
   title: "Elkaza Consulting - Networking & Security",
@@ -43,41 +44,7 @@ export default function HomeEN() {
         </section>
       </InteractiveHero>
 
-      {/* Trust Strip - Enhanced with Urgency */}
-      <div className="trust-strip bg-[var(--bg)] border-b border-[var(--border)]">
-        <div className="max-w-[1140px] mx-auto px-6 py-5">
-          <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm">
-            {/* Left side: Trust signals */}
-            <div className="flex flex-wrap justify-center gap-x-6 gap-y-3">
-              {siteContent.trust.en.map((item, i) => (
-                <div key={i} className="flex items-center gap-2 text-[var(--text-secondary)] font-medium">
-                  <Check className="w-4 h-4 text-[var(--primary)]" />
-                  <span>{item}</span>
-                </div>
-              ))}
-            </div>
-            
-            {/* Divider */}
-            <div className="w-px bg-[var(--border)] hidden md:block"></div>
-            
-            {/* Right side: Urgency/Speed badges */}
-            <div className="flex flex-wrap justify-center gap-3 md:gap-4">
-              <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--primary-light)] text-[var(--primary)] text-xs font-semibold">
-                <Clock className="w-4 h-4" />
-                <span>24h Response</span>
-              </div>
-              <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-green-100 dark:bg-green-950/30 text-green-700 dark:text-green-400 text-xs font-semibold">
-                <Lock className="w-4 h-4" />
-                <span>No Lock-in</span>
-              </div>
-              <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-950/30 text-blue-700 dark:text-blue-400 text-xs font-semibold">
-                <Users className="w-4 h-4" />
-                <span>1:1 Support</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <HomeTrustStrip locale="en" />
 
       {/* Pain points */}
       <section className="py-12 md:py-14 bg-[var(--surface)]">
