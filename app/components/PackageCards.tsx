@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { siteContent, type Locale } from "@/lib/siteContent";
-import { Check } from "lucide-react";
+import { Check, MinusCircle } from "lucide-react";
 
 interface PackageCardsProps {
     locale: Locale;
@@ -50,9 +50,9 @@ export default function PackageCards({ locale }: PackageCardsProps) {
                             return (
                                 <li key={i} className={`flex items-start gap-3 text-sm ${isExclusion ? "text-[var(--muted)] italic" : "text-[var(--text-secondary)]"}`}>
                                     {isExclusion ? (
-                                        <div className="w-5 h-5 flex items-center justify-center shrink-0 text-[var(--muted)] font-bold">x</div>
+                                        <MinusCircle className="w-5 h-5 text-[var(--muted)] mt-0.5 shrink-0" aria-hidden="true" />
                                     ) : (
-                                        <Check className="w-5 h-5 text-[var(--primary)] mt-0.5 shrink-0" />
+                                        <Check className="w-5 h-5 text-[var(--primary)] mt-0.5 shrink-0" aria-hidden="true" />
                                     )}
                                     <span>{feature}</span>
                                 </li>

@@ -5,6 +5,8 @@ export const metadata = {
   description: "Schedule a free initial consultation. We will get back to you within 24 hours.",
 };
 
+const fieldClass = "w-full border border-[var(--border)] rounded-lg px-4 py-3 bg-[var(--elevated)] text-[var(--text)] placeholder:text-[var(--muted)] focus:outline-none focus:border-[var(--border-focus)] focus:ring-2 focus:ring-[var(--primary)]/20 hover:border-[var(--border-hover)] transition-all";
+
 export default function ContactEnPage() {
   const content = siteContent.contact.en;
 
@@ -19,45 +21,57 @@ export default function ContactEnPage() {
 
       <section className="py-10 md:py-14 bg-[var(--surface)]">
         <div className="max-w-xl mx-auto px-6">
-          <form className="space-y-5" method="post" action="#">
+          <p className="text-sm text-[var(--muted)] mb-6 text-center">
+            For SMEs in Vienna and the surrounding area. Remote by agreement.
+          </p>
+          <form className="space-y-5" method="post" action="mailto:office@elkaza.at" encType="text/plain">
+            <input type="hidden" name="Subject" value="Consultation request via elkaza.at" />
             <div>
-              <label className="block text-sm font-medium text-[var(--text)] mb-2">
+              <label htmlFor="contact-name" className="block text-sm font-medium text-[var(--text)] mb-2">
                 {content.form.name}
               </label>
               <input
-                className="w-full border border-[var(--border)] rounded-lg px-4 py-3 bg-[var(--elevated)] text-[var(--text)] placeholder:text-[var(--muted)] focus:outline-none focus:border-[var(--border-focus)] focus:ring-2 focus:ring-[var(--primary)]/20 hover:border-[var(--border-hover)] transition-all"
-                name="name"
+                id="contact-name"
+                className={fieldClass}
+                name="Name"
+                autoComplete="name"
                 required
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-[var(--text)] mb-2">
+              <label htmlFor="contact-email" className="block text-sm font-medium text-[var(--text)] mb-2">
                 {content.form.email}
               </label>
               <input
+                id="contact-email"
                 type="email"
-                className="w-full border border-[var(--border)] rounded-lg px-4 py-3 bg-[var(--elevated)] text-[var(--text)] placeholder:text-[var(--muted)] focus:outline-none focus:border-[var(--border-focus)] focus:ring-2 focus:ring-[var(--primary)]/20 hover:border-[var(--border-hover)] transition-all"
-                name="email"
+                className={fieldClass}
+                name="Email"
+                autoComplete="email"
                 required
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-[var(--text)] mb-2">
+              <label htmlFor="contact-company" className="block text-sm font-medium text-[var(--text)] mb-2">
                 {content.form.company}
               </label>
               <input
-                className="w-full border border-[var(--border)] rounded-lg px-4 py-3 bg-[var(--elevated)] text-[var(--text)] placeholder:text-[var(--muted)] focus:outline-none focus:border-[var(--border-focus)] focus:ring-2 focus:ring-[var(--primary)]/20 hover:border-[var(--border-hover)] transition-all"
-                name="company"
+                id="contact-company"
+                className={fieldClass}
+                name="Company"
+                autoComplete="organization"
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-[var(--text)] mb-2">
+              <label htmlFor="contact-message" className="block text-sm font-medium text-[var(--text)] mb-2">
                 {content.form.message}
               </label>
               <textarea
-                className="w-full border border-[var(--border)] rounded-lg px-4 py-3 bg-[var(--elevated)] text-[var(--text)] placeholder:text-[var(--muted)] focus:outline-none focus:border-[var(--border-focus)] focus:ring-2 focus:ring-[var(--primary)]/20 hover:border-[var(--border-hover)] transition-all resize-none"
-                name="message"
+                id="contact-message"
+                className={`${fieldClass} resize-none`}
+                name="Message"
                 rows={5}
+                required
               />
             </div>
             <button
@@ -67,6 +81,9 @@ export default function ContactEnPage() {
               {content.form.submit}
             </button>
           </form>
+          <p className="mt-5 text-center text-sm text-[var(--muted)]">
+            Direct contact: <a className="font-medium text-[var(--primary)] hover:underline" href="mailto:office@elkaza.at">office@elkaza.at</a>
+          </p>
         </div>
       </section>
     </main>

@@ -2,7 +2,6 @@ import "./globals.css";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import BackToTop from "@/app/components/BackToTop";
-import ScrollProgress from "@/app/components/ScrollProgress";
 import Script from "next/script";
 
 export function generateMetadata() {
@@ -113,7 +112,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         <Footer />
         <BackToTop />
-        <ScrollProgress />
       </body>
     </html>
   );

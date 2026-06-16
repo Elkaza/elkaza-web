@@ -5,7 +5,6 @@ import CoreServices from "@/app/components/CoreServices";
 import PackageCards from "@/app/components/PackageCards";
 import Resources from "@/app/components/Resources";
 import FAQ from "@/app/components/FAQ";
-import InteractiveHero from "@/app/components/InteractiveHero";
 import HomeTrustStrip from "@/app/components/HomeTrustStrip";
 import { Check } from "lucide-react";
 
@@ -26,8 +25,7 @@ export default function Home() {
   return (
     <main>
       {/* Hero */}
-      <InteractiveHero>
-        <section className="relative text-center py-14 md:py-20">
+      <section className="hero-gradient-enhanced text-center py-14 md:py-20">
           <div className="max-w-[1140px] mx-auto px-6">
             <h1 className="text-4xl md:text-5xl font-bold mb-5 text-[var(--text)] leading-tight tracking-tight">
               {hero.headline}
@@ -45,8 +43,7 @@ export default function Home() {
               Keine Verpflichtung. Kein Verkaufsdruck. Antwort innerhalb von 24h.
             </p>
           </div>
-        </section>
-      </InteractiveHero>
+      </section>
 
       <HomeTrustStrip locale="de" />
 
