@@ -12,6 +12,13 @@ export const metadata = {
   title: "Elkaza Consulting - Networking & Security",
   description:
     "We build stable IT infrastructure for growing teams: networking, security, and automation from a single source.",
+  alternates: {
+    canonical: "https://elkaza.at/en/",
+    languages: {
+      "de-AT": "https://elkaza.at/",
+      en: "https://elkaza.at/en/",
+    },
+  },
 };
 
 export default function HomeEN() {

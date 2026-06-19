@@ -6,13 +6,19 @@ import Script from "next/script";
 
 export function generateMetadata() {
   const base = "https://elkaza.at";
-  const canonical = base;
+  const canonical = `${base}/`;
   return {
     metadataBase: new URL(base),
     title: "Elkaza Consulting - Networking, Security & Automation",
     description:
-      "Stabile IT-Infrastruktur für wachsende Teams: Netzwerk, Sicherheit und Automatisierung aus einer Hand.",
-    icons: { icon: "/favicon.svg" },
+      "Stabile IT-Infrastruktur fuer wachsende Teams: Netzwerk, Security und Automatisierung aus einer Hand.",
+    icons: {
+      icon: [
+        { url: "/favicon.svg", type: "image/svg+xml" },
+        { url: "/favicon.ico", sizes: "any" },
+      ],
+      apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+    },
     manifest: "/manifest.json",
     appleWebApp: {
       capable: true,
@@ -22,7 +28,7 @@ export function generateMetadata() {
     formatDetection: {
       telephone: false,
     },
-    alternates: { canonical, languages: { "de-AT": `${base}/`, en: `${base}/en` } },
+    alternates: { canonical, languages: { "de-AT": `${base}/`, en: `${base}/en/` } },
     openGraph: {
       url: canonical,
       siteName: "Elkaza Consulting",
@@ -35,9 +41,8 @@ export function generateMetadata() {
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const locale = "de" as "de" | "en";
   return (
-    <html lang={locale} suppressHydrationWarning>
+    <html lang="de-AT" suppressHydrationWarning>
       <head>
         <script
           dangerouslySetInnerHTML={{
@@ -116,3 +121,4 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   );
 }
+

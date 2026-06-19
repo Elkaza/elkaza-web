@@ -11,7 +11,7 @@ import { Check } from "lucide-react";
 export const metadata = {
   title: "IT-Infrastruktur & Security",
   description:
-    "Wir sind Ihr Partner für stabile IT-Infrastruktur & Excellence in Wien... Netzwerk, Security & Automatisierung für KMU – zuverlässig, sicher und dokumentiert.",
+    "Stabile IT-Infrastruktur, Security und Automatisierung fuer KMU in Wien: dokumentiert, zuverlaessig und ohne unnoetige Komplexitaet.",
   alternates: { canonical: "/" },
 };
 
@@ -245,3 +245,4 @@ export default function Home() {
     </main>
   );
 }
+
