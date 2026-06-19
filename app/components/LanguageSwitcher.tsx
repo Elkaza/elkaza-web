@@ -1,23 +1,29 @@
-"use client";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 import Image from "next/image";
-import { mapDeToEn, mapEnToDe } from "@/lib/i18nPaths";
+import Link from "next/link";
 
 export default function LanguageSwitcher() {
-  const pathname = usePathname();
-  const isEnglish = pathname.startsWith("/en");
-  const href = isEnglish ? mapEnToDe(pathname) : mapDeToEn(pathname);
+  const className = "flex items-center space-x-1 hover:opacity-80 transition";
 
   return (
-    <Link href={href} className="flex items-center space-x-1 hover:opacity-80 transition">
-      <Image
-        src={isEnglish ? "/flags/at.svg" : "/flags/gb.svg"}
-        alt={isEnglish ? "Deutsch (Österreich)" : "English"}
-        width={22}
-        height={22}
-      />
-      <span className="text-xs text-[var(--muted)]">{isEnglish ? "Deutsch" : "English"}</span>
-    </Link>
+    <>
+      <Link
+        href="/en"
+        data-language-switch
+        className={`locale-de-only ${className}`}
+        aria-label="Switch to English"
+      >
+        <Image src="/flags/gb.svg" alt="" width={22} height={22} aria-hidden="true" />
+        <span className="text-xs text-[var(--muted)]">English</span>
+      </Link>
+      <Link
+        href="/"
+        data-language-switch
+        className={`locale-en-only ${className}`}
+        aria-label="Auf Deutsch wechseln"
+      >
+        <Image src="/flags/at.svg" alt="" width={22} height={22} aria-hidden="true" />
+        <span className="text-xs text-[var(--muted)]">Deutsch</span>
+      </Link>
+    </>
   );
 }

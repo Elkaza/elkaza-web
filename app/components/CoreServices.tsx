@@ -1,7 +1,5 @@
-"use client";
-
-import { useState } from "react";
 import Link from "next/link";
+import type { ElementType } from "react";
 import type { Locale } from "@/lib/siteContent";
 import { ShieldCheck, Shield, Network, Cloud, Workflow, LifeBuoy, Laptop, Brain, Scale } from "lucide-react";
 
@@ -23,19 +21,16 @@ interface CoreServicesProps {
 const CORE_SERVICES = ["security-baseline", "networking", "zero-trust", "automation"];
 
 export default function CoreServices({ locale, items, basePath }: CoreServicesProps) {
-    const [showAll, setShowAll] = useState(false);
     const path = basePath || (locale === "de" ? "/leistungen" : "/en/services");
 
     const coreItems = items.filter(s => CORE_SERVICES.includes(s.slug));
     const additionalItems = items.filter(s => !CORE_SERVICES.includes(s.slug));
-    
-    const displayedItems = showAll ? items : coreItems;
 
     const recommendedSlug = "security-baseline";
     const recommendedLabel = locale === "de" ? "Empfohlener Einstieg" : "Recommended start";
 
     // Icon mapping
-    const iconMap: Record<string, React.ElementType> = {
+    const iconMap: Record<string, ElementType> = {
         "security-baseline": Shield,
         "zero-trust": ShieldCheck,
         "ransomware-resilience": Shield,
@@ -78,7 +73,7 @@ export default function CoreServices({ locale, items, basePath }: CoreServicesPr
     return (
         <>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                {displayedItems.map((service) => {
+                {coreItems.map((service) => {
                     const isRecommended = service.slug === recommendedSlug || service.recommended;
                     const Icon = iconMap[service.slug] || Shield;
                     const colorClass = categoryMap[service.slug] || "text-indigo-600";
@@ -126,25 +121,14 @@ export default function CoreServices({ locale, items, basePath }: CoreServicesPr
                 })}
             </div>
 
-            {!showAll && additionalItems.length > 0 && (
+            {additionalItems.length > 0 && (
                 <div className="mt-8 text-center">
-                    <button
-                        onClick={() => setShowAll(true)}
+                    <Link
+                        href={path}
                         className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border-2 border-[var(--primary)] text-[var(--primary)] font-semibold hover:bg-[var(--primary-light)] transition-colors"
                     >
                         {locale === "de" ? "Alle Services anzeigen" : "View all services"} ({items.length})
-                    </button>
-                </div>
-            )}
-
-            {showAll && (
-                <div className="mt-8 text-center">
-                    <button
-                        onClick={() => setShowAll(false)}
-                        className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border-2 border-[var(--border)] text-[var(--text-secondary)] font-semibold hover:border-[var(--primary)] transition-colors"
-                    >
-                        {locale === "de" ? "Wichtigste anzeigen" : "Show essentials"}
-                    </button>
+                    </Link>
                 </div>
             )}
         </>

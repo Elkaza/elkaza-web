@@ -2,6 +2,7 @@ import "./globals.css";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import BackToTop from "@/app/components/BackToTop";
+import SiteInteractivity from "@/app/components/SiteInteractivity";
 import Script from "next/script";
 
 export function generateMetadata() {
@@ -117,6 +118,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         <Footer />
         <BackToTop />
+        <SiteInteractivity />
       </body>
     </html>
   );

@@ -369,3 +369,50 @@ button:focus-visible {
   z-index: 9999;
   border-radius: 0.25rem;
 }
+
+html[lang="en"] .locale-de-only,
+html[data-locale="en"] .locale-de-only {
+  display: none !important;
+}
+
+html:not([lang="en"]) .locale-en-only,
+html[data-locale="de"] .locale-en-only {
+  display: none !important;
+}
+
+.site-nav-link {
+  color: var(--muted);
+  padding-block: 0.25rem;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.site-nav-link:hover {
+  color: var(--text);
+}
+
+.site-nav-link[aria-current="page"] {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+
+.mobile-nav-link {
+  display: block;
+  padding-block: 0.75rem;
+  color: var(--text);
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link[aria-current="page"] {
+  color: var(--primary);
+}
+
+html[data-theme="dark"] [data-theme-icon="moon"] {
+  display: none !important;
+}
+
+html[data-theme="dark"] [data-theme-icon="sun"] {
+  display: block !important;
+}

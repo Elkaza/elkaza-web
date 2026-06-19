@@ -1,0 +1,173 @@
+const siteInteractivityScript = String.raw`
+(function () {
+  var routePairs = {
+    "/": "/en",
+    "/leistungen": "/en/services",
+    "/leistungen/networking": "/en/services/networking",
+    "/leistungen/security-baseline": "/en/services/security-baseline",
+    "/leistungen/managed-ops": "/en/services/managed-ops",
+    "/leistungen/automation": "/en/services/automation",
+    "/leistungen/cloud-saas-security": "/en/services/cloud-saas-security",
+    "/leistungen/endpoint-security": "/en/services/endpoint-security",
+    "/leistungen/ai-adoption": "/en/services/ai-adoption",
+    "/leistungen/ki-automatisierung": "/en/services/ai-automation",
+    "/leistungen/digitalstrategie": "/en/services/digital-strategy",
+    "/leistungen/digitale-produkte": "/en/services/digital-products",
+    "/leistungen/nis2-compliance": "/en/services/nis2-compliance",
+    "/leistungen/ransomware-resilience": "/en/services/ransomware-resilience",
+    "/leistungen/zero-trust": "/en/services/zero-trust",
+    "/pakete": "/en/packages",
+    "/referenzen": "/en/case-studies",
+    "/insights": "/en/insights",
+    "/ueber-uns": "/en/about",
+    "/kontakt": "/en/contact",
+    "/impressum": "/en/imprint",
+    "/datenschutz": "/en/privacy"
+  };
+
+  var reversePairs = {};
+  Object.keys(routePairs).forEach(function (key) {
+    reversePairs[routePairs[key]] = key;
+  });
+
+  function normalizePath(value) {
+    if (!value) return "/";
+    var path = value.split("?")[0].split("#")[0].replace(/\/+$/, "");
+    return path || "/";
+  }
+
+  function withTrailingSlash(path) {
+    return path === "/" ? "/" : path + "/";
+  }
+
+  function currentPath() {
+    return normalizePath(window.location.pathname);
+  }
+
+  function mapLanguagePath(path) {
+    if (routePairs[path]) return routePairs[path];
+    if (reversePairs[path]) return reversePairs[path];
+    if (path.indexOf("/referenzen/") === 0) {
+      return "/en/case-studies" + path.slice("/referenzen".length);
+    }
+    if (path.indexOf("/en/case-studies/") === 0) {
+      return "/referenzen" + path.slice("/en/case-studies".length);
+    }
+    if (path.indexOf("/insights/") === 0) {
+      return "/en" + path;
+    }
+    if (path.indexOf("/en/insights/") === 0) {
+      return path.slice("/en".length) || "/";
+    }
+    return path.indexOf("/en") === 0 ? "/" : "/en";
+  }
+
+  function updateLocale() {
+    var path = currentPath();
+    var isEnglish = path === "/en" || path.indexOf("/en/") === 0;
+    document.documentElement.lang = isEnglish ? "en" : "de-AT";
+    document.documentElement.setAttribute("data-locale", isEnglish ? "en" : "de");
+
+    var target = withTrailingSlash(mapLanguagePath(path)) + window.location.search + window.location.hash;
+    document.querySelectorAll("[data-language-switch]").forEach(function (link) {
+      link.setAttribute("href", target);
+    });
+  }
+
+  function updateActiveNavigation() {
+    var path = currentPath();
+    document.querySelectorAll("[data-nav-href]").forEach(function (link) {
+      var href = normalizePath(link.getAttribute("data-nav-href"));
+      var active = path === href || (href !== "/" && path.indexOf(href + "/") === 0);
+      if (active) {
+        link.setAttribute("aria-current", "page");
+      } else {
+        link.removeAttribute("aria-current");
+      }
+    });
+  }
+
+  function updateThemeButton() {
+    var isDark = document.documentElement.getAttribute("data-theme") === "dark";
+    document.querySelectorAll("[data-theme-toggle]").forEach(function (button) {
+      button.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
+      button.setAttribute("title", isDark ? "Light mode" : "Dark mode");
+      var moon = button.querySelector('[data-theme-icon="moon"]');
+      var sun = button.querySelector('[data-theme-icon="sun"]');
+      if (moon) moon.classList.toggle("hidden", isDark);
+      if (sun) sun.classList.toggle("hidden", !isDark);
+    });
+  }
+
+  function initThemeToggle() {
+    updateThemeButton();
+    document.querySelectorAll("[data-theme-toggle]").forEach(function (button) {
+      button.addEventListener("click", function () {
+        var nextTheme = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+        document.documentElement.setAttribute("data-theme", nextTheme);
+        try {
+          window.localStorage.setItem("theme", nextTheme);
+        } catch (error) {}
+        updateThemeButton();
+      });
+    });
+  }
+
+  function initMobileMenu() {
+    var button = document.querySelector("[data-mobile-menu-toggle]");
+    var menu = document.getElementById("mobile-navigation");
+    if (!button || !menu) return;
+
+    function setOpen(open) {
+      menu.hidden = !open;
+      button.setAttribute("aria-expanded", open ? "true" : "false");
+      var openIcon = button.querySelector('[data-mobile-menu-icon="open"]');
+      var closeIcon = button.querySelector('[data-mobile-menu-icon="close"]');
+      if (openIcon) openIcon.classList.toggle("hidden", open);
+      if (closeIcon) closeIcon.classList.toggle("hidden", !open);
+    }
+
+    button.addEventListener("click", function () {
+      setOpen(menu.hidden);
+    });
+    menu.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        setOpen(false);
+      });
+    });
+  }
+
+  function initBackToTop() {
+    var button = document.querySelector("[data-back-to-top]");
+    if (!button) return;
+
+    function updateVisibility() {
+      button.hidden = window.scrollY <= 300;
+    }
+
+    updateVisibility();
+    window.addEventListener("scroll", updateVisibility, { passive: true });
+    button.addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+
+  function init() {
+    updateLocale();
+    updateActiveNavigation();
+    initThemeToggle();
+    initMobileMenu();
+    initBackToTop();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init, { once: true });
+  } else {
+    init();
+  }
+})();
+`;
+
+export default function SiteInteractivity() {
+  return <script dangerouslySetInnerHTML={{ __html: siteInteractivityScript }} />;
+}
