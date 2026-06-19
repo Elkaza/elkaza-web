@@ -16,6 +16,9 @@ cd "$PROJECT_DIR"
 echo "==> Updating source"
 git pull --ff-only origin main
 
+echo "==> Cleaning generated Next artifacts"
+rm -rf "$PROJECT_DIR/.next"
+
 echo "==> Installing dependencies"
 export HUSKY=0
 if [[ -f package-lock.json ]]; then
