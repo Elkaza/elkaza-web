@@ -19,6 +19,17 @@ export const metadata = {
       en: "https://elkaza.at/en/",
     },
   },
+  openGraph: {
+    url: "https://elkaza.at/en/",
+    siteName: "Elkaza Consulting",
+    locale: "en_US",
+    type: "website",
+    images: [{ url: "https://elkaza.at/opengraph-image.png", width: 1200, height: 630, alt: "Elkaza Consulting" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["https://elkaza.at/opengraph-image.png"],
+  },
 };
 
 export default function HomeEN() {

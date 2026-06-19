@@ -1,4 +1,3 @@
-export { getEnv } from './env';
 export { mapDeToEn, mapEnToDe, getAlternates } from './i18nPaths';
 export { legal } from './legal';
 export type { Legal } from './legal';

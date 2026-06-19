@@ -21,7 +21,7 @@ export function generateServiceMetadata(props: ServiceMetadataProps): Metadata {
     title,
     description,
     keywords = [],
-    ogImage = `${BASE_URL}/og-default.jpg`,
+    ogImage = `${BASE_URL}/opengraph-image.png`,
     locale = 'de',
   } = props;
 
@@ -106,7 +106,7 @@ export function generateServiceSchema(props: ServiceMetadataProps) {
       '@type': 'Organization',
       name: 'Elkaza Consulting',
       url: 'https://elkaza.at',
-      logo: 'https://elkaza.at/logo.svg',
+      logo: 'https://elkaza.at/logo.png',
     },
     potentialAction: {
       '@type': 'ReserveAction',
