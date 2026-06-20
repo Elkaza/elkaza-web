@@ -6,12 +6,14 @@ import PackageCards from "@/app/components/PackageCards";
 import Resources from "@/app/components/Resources";
 import FAQ from "@/app/components/FAQ";
 import HomeTrustStrip from "@/app/components/HomeTrustStrip";
+import HomeDecisionPath from "@/app/components/HomeDecisionPath";
+import HomeHero from "@/app/components/HomeHero";
 import { Check } from "lucide-react";
 
 export const metadata = {
-  title: "Elkaza Consulting - Networking & Security",
+  title: "Stable IT Infrastructure for SMEs in Vienna",
   description:
-    "We build stable IT infrastructure for growing teams: networking, security, and automation from a single source.",
+    "Stable IT infrastructure, security, and automation for growing SMEs in Vienna and Austria.",
   alternates: {
     canonical: "https://elkaza.at/en/",
     languages: {
@@ -33,7 +35,6 @@ export const metadata = {
 };
 
 export default function HomeEN() {
-  const hero = siteContent.hero.en;
   const painPoints = siteContent.painPoints.en;
   const whyUs = siteContent.whyUs.en;
   const caseStudies = siteContent.caseStudies.en;
@@ -41,23 +42,7 @@ export default function HomeEN() {
 
   return (
     <main>
-      {/* Hero */}
-      <section className="hero-gradient-enhanced text-center py-14 md:py-20">
-          <div className="max-w-[1140px] mx-auto px-6">
-            <h1 className="text-4xl md:text-5xl font-bold mb-5 text-[var(--text)] leading-tight tracking-tight">
-              {hero.headline}
-            </h1>
-            <p className="text-lg text-[var(--text-secondary)] max-w-2xl mx-auto mb-8 leading-relaxed">
-              {hero.subheadline}
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <CTA href={hero.primaryCtaHref}>{hero.primaryCta}</CTA>
-              <CTA href={hero.secondaryCtaHref} variant="secondary">
-                {hero.secondaryCta}
-              </CTA>
-            </div>
-          </div>
-      </section>
+      <HomeHero locale="en" />
 
       <HomeTrustStrip locale="en" />
 
@@ -81,8 +66,10 @@ export default function HomeEN() {
         </div>
       </section>
 
+      <HomeDecisionPath locale="en" />
+
       {/* Services */}
-      <section className="py-12 md:py-14 bg-[var(--bg)]">
+      <section className="py-12 md:py-14 bg-[var(--surface)]">
         <div className="max-w-[1140px] mx-auto px-6">
           <h2 className="text-2xl md:text-3xl font-bold text-[var(--text)] mb-6">
             Our Services

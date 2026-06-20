@@ -66,22 +66,22 @@ export const siteContent = {
   // Homepage hero
   hero: {
     de: {
-      headline: "IT-Infrastruktur & Security",
+      headline: "Stabile IT-Infrastruktur für wachsende Teams.",
       subheadline:
-        "Netzwerk, Security, Automation. Weniger Ausfälle, sichere Daten und mehr Zeit für Ihr Kerngeschäft.",
-      primaryCta: "15-Minuten Erstgespräch",
+        "Wir sichern Netzwerk, Zugänge, Backups und Betrieb, damit Ausfälle seltener werden und Ihr Team arbeiten kann.",
+      primaryCta: "Kostenloses Erstgespräch",
       primaryCtaHref: "/kontakt",
-      secondaryCta: "Fallstudien ansehen",
-      secondaryCtaHref: "/referenzen",
+      secondaryCta: "Security Baseline ansehen",
+      secondaryCtaHref: "/leistungen/security-baseline",
     },
     en: {
-      headline: "IT Infrastructure & Security for SMEs in Vienna.",
+      headline: "Stable IT infrastructure for growing teams.",
       subheadline:
-        "Networking, Security, Automation. Fewer outages, secure data, and more time for your core business.",
+        "We secure networks, access, backups, and operations so outages become rarer and your team can keep working.",
       primaryCta: "Book a 15-minute call",
       primaryCtaHref: "/en/contact",
-      secondaryCta: "View case studies",
-      secondaryCtaHref: "/en/case-studies",
+      secondaryCta: "View Security Baseline",
+      secondaryCtaHref: "/en/services/security-baseline",
     },
   },
 
