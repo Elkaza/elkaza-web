@@ -22,7 +22,13 @@ const siteInteractivityScript = String.raw`
     "/ueber-uns": "/en/about",
     "/kontakt": "/en/contact",
     "/impressum": "/en/imprint",
-    "/datenschutz": "/en/privacy"
+    "/datenschutz": "/en/privacy",
+    "/referenzen/netzwerk-modernisierung-handelsunternehmen": "/en/case-studies/network-modernization-retail",
+    "/referenzen/security-baseline-dienstleister": "/en/case-studies/security-baseline-it-service",
+    "/referenzen/zero-trust-finanzberatung": "/en/case-studies/zero-trust-fintech",
+    "/referenzen/ransomware-resilience-produktion": "/en/case-studies/ransomware-recovery-manufacturing",
+    "/referenzen/m365-sicherheit-compliance": "/en/case-studies/m365-security-audit",
+    "/insights/ki-strategie-fuer-kmus": "/en/insights/ai-strategy-for-smes"
   };
 
   var reversePairs = {};

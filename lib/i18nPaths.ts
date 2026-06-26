@@ -1,6 +1,5 @@
-export function mapDeToEn(pathname: string): string {
-  if (pathname === "/") return "/en";
-  const map: Record<string, string> = {
+const deToEnMap: Record<string, string> = {
+    "/": "/en",
     "/leistungen": "/en/services",
     "/leistungen/networking": "/en/services/networking",
     "/leistungen/security-baseline": "/en/services/security-baseline",
@@ -22,47 +21,48 @@ export function mapDeToEn(pathname: string): string {
     "/kontakt": "/en/contact",
     "/impressum": "/en/imprint",
     "/datenschutz": "/en/privacy",
-  };
-  if (map[pathname]) return map[pathname];
-  if (pathname.startsWith("/referenzen/")) return "/en/case-studies" + pathname.replace("/referenzen", "");
-  if (pathname.startsWith("/insights/")) return "/en" + pathname;
+    "/referenzen/netzwerk-modernisierung-handelsunternehmen": "/en/case-studies/network-modernization-retail",
+    "/referenzen/security-baseline-dienstleister": "/en/case-studies/security-baseline-it-service",
+    "/referenzen/zero-trust-finanzberatung": "/en/case-studies/zero-trust-fintech",
+    "/referenzen/ransomware-resilience-produktion": "/en/case-studies/ransomware-recovery-manufacturing",
+    "/referenzen/m365-sicherheit-compliance": "/en/case-studies/m365-security-audit",
+    "/insights/ki-strategie-fuer-kmus": "/en/insights/ai-strategy-for-smes",
+};
+
+const enToDeMap = Object.fromEntries(
+  Object.entries(deToEnMap).map(([dePath, enPath]) => [enPath, dePath])
+) as Record<string, string>;
+
+function normalizePath(pathname: string): string {
+  const path = pathname.split("?")[0].split("#")[0].replace(/\/+$/, "");
+  return path || "/";
+}
+
+export function mapDeToEn(pathname: string): string {
+  const path = normalizePath(pathname);
+  if (deToEnMap[path]) return deToEnMap[path];
+  if (path.startsWith("/referenzen/")) return "/en/case-studies" + path.replace("/referenzen", "");
+  if (path.startsWith("/insights/")) return "/en" + path;
   return "/en";
 }
 
 export function mapEnToDe(pathname: string): string {
-  if (pathname === "/en") return "/";
-  const map: Record<string, string> = {
-    "/en/services": "/leistungen",
-    "/en/services/networking": "/leistungen/networking",
-    "/en/services/security-baseline": "/leistungen/security-baseline",
-    "/en/services/managed-ops": "/leistungen/managed-ops",
-    "/en/services/automation": "/leistungen/automation",
-    "/en/services/cloud-saas-security": "/leistungen/cloud-saas-security",
-    "/en/services/endpoint-security": "/leistungen/endpoint-security",
-    "/en/services/ai-adoption": "/leistungen/ai-adoption",
-    "/en/services/ai-automation": "/leistungen/ki-automatisierung",
-    "/en/services/digital-strategy": "/leistungen/digitalstrategie",
-    "/en/services/digital-products": "/leistungen/digitale-produkte",
-    "/en/services/nis2-compliance": "/leistungen/nis2-compliance",
-    "/en/services/ransomware-resilience": "/leistungen/ransomware-resilience",
-    "/en/services/zero-trust": "/leistungen/zero-trust",
-    "/en/packages": "/pakete",
-    "/en/case-studies": "/referenzen",
-    "/en/insights": "/insights",
-    "/en/about": "/ueber-uns",
-    "/en/contact": "/kontakt",
-    "/en/imprint": "/impressum",
-    "/en/privacy": "/datenschutz",
-  };
-  if (map[pathname]) return map[pathname];
-  if (pathname.startsWith("/en/case-studies/")) return "/referenzen" + pathname.replace("/en/case-studies", "");
-  if (pathname.startsWith("/en/insights/")) return pathname.replace("/en", "");
+  const path = normalizePath(pathname);
+  if (enToDeMap[path]) return enToDeMap[path];
+  if (path.startsWith("/en/case-studies/")) return "/referenzen" + path.replace("/en/case-studies", "");
+  if (path.startsWith("/en/insights/")) return path.replace("/en", "");
   return "/";
 }
 
 export function getAlternates(pathname: string) {
-  const isEnglish = pathname.startsWith("/en");
-  const dePath = isEnglish ? mapEnToDe(pathname) : pathname;
-  const enPath = isEnglish ? pathname : mapDeToEn(pathname);
+  const path = normalizePath(pathname);
+  const isEnglish = path === "/en" || path.startsWith("/en/");
+  const dePath = isEnglish ? mapEnToDe(path) : path;
+  const enPath = isEnglish ? path : mapDeToEn(path);
   return { dePath, enPath };
+}
+
+export function getLanguageSwitchHref(pathname: string): string {
+  const path = normalizePath(pathname);
+  return path === "/en" || path.startsWith("/en/") ? mapEnToDe(path) : mapDeToEn(path);
 }

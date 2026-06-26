@@ -50,6 +50,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             __html: `
               (function() {
                 try {
+                  var path = window.location.pathname || "/";
+                  var isEnglish = path === "/en" || path.indexOf("/en/") === 0;
+                  document.documentElement.lang = isEnglish ? "en" : "de-AT";
+                  document.documentElement.setAttribute("data-locale", isEnglish ? "en" : "de");
                   var theme = localStorage.getItem('theme');
                   if (theme) {
                     document.documentElement.setAttribute('data-theme', theme);
@@ -123,4 +127,3 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   );
 }
-
