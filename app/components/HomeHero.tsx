@@ -8,9 +8,9 @@ const heroDetails = {
     eyebrow: "Elkaza Consulting",
     audience: "Für KMU in Wien und Österreich",
     note: "Keine Verpflichtung. Klare Empfehlung innerhalb von 24h.",
-    caseStudyLabel: "Fallstudien ansehen",
-    caseStudyHref: "/referenzen",
-    panelTitle: "Was zuerst passiert",
+    caseStudyLabel: "Pakete ansehen",
+    caseStudyHref: "/pakete",
+    panelTitle: "Der erste Schritt",
     panelLead: "Ein kurzer, kontrollierter Einstieg statt großer Umbau auf Verdacht.",
     steps: [
       {
@@ -29,15 +29,15 @@ const heroDetails = {
         text: "Konkrete Roadmap mit Quick-Wins, Aufwand und nächstem Schritt.",
       },
     ],
-    outcomes: ["Security Baseline", "Backup-Check", "Monitoring-Start"],
+    outcomes: ["Assessment", "Security Baseline", "Betrieb"],
   },
   en: {
     eyebrow: "Elkaza Consulting",
     audience: "For SMEs in Vienna and Austria",
     note: "No obligation. Clear recommendation within 24h.",
-    caseStudyLabel: "View case studies",
-    caseStudyHref: "/en/case-studies",
-    panelTitle: "What happens first",
+    caseStudyLabel: "View packages",
+    caseStudyHref: "/en/packages",
+    panelTitle: "The first step",
     panelLead: "A controlled starting point instead of a large rebuild on guesswork.",
     steps: [
       {
@@ -56,7 +56,7 @@ const heroDetails = {
         text: "A practical roadmap with quick wins, effort, and the next step.",
       },
     ],
-    outcomes: ["Security baseline", "Backup check", "Monitoring start"],
+    outcomes: ["Assessment", "Security baseline", "Operations"],
   },
 } as const;
 
@@ -69,8 +69,8 @@ export default function HomeHero({ locale }: HomeHeroProps) {
   const details = heroDetails[locale];
 
   return (
-    <section className="hero-gradient-enhanced py-14 md:py-18">
-      <div className="max-w-[1140px] mx-auto px-6">
+    <section className="hero-gradient-enhanced py-12 md:py-18">
+      <div className="max-w-[1140px] mx-auto px-4 sm:px-6">
         <div className="max-w-3xl">
           <p className="mb-4 text-sm font-semibold text-[var(--primary)]">
             {details.eyebrow} · {details.audience}
@@ -82,7 +82,7 @@ export default function HomeHero({ locale }: HomeHeroProps) {
             {hero.subheadline}
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
             <CTA href={hero.primaryCtaHref}>{hero.primaryCta}</CTA>
             <CTA href={hero.secondaryCtaHref} variant="secondary">
               {hero.secondaryCta}
@@ -101,7 +101,7 @@ export default function HomeHero({ locale }: HomeHeroProps) {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-[var(--border)] pt-8">
+        <div className="mt-10 border-t border-[var(--border)] pt-7 md:mt-12 md:pt-8">
           <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <h2 className="text-xl font-semibold text-[var(--text)]">{details.panelTitle}</h2>

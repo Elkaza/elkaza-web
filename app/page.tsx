@@ -57,11 +57,12 @@ export default function Home() {
           <h2 className="text-2xl md:text-3xl font-bold text-[var(--text)] mb-2">
             Unsere Leistungen
           </h2>
-          <p className="text-[var(--muted)] mb-2">
+          <p className="text-[var(--text-secondary)] mb-2">
             <strong>Startpunkt für die meisten: Security Baseline.</strong>
           </p>
-          <p className="text-sm text-[var(--text-secondary)] mb-8">
-            Vier Bereiche: Stabilität · Security-Basis · Resilience · Betrieb & Automatisierung
+          <p className="mb-8 max-w-3xl text-sm leading-relaxed text-[var(--text-secondary)]">
+            Wählen Sie zuerst den passenden Einstieg: Netzwerk stabilisieren, Security-Basis schaffen,
+            Zugriffe absichern oder wiederkehrende IT-Aufgaben automatisieren.
           </p>
           <CoreServices locale="de" items={siteContent.services.de.items} />
         </div>
@@ -229,4 +230,3 @@ export default function Home() {
     </main>
   );
 }
-

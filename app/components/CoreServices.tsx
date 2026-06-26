@@ -72,7 +72,7 @@ export default function CoreServices({ locale, items, basePath }: CoreServicesPr
 
     return (
         <>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
                 {coreItems.map((service) => {
                     const isRecommended = service.slug === recommendedSlug || service.recommended;
                     const Icon = iconMap[service.slug] || Shield;
@@ -83,7 +83,7 @@ export default function CoreServices({ locale, items, basePath }: CoreServicesPr
                         <Link
                             key={service.slug}
                             href={`${path}/${service.slug}`}
-                            className={`group flex flex-col rounded-xl border-2 p-5 transition-all duration-200 ${
+                            className={`group flex min-w-0 flex-col rounded-xl border-2 p-5 transition-all duration-200 ${
                                 isRecommended
                                     ? `border-[var(--primary)] ${bgClass} ring-2 ring-[var(--primary)]/20 shadow-md hover:shadow-lg hover:ring-[var(--primary)]/30`
                                     : `border-[var(--border)] bg-[var(--surface)] hover:border-[var(--primary)] hover:shadow-[var(--shadow-lg)]`
@@ -91,7 +91,7 @@ export default function CoreServices({ locale, items, basePath }: CoreServicesPr
                         >
                             {isRecommended && (
                                 <div className="mb-3">
-                                    <span className="inline-block text-xs font-bold uppercase tracking-wider text-[var(--primary)] bg-[var(--primary-light)] px-2 py-1 rounded">
+                                    <span className="inline-block rounded bg-[var(--surface)] px-2 py-1 text-xs font-bold uppercase tracking-normal text-[var(--text)] ring-1 ring-[var(--border)]">
                                         {recommendedLabel}
                                     </span>
                                 </div>
@@ -101,18 +101,18 @@ export default function CoreServices({ locale, items, basePath }: CoreServicesPr
                                 <Icon className={`w-6 h-6 ${colorClass}`} />
                             </div>
 
-                            <h3 className="text-sm font-bold text-[var(--text)] mb-2 group-hover:text-[var(--primary)] transition-colors">
+                            <h3 className="mb-2 text-base font-bold leading-snug text-[var(--text)] transition-colors group-hover:text-[var(--primary)] lg:text-sm">
                                 {service.title}
                             </h3>
 
                             {service.shortDescription && (
-                                <p className="text-xs text-[var(--text-secondary)] leading-relaxed flex-1 mb-3">
+                                <p className="mb-3 flex-1 text-sm leading-relaxed text-[var(--text-secondary)] lg:text-xs">
                                     {service.shortDescription}
                                 </p>
                             )}
 
                             <div className="pt-3 border-t border-[var(--border)] group-hover:border-[var(--primary)] transition-colors">
-                                <span className="text-xs font-medium text-[var(--primary)] group-hover:underline">
+                                <span className="text-sm font-semibold text-[var(--primary)] group-hover:underline lg:text-xs">
                                     {locale === "de" ? "Mehr erfahren →" : "Learn more →"}
                                 </span>
                             </div>

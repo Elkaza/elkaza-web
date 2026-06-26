@@ -71,9 +71,13 @@ export default function HomeEN() {
       {/* Services */}
       <section className="py-12 md:py-14 bg-[var(--surface)]">
         <div className="max-w-[1140px] mx-auto px-6">
-          <h2 className="text-2xl md:text-3xl font-bold text-[var(--text)] mb-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-[var(--text)] mb-2">
             Our Services
           </h2>
+          <p className="mb-8 max-w-3xl text-sm leading-relaxed text-[var(--text-secondary)]">
+            Start with the right entry point: stabilize the network, build a security baseline,
+            secure access, or automate recurring IT work.
+          </p>
           <CoreServices locale="en" items={siteContent.services.en.items} />
         </div>
       </section>

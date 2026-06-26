@@ -73,8 +73,8 @@ export default function HomeDecisionPath({ locale }: HomeDecisionPathProps) {
   const copy = content[locale];
 
   return (
-    <section className="py-12 md:py-14 bg-[var(--bg)]">
-      <div className="max-w-[1140px] mx-auto px-6">
+    <section className="py-10 md:py-14 bg-[var(--bg)]">
+      <div className="max-w-[1140px] mx-auto px-4 sm:px-6">
         <div className="mb-7 max-w-3xl">
           <h2 className="text-2xl md:text-3xl font-bold text-[var(--text)]">{copy.title}</h2>
           <p className="mt-2 text-[var(--text-secondary)]">{copy.subtitle}</p>
@@ -85,23 +85,23 @@ export default function HomeDecisionPath({ locale }: HomeDecisionPathProps) {
             <Link
               key={item.title}
               href={item.href}
-              className="group rounded-xl border border-[var(--border)] bg-[var(--surface)] p-5 shadow-[var(--shadow-sm)] transition-all duration-200 hover:border-[var(--primary)] hover:bg-[var(--elevated)] hover:shadow-[var(--shadow-md)]"
+              className="group flex min-w-0 flex-col rounded-xl border border-[var(--border)] bg-[var(--surface)] p-5 shadow-[var(--shadow-sm)] transition-all duration-200 hover:border-[var(--primary)] hover:bg-[var(--elevated)] hover:shadow-[var(--shadow-md)]"
             >
               <div className="flex items-start justify-between gap-4">
                 <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-[var(--primary-light)] text-[var(--primary)]">
                   <item.icon className="h-5 w-5" aria-hidden="true" />
                 </div>
-                <span className="rounded-md border border-[var(--border)] px-2.5 py-1 text-xs font-semibold text-[var(--muted)]">
+                <span className="rounded-md border border-[var(--border)] bg-[var(--elevated)] px-2.5 py-1 text-xs font-semibold text-[var(--text)]">
                   {item.tag}
                 </span>
               </div>
               <h3 className="mt-5 text-lg font-semibold text-[var(--text)] group-hover:text-[var(--primary)]">
                 {item.title}
               </h3>
-              <p className="mt-2 min-h-[4.5rem] text-sm leading-relaxed text-[var(--text-secondary)]">
+              <p className="mt-2 text-sm leading-relaxed text-[var(--text-secondary)] md:min-h-[4.5rem]">
                 {item.text}
               </p>
-              <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[var(--primary)]">
+              <span className="mt-auto inline-flex items-center gap-1 pt-4 text-sm font-semibold text-[var(--primary)]">
                 {item.cta}
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </span>
