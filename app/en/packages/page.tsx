@@ -14,18 +14,34 @@ export default function PackagesEnPage() {
     return (
         <main>
             <section className="py-10 md:py-14 hero-gradient-enhanced">
-                <div className="max-w-[1140px] mx-auto px-6 text-center">
+                <div className="max-w-[1140px] mx-auto px-4 text-center sm:px-6">
                     <h1 className="text-4xl font-bold text-[var(--text)] mb-3">{content.title}</h1>
-                    <p className="text-lg text-[var(--text-secondary)] max-w-2xl mx-auto">{content.subtitle}</p>
+                    <p className="text-lg text-[var(--text-secondary)] max-w-2xl mx-auto">
+                        {content.subtitle} Choose the right entry point: create clarity, implement improvements, or run ongoing support.
+                    </p>
                 </div>
             </section>
 
             <section className="py-10 md:py-14 bg-[var(--surface)]">
-                <div className="max-w-[1140px] mx-auto px-6">
+                <div className="max-w-[1140px] mx-auto px-4 sm:px-6">
+                    <div className="mb-8 grid gap-3 rounded-2xl border border-[var(--border)] bg-[var(--bg)] p-4 sm:grid-cols-3 sm:p-5">
+                        {[
+                            ["Starter", "when the current IT situation is unclear"],
+                            ["Growth", "when concrete problems should be solved"],
+                            ["Managed", "when operations and maintenance should run continuously"],
+                        ].map(([title, copy]) => (
+                            <div key={title} className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-4">
+                                <p className="text-xs font-semibold uppercase tracking-wide text-[var(--muted)]">Best for</p>
+                                <h2 className="mt-1 font-semibold text-[var(--text)]">{title}</h2>
+                                <p className="mt-1 text-sm leading-relaxed text-[var(--text-secondary)]">{copy}</p>
+                            </div>
+                        ))}
+                    </div>
+
                     <PackageCards locale="en" />
 
                     {/* Custom / Enterprise Callout */}
-                    <div className="mt-8 p-8 rounded-2xl bg-[var(--elevated)] border border-[var(--border)] text-center max-w-3xl mx-auto shadow-sm">
+                    <div className="mt-8 rounded-2xl border border-[var(--border)] bg-[var(--elevated)] p-6 text-center shadow-sm sm:p-8">
                         <h3 className="text-xl font-bold text-[var(--text)] mb-3">{content.custom.title}</h3>
                         <p className="text-[var(--text-secondary)] mb-6">{content.custom.desc}</p>
                         <CTA href={content.custom.href} variant="secondary">{content.custom.cta}</CTA>
@@ -35,16 +51,19 @@ export default function PackagesEnPage() {
 
             {/* Comparison Table */}
             <section className="py-12 md:py-16 bg-[var(--bg)]">
-                <div className="max-w-[900px] mx-auto px-6">
-                    <h2 className="text-2xl font-bold text-[var(--text)] mb-8 text-center">Deliverables Comparison</h2>
-                    <div className="overflow-x-auto">
-                        <table className="w-full text-sm text-[var(--text)] border-collapse border border-[var(--border)] bg-[var(--surface)]">
+                <div className="max-w-[960px] mx-auto px-4 sm:px-6">
+                    <div className="mb-8 text-center">
+                        <p className="text-sm font-semibold uppercase tracking-wide text-[var(--muted)]">Comparison</p>
+                        <h2 className="mt-2 text-2xl font-bold text-[var(--text)]">What you actually get</h2>
+                    </div>
+                    <div className="overflow-x-auto rounded-2xl border border-[var(--border)] bg-[var(--surface)] shadow-[var(--shadow-sm)]">
+                        <table className="w-full min-w-[680px] border-collapse text-sm text-[var(--text)]">
                             <thead>
                                 <tr className="bg-[var(--elevated)] text-left">
-                                    <th className="p-4 border-b border-r border-[var(--border)] w-1/4">Feature</th>
-                                    <th className="p-4 border-b border-r border-[var(--border)] w-1/4 text-center">Starter</th>
-                                    <th className="p-4 border-b border-r border-[var(--border)] w-1/4 text-center">Growth</th>
-                                    <th className="p-4 border-b border-[var(--border)] w-1/4 text-center">Managed</th>
+                                    <th className="w-1/4 border-b border-r border-[var(--border)] p-4">Deliverable</th>
+                                    <th className="w-1/4 border-b border-r border-[var(--border)] p-4 text-center">Starter</th>
+                                    <th className="w-1/4 border-b border-r border-[var(--border)] p-4 text-center">Growth</th>
+                                    <th className="w-1/4 border-b border-[var(--border)] p-4 text-center">Managed</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -104,32 +123,32 @@ export default function PackagesEnPage() {
 
             {/* Next Steps */}
             <section className="py-12 md:py-16 bg-[var(--surface)] border-y border-[var(--border)]">
-                <div className="max-w-[1140px] mx-auto px-6 text-center">
+                <div className="max-w-[1140px] mx-auto px-4 text-center sm:px-6">
                     <h2 className="text-2xl font-bold text-[var(--text)] mb-8">Next Steps</h2>
-                    <div className="grid md:grid-cols-4 gap-6 text-left max-w-4xl mx-auto">
-                        <div className="flex gap-4">
-                            <div className="w-8 h-8 rounded-full bg-[var(--primary-light)] text-[var(--primary)] flex items-center justify-center font-bold shrink-0">1</div>
+                    <div className="grid gap-4 text-left md:grid-cols-4">
+                        <div className="rounded-xl border border-[var(--border)] bg-[var(--bg)] p-4">
+                            <div className="mb-4 flex h-8 w-8 items-center justify-center rounded-full bg-[var(--primary)] font-bold text-[var(--primary-foreground)]">1</div>
                             <div>
                                 <h3 className="font-semibold text-[var(--text)]">Inquiry</h3>
                                 <p className="text-sm text-[var(--text-secondary)]">Fill out the contact form or give us a call.</p>
                             </div>
                         </div>
-                        <div className="flex gap-4">
-                            <div className="w-8 h-8 rounded-full bg-[var(--primary-light)] text-[var(--primary)] flex items-center justify-center font-bold shrink-0">2</div>
+                        <div className="rounded-xl border border-[var(--border)] bg-[var(--bg)] p-4">
+                            <div className="mb-4 flex h-8 w-8 items-center justify-center rounded-full bg-[var(--primary)] font-bold text-[var(--primary-foreground)]">2</div>
                             <div>
                                 <h3 className="font-semibold text-[var(--text)]">Quick Call</h3>
                                 <p className="text-sm text-[var(--text-secondary)]">15 min. clarification: Is it a fit? Which package?</p>
                             </div>
                         </div>
-                        <div className="flex gap-4">
-                            <div className="w-8 h-8 rounded-full bg-[var(--primary-light)] text-[var(--primary)] flex items-center justify-center font-bold shrink-0">3</div>
+                        <div className="rounded-xl border border-[var(--border)] bg-[var(--bg)] p-4">
+                            <div className="mb-4 flex h-8 w-8 items-center justify-center rounded-full bg-[var(--primary)] font-bold text-[var(--primary-foreground)]">3</div>
                             <div>
                                 <h3 className="font-semibold text-[var(--text)]">Proposal</h3>
                                 <p className="text-sm text-[var(--text-secondary)]">Transparent, fixed pricing, no surprises.</p>
                             </div>
                         </div>
-                        <div className="flex gap-4">
-                            <div className="w-8 h-8 rounded-full bg-[var(--primary-light)] text-[var(--primary)] flex items-center justify-center font-bold shrink-0">4</div>
+                        <div className="rounded-xl border border-[var(--border)] bg-[var(--bg)] p-4">
+                            <div className="mb-4 flex h-8 w-8 items-center justify-center rounded-full bg-[var(--primary)] font-bold text-[var(--primary-foreground)]">4</div>
                             <div>
                                 <h3 className="font-semibold text-[var(--text)]">Kick-off</h3>
                                 <p className="text-sm text-[var(--text-secondary)]">Scheduled kick-off and immediate implementation.</p>
