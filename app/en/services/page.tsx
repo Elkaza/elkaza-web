@@ -34,6 +34,27 @@ const categories = [
   { id: "compliance", label: "Compliance" },
 ];
 
+const entryPaths = [
+  {
+    title: "I need clarity first",
+    label: "Assessment",
+    text: "Current state, risks, and prioritized actions before anything gets rebuilt.",
+    href: "/en/packages",
+  },
+  {
+    title: "I need concrete improvements",
+    label: "Security Baseline",
+    text: "Improve MFA, backups, patch status, admin access, and documentation pragmatically.",
+    href: "/en/services/security-baseline",
+  },
+  {
+    title: "I need ongoing operations",
+    label: "Managed Operations",
+    text: "Monitoring, patch rhythm, backup checks, and clear response when something breaks.",
+    href: "/en/services/managed-ops",
+  },
+];
+
 const processSteps = [
   { icon: Search, name: "Assess", desc: "We capture the current state.", time: "1-2 weeks" },
   { icon: Settings, name: "Implement", desc: "We make the changes.", time: "2-6 weeks" },
@@ -65,10 +86,10 @@ export default function ServicesEnPage() {
   return (
     <main className="scroll-smooth">
       {/* Hero */}
-      <section className="py-14 md:py-20 hero-gradient-enhanced">
-        <div className="max-w-[1140px] mx-auto px-6">
+      <section className="py-12 md:py-20 hero-gradient-enhanced">
+        <div className="max-w-[1140px] mx-auto px-4 sm:px-6">
           <h1 className="text-4xl md:text-5xl font-bold text-[var(--text)] mb-4">Services</h1>
-          <p className="text-xl text-[var(--text-secondary)] max-w-2xl mb-8">
+          <p className="max-w-2xl text-lg leading-relaxed text-[var(--text-secondary)] mb-8 md:text-xl">
             IT infrastructure and security for growing SMBs. Clearly defined projects with measurable outcomes.
           </p>
           <div className="flex flex-wrap gap-4">
@@ -83,17 +104,46 @@ export default function ServicesEnPage() {
         </div>
       </section>
 
+      <section className="bg-[var(--bg)] py-10 md:py-12">
+        <div className="mx-auto max-w-[1140px] px-4 sm:px-6">
+          <div className="mb-6 max-w-3xl">
+            <h2 className="text-2xl font-semibold text-[var(--text)]">Which entry point fits?</h2>
+            <p className="mt-2 text-sm leading-relaxed text-[var(--text-secondary)]">
+              If you are not sure which service is right, start here. These three paths cover the most common situations.
+            </p>
+          </div>
+          <div className="grid gap-4 md:grid-cols-3">
+            {entryPaths.map((path) => (
+              <Link
+                key={path.title}
+                href={path.href}
+                className="group flex min-w-0 flex-col rounded-xl border border-[var(--border)] bg-[var(--surface)] p-5 shadow-[var(--shadow-sm)] transition-all hover:border-[var(--primary)] hover:bg-[var(--elevated)]"
+              >
+                <span className="mb-3 w-fit rounded-md border border-[var(--border)] bg-[var(--elevated)] px-2.5 py-1 text-xs font-bold text-[var(--text)]">
+                  {path.label}
+                </span>
+                <h3 className="text-lg font-semibold text-[var(--text)] group-hover:text-[var(--primary)]">{path.title}</h3>
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-[var(--text-secondary)]">{path.text}</p>
+                <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[var(--primary)]">
+                  View <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Trust Strip */}
       <section className="py-5 bg-[var(--surface)] border-y border-[var(--border)]">
-        <div className="max-w-[1140px] mx-auto px-6">
+        <div className="max-w-[1140px] mx-auto px-4 sm:px-6">
           <TrustBar locale="en" />
         </div>
       </section>
 
       {/* Category Tabs */}
       <section className="py-6 bg-[var(--bg)]">
-        <div className="max-w-[1140px] mx-auto px-6">
-          <div className="flex flex-wrap justify-center gap-2" role="tablist" aria-label="Categories">
+        <div className="max-w-[1140px] mx-auto px-4 sm:px-6">
+          <div className="flex gap-2 overflow-x-auto pb-1 md:flex-wrap md:justify-center" role="tablist" aria-label="Categories">
             {categories.map((cat) => (
               <button
                 key={cat.id}
@@ -114,19 +164,19 @@ export default function ServicesEnPage() {
 
       {/* Service Cards Grid */}
       <section className="py-10 md:py-14 bg-[var(--bg)]">
-        <div className="max-w-[1140px] mx-auto px-6">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="max-w-[1140px] mx-auto px-4 sm:px-6">
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {filteredServices.map((service) => (
               <Link
                 key={service.slug}
                 href={`/en/services/${service.slug}`}
-                className={`group p-5 rounded-xl border bg-[var(--surface)] hover:bg-[var(--elevated)] transition-all relative ${service.recommended
+                className={`group relative flex min-w-0 flex-col rounded-xl border bg-[var(--surface)] p-5 transition-all hover:bg-[var(--elevated)] ${service.recommended
                   ? "border-[var(--primary)] ring-1 ring-[var(--primary)]"
                   : "border-[var(--border)] hover:border-[var(--primary)]"
                   }`}
               >
                 {service.recommended && (
-                  <span className="absolute -top-3 left-4 px-2 py-0.5 bg-[var(--primary)] text-white text-xs font-medium rounded-full">
+                  <span className="absolute -top-3 left-4 rounded-full bg-[var(--primary)] px-2.5 py-0.5 text-xs font-semibold text-white">
                     Recommended start
                   </span>
                 )}
@@ -139,15 +189,15 @@ export default function ServicesEnPage() {
                   </h3>
                 </div>
                 <p className="text-sm text-[var(--text-secondary)] mb-3">{service.benefit}</p>
-                <ul className="space-y-1.5 mb-4">
+                <ul className="mb-4 space-y-1.5">
                   {service.bullets.map((b, i) => (
-                    <li key={i} className="text-xs text-[var(--muted)] flex items-start gap-2">
+                    <li key={i} className="flex items-start gap-2 text-xs text-[var(--text-secondary)]">
                       <CheckCircle className="w-3.5 h-3.5 text-[var(--primary)] mt-0.5 shrink-0" />
                       <span>{b}</span>
                     </li>
                   ))}
                 </ul>
-                <span className="text-sm text-[var(--link)] font-medium group-hover:text-[var(--link-hover)] flex items-center gap-1">
+                <span className="mt-auto flex items-center gap-1 text-sm font-semibold text-[var(--link)] group-hover:text-[var(--link-hover)]">
                   Learn more <ArrowRight className="w-4 h-4" />
                 </span>
               </Link>

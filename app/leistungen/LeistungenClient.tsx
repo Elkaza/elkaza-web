@@ -33,6 +33,27 @@ const categories = [
     { id: "compliance", label: "Compliance" },
 ];
 
+const entryPaths = [
+    {
+        title: "Ich brauche zuerst Klarheit",
+        label: "Assessment",
+        text: "Bestandsaufnahme, Risiken und priorisierte Maßnahmen, bevor etwas umgebaut wird.",
+        href: "/pakete",
+    },
+    {
+        title: "Ich will konkrete Verbesserungen",
+        label: "Security Baseline",
+        text: "MFA, Backups, Patch-Stand, Admin-Zugänge und Dokumentation pragmatisch verbessern.",
+        href: "/leistungen/security-baseline",
+    },
+    {
+        title: "Ich brauche laufenden Betrieb",
+        label: "Managed Operations",
+        text: "Monitoring, Patch-Rhythmus, Backup-Prüfung und klare Reaktion bei Störungen.",
+        href: "/leistungen/managed-ops",
+    },
+];
+
 
 
 const deliverables = [
@@ -60,15 +81,15 @@ export default function LeistungenClient() {
     return (
         <main className="scroll-smooth">
             {/* Hero */}
-            <section className="py-14 md:py-20 hero-gradient-enhanced">
-                <div className="max-w-[1140px] mx-auto px-6">
+            <section className="py-12 md:py-20 hero-gradient-enhanced">
+                <div className="max-w-[1140px] mx-auto px-4 sm:px-6">
                     <div className="md:flex md:items-center md:justify-between gap-10">
                         <div className="md:w-3/5">
                             <h1 className="text-4xl md:text-5xl font-bold text-[var(--text)] mb-4">
                                 IT-Infrastruktur für Wiener KMUs. <br />
                                 Stabil. Sicher. Skalierbar.
                             </h1>
-                            <p className="text-xl text-[var(--text-secondary)] mb-8">
+                            <p className="text-lg leading-relaxed text-[var(--text-secondary)] mb-8 md:text-xl">
                                 Kein Technik-Kauderwelsch. Wir sorgen dafür, dass Ihr Netzwerk läuft, Ihre Daten sicher sind und Sie sich auf Ihr Geschäft konzentrieren können. Ihr persönlicher Ansprechpartner vor Ort in Wien.
                             </p>
                             <div className="flex flex-wrap gap-4 mb-8">
@@ -102,9 +123,38 @@ export default function LeistungenClient() {
                 </div>
             </section>
 
+            <section className="bg-[var(--bg)] py-10 md:py-12">
+                <div className="mx-auto max-w-[1140px] px-4 sm:px-6">
+                    <div className="mb-6 max-w-3xl">
+                        <h2 className="text-2xl font-semibold text-[var(--text)]">Welcher Einstieg passt?</h2>
+                        <p className="mt-2 text-sm leading-relaxed text-[var(--text-secondary)]">
+                            Wenn Sie noch nicht wissen, welcher Service richtig ist, starten Sie hier. Die drei Wege decken die häufigsten Situationen ab.
+                        </p>
+                    </div>
+                    <div className="grid gap-4 md:grid-cols-3">
+                        {entryPaths.map((path) => (
+                            <Link
+                                key={path.title}
+                                href={path.href}
+                                className="group flex min-w-0 flex-col rounded-xl border border-[var(--border)] bg-[var(--surface)] p-5 shadow-[var(--shadow-sm)] transition-all hover:border-[var(--primary)] hover:bg-[var(--elevated)]"
+                            >
+                                <span className="mb-3 w-fit rounded-md border border-[var(--border)] bg-[var(--elevated)] px-2.5 py-1 text-xs font-bold text-[var(--text)]">
+                                    {path.label}
+                                </span>
+                                <h3 className="text-lg font-semibold text-[var(--text)] group-hover:text-[var(--primary)]">{path.title}</h3>
+                                <p className="mt-2 flex-1 text-sm leading-relaxed text-[var(--text-secondary)]">{path.text}</p>
+                                <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[var(--primary)]">
+                                    Ansehen <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                                </span>
+                            </Link>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
             {/* For Whom / When Useful Block */}
             <section className="py-10 bg-[var(--surface)] border-y border-[var(--border)]">
-                <div className="max-w-[1140px] mx-auto px-6">
+                <div className="max-w-[1140px] mx-auto px-4 sm:px-6">
                     <div className="grid md:grid-cols-3 gap-8">
                         <div>
                             <h3 className="font-semibold text-[var(--text)] mb-3 flex items-center gap-2">
@@ -142,8 +192,8 @@ export default function LeistungenClient() {
 
             {/* Category Tabs */}
             <section className="py-6 bg-[var(--bg)]">
-                <div className="max-w-[1140px] mx-auto px-6">
-                    <div className="flex flex-wrap justify-center gap-2" role="tablist" aria-label="Kategorien">
+                <div className="max-w-[1140px] mx-auto px-4 sm:px-6">
+                    <div className="flex gap-2 overflow-x-auto pb-1 md:flex-wrap md:justify-center" role="tablist" aria-label="Kategorien">
                         {categories.map((cat) => (
                             <button
                                 key={cat.id}
@@ -164,19 +214,19 @@ export default function LeistungenClient() {
 
             {/* Service Cards Grid */}
             <section className="py-10 md:py-14 bg-[var(--bg)]">
-                <div className="max-w-[1140px] mx-auto px-6">
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+                <div className="max-w-[1140px] mx-auto px-4 sm:px-6">
+                    <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
                         {filteredServices.map((service) => (
                             <Link
                                 key={service.slug}
                                 href={`/leistungen/${service.slug}`}
-                                className={`group p-5 rounded-xl border bg-[var(--surface)] hover:bg-[var(--elevated)] transition-all relative ${service.recommended
+                                className={`group relative flex min-w-0 flex-col rounded-xl border bg-[var(--surface)] p-5 transition-all hover:bg-[var(--elevated)] ${service.recommended
                                     ? "border-[var(--primary)] ring-1 ring-[var(--primary)]"
                                     : "border-[var(--border)] hover:border-[var(--primary)]"
                                     }`}
                             >
                                 {service.recommended && (
-                                    <span className="absolute -top-3 left-4 px-2 py-0.5 bg-[var(--primary)] text-white text-xs font-medium rounded-full">
+                                    <span className="absolute -top-3 left-4 rounded-full bg-[var(--primary)] px-2.5 py-0.5 text-xs font-semibold text-white">
                                         Empfohlener Einstieg
                                     </span>
                                 )}
@@ -189,15 +239,15 @@ export default function LeistungenClient() {
                                     </h3>
                                 </div>
                                 <p className="text-sm text-[var(--text-secondary)] mb-3">{service.benefit}</p>
-                                <ul className="space-y-1.5 mb-4">
+                                <ul className="mb-4 space-y-1.5">
                                     {service.bullets.map((b, i) => (
-                                        <li key={i} className="text-xs text-[var(--muted)] flex items-start gap-2">
+                                        <li key={i} className="flex items-start gap-2 text-xs text-[var(--text-secondary)]">
                                             <CheckCircle className="w-3.5 h-3.5 text-[var(--primary)] mt-0.5 shrink-0" />
                                             <span>{b}</span>
                                         </li>
                                     ))}
                                 </ul>
-                                <span className="text-sm text-[var(--link)] font-medium group-hover:text-[var(--link-hover)] flex items-center gap-1">
+                                <span className="mt-auto flex items-center gap-1 text-sm font-semibold text-[var(--link)] group-hover:text-[var(--link-hover)]">
                                     Mehr erfahren <ArrowRight className="w-4 h-4" />
                                 </span>
                             </Link>
