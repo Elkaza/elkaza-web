@@ -1,3 +1,6 @@
+import { createLocalizedMetadata } from "@/lib/metadata";
+import { notFound } from "next/navigation";
+
 const mockPosts: Record<string, { title: string; date: string; content: string; author?: string }> = {
   "ai-strategy-for-smes": {
     title: "AI Strategy for SMEs: start pragmatically",
@@ -7,10 +10,23 @@ const mockPosts: Record<string, { title: string; date: string; content: string; 
   },
 };
 
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const post = mockPosts[slug];
+  if (!post) notFound();
+
+  return createLocalizedMetadata({
+    title: `${post.title} - Elkaza Consulting`,
+    description: post.content,
+    path: `/en/insights/${slug}`,
+  });
+}
+
 export default async function InsightDetailEn(props: { params: Promise<{ slug: string }> }) {
   const resolved = await props.params;
   const slug = resolved.slug;
-  const post = mockPosts[slug] || { title: "Post", date: new Date().toISOString(), content: "Coming soon." };
+  const post = mockPosts[slug];
+  if (!post) notFound();
   return (
     <main className="min-h-screen bg-[var(--bg)]">
       <section className="py-10 md:py-14 hero-gradient-enhanced">

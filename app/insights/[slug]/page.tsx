@@ -1,3 +1,6 @@
+import { createLocalizedMetadata } from "@/lib/metadata";
+import { notFound } from "next/navigation";
+
 const mockPosts: Record<string, { title: string; date: string; content: string; author?: string }> = {
   "ki-strategie-fuer-kmus": {
     title: "KI-Strategie für KMUs: pragmatisch starten",
@@ -7,6 +10,18 @@ const mockPosts: Record<string, { title: string; date: string; content: string; 
   },
 };
 
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const post = mockPosts[slug];
+  if (!post) notFound();
+
+  return createLocalizedMetadata({
+    title: `${post.title} - Elkaza Consulting`,
+    description: post.content,
+    path: `/insights/${slug}`,
+  });
+}
+
 export function generateStaticParams() {
   return Object.keys(mockPosts).map((slug) => ({ slug }));
 }
@@ -14,7 +29,8 @@ export function generateStaticParams() {
 export default async function InsightDetail(props: { params: Promise<{ slug: string }> }) {
   const resolved = await props.params;
   const slug = resolved.slug;
-  const post = mockPosts[slug] || { title: "Beitrag", date: new Date().toISOString(), content: "Bald verfügbar." };
+  const post = mockPosts[slug];
+  if (!post) notFound();
   return (
     <main className="min-h-screen bg-[var(--bg)]">
       <section className="py-10 md:py-14 hero-gradient-enhanced">

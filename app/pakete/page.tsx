@@ -2,12 +2,13 @@ import { siteContent } from "@/lib/siteContent";
 import PackageCards from "@/app/components/PackageCards";
 import CTA from "@/app/components/CTA";
 import { HelpCircle } from "lucide-react";
+import { createLocalizedMetadata } from "@/lib/metadata";
 
-export const metadata = {
+export const metadata = createLocalizedMetadata({
     title: "Preise & Pakete – IT-Support & Security für KMUs | Elkaza",
     description: "Transparente IT-Pakete für Unternehmen in Wien: Assessment, Umsetzung oder laufende Betreuung. Starten Sie ab 490 € mit unserem Basis-Check.",
-    alternates: { canonical: "/pakete" },
-};
+    path: "/pakete",
+});
 
 export default function PaketePage() {
     const content = siteContent.packages.de;

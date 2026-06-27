@@ -1,8 +1,10 @@
 import { legal } from '@/lib/legal';
-export const metadata = {
+import { createLocalizedMetadata } from '@/lib/metadata';
+export const metadata = createLocalizedMetadata({
   title: "Datenschutzerklärung - Elkaza Consulting",
   description: "Datenschutzerklärung und Informationen zur Datenverarbeitung",
-};
+  path: '/datenschutz',
+});
 
 export default function DatenschutzPage() {
   const L = legal.de;

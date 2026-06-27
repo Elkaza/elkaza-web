@@ -1,10 +1,12 @@
 import Link from "next/link";
 import { siteContent } from "@/lib/siteContent";
+import { createLocalizedMetadata } from "@/lib/metadata";
 
-export const metadata = {
+export const metadata = createLocalizedMetadata({
   title: "Case Studies - Elkaza Consulting",
   description: "Projects with measurable impact. Network modernization and security for SMEs.",
-};
+  path: "/en/case-studies",
+});
 
 export default function CaseStudiesEnPage() {
   const content = siteContent.caseStudies.en;

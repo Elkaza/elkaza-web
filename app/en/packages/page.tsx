@@ -2,11 +2,13 @@ import { siteContent } from "@/lib/siteContent";
 import PackageCards from "@/app/components/PackageCards";
 import CTA from "@/app/components/CTA";
 import { HelpCircle } from "lucide-react";
+import { createLocalizedMetadata } from "@/lib/metadata";
 
-export const metadata = {
+export const metadata = createLocalizedMetadata({
     title: "Packages - Elkaza Consulting",
     description: "Clear services, fair prices. Assessment, implementation, or ongoing support.",
-};
+    path: "/en/packages",
+});
 
 export default function PackagesEnPage() {
     const content = siteContent.packages.en;

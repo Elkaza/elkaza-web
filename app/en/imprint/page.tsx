@@ -1,9 +1,11 @@
 import { legal } from '@/lib/legal';
+import { createLocalizedMetadata } from '@/lib/metadata';
 
-export const metadata = {
+export const metadata = createLocalizedMetadata({
   title: 'Imprint - Elkaza Consulting',
   description: 'Legal disclosure and operator information',
-};
+  path: '/en/imprint',
+});
 
 export default function ImprintPage() {
   const L = legal.en;

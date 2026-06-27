@@ -1,5 +1,12 @@
 import Link from "next/link";
 import { CheckCircle, Compass, GraduationCap, Layers, Network, ShieldCheck } from "lucide-react";
+import { createLocalizedMetadata } from "@/lib/metadata";
+
+export const metadata = createLocalizedMetadata({
+  title: "About Elkaza Consulting",
+  description: "Infrastructure, security, and automation expertise focused on clear decisions and maintainable IT operations.",
+  path: "/en/about",
+});
 
 const principles = [
   {

@@ -1,11 +1,12 @@
 import Link from "next/link";
 import { siteContent } from "@/lib/siteContent";
+import { createLocalizedMetadata } from "@/lib/metadata";
 
-export const metadata = {
+export const metadata = createLocalizedMetadata({
     title: "Referenzen & Case Studies – Erfolgreiche IT-Projekte | Elkaza",
     description: "Sehen Sie, wie wir KMUs in Wien geholfen haben: Stabilere Netzwerke, sichere Backups und weniger Ausfälle. Echte Ergebnisse, keine Theorie.",
-    alternates: { canonical: "/referenzen" },
-};
+    path: "/referenzen",
+});
 
 export default function ReferenzenPage() {
     const content = siteContent.caseStudies.de;

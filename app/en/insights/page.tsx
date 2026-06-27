@@ -1,9 +1,11 @@
 import Link from "next/link";
+import { createLocalizedMetadata } from "@/lib/metadata";
 
-export const metadata = {
+export const metadata = createLocalizedMetadata({
   title: "Insights – Elkaza Consulting",
   description: "Strategy, AI and digital products - explained pragmatically.",
-};
+  path: "/en/insights",
+});
 
 const mockPosts = [
   { slug: "ai-strategy-for-smes", title: "AI Strategy for SMEs: start pragmatically", date: "2025-11-01", excerpt: "How to create impact with small steps." },

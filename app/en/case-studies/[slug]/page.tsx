@@ -1,11 +1,24 @@
 import { siteContent } from "@/lib/siteContent";
 import { notFound } from "next/navigation";
 import CTA from "@/app/components/CTA";
+import { createLocalizedMetadata } from "@/lib/metadata";
 
 const cases = siteContent.caseStudies.en.items;
 
 export function generateStaticParams() {
   return cases.map((c) => ({ slug: c.slug }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const cs = cases.find((item) => item.slug === slug);
+  if (!cs) notFound();
+
+  return createLocalizedMetadata({
+    title: `${cs.title} - Elkaza Consulting`,
+    description: `${cs.context}: ${cs.result}`,
+    path: `/en/case-studies/${slug}`,
+  });
 }
 
 export default async function CaseStudyDetailEnPage({

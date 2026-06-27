@@ -1,9 +1,11 @@
 import { legal } from '@/lib/legal';
+import { createLocalizedMetadata } from '@/lib/metadata';
 
-export const metadata = {
+export const metadata = createLocalizedMetadata({
   title: "Privacy Policy - Elkaza Consulting",
   description: "Privacy policy and data processing information in accordance with GDPR",
-};
+  path: '/en/privacy',
+});
 
 export default function PrivacyEn() {
   const L = legal.en;
