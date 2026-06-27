@@ -50,8 +50,8 @@ export default function DatenschutzPage() {
           <h2 className="text-lg font-semibold">Speicherdauer</h2>
           <p>Kontaktdaten werden so lange gespeichert, wie es zur Bearbeitung der Anfrage oder zur Erfüllung gesetzlicher Pflichten erforderlich ist. Server-Logs werden nur so lange gespeichert, wie dies für Sicherheits- und Betriebszwecke erforderlich ist.</p>
 
-          <h2 className="text-lg font-semibold">Cookies / Tracking</h2>
-          <p>Diese Website verwendet keine Analyse- oder Marketing-Cookies. Es werden nur technisch notwendige Cookies eingesetzt, soweit erforderlich.</p>
+          <h2 className="text-lg font-semibold">Reichweitenmessung / Plausible Analytics</h2>
+          <p>Diese Website nutzt eine selbst gehostete Instanz von Plausible Analytics unter <code>analytics.elkaza.at</code>, um aggregierte Nutzungsstatistiken zu erfassen. Plausible setzt dabei keine Analyse- oder Marketing-Cookies ein.</p>
 
           <h2 className="text-lg font-semibold">Ihre Rechte</h2>
           <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit sowie das Recht, der Verarbeitung zu widersprechen. Zur Ausübung Ihrer Rechte kontaktieren Sie uns bitte per E‑Mail an <a href="mailto:contact@elkaza.at">contact@elkaza.at</a> oder über das Kontaktformular unter <code>/kontakt</code>.</p>

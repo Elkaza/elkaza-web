@@ -51,8 +51,8 @@ export default function PrivacyEn() {
           <h2 className="text-lg font-semibold">Storage periods</h2>
           <p>Contact information is retained as long as needed to handle the inquiry and to meet legal obligations. Server logs are retained only for operational and security needs.</p>
 
-          <h2 className="text-lg font-semibold">Cookies / tracking</h2>
-          <p>This website does not use analytics or marketing cookies.</p>
+          <h2 className="text-lg font-semibold">Audience measurement / Plausible Analytics</h2>
+          <p>This website uses a self-hosted Plausible Analytics instance at <code>analytics.elkaza.at</code> to collect aggregated usage statistics. Plausible does not use analytics or marketing cookies.</p>
 
           <h2 className="text-lg font-semibold">Your rights</h2>
           <p>You have the right to access, rectify, erase, restrict processing, data portability and to object. To exercise your rights contact: <a href="mailto:contact@elkaza.at">contact@elkaza.at</a> or use the contact form at <code>/en/contact</code>.</p>

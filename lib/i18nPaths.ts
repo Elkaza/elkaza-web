@@ -33,6 +33,11 @@ const enToDeMap = Object.fromEntries(
   Object.entries(deToEnMap).map(([dePath, enPath]) => [enPath, dePath])
 ) as Record<string, string>;
 
+export const localizedPathPairs = Object.entries(deToEnMap).map(([dePath, enPath]) => ({
+  dePath,
+  enPath,
+}));
+
 function normalizePath(pathname: string): string {
   const path = pathname.split("?")[0].split("#")[0].replace(/\/+$/, "");
   return path || "/";
