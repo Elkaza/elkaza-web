@@ -63,6 +63,24 @@ test.describe('Accessibility', () => {
     expect(focusedElement).not.toBe('BODY');
   });
 
+  test('mobile menu closes with Escape and restores focus', async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.goto('/');
+
+    const toggle = page.locator('[data-mobile-menu-toggle]');
+    const menu = page.locator('#mobile-navigation');
+    await toggle.click();
+
+    await expect(toggle).toHaveAttribute('aria-expanded', 'true');
+    await expect(menu).toBeVisible();
+
+    await page.keyboard.press('Escape');
+
+    await expect(toggle).toHaveAttribute('aria-expanded', 'false');
+    await expect(menu).toBeHidden();
+    await expect(toggle).toBeFocused();
+  });
+
   test('images have alt text', async ({ page }) => {
     await page.goto('/');
 

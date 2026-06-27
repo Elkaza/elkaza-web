@@ -58,11 +58,11 @@ export default function Header() {
             data-mobile-menu-toggle
             aria-controls="mobile-navigation"
             aria-expanded="false"
-            className="md:hidden p-2 text-[var(--muted)] hover:text-[var(--text)] rounded-lg hover:bg-[var(--elevated)] transition-colors"
-            aria-label="Toggle menu"
+            className="md:hidden p-2.5 text-[var(--muted)] hover:text-[var(--text)] rounded-lg hover:bg-[var(--elevated)] transition-colors"
+            aria-label="Menü öffnen"
           >
-            <Menu data-mobile-menu-icon="open" className="w-6 h-6" />
-            <X data-mobile-menu-icon="close" className="hidden w-6 h-6" />
+            <Menu data-mobile-menu-icon="open" className="w-6 h-6" aria-hidden="true" />
+            <X data-mobile-menu-icon="close" className="hidden w-6 h-6" aria-hidden="true" />
           </button>
         </div>
       </div>
