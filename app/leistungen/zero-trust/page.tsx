@@ -1,10 +1,12 @@
 import { Lock } from "lucide-react";
 import ServicePageTemplate from "@/app/components/ServicePageTemplate";
+import { createLocalizedMetadata } from "@/lib/metadata";
 
-export const metadata = {
+export const metadata = createLocalizedMetadata({
     title: "Zero Trust & Identity - Elkaza Consulting",
     description: "Moderner Zugriffsschutz: MFA, SSO, Conditional Access. Vertrauen Sie keinem Gerät blind.",
-};
+    path: "/leistungen/zero-trust",
+});
 
 export default function ZeroTrustPage() {
     return (

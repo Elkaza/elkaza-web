@@ -1,10 +1,12 @@
 import { Sparkles } from "lucide-react";
 import ServicePageTemplate from "@/app/components/ServicePageTemplate";
+import { createLocalizedMetadata } from "@/lib/metadata";
 
-export const metadata = {
+export const metadata = createLocalizedMetadata({
     title: "Secure AI Adoption - Elkaza Consulting",
     description: "Use AI safely in business. Copilot readiness, data classification, and policies.",
-};
+    path: "/en/services/ai-adoption",
+});
 
 export default function AIAdoptionPage() {
     return (

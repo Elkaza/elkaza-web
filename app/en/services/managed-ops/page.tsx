@@ -1,10 +1,12 @@
 import { Headphones } from "lucide-react";
 import ServicePageTemplate from "@/app/components/ServicePageTemplate";
+import { createLocalizedMetadata } from "@/lib/metadata";
 
-export const metadata = {
+export const metadata = createLocalizedMetadata({
     title: "Managed Operations - Elkaza Consulting",
     description: "We handle your IT. Proactive monitoring, patching, and incident response.",
-};
+    path: "/en/services/managed-ops",
+});
 
 export default function ManagedOpsPage() {
     return (

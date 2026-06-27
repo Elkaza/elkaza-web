@@ -1,10 +1,12 @@
 import { ShieldAlert } from "lucide-react";
 import ServicePageTemplate from "@/app/components/ServicePageTemplate";
+import { createLocalizedMetadata } from "@/lib/metadata";
 
-export const metadata = {
+export const metadata = createLocalizedMetadata({
     title: "Ransomware Resilience - Elkaza Consulting",
     description: "Nicht ob, sondern wann. Unveränderbare Backups, Notfallpläne und Wiederherstellungstests.",
-};
+    path: "/leistungen/ransomware-resilience",
+});
 
 export default function RansomwareResiliencePage() {
     return (

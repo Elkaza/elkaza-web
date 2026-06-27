@@ -1,10 +1,12 @@
 import { ClipboardCheck } from "lucide-react";
 import ServicePageTemplate from "@/app/components/ServicePageTemplate";
+import { createLocalizedMetadata } from "@/lib/metadata";
 
-export const metadata = {
+export const metadata = createLocalizedMetadata({
     title: "NIS2 / Compliance Readiness - Elkaza Consulting",
     description: "Don't fear the audit. Pragmatic compliance, documentation, and processes.",
-};
+    path: "/en/services/nis2-compliance",
+});
 
 export default function NIS2Page() {
     return (

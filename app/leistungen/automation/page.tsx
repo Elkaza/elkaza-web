@@ -1,10 +1,12 @@
 import { Cog } from "lucide-react";
 import ServicePageTemplate from "@/app/components/ServicePageTemplate";
+import { createLocalizedMetadata } from "@/lib/metadata";
 
-export const metadata = {
+export const metadata = createLocalizedMetadata({
     title: "Automation & Platform Engineering - Elkaza Consulting",
     description: "Weniger manuelle Arbeit. Weniger Fehler. Terraform, Ansible, CI/CD.",
-};
+    path: "/leistungen/automation",
+});
 
 export default function AutomationPage() {
     return (

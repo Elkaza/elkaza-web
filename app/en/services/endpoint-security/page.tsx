@@ -1,10 +1,12 @@
 import { Laptop } from "lucide-react";
 import ServicePageTemplate from "@/app/components/ServicePageTemplate";
+import { createLocalizedMetadata } from "@/lib/metadata";
 
-export const metadata = {
+export const metadata = createLocalizedMetadata({
     title: "Endpoint & Device Security - Elkaza Consulting",
     description: "Every device secured. EDR, encryption, patching for laptops and mobiles.",
-};
+    path: "/en/services/endpoint-security",
+});
 
 export default function EndpointSecurityPage() {
     return (

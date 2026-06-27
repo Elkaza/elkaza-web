@@ -1,10 +1,12 @@
 import { Network } from "lucide-react";
 import ServicePageTemplate from "@/app/components/ServicePageTemplate";
+import { createLocalizedMetadata } from "@/lib/metadata";
 
-export const metadata = {
+export const metadata = createLocalizedMetadata({
     title: "Netzwerk & Infrastruktur - Elkaza Consulting",
     description: "Stabile Verbindungen, saubere Segmentierung, sichere Remote-Zugänge für wachsende Teams.",
-};
+    path: "/leistungen/networking",
+});
 
 export default function NetworkingPage() {
     return (

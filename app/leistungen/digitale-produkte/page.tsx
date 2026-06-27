@@ -1,4 +1,11 @@
 import CTA from "@/app/components/CTA";
+import { createLocalizedMetadata } from "@/lib/metadata";
+
+export const metadata = createLocalizedMetadata({
+  title: "Digitale Produkte & Plattformen - Elkaza Consulting",
+  description: "Wartbare digitale Produkte und skalierbare Plattformen, entwickelt für konkrete Geschäftsanforderungen.",
+  path: "/leistungen/digitale-produkte",
+});
 
 export default function DigitaleProdukteGe() {
   return (

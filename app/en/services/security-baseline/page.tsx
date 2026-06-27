@@ -1,10 +1,12 @@
 import { ShieldCheck } from "lucide-react";
 import ServicePageTemplate from "@/app/components/ServicePageTemplate";
+import { createLocalizedMetadata } from "@/lib/metadata";
 
-export const metadata = {
+export const metadata = createLocalizedMetadata({
     title: "Security Baseline - Elkaza Consulting",
     description: "Practical security for SMBs: MFA, patching, backups, clear access rights.",
-};
+    path: "/en/services/security-baseline",
+});
 
 export default function SecurityBaselinePage() {
     return (

@@ -1,4 +1,11 @@
 import CTA from "@/app/components/CTA";
+import { createLocalizedMetadata } from "@/lib/metadata";
+
+export const metadata = createLocalizedMetadata({
+  title: "Digitale Strategie & Beratung - Elkaza Consulting",
+  description: "Klare Technologie-Roadmaps, die Investitionen priorisieren, Stakeholder ausrichten und Umsetzungsrisiken reduzieren.",
+  path: "/leistungen/digitalstrategie",
+});
 
 export default function DigitalstrategiePage() {
   return (
