@@ -109,3 +109,13 @@ const server = createServer(async (request, response) => {
 server.listen(port, () => {
   console.log(`Serving ${root} at http://localhost:${port}`);
 });
+
+function shutdown() {
+  server.close(() => process.exit(0));
+  server.closeAllConnections?.();
+
+  setTimeout(() => process.exit(0), 1000).unref();
+}
+
+process.once('SIGINT', shutdown);
+process.once('SIGTERM', shutdown);

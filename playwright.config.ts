@@ -1,12 +1,16 @@
 import { defineConfig, devices } from 'playwright/test';
 
 const baseURL = process.env.PLAYWRIGHT_TEST_BASE_URL || 'http://localhost:3002';
+const useInstalledEdge = process.env.PLAYWRIGHT_USE_EDGE === '1';
 const webServerCommand = process.env.CI
   ? 'node scripts/serve-static-export.mjs out 3002'
   : 'npm run dev';
 const chromiumProject = {
   name: 'chromium',
-  use: { ...devices['Desktop Chrome'] },
+  use: {
+    ...devices['Desktop Chrome'],
+    ...(useInstalledEdge ? { channel: 'msedge' as const } : {}),
+  },
 };
 
 /**
