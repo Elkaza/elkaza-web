@@ -2,7 +2,6 @@ import Link from "next/link";
 import { siteContent } from "@/lib/siteContent";
 import CTA from "@/app/components/CTA";
 import CoreServices from "@/app/components/CoreServices";
-import PackageCards from "@/app/components/PackageCards";
 import Resources from "@/app/components/Resources";
 import FAQ from "@/app/components/FAQ";
 import HomeTrustStrip from "@/app/components/HomeTrustStrip";
@@ -100,16 +99,6 @@ export default function Home() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Packages */}
-      <section className="py-12 md:py-14 bg-[var(--bg)]">
-        <div className="max-w-[1140px] mx-auto px-6">
-          <h2 className="text-2xl md:text-3xl font-bold text-[var(--text)] mb-6 text-center">
-            Unsere Pakete
-          </h2>
-          <PackageCards locale="de" />
         </div>
       </section>
 
