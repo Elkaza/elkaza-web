@@ -1,11 +1,14 @@
 import Link from "next/link";
 import { createLocalizedMetadata } from "@/lib/metadata";
 
-export const metadata = createLocalizedMetadata({
+export const metadata = {
+  ...createLocalizedMetadata({
   title: "Insights – Elkaza Consulting",
   description: "Strategie, KI und digitale Produkte – praxisnah erklärt.",
-  path: "/insights",
-});
+    path: "/insights",
+  }),
+  robots: { index: false, follow: true },
+};
 
 const mockPosts = [
   { slug: "ki-strategie-fuer-kmus", title: "KI-Strategie für KMUs: pragmatisch starten", date: "2025-11-01", excerpt: "Wie Sie mit kleinen Schritten Wirkung erzielen." },

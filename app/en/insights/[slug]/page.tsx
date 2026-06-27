@@ -15,11 +15,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const post = mockPosts[slug];
   if (!post) notFound();
 
-  return createLocalizedMetadata({
+  return {
+    ...createLocalizedMetadata({
     title: `${post.title} - Elkaza Consulting`,
     description: post.content,
     path: `/en/insights/${slug}`,
-  });
+    }),
+    robots: { index: false, follow: true },
+  };
 }
 
 export default async function InsightDetailEn(props: { params: Promise<{ slug: string }> }) {

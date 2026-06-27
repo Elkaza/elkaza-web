@@ -10,7 +10,9 @@ function absoluteUrl(path: string) {
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return localizedPathPairs.flatMap(({ dePath, enPath }) => {
+  return localizedPathPairs
+    .filter(({ dePath }) => dePath !== "/insights" && !dePath.startsWith("/insights/"))
+    .flatMap(({ dePath, enPath }) => {
     const languages = {
       "de-AT": absoluteUrl(dePath),
       en: absoluteUrl(enPath),
@@ -27,5 +29,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
         alternates: { languages },
       },
     ];
-  });
+    });
 }
