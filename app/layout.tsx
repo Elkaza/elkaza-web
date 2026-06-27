@@ -15,10 +15,10 @@ export function generateMetadata() {
       "Stabile IT-Infrastruktur fuer wachsende Teams: Netzwerk, Security und Automatisierung aus einer Hand.",
     icons: {
       icon: [
-        { url: "/favicon.svg", type: "image/svg+xml" },
-        { url: "/favicon.ico", sizes: "any" },
+        { url: "/favicon.svg?v=2", type: "image/svg+xml" },
+        { url: "/favicon.ico?v=2", sizes: "any" },
       ],
-      apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+      apple: [{ url: "/apple-touch-icon.png?v=2", sizes: "180x180", type: "image/png" }],
     },
     manifest: "/manifest.json",
     appleWebApp: {
