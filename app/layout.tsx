@@ -115,10 +115,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           src="https://analytics.elkaza.at/js/script.js"
           strategy="afterInteractive"
         />
-        <a href="#content" className="skip-link">Skip to content</a>
+        <a href="#content" className="skip-link">
+          <span className="locale-de-only">Zum Inhalt springen</span>
+          <span className="locale-en-only">Skip to content</span>
+        </a>
         <Header />
 
-        <main id="content" className="flex-1">{children}</main>
+        <div id="content" className="flex-1">{children}</div>
 
         <Footer />
         <BackToTop />

@@ -95,9 +95,16 @@ const siteInteractivityScript = String.raw`
 
   function updateThemeButton() {
     var isDark = document.documentElement.getAttribute("data-theme") === "dark";
+    var isEnglish = document.documentElement.lang === "en";
     document.querySelectorAll("[data-theme-toggle]").forEach(function (button) {
-      button.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
-      button.setAttribute("title", isDark ? "Light mode" : "Dark mode");
+      var label = isEnglish
+        ? (isDark ? "Switch to light mode" : "Switch to dark mode")
+        : (isDark ? "Zum hellen Design wechseln" : "Zum dunklen Design wechseln");
+      var title = isEnglish
+        ? (isDark ? "Light mode" : "Dark mode")
+        : (isDark ? "Helles Design" : "Dunkles Design");
+      button.setAttribute("aria-label", label);
+      button.setAttribute("title", title);
       var moon = button.querySelector('[data-theme-icon="moon"]');
       var sun = button.querySelector('[data-theme-icon="sun"]');
       if (moon) moon.classList.toggle("hidden", isDark);
@@ -165,6 +172,10 @@ const siteInteractivityScript = String.raw`
   function initBackToTop() {
     var button = document.querySelector("[data-back-to-top]");
     if (!button) return;
+
+    var isEnglish = document.documentElement.lang === "en";
+    button.setAttribute("aria-label", isEnglish ? "Scroll to top" : "Nach oben scrollen");
+    button.setAttribute("title", isEnglish ? "Back to top" : "Nach oben");
 
     function updateVisibility() {
       button.hidden = window.scrollY <= 300;

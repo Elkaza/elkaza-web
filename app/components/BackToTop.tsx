@@ -10,7 +10,7 @@ export default function BackToTop() {
       aria-label="Nach oben scrollen"
       title="Nach oben"
     >
-      <ArrowUp className="w-5 h-5" />
+      <ArrowUp className="w-5 h-5" aria-hidden="true" />
     </button>
   );
 }

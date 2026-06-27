@@ -15,7 +15,8 @@ export default function Footer() {
             <a href="mailto:office@elkaza.at" className="hover:text-[var(--link)] transition-colors">office@elkaza.at</a>
           </div>
           <div className="mt-2 md:mt-0">
-            <span>Vienna, Austria</span>
+            <span className="locale-de-only">Wien, Österreich</span>
+            <span className="locale-en-only">Vienna, Austria</span>
           </div>
         </div>
       </div>
