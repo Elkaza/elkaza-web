@@ -11,8 +11,9 @@ export default function Footer() {
       {/* Contact Info Row */}
       <div className="border-t border-[var(--border)] bg-[var(--bg)]">
         <div className="max-w-[1140px] mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center text-xs text-[var(--muted)]">
-          <div className="flex gap-4">
-            <a href="mailto:office@elkaza.at" className="hover:text-[var(--link)] transition-colors">office@elkaza.at</a>
+          <div>
+            <span className="locale-de-only">Projekt in Vorbereitung</span>
+            <span className="locale-en-only">Project in preparation</span>
           </div>
           <div className="mt-2 md:mt-0">
             <span className="locale-de-only">Wien, Österreich</span>

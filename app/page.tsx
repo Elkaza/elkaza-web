@@ -2,7 +2,6 @@ import Link from "next/link";
 import { siteContent } from "@/lib/siteContent";
 import CTA from "@/app/components/CTA";
 import CoreServices from "@/app/components/CoreServices";
-import Resources from "@/app/components/Resources";
 import FAQ from "@/app/components/FAQ";
 import HomeTrustStrip from "@/app/components/HomeTrustStrip";
 import HomeDecisionPath from "@/app/components/HomeDecisionPath";
@@ -139,7 +138,7 @@ export default function Home() {
       <section className="py-12 md:py-14 bg-[var(--bg)]">
         <div className="max-w-[1140px] mx-auto px-6">
           <h2 className="text-2xl md:text-3xl font-bold text-[var(--text)] mb-6">
-            Referenzen
+            Illustrative Szenarien
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {caseStudies.items.slice(0, 2).map((cs) => (
@@ -177,7 +176,7 @@ export default function Home() {
             ))}
           </div>
           <p className="mt-6 text-center text-sm text-[var(--muted)]">
-            Weitere Referenzen und Details auf Anfrage (NDA möglich).
+            Fiktive Beispielszenarien zur Darstellung möglicher Vorgehensweisen; keine Kundenreferenzen.
           </p>
         </div>
       </section>
@@ -198,9 +197,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Resources Section */}
-      <Resources locale="de" />
-
       {/* FAQ Section */}
       <FAQ items={siteContent.faqs.de.items} locale="de" />
 
@@ -210,7 +206,7 @@ export default function Home() {
           <h2 className="text-2xl md:text-3xl font-bold text-[var(--text)] mb-5">
             Bereit für stabile Infrastruktur?
           </h2>
-          <CTA href="/kontakt">Kostenloses Erstgespräch vereinbaren</CTA>
+          <CTA href="/kontakt">Projektstatus ansehen</CTA>
           <p className="mt-3 text-sm text-[var(--muted)]">
             Sie erhalten eine klare Empfehlung – auch wenn wir nicht zusammenarbeiten.
           </p>

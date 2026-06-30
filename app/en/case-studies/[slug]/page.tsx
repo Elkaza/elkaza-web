@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
   return createLocalizedMetadata({
     title: `${cs.title} - Elkaza Consulting`,
-    description: `${cs.context}: ${cs.result}`,
+    description: `Illustrative scenario, not a customer reference. ${cs.context}: ${cs.result}`,
     path: `/en/case-studies/${slug}`,
   });
 }
@@ -34,6 +34,7 @@ export default async function CaseStudyDetailEnPage({
     <main>
       <section className="py-10 md:py-14 hero-gradient-enhanced">
         <div className="max-w-4xl mx-auto px-6">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-[var(--primary)]">Illustrative scenario - not a customer reference</p>
           <span className="text-xs font-semibold text-[var(--primary-foreground)] bg-[var(--primary)] px-3 py-1 rounded-full">
             {cs.tag}
           </span>

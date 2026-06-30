@@ -4,19 +4,19 @@ import { Check, Clock, Lock, Users } from "lucide-react";
 const urgencyBadges = [
   {
     icon: Clock,
-    label: "24h Response",
+    label: { de: "In Vorbereitung", en: "In preparation" },
     className:
       "border-indigo-200 bg-indigo-50 text-indigo-950 dark:border-indigo-700/70 dark:bg-indigo-950 dark:text-indigo-100",
   },
   {
     icon: Lock,
-    label: "No Lock-in",
+    label: { de: "Unverbindlich", en: "Non-binding" },
     className:
       "border-emerald-200 bg-emerald-50 text-emerald-950 dark:border-emerald-700/70 dark:bg-emerald-950 dark:text-emerald-100",
   },
   {
     icon: Users,
-    label: "1:1 Support",
+    label: { de: "Keine Aufträge", en: "No orders" },
     className:
       "border-sky-200 bg-sky-50 text-sky-950 dark:border-sky-700/70 dark:bg-sky-950 dark:text-sky-100",
   },
@@ -48,11 +48,11 @@ export default function HomeTrustStrip({ locale }: HomeTrustStripProps) {
           <div className="flex flex-wrap justify-center gap-3">
             {urgencyBadges.map((badge) => (
               <div
-                key={badge.label}
+                key={badge.label.en}
                 className={`flex items-center gap-2 whitespace-nowrap rounded-md border px-3 py-1.5 text-sm font-semibold leading-none shadow-sm ${badge.className}`}
               >
                 <badge.icon className="w-4 h-4" aria-hidden="true" />
-                <span>{badge.label}</span>
+                <span>{badge.label[locale]}</span>
               </div>
             ))}
           </div>

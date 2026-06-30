@@ -3,7 +3,9 @@ import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import BackToTop from "@/app/components/BackToTop";
 import SiteInteractivity from "@/app/components/SiteInteractivity";
+import PrelaunchNotice from "@/app/components/PrelaunchNotice";
 import Script from "next/script";
+import { SITE_IS_PRELAUNCH } from "@/lib/siteStatus";
 
 export function generateMetadata() {
   const base = "https://elkaza.at";
@@ -38,6 +40,7 @@ export function generateMetadata() {
       images: [{ url: `${base}/opengraph-image.png`, width: 1200, height: 630, alt: "Elkaza Consulting" }],
     },
     twitter: { card: "summary_large_image", images: [`${base}/opengraph-image.png`] },
+    robots: { index: false, follow: false, noarchive: true },
   } as const;
 }
 
@@ -66,7 +69,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
+            __html: JSON.stringify(SITE_IS_PRELAUNCH ? {
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "@id": "https://elkaza.at/#website",
+              url: "https://elkaza.at",
+              name: "Elkaza project preview",
+              description: "Private project website in preparation. No services are currently offered.",
+              inLanguage: ["de-AT", "en"],
+            } : {
               "@context": "https://schema.org",
               "@graph": [
                 {
@@ -108,18 +119,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className="min-h-screen flex flex-col bg-[var(--bg)] text-[var(--text)]">
-        {/* Privacy-friendly analytics by Plausible */}
-        <Script
-          defer
-          data-domain="elkaza.at"
-          src="https://analytics.elkaza.at/js/script.js"
-          strategy="afterInteractive"
-        />
+        {!SITE_IS_PRELAUNCH && (
+          <Script
+            defer
+            data-domain="elkaza.at"
+            src="https://analytics.elkaza.at/js/script.js"
+            strategy="afterInteractive"
+          />
+        )}
         <a href="#content" className="skip-link">
           <span className="locale-de-only">Zum Inhalt springen</span>
           <span className="locale-en-only">Skip to content</span>
         </a>
         <Header />
+        <PrelaunchNotice />
 
         <div id="content" className="flex-1">{children}</div>
 

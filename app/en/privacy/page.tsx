@@ -22,7 +22,7 @@ export default function PrivacyEn() {
         <div className="max-w-3xl mx-auto px-6 prose prose-lg max-w-3xl">
 
           <h2 className="text-lg font-semibold">Controller</h2>
-          <p>Elkaza Consulting (in formation)</p>
+          <p>Operator of the private Elkaza project website (preparation phase)</p>
           <p>
             {L.address.street && L.address.street !== 'ADDRESS_LINE' ? (
               <>
@@ -34,11 +34,10 @@ export default function PrivacyEn() {
             <br />
             {L.address.country}
           </p>
-          <p>Email: <a href="mailto:contact@elkaza.at">contact@elkaza.at</a></p>
+          <p>The business contact channel and complete operator identification will be added before commercial activation.</p>
 
           <h2 className="text-lg font-semibold">Purposes and legal basis</h2>
           <ul>
-            <li>Handling contact requests and pre-contractual measures – Article 6(1)(b) GDPR or, where applicable, Article 6(1)(f) GDPR (legitimate interest).</li>
             <li>Operation, maintenance and security of the website (server logs) – Article 6(1)(f) GDPR.</li>
           </ul>
 
@@ -49,13 +48,13 @@ export default function PrivacyEn() {
           <p>Data is shared only with service providers necessary for website operation (hosting, e‑mail). Transfers to third countries occur only with appropriate safeguards.</p>
 
           <h2 className="text-lg font-semibold">Storage periods</h2>
-          <p>Contact information is retained as long as needed to handle the inquiry and to meet legal obligations. Server logs are retained only for operational and security needs.</p>
+          <p>Server logs are retained only for operational and security needs. No contact requests are currently processed through this website.</p>
 
-          <h2 className="text-lg font-semibold">Audience measurement / Plausible Analytics</h2>
-          <p>This website uses a self-hosted Plausible Analytics instance at <code>analytics.elkaza.at</code> to collect aggregated usage statistics. Plausible does not use analytics or marketing cookies.</p>
+          <h2 className="text-lg font-semibold">Cookies and audience measurement</h2>
+          <p>During the preparation phase, this website uses no analytics or marketing cookies and performs no audience measurement.</p>
 
           <h2 className="text-lg font-semibold">Your rights</h2>
-          <p>You have the right to access, rectify, erase, restrict processing, data portability and to object. To exercise your rights contact: <a href="mailto:contact@elkaza.at">contact@elkaza.at</a> or use the contact form at <code>/en/contact</code>.</p>
+          <p>You have the right to access, rectify, erase, restrict processing, data portability and to object. A contact route for exercising these rights must be added before public commercial use.</p>
 
           <h2 className="text-lg font-semibold">Complaint</h2>
           <p>You may lodge a complaint with the Austrian Data Protection Authority: https://www.dsb.gv.at/</p>

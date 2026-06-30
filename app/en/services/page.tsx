@@ -93,7 +93,7 @@ export default function ServicesEnPage() {
             IT infrastructure and security for growing SMBs. Clearly defined projects with measurable outcomes.
           </p>
           <div className="flex flex-wrap gap-4">
-            <CTA href="/en/contact">Free Initial Consultation</CTA>
+            <CTA href="/en/contact">View project status</CTA>
             <Link href="/en/packages" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-[var(--border)] text-[var(--text)] hover:bg-[var(--surface)] transition-colors">
               View Packages
             </Link>
@@ -285,7 +285,7 @@ export default function ServicesEnPage() {
         <div className="max-w-[1140px] mx-auto px-6 text-center">
           <h2 className="text-2xl font-semibold text-[var(--text)] mb-4">Ready for stable IT?</h2>
           <p className="text-[var(--text-secondary)] mb-6">Let us discuss what you need in a 30-minute call.</p>
-          <CTA href="/en/contact">Free Initial Consultation</CTA>
+          <CTA href="/en/contact">View project status</CTA>
           <p className="text-sm text-[var(--muted)] mt-4">No obligation. No sales pressure.</p>
         </div>
       </section>

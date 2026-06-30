@@ -22,6 +22,10 @@ export default function ImprintPage() {
         <div className="max-w-[1140px] mx-auto px-6 prose prose-lg max-w-3xl">
           <h2>{L.title}</h2>
 
+          <div className="not-prose my-6 rounded-lg border border-amber-300 bg-amber-50 p-4 text-sm leading-relaxed text-amber-950 dark:border-amber-700 dark:bg-amber-950 dark:text-amber-100">
+            This website documents a project in preparation. No services are currently offered, no orders are accepted, and no contracts are concluded through this website. The operator&apos;s full name and geographic address will be added before commercial activation.
+          </div>
+
           <p className="text-[var(--text-secondary)]">Operator / Provider:</p>
           <p>
             {L.operatorLine}
@@ -41,12 +45,7 @@ export default function ImprintPage() {
           </p>
 
           <h3>Contact</h3>
-          <p>
-            E‑mail:{' '}
-            <a href={`mailto:${L.contact.email.replace(/\[|\]/g, '')}`}>{L.contact.email}</a>
-            <br />
-            Contact form: {L.contact.contactForm}
-          </p>
+          <p>No business contact channel is active during the preparation phase.</p>
 
           <h3>Business purpose</h3>
           <p>{L.businessPurpose}</p>
@@ -61,7 +60,7 @@ export default function ImprintPage() {
             </>
           )}
 
-          <h3>Supervisory authority / Trade authority</h3>
+          <h3>Commercial status</h3>
           <p>{L.authority}</p>
 
           <h3>Applicable regulations</h3>

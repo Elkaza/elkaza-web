@@ -32,7 +32,7 @@ export default function ManagedOpsPage() {
                 "Ein Ansprechpartner, der Ihre Umgebung kennt",
             ]}
             included={[
-                "24/7 Monitoring kritischer Dienste",
+                "Konzept für Monitoring kritischer Dienste",
                 "Patch-Management (OS & 3rd Party)",
                 "Backup-Überwachung und regelmäßige Tests",
                 "Endpoint Protection Management",
@@ -70,8 +70,8 @@ export default function ManagedOpsPage() {
             ]}
             faqs={[
                 { q: "Ersetzen Sie unsere interne IT?", a: "Wir können ergänzen oder ersetzen. Oft übernehmen wir den 'langweiligen' Betrieb, damit interne IT Projekte machen kann." },
-                { q: "Wie schnell reagieren Sie?", a: "Je nach SLA. Kritische Fälle meist < 1 Stunde. Standard-Anfragen < 4 Stunden." },
-                { q: "Haben Sie Zugriff auf unsere Daten?", a: "Technisch administrativ ja, aber wir schauen nicht in Files. Vertraulichkeit ist vertraglich garantiert (NDA/AVV)." },
+                { q: "Welche Reaktionszeiten sind geplant?", a: "Reaktionszeiten und Servicezeiten sind noch nicht festgelegt und würden erst in einem späteren, verbindlichen Angebot definiert." },
+                { q: "Wie würde mit Datenzugriff umgegangen?", a: "Ein späteres Angebot würde Rollen, Protokollierung, Vertraulichkeit und Auftragsverarbeitung vor jedem Zugriff verbindlich regeln." },
             ]}
             trustNote="Wir arbeiten transparent. Sie sehen in unserem Portal jederzeit, was wir tun und wie es Ihren Systemen geht."
             finalCtaText="Geben Sie Ihre IT in professionelle Hände."

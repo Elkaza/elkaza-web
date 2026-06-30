@@ -93,7 +93,7 @@ export default function LeistungenClient() {
                                 Kein Technik-Kauderwelsch. Wir sorgen dafür, dass Ihr Netzwerk läuft, Ihre Daten sicher sind und Sie sich auf Ihr Geschäft konzentrieren können. Ihr persönlicher Ansprechpartner vor Ort in Wien.
                             </p>
                             <div className="flex flex-wrap gap-4 mb-8">
-                                <CTA href="/kontakt">Erstgespräch vereinbaren</CTA>
+                                <CTA href="/kontakt">Projektstatus ansehen</CTA>
                                 <Link href="/pakete" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-[var(--border)] text-[var(--text)] hover:bg-[var(--surface)] transition-colors">
                                     Pakete ansehen
                                 </Link>
@@ -379,7 +379,7 @@ export default function LeistungenClient() {
                 <div className="max-w-[1140px] mx-auto px-6 text-center">
                     <h2 className="text-2xl font-semibold text-[var(--text)] mb-4">Bereit für professionelle IT?</h2>
                     <p className="text-[var(--text-secondary)] mb-6">Lassen Sie uns herausfinden, ob wir zusammenpassen. Ein kurzes Gespräch kostet nichts.</p>
-                    <CTA href="/kontakt">15-Minuten Erstgespräch vereinbaren</CTA>
+                    <CTA href="/kontakt">Projektstatus ansehen</CTA>
                     <p className="text-sm text-[var(--muted)] mt-4">Kein Verkaufsdruck. Nur Beratung.</p>
                 </div>
             </section>

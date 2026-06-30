@@ -7,7 +7,7 @@ const heroDetails = {
   de: {
     eyebrow: "Elkaza Consulting",
     audience: "Für KMU in Wien und Österreich",
-    note: "Keine Verpflichtung. Klare Empfehlung innerhalb von 24h.",
+    note: "Unverbindliche Projektvorschau. Derzeit kein Angebot.",
     caseStudyLabel: "Pakete ansehen",
     caseStudyHref: "/pakete",
     panelTitle: "Der erste Schritt",
@@ -34,7 +34,7 @@ const heroDetails = {
   en: {
     eyebrow: "Elkaza Consulting",
     audience: "For SMEs in Vienna and Austria",
-    note: "No obligation. Clear recommendation within 24h.",
+    note: "Non-binding project preview. No current offer.",
     caseStudyLabel: "View packages",
     caseStudyHref: "/en/packages",
     panelTitle: "The first step",

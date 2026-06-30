@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { siteContent, type Locale } from "@/lib/siteContent";
 import { Check, Clock, MinusCircle } from "lucide-react";
+import { SITE_IS_PRELAUNCH } from "@/lib/siteStatus";
 
 interface PackageCardsProps {
     locale: Locale;
@@ -52,8 +53,10 @@ export default function PackageCards({ locale }: PackageCardsProps) {
 
                     <div className="my-5 rounded-xl border border-[var(--border)] bg-[var(--bg)] p-4">
                         <div className="flex flex-wrap items-end gap-x-2 gap-y-1">
-                            <span className="text-3xl font-bold tracking-tight text-[var(--text)]">{pkg.price}</span>
-                            <span className="pb-1 text-sm font-medium text-[var(--muted)]">{pkg.priceNote}</span>
+                            <span className="text-2xl font-bold tracking-tight text-[var(--text)]">
+                                {SITE_IS_PRELAUNCH ? (locale === "de" ? "Noch nicht verfügbar" : "Not yet available") : pkg.price}
+                            </span>
+                            {!SITE_IS_PRELAUNCH && <span className="pb-1 text-sm font-medium text-[var(--muted)]">{pkg.priceNote}</span>}
                         </div>
                         <div className="mt-3 inline-flex items-center gap-2 rounded-full bg-[var(--surface)] px-3 py-1 text-xs font-medium text-[var(--text-secondary)]">
                             <Clock className="h-3.5 w-3.5 text-[var(--primary)]" aria-hidden="true" />
@@ -88,15 +91,21 @@ export default function PackageCards({ locale }: PackageCardsProps) {
                             );
                         })}
                     </ul>
-                    <Link
-                        href={contactPath}
-                        className={`btn-enhanced block rounded-lg px-4 py-3 text-center font-semibold transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--border-focus)] active:scale-[0.98] ${pkg.popular
+                    {SITE_IS_PRELAUNCH ? (
+                        <span className="block cursor-not-allowed rounded-lg border border-[var(--border)] bg-[var(--bg)] px-4 py-3 text-center font-semibold text-[var(--muted)]" aria-disabled="true">
+                            {locale === "de" ? "Angebot in Vorbereitung" : "Offer in preparation"}
+                        </span>
+                    ) : (
+                        <Link
+                            href={contactPath}
+                            className={`btn-enhanced block rounded-lg px-4 py-3 text-center font-semibold transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--border-focus)] active:scale-[0.98] ${pkg.popular
                             ? "bg-[var(--primary)] text-[var(--primary-foreground)] hover:bg-[var(--primary-hover)]"
                             : "border border-[var(--border)] text-[var(--text)] hover:border-[var(--primary)] hover:bg-[var(--primary-light)] hover:text-[var(--primary)]"
-                            }`}
-                    >
-                        {pkg.cta}
-                    </Link>
+                                }`}
+                        >
+                            {pkg.cta}
+                        </Link>
+                    )}
                 </div>
             ))}
         </div>

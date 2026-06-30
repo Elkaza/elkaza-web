@@ -17,17 +17,17 @@ export const siteContent = {
   trust: {
     de: [
       "Standort: Wien",
-      "Fokus: KMU (10-200 User)",
+      "Geplanter Fokus: KMU",
       "Microsoft & Open Source",
-      "Persönlicher Ansprechpartner",
-      "Schnelle Reaktionszeit",
+      "Konzeptphase",
+      "Noch keine Auftragsannahme",
     ],
     en: [
       "Location: Vienna",
-      "Focus: SMEs (10-200 Users)",
+      "Planned focus: SMEs",
       "Microsoft & Open Source",
-      "Dedicated Contact",
-      "Fast Response Time",
+      "Concept stage",
+      "Not accepting orders yet",
     ],
   },
 
@@ -66,19 +66,19 @@ export const siteContent = {
   // Homepage hero
   hero: {
     de: {
-      headline: "Stabile IT-Infrastruktur für wachsende Teams.",
+      headline: "Ein Konzept für stabile IT-Infrastruktur in wachsenden Teams.",
       subheadline:
-        "Wir sichern Netzwerk, Zugänge, Backups und Betrieb, damit Ausfälle seltener werden und Ihr Team arbeiten kann.",
-      primaryCta: "Kostenloses Erstgespräch",
+        "Elkaza wird als mögliches zukünftiges Angebot für Netzwerk, Zugänge, Backups und dokumentierten IT-Betrieb entwickelt.",
+      primaryCta: "Projektstatus ansehen",
       primaryCtaHref: "/kontakt",
       secondaryCta: "Security Baseline ansehen",
       secondaryCtaHref: "/leistungen/security-baseline",
     },
     en: {
-      headline: "Stable IT infrastructure for growing teams.",
+      headline: "A concept for stable IT infrastructure in growing teams.",
       subheadline:
-        "We secure networks, access, backups, and operations so outages become rarer and your team can keep working.",
-      primaryCta: "Book a 15-minute call",
+        "Elkaza is being developed as a possible future offering for networks, access, backups, and documented IT operations.",
+      primaryCta: "View project status",
       primaryCtaHref: "/en/contact",
       secondaryCta: "View Security Baseline",
       secondaryCtaHref: "/en/services/security-baseline",
@@ -288,7 +288,7 @@ export const siteContent = {
             "Betriebe mit kritischen Systemen",
           ],
           outcomes: [
-            "24/7 Monitoring Ihrer Systeme",
+            "Geplantes Monitoring Ihrer Systeme",
             "Regelmäßige Sicherheits-Updates",
             "Geprüfte Backups",
             "Schnelle Reaktion bei Störungen",
@@ -550,7 +550,7 @@ export const siteContent = {
             "Businesses with critical systems",
           ],
           outcomes: [
-            "24/7 monitoring of your systems",
+            "Planned monitoring of your systems",
             "Regular security updates",
             "Verified backups",
             "Fast response to incidents",
@@ -747,7 +747,7 @@ export const siteContent = {
           description:
             "Wir kümmern uns dauerhaft im Hintergrund um Ihre Infrastruktur.",
           features: [
-            "24/7 Monitoring (Netzwerk & Server)",
+            "Monitoring-Konzept (Netzwerk & Server)",
             "Patch-Management (OS & 3rd Party)",
             "Backup-Verifizierung (Restore-Tests)",
             "Schnelle Reaktion bei Störungen",
@@ -841,7 +841,7 @@ export const siteContent = {
           description:
             "We take care of your infrastructure continuously.",
           features: [
-            "24/7 monitoring",
+            "Monitoring concept",
             "Patch management",
             "Backup verification",
             "Incident response (SLA)",
@@ -994,10 +994,10 @@ export const siteContent = {
         { q: "Wie lange dauert ein Projekt?", a: "Das hängt vom Umfang ab. Das Security Baseline Assessment dauert 1-2 Wochen, die Umsetzung typischerweise 2-6 Wochen. Managed Services laufen fortlaufend." },
         { q: "Wird die Umsetzung unseren Betrieb stören?", a: "Nein, wir planen Änderungen außerhalb der Betriebszeiten und testen alles gründlich. Bei kritischen Systemen machen wir Rollbacks möglich." },
         { q: "Was passiert nach dem Projekt?", a: "Sie erhalten vollständige Dokumentation, Runbooks und Training. Sie können uns dann für Managed Services engagieren oder eigenständig weiterarbeiten." },
-        { q: "Sind wir an Elkaza gebunden?", a: "Nein. Nach der Umsetzung sind Sie unabhängig. Falls Sie Managed Services nutzen, können Sie monatlich kündigen." },
-        { q: "Was kostet ein Security Assessment?", a: "Das Starter-Assessment kostet ab €490 und beinhaltet Netzwerk-Audit, Security-Check, und einen Maßnahmenplan." },
+        { q: "Sind die Modelle bereits buchbar?", a: "Nein. Die dargestellten Modelle dokumentieren nur den aktuellen Planungsstand und sind noch keine Angebote." },
+        { q: "Stehen die Preise bereits fest?", a: "Nein. Preise, Leistungsumfang und Vertragsbedingungen werden erst vor einem späteren Marktstart verbindlich festgelegt." },
         { q: "Garantiert ihr 100% Security?", a: "Niemand kann das. Wir bauen eine solid Security Baseline nach Best Practices, regelmäßige Updates und Monitoring." },
-        { q: "Wie ist eure Reaktionszeit bei Fehlern?", a: "Im Managed Package garantieren wir < 4 Stunden Reaktion bei kritischen Problemen. Bei Projekten gelten vereinbarte Meilensteine." },
+        { q: "Welche Reaktionszeit ist vorgesehen?", a: "Reaktionszeiten und Servicezeiten sind noch nicht festgelegt und werden derzeit nicht zugesichert." },
         { q: "Helft ihr auch bei Compliance (ISO, DSGVO)?", a: "Ja, wir bieten NIS2/Compliance Readiness. Das ist kein Audit-Siegel, aber eine audit-fähige Sicherheitsbasis." },
       ],
     },
@@ -1007,10 +1007,10 @@ export const siteContent = {
         { q: "How long does a project take?", a: "It depends on scope. The Security Baseline Assessment takes 1-2 weeks, implementation typically 2-6 weeks. Managed Services run continuously." },
         { q: "Will implementation disrupt our operations?", a: "No, we schedule changes outside business hours and test thoroughly. For critical systems, we ensure rollback capability." },
         { q: "What happens after the project?", a: "You receive full documentation, runbooks, and training. You can then engage us for Managed Services or continue independently." },
-        { q: "Are we locked into Elkaza?", a: "No. After implementation you're independent. For Managed Services, you can cancel monthly." },
-        { q: "How much does a security assessment cost?", a: "The Starter Assessment starts at €490 and includes network audit, security check, and action plan." },
+        { q: "Can these models be ordered already?", a: "No. The models shown only document the current planning stage and are not offers." },
+        { q: "Are prices already fixed?", a: "No. Prices, scope, and contract terms will only be defined before a future market launch." },
         { q: "Do you guarantee 100% security?", a: "No one can. We build a solid security baseline per best practices, with regular updates and monitoring." },
-        { q: "What's your response time for issues?", a: "In Managed Packages, we guarantee < 4 hours response for critical issues. Projects follow agreed milestones." },
+        { q: "What response time is planned?", a: "Response and service hours are not yet defined and are not currently guaranteed." },
         { q: "Do you help with compliance (ISO, GDPR)?", a: "Yes, we offer NIS2/Compliance Readiness. It's not an audit seal, but audit-ready security fundamentals." },
       ],
     },

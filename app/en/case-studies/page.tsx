@@ -3,8 +3,8 @@ import { siteContent } from "@/lib/siteContent";
 import { createLocalizedMetadata } from "@/lib/metadata";
 
 export const metadata = createLocalizedMetadata({
-  title: "Case Studies - Elkaza Consulting",
-  description: "Projects with measurable impact. Network modernization and security for SMEs.",
+  title: "Illustrative IT scenarios - Elkaza",
+  description: "Fictional technical scenarios showing possible approaches. These are not customer references.",
   path: "/en/case-studies",
 });
 
@@ -15,8 +15,9 @@ export default function CaseStudiesEnPage() {
     <main>
       <section className="py-10 md:py-14 hero-gradient-enhanced">
         <div className="max-w-[1140px] mx-auto px-6">
-          <h1 className="text-4xl font-bold text-[var(--text)] mb-3">{content.title}</h1>
-          <p className="text-lg text-[var(--text-secondary)] max-w-3xl">{content.subtitle}</p>
+          <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-[var(--primary)]">Not customer references</p>
+          <h1 className="text-4xl font-bold text-[var(--text)] mb-3">Illustrative IT Scenarios</h1>
+          <p className="text-lg text-[var(--text-secondary)] max-w-3xl">Fictional examples explaining possible problems, approaches, and target outcomes.</p>
         </div>
       </section>
 

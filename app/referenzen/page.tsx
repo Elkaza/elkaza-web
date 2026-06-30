@@ -3,8 +3,8 @@ import { siteContent } from "@/lib/siteContent";
 import { createLocalizedMetadata } from "@/lib/metadata";
 
 export const metadata = createLocalizedMetadata({
-    title: "Referenzen & Case Studies – Erfolgreiche IT-Projekte | Elkaza",
-    description: "Sehen Sie, wie wir KMUs in Wien geholfen haben: Stabilere Netzwerke, sichere Backups und weniger Ausfälle. Echte Ergebnisse, keine Theorie.",
+    title: "Illustrative IT-Szenarien - Elkaza",
+    description: "Fiktive technische Szenarien zur Darstellung möglicher Vorgehensweisen. Keine Kundenreferenzen.",
     path: "/referenzen",
 });
 
@@ -15,8 +15,9 @@ export default function ReferenzenPage() {
         <main>
             <section className="py-10 md:py-14 hero-gradient-enhanced">
                 <div className="max-w-[1140px] mx-auto px-6">
-                    <h1 className="text-4xl font-bold text-[var(--text)] mb-3">{content.title}</h1>
-                    <p className="text-lg text-[var(--text-secondary)] max-w-3xl">{content.subtitle}</p>
+                    <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-[var(--primary)]">Keine Kundenreferenzen</p>
+                    <h1 className="text-4xl font-bold text-[var(--text)] mb-3">Illustrative IT-Szenarien</h1>
+                    <p className="text-lg text-[var(--text-secondary)] max-w-3xl">Fiktive Beispiele, die mögliche Probleme, Vorgehensweisen und Zielbilder erklären.</p>
                 </div>
             </section>
 

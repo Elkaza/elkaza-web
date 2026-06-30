@@ -22,6 +22,10 @@ export default function ImpressumPage() {
         <div className="max-w-[1140px] mx-auto px-6 prose prose-lg max-w-3xl">
           <h2>{L.title}</h2>
 
+          <div className="not-prose my-6 rounded-lg border border-amber-300 bg-amber-50 p-4 text-sm leading-relaxed text-amber-950 dark:border-amber-700 dark:bg-amber-950 dark:text-amber-100">
+            Diese Website dokumentiert ein Projekt in Vorbereitung. Derzeit werden keine Dienstleistungen angeboten, keine Aufträge angenommen und keine Verträge über diese Website geschlossen. Vor einer kommerziellen Aktivierung werden vollständiger Name und geografische Anschrift des Betreibers ergänzt.
+          </div>
+
           <p className="text-[var(--text-secondary)]">Betreiber / Anbieter:</p>
           <p>
             {L.operatorLine}
@@ -41,12 +45,7 @@ export default function ImpressumPage() {
           </p>
 
           <h3>Kontakt</h3>
-          <p>
-            E‑Mail:{' '}
-            <a href={`mailto:${L.contact.email.replace(/\[|\]/g, '')}`}>{L.contact.email}</a>
-            <br />
-            Kontaktformular: {L.contact.contactForm}
-          </p>
+          <p>Während der Vorbereitungsphase ist kein geschäftlicher Kontaktkanal aktiv.</p>
 
           <h3>Unternehmensgegenstand</h3>
           <p>{L.businessPurpose}</p>
@@ -61,7 +60,7 @@ export default function ImpressumPage() {
             </>
           )}
 
-          <h3>Aufsichtsbehörde / Gewerbebehörde</h3>
+          <h3>Gewerblicher Status</h3>
           <p>{L.authority}</p>
 
           <h3>Anwendbare Vorschriften</h3>

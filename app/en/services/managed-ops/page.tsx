@@ -32,7 +32,7 @@ export default function ManagedOpsPage() {
                 "One contact who knows your environment",
             ]}
             included={[
-                "24/7 Monitoring of critical services",
+                "Monitoring concept for critical services",
                 "Patch Management (OS & 3rd Party)",
                 "Backup monitoring and regular tests",
                 "Endpoint Protection Management",
@@ -70,8 +70,8 @@ export default function ManagedOpsPage() {
             ]}
             faqs={[
                 { q: "Do you replace our internal IT?", a: "We can complement or replace. We often handle 'boring' ops so internal IT can focus on projects." },
-                { q: "How fast do you respond?", a: "Depends on SLA. Critical usually < 1 hour. Standard requests < 4 hours." },
-                { q: "Do you have access to our data?", a: "Technically administrative yes, but we don't look at files. Confidentiality is guaranteed (NDA/DPA)." },
+                { q: "What response times are planned?", a: "Response and service hours are not yet defined and would only be specified in a later binding offer." },
+                { q: "How would data access be handled?", a: "A future offer would define roles, logging, confidentiality, and data-processing terms before any access occurs." },
             ]}
             trustNote="We work transparently. You can see what we do and how your systems are doing in our portal at any time."
             finalCtaText="Put your IT in professional hands."

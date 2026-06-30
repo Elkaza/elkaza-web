@@ -8,16 +8,16 @@ interface TrustBarProps {
 
 const trustItems = {
     de: [
-        { icon: FileText, text: "Dokumentation inklusive" },
-        { icon: Clock, text: "Antwort in 24h" },
-        { icon: CheckCircle, text: "Fixpreis möglich" },
-        { icon: Lock, text: "NDA auf Wunsch" },
+        { icon: FileText, text: "Konzeptdokumentation" },
+        { icon: Clock, text: "In Vorbereitung" },
+        { icon: CheckCircle, text: "Unverbindliche Planung" },
+        { icon: Lock, text: "Noch nicht verfügbar" },
     ],
     en: [
-        { icon: FileText, text: "Documentation included" },
-        { icon: Clock, text: "Response in 24h" },
-        { icon: CheckCircle, text: "Fixed scope available" },
-        { icon: Lock, text: "NDA available" },
+        { icon: FileText, text: "Concept documentation" },
+        { icon: Clock, text: "In preparation" },
+        { icon: CheckCircle, text: "Non-binding planning" },
+        { icon: Lock, text: "Not yet available" },
     ],
 };
 

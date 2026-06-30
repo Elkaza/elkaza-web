@@ -2,7 +2,6 @@ import Link from "next/link";
 import { siteContent } from "@/lib/siteContent";
 import CTA from "@/app/components/CTA";
 import CoreServices from "@/app/components/CoreServices";
-import Resources from "@/app/components/Resources";
 import FAQ from "@/app/components/FAQ";
 import HomeTrustStrip from "@/app/components/HomeTrustStrip";
 import HomeDecisionPath from "@/app/components/HomeDecisionPath";
@@ -136,7 +135,7 @@ export default function HomeEN() {
       <section className="py-12 md:py-14 bg-[var(--bg)]">
         <div className="max-w-[1140px] mx-auto px-6">
           <h2 className="text-2xl md:text-3xl font-bold text-[var(--text)] mb-6">
-            Case Studies
+            Illustrative Scenarios
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {caseStudies.items.slice(0, 2).map((cs) => (
@@ -176,9 +175,6 @@ export default function HomeEN() {
         </div>
       </section>
 
-      {/* Resources Section */}
-      <Resources locale="en" />
-
       {/* FAQ Section */}
       <FAQ items={siteContent.faqs.en.items} locale="en" />
 
@@ -188,7 +184,7 @@ export default function HomeEN() {
           <h2 className="text-2xl md:text-3xl font-bold text-[var(--text)] mb-5">
             Ready for stable infrastructure?
           </h2>
-          <CTA href="/en/contact">Schedule a Free Consultation</CTA>
+          <CTA href="/en/contact">View project status</CTA>
         </div>
       </section>
     </main>

@@ -10,6 +10,7 @@ import {
     Wrench,
 } from "lucide-react";
 import CTA from "@/app/components/CTA";
+import { SITE_IS_PRELAUNCH } from "@/lib/siteStatus";
 
 interface ServicePageTemplateProps {
     locale: "de" | "en";
@@ -47,6 +48,8 @@ const labels = {
         faq: "Häufige Fragen",
         timeline: "Typische Dauer",
         deliverablesLabel: "Ergebnisse",
+        prelaunch: "Geplantes Leistungskonzept - derzeit nicht verfügbar",
+        statusCta: "Projektstatus ansehen",
     },
     en: {
         forWhom: "Who it's for",
@@ -62,6 +65,8 @@ const labels = {
         faq: "FAQ",
         timeline: "Typical timeline",
         deliverablesLabel: "Deliverables",
+        prelaunch: "Planned service concept - not currently available",
+        statusCta: "View project status",
     },
 };
 
@@ -105,6 +110,9 @@ export default function ServicePageTemplate({
             <section className="hero-gradient-enhanced py-12 md:py-18">
                 <div className="mx-auto grid max-w-[1140px] gap-8 px-4 sm:px-6 md:grid-cols-[1.1fr_0.9fr] md:items-end">
                     <div>
+                        {SITE_IS_PRELAUNCH && (
+                            <p className="mb-4 text-sm font-semibold uppercase tracking-wide text-[var(--primary)]">{l.prelaunch}</p>
+                        )}
                         <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--primary-light)] text-[var(--primary)]">
                             <Icon className="h-6 w-6" aria-hidden="true" />
                         </div>
@@ -121,7 +129,9 @@ export default function ServicePageTemplate({
                             </span>
                         </div>
                         <div className="mt-7">
-                            <CTA href={ctaHref}>{ctaAction}</CTA>
+                            <CTA href={SITE_IS_PRELAUNCH ? (locale === "de" ? "/kontakt" : "/en/contact") : ctaHref}>
+                                {SITE_IS_PRELAUNCH ? l.statusCta : ctaAction}
+                            </CTA>
                         </div>
                     </div>
 
@@ -267,7 +277,9 @@ export default function ServicePageTemplate({
             <section className="bg-[var(--surface)] py-12 md:py-16">
                 <div className="mx-auto max-w-[1140px] px-4 text-center sm:px-6">
                     <h2 className="mb-6 text-2xl font-semibold text-[var(--text)]">{finalCtaText}</h2>
-                    <CTA href={ctaHref}>{ctaAction}</CTA>
+                    <CTA href={SITE_IS_PRELAUNCH ? (locale === "de" ? "/kontakt" : "/en/contact") : ctaHref}>
+                        {SITE_IS_PRELAUNCH ? l.statusCta : ctaAction}
+                    </CTA>
                 </div>
             </section>
         </main>

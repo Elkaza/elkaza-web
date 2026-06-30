@@ -21,7 +21,7 @@ export default function DatenschutzPage() {
         <div className="max-w-[1140px] mx-auto px-6 prose prose-lg max-w-3xl">
 
           <h2 className="text-lg font-semibold">Verantwortliche Stelle</h2>
-          <p className="text-[var(--text-secondary)]">Elkaza Consulting (in Gründung)</p>
+          <p className="text-[var(--text-secondary)]">Betreiber der privaten Projektwebsite Elkaza (Vorbereitungsphase)</p>
           <p>
             {L.address.street && L.address.street !== 'ADDRESS_LINE' ? (
               <>
@@ -33,11 +33,10 @@ export default function DatenschutzPage() {
             <br />
             {L.address.country}
           </p>
-          <p>E‑Mail: <a href="mailto:contact@elkaza.at">contact@elkaza.at</a></p>
+          <p>Der geschäftliche Kontaktkanal und die vollständige Anbieterkennzeichnung werden vor der kommerziellen Aktivierung ergänzt.</p>
 
           <h2 className="text-lg font-semibold">Zwecke der Verarbeitung und Rechtsgrundlagen</h2>
           <ul>
-            <li>Bearbeitung von Kontaktanfragen und Kommunikation – Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Maßnahmen) bzw. Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse).</li>
             <li>Betrieb der Website und IT-Sicherheit (Server-Logs) – Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO.</li>
           </ul>
 
@@ -48,13 +47,13 @@ export default function DatenschutzPage() {
           <p>Personenbezogene Daten werden nur an Dienstleister weitergegeben, die für den Betrieb der Website erforderlich sind (z. B. Hosting, E‑Mail-Versand). Übermittlungen an Empfänger in Drittländer erfolgen nur, wenn gesetzlich zulässig und mit geeigneten Garantien.</p>
 
           <h2 className="text-lg font-semibold">Speicherdauer</h2>
-          <p>Kontaktdaten werden so lange gespeichert, wie es zur Bearbeitung der Anfrage oder zur Erfüllung gesetzlicher Pflichten erforderlich ist. Server-Logs werden nur so lange gespeichert, wie dies für Sicherheits- und Betriebszwecke erforderlich ist.</p>
+          <p>Server-Logs werden nur so lange gespeichert, wie dies für Sicherheits- und Betriebszwecke erforderlich ist. Über diese Website werden derzeit keine Kontaktanfragen verarbeitet.</p>
 
-          <h2 className="text-lg font-semibold">Reichweitenmessung / Plausible Analytics</h2>
-          <p>Diese Website nutzt eine selbst gehostete Instanz von Plausible Analytics unter <code>analytics.elkaza.at</code>, um aggregierte Nutzungsstatistiken zu erfassen. Plausible setzt dabei keine Analyse- oder Marketing-Cookies ein.</p>
+          <h2 className="text-lg font-semibold">Cookies und Reichweitenmessung</h2>
+          <p>Während der Vorbereitungsphase werden keine Analyse- oder Marketing-Cookies gesetzt und keine Reichweitenmessung eingesetzt.</p>
 
           <h2 className="text-lg font-semibold">Ihre Rechte</h2>
-          <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit sowie das Recht, der Verarbeitung zu widersprechen. Zur Ausübung Ihrer Rechte kontaktieren Sie uns bitte per E‑Mail an <a href="mailto:contact@elkaza.at">contact@elkaza.at</a> oder über das Kontaktformular unter <code>/kontakt</code>.</p>
+          <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit sowie das Recht, der Verarbeitung zu widersprechen. Ein Kontaktweg zur Ausübung dieser Rechte muss vor öffentlicher kommerzieller Nutzung ergänzt werden.</p>
 
           <h2 className="text-lg font-semibold">Beschwerderecht</h2>
           <p>Sie haben das Recht, bei der österreichischen Datenschutzbehörde Beschwerde einzulegen: https://www.dsb.gv.at/</p>

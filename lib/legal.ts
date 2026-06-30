@@ -1,7 +1,7 @@
 export const legal = {
   de: {
-    title: 'Angaben gemäß § 5 ECG',
-    operatorLine: 'Elkaza Consulting (in Gründung)',
+    title: 'Impressum und Projektstatus',
+    operatorLine: 'Elkaza ist eine private Projektwebsite in Vorbereitung.',
     owner: '',
     address: {
       street: 'ADDRESS_LINE',
@@ -9,20 +9,20 @@ export const legal = {
       country: 'Österreich',
     },
     contact: {
-      email: 'contact@elkaza.at',
+      email: '',
       phone: '',
       contactForm: '/kontakt',
     },
-    businessPurpose: 'IT-Infrastruktur, Netzwerk, Security, Automation',
+    businessPurpose: 'Konzeption einer möglichen zukünftigen Tätigkeit in den Bereichen IT-Infrastruktur, Netzwerk, Security und Automation. Derzeit kein Dienstleistungsangebot und keine Auftragsannahme.',
     companyRegister: '',
     vatId: '',
-    authority: 'zuständige Gewerbebehörde in Wien',
+    authority: 'Derzeit keine gewerbliche Leistungserbringung über diese Website.',
     regulationsUrl:
       'https://www.ris.bka.gv.at/GeltendeFassung.wxe?Abfrage=Bundesnormen&Gesetzesnummer=10001122',
   },
   en: {
-    title: 'Legal disclosure (Austria)',
-    operatorLine: 'Elkaza Consulting (in formation)',
+    title: 'Legal notice and project status',
+    operatorLine: 'Elkaza is a private project website in preparation.',
     owner: '',
     address: {
       street: 'ADDRESS_LINE',
@@ -30,14 +30,14 @@ export const legal = {
       country: 'Austria',
     },
     contact: {
-      email: 'contact@elkaza.at',
+      email: '',
       phone: '',
       contactForm: '/en/contact',
     },
-    businessPurpose: 'IT infrastructure, networking, security, automation',
+    businessPurpose: 'Planning a possible future activity in IT infrastructure, networking, security, and automation. No services are currently offered and no orders are accepted.',
     companyRegister: '',
     vatId: '',
-    authority: 'competent trade authority in Vienna',
+    authority: 'No commercial services are currently provided through this website.',
     regulationsUrl:
       'https://www.ris.bka.gv.at/GeltendeFassung.wxe?Abfrage=Bundesnormen&Gesetzesnummer=10001122',
   },
