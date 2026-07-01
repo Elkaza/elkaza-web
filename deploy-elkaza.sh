@@ -2,10 +2,18 @@
 set -Eeuo pipefail
 
 PROJECT_DIR="${PROJECT_DIR:-$HOME/elkaza-web}"
-REMOTE_TARGET="${REMOTE_TARGET:-mohamed@100.69.253.5:/home/mohamed/fortress/compose/elkaza-web/html/}"
+REMOTE_TARGET="${REMOTE_TARGET:-mohamed@100.69.253.5:./}"
 SITE_URL="${SITE_URL:-https://elkaza.at}"
 BACKEND_URL="${BACKEND_URL:-http://100.69.253.5:8081}"
 CURL_MAX_TIME="${CURL_MAX_TIME:-20}"
+DEPLOY_LOCK_FILE="${DEPLOY_LOCK_FILE:-$HOME/.cache/elkaza-web/deploy.lock}"
+
+mkdir -p "$(dirname "$DEPLOY_LOCK_FILE")"
+exec 9>"$DEPLOY_LOCK_FILE"
+if ! flock -n 9; then
+  echo "ERROR: another elkaza.at deployment is already running" >&2
+  exit 1
+fi
 
 curl_head() {
   curl --fail --silent --show-error --max-time "$CURL_MAX_TIME" --head "$@"
@@ -35,7 +43,7 @@ echo "==> Building static export"
 npm run build
 
 echo "==> Deploying static export to debian-core"
-rsync -az --delete "$PROJECT_DIR/out/" "$REMOTE_TARGET"
+rsync -az --delete -e "ssh -o BatchMode=yes" "$PROJECT_DIR/out/" "$REMOTE_TARGET"
 
 echo "==> Smoke testing backend and ingress"
 curl_head "$BACKEND_URL/" >/dev/null
