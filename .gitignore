@@ -12,6 +12,8 @@
 
 # testing
 /coverage
+/test-results/
+/screenshots/
 
 # next.js
 /.next/
@@ -29,6 +31,11 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
+*.log
+build_*.txt
+lint_*.txt
+a11y_results.txt
+authors.txt
 
 # env files (can opt-in for committing if needed)
 .env*
@@ -39,3 +46,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local scratch work
+/.tmp/
