@@ -1,7 +1,9 @@
 import { Metadata } from 'next';
 import { getAlternates } from '@/lib/i18nPaths';
+import { SITE_IS_PRELAUNCH } from '@/lib/siteStatus';
 
 const BASE_URL = 'https://elkaza.at';
+const prelaunchRobots = { index: false, follow: false, noarchive: true } as const;
 
 export function createLocalizedMetadata({
   title,
@@ -32,6 +34,7 @@ export function createLocalizedMetadata({
       locale: path === '/en' || path.startsWith('/en/') ? 'en_US' : 'de_AT',
       type: 'website',
     },
+    robots: SITE_IS_PRELAUNCH ? prelaunchRobots : undefined,
   };
 }
 
@@ -101,13 +104,15 @@ export function generateServiceMetadata(props: ServiceMetadataProps): Metadata {
       description,
       images: [ogImage],
     },
-    robots: {
-      index: true,
-      follow: true,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-      'max-video-preview': -1,
-    },
+    robots: SITE_IS_PRELAUNCH
+      ? prelaunchRobots
+      : {
+          index: true,
+          follow: true,
+          'max-image-preview': 'large',
+          'max-snippet': -1,
+          'max-video-preview': -1,
+        },
   };
 }
 
@@ -124,6 +129,22 @@ export function generateServiceSchema(props: ServiceMetadataProps) {
   } = props;
 
   const url = locale === 'en' ? `https://elkaza.at/en/services/${slug}` : `https://elkaza.at/leistungen/${slug}`;
+
+  if (SITE_IS_PRELAUNCH) {
+    return {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: title,
+      description,
+      url,
+      isPartOf: {
+        '@type': 'WebSite',
+        name: 'Elkaza project preview',
+        url: 'https://elkaza.at',
+      },
+      inLanguage: locale === 'en' ? 'en' : 'de-AT',
+    };
+  }
 
   return {
     '@context': 'https://schema.org',
