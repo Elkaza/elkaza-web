@@ -69,10 +69,10 @@ export default async function ReferenzDetailPage({
                     </div>
 
                     <p className="text-[var(--muted)] text-sm mb-6">
-                        Mehr Details auf Anfrage. Kontaktieren Sie uns für ein Gespräch.
+                        Dieses Szenario dient nur zur Erklärung der geplanten Arbeitsweise. Derzeit werden keine Anfragen oder Aufträge angenommen.
                     </p>
 
-                    <CTA href="/kontakt">Kontakt aufnehmen</CTA>
+                    <CTA href="/kontakt">Projektstatus ansehen</CTA>
                 </div>
             </section>
         </main>

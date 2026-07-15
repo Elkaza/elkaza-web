@@ -75,8 +75,8 @@ export default function CloudSecurityPage() {
                 { q: "Brauchen wir teure Lizenzen?", a: "Wir nutzen oft, was in Business Premium/Enterprise schon drin ist. Wir beraten zu Upgrades nur wenn nötig." },
                 { q: "Decken Sie nur Microsoft ab?", a: "Schwerpunkt M365/Azure, aber auch AWS Grundlagen und gängige SaaS-Tools." },
             ]}
-            trustNote="Cloud-Security ist ein geteiltes Modell. Wir sorgen dafür, dass Sie Ihren Teil der Verantwortung perfekt erfüllen."
-            finalCtaText="Nutzen Sie die Cloud sicher und effizient."
+            trustNote="Cloud-Security ist ein geteiltes Modell. Das Konzept zeigt, wie der eigene Verantwortungsbereich sauber abgesichert werden kann."
+            finalCtaText="Cloud-Security als geplantes Leistungsfeld ansehen."
         />
     );
 }

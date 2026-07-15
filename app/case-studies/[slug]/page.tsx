@@ -2,14 +2,14 @@ import CTA from "@/app/components/CTA";
 
 const mockDb: Record<string, { title: string; client?: string; challenge: string; solution: string; result: string; tech: string[] }> = {
   "logistik-automation": {
-    title: "Automatisierung spart 50 Stunden/Monat für Logistikunternehmen",
-    client: "KMU (Logistik)",
+    title: "Beispiel: Automatisierung in der Logistik",
+    client: "Fiktives Logistik-KMU",
     challenge:
-      "Ein österreichisches Logistikunternehmen verarbeitete hunderte Frachtrechnungen jeden Monat manuell. Das Finanzteam verbrachte über 50 Stunden mit einer fehleranfälligen Tätigkeit.",
+      "Ein fiktives Logistikunternehmen verarbeitet viele Frachtrechnungen manuell. Das Beispiel zeigt, wie wiederkehrende Datenerfassung analysiert werden könnte.",
     solution:
-      "Mit unserer Leistung ‚KI & Intelligente Automatisierung' entwickelten wir eine Lösung, die PDF‑Rechnungen automatisch ausliest, relevante Felder validiert und die Daten direkt in die Buchhaltungssoftware übergibt – ohne manuelle Eingabe.",
+      "Ein möglicher Ansatz wäre, PDF-Rechnungen strukturiert auszulesen, relevante Felder zu validieren und den Übergabeprozess an die Buchhaltung zu dokumentieren.",
     result:
-      "Über 50 Stunden pro Monat eingespart, 98% weniger Erfassungsfehler, Fokus des Teams auf Analyse und Budgetsteuerung, ROI in unter 4 Monaten.",
+      "Zielbild: weniger manuelle Erfassung, nachvollziehbare Validierung und klarere Übergabe zwischen Betrieb und Buchhaltung.",
     tech: ["Next.js", "TypeScript", "Gemini"],
   },
 };
@@ -30,7 +30,8 @@ export default async function CaseStudyDetail(props: { params: Promise<{ slug: s
       <section className="py-10 md:py-14 hero-gradient-enhanced">
         <div className="max-w-3xl mx-auto px-6">
           <h1 className="text-4xl font-bold text-[var(--text)] mb-2">{data.title}</h1>
-          {data.client && <p className="text-[var(--muted)]">Kunde: {data.client}</p>}
+          <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-[var(--primary)]">Illustratives Szenario - keine Kundenreferenz</p>
+          {data.client && <p className="text-[var(--muted)]">Kontext: {data.client}</p>}
         </div>
       </section>
 
@@ -66,7 +67,7 @@ export default async function CaseStudyDetail(props: { params: Promise<{ slug: s
 
       <section className="py-10 md:py-14 bg-[var(--bg)]">
         <div className="max-w-3xl mx-auto px-6 text-center">
-          <CTA href="/kontakt">Ähnliches Projekt besprechen</CTA>
+          <CTA href="/kontakt">Projektstatus ansehen</CTA>
         </div>
       </section>
     </main>

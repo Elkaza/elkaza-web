@@ -70,11 +70,11 @@ export default function HomeEN() {
       <section className="py-12 md:py-14 bg-[var(--surface)]">
         <div className="max-w-[1140px] mx-auto px-6">
           <h2 className="text-2xl md:text-3xl font-bold text-[var(--text)] mb-2">
-            Our Services
+            Planned service areas
           </h2>
           <p className="mb-8 max-w-3xl text-sm leading-relaxed text-[var(--text-secondary)]">
-            Start with the right entry point: stabilize the network, build a security baseline,
-            secure access, or automate recurring IT work.
+            These areas show how a future offer could be structured: stabilize the network,
+            build a security baseline, secure access, or automate recurring IT work.
           </p>
           <CoreServices locale="en" items={siteContent.services.en.items} />
         </div>
@@ -84,7 +84,7 @@ export default function HomeEN() {
       <section className="py-12 md:py-14 bg-[var(--surface)]">
         <div className="max-w-[1140px] mx-auto px-6">
           <h2 className="text-2xl md:text-3xl font-bold text-[var(--text)] mb-8 md:text-center">
-            How it works
+            How the model is planned
           </h2>
           <div className="flex flex-wrap justify-center gap-6">
             {process.map((step, i) => (
@@ -107,7 +107,7 @@ export default function HomeEN() {
                 {whyUs.title}
               </h2>
               <p className="text-[var(--text-secondary)] text-lg mb-2">{whyUs.lead}</p>
-              <p className="text-[var(--muted)] mb-6">We deliver solutions that work, not just concepts.</p>
+              <p className="text-[var(--muted)] mb-6">The focus is on clear, documented, and operable technical work.</p>
               <ul className="space-y-3">
                 {whyUs.bullets.map((bullet, i) => (
                   <li key={i} className="flex items-start gap-3">
@@ -182,7 +182,7 @@ export default function HomeEN() {
       <section className="py-12 md:py-14 bg-[var(--surface)]">
         <div className="max-w-[1140px] mx-auto px-6 text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-[var(--text)] mb-5">
-            Ready for stable infrastructure?
+            View project status
           </h2>
           <CTA href="/en/contact">View project status</CTA>
         </div>

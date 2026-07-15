@@ -69,10 +69,10 @@ export default async function CaseStudyDetailEnPage({
           </div>
 
           <p className="text-[var(--muted)] text-sm mb-6">
-            More details available on request. Contact us for a conversation.
+            This scenario only explains the planned working model. No inquiries or orders are currently accepted.
           </p>
 
-          <CTA href="/en/contact">Get in Touch</CTA>
+          <CTA href="/en/contact">View project status</CTA>
         </div>
       </section>
     </main>

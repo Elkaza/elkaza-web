@@ -12,17 +12,17 @@ export default function NotFoundContent() {
         title: "Page not found",
         description: "The page you are looking for does not exist or may have moved.",
         home: "Back to homepage",
-        services: "View services",
+        services: "View concepts",
         helpful: "Helpful links:",
-        links: [["/en/contact", "Contact"], ["/en/packages", "Packages"], ["/en/case-studies", "Case Studies"], ["/en/about", "About"]],
+        links: [["/en/contact", "Contact"], ["/en/packages", "Packages"], ["/en/case-studies", "Scenarios"], ["/en/about", "About"]],
       }
     : {
         title: "Seite nicht gefunden",
         description: "Die Seite, die Sie suchen, existiert nicht oder wurde verschoben.",
         home: "Zur Startseite",
-        services: "Unsere Leistungen",
+        services: "Konzepte ansehen",
         helpful: "Hilfreiche Links:",
-        links: [["/kontakt", "Kontakt"], ["/pakete", "Pakete"], ["/referenzen", "Referenzen"], ["/ueber-uns", "Über uns"]],
+        links: [["/kontakt", "Kontakt"], ["/pakete", "Pakete"], ["/referenzen", "Szenarien"], ["/ueber-uns", "Über uns"]],
       };
 
   return (

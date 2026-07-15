@@ -75,8 +75,8 @@ export default function ZeroTrustPage() {
                 { q: "Wird das Anmelden komplizierter?", a: "Nein, oft einfacher dank SSO (nur noch 1 Login) und passwortloser Anmeldung (Windows Hello / TouchID)." },
                 { q: "Was passiert, wenn das Handy weg ist?", a: "Dank Conditional Access sperren wir den Zugriff sofort und löschen Firmendaten remote." },
             ]}
-            trustNote="Identitäten sind der neue Perimeter. Wir setzen auf strikte Prinzipien: Verify explicitly, Use least privilege, Assume breach."
-            finalCtaText="Machen Sie Ihre Identitäten zur stärksten Verteidigungslinie."
+            trustNote="Identitäten sind der neue Perimeter. Das Konzept orientiert sich an strikten Prinzipien: Verify explicitly, Use least privilege, Assume breach."
+            finalCtaText="Zero Trust als geplantes Leistungsfeld ansehen."
         />
     );
 }

@@ -16,7 +16,7 @@ const services = [
     { slug: "zero-trust", icon: Lock, title: "Zero Trust & Identity", benefit: "Zugriff nur für die, die ihn brauchen.", bullets: ["Identitätsbasierte Zugriffskontrolle", "Conditional Access Policies", "Privileged Access Management"], categories: ["security"] },
     { slug: "ransomware-resilience", icon: ShieldAlert, title: "Ransomware Resilience", benefit: "Bereit für den Ernstfall.", bullets: ["Immutable Backups", "Getestete Restore-Prozesse", "Incident-Runbooks"], categories: ["security"] },
     { slug: "automation", icon: Cog, title: "Automation & Platform Engineering", benefit: "Weniger manuelle Arbeit. Weniger Fehler.", bullets: ["Automatisierte Deployments", "Infrastructure as Code", "Self-Service für Teams"], categories: ["automation"] },
-    { slug: "managed-ops", icon: Headphones, title: "Managed Operations", benefit: "Wir kümmern uns. Sie konzentrieren sich aufs Geschäft.", bullets: ["Proaktives Monitoring", "Incident-Response", "Regelmäßige Reviews"], categories: ["operations"] },
+    { slug: "managed-ops", icon: Headphones, title: "Managed Operations", benefit: "Geplantes Modell für laufende Betreuung.", bullets: ["Monitoring-Konzept", "Incident-Abläufe", "Regelmäßige Reviews"], categories: ["operations"] },
     { slug: "cloud-saas-security", icon: Cloud, title: "Cloud & SaaS Security", benefit: "Kontrolle über Ihre Cloud-Umgebung.", bullets: ["Cloud Security Posture", "Konfigurationsaudits", "Shadow-IT-Erkennung"], categories: ["security", "cloud"] },
     { slug: "endpoint-security", icon: Laptop, title: "Endpoint & Device Security", benefit: "Jedes Gerät abgesichert.", bullets: ["EDR/XDR-Rollout", "Device Compliance", "Sichere Gerätekonfiguration"], categories: ["security"] },
     { slug: "ai-adoption", icon: Sparkles, title: "Secure AI Adoption", benefit: "KI nutzen, ohne Daten zu riskieren.", bullets: ["Datenklassifizierung", "Berechtigungs-Cleanup", "AI-Nutzungsrichtlinie"], categories: ["compliance"] },
@@ -60,15 +60,14 @@ const deliverables = [
     { icon: FileText, name: "Dokumentation", desc: "Jede Änderung dokumentiert." },
     { icon: BookOpen, name: "Wissenstransfer", desc: "Schulung für Ihr Team." },
     { icon: Presentation, name: "Abschlussbericht", desc: "Zusammenfassung und Empfehlungen." },
-    { icon: MessageSquare, name: "Support", desc: "Fragen nach Projektende? Erreichbar." },
+    { icon: MessageSquare, name: "Übergabe", desc: "Klare nächste Schritte und Verantwortlichkeiten." },
 ];
 
 const faqs = [
-    { q: "Wie viel Ausfallzeit entsteht?", a: "Die meisten Änderungen laufen im Hintergrund. Geplante Wartungsfenster werden mit Ihnen abgestimmt." },
-    { q: "Welchen Zugang brauchen Sie?", a: "Admin-Zugang zu den relevanten Systemen. Temporär, dokumentiert, nach Projektende entfernt." },
-    { q: "Müssen wir bestimmte Tools kaufen?", a: "Wir arbeiten mit dem, was Sie haben. Wenn Investitionen sinnvoll sind, besprechen wir das vorher." },
-    { q: "Wem gehört das Ergebnis?", a: "Ihnen. Alle Dokumentation, Konfigurationen und Skripte gehören Ihrem Unternehmen." },
-    { q: "Wie steht es mit Vertraulichkeit?", a: "NDA auf Wunsch. Alle Daten bleiben bei Ihnen. Wir nehmen keine Kopien mit." },
+    { q: "Kann man diese Leistungen schon beauftragen?", a: "Nein. Diese Seite dokumentiert den aktuellen Planungsstand. Derzeit werden keine Angebote erstellt und keine Aufträge angenommen." },
+    { q: "Warum sind die Bereiche trotzdem beschrieben?", a: "Die Beschreibungen helfen, den geplanten Fokus transparent zu machen: Netzwerk, Security, Zugänge, Backups und dokumentierter Betrieb." },
+    { q: "Sind die Szenarien Kundenreferenzen?", a: "Nein. Sie sind illustrative Beispielverläufe und keine echten Kundenprojekte." },
+    { q: "Wann werden Preise und Kontaktweg ergänzt?", a: "Erst nach rechtlicher und organisatorischer Klärung, inklusive vollständiger Anbieterkennzeichnung und aktivem Kontaktkanal." },
 ];
 
 export default function LeistungenClient() {
@@ -86,11 +85,10 @@ export default function LeistungenClient() {
                     <div className="md:flex md:items-center md:justify-between gap-10">
                         <div className="md:w-3/5">
                             <h1 className="text-4xl md:text-5xl font-bold text-[var(--text)] mb-4">
-                                IT-Infrastruktur für Wiener KMUs. <br />
-                                Stabil. Sicher. Skalierbar.
+                                Geplante IT-Leistungsbereiche für Wiener KMUs.
                             </h1>
                             <p className="text-lg leading-relaxed text-[var(--text-secondary)] mb-8 md:text-xl">
-                                Kein Technik-Kauderwelsch. Wir sorgen dafür, dass Ihr Netzwerk läuft, Ihre Daten sicher sind und Sie sich auf Ihr Geschäft konzentrieren können. Ihr persönlicher Ansprechpartner vor Ort in Wien.
+                                Diese Seite zeigt, wie ein späteres Angebot für Netzwerk, Security, Zugänge, Backups und dokumentierten IT-Betrieb aufgebaut sein könnte. Derzeit ist Elkaza ein Projekt in Vorbereitung.
                             </p>
                             <div className="flex flex-wrap gap-4 mb-8">
                                 <CTA href="/kontakt">Projektstatus ansehen</CTA>
@@ -99,19 +97,18 @@ export default function LeistungenClient() {
                                 </Link>
                             </div>
 
-                            {/* Trust Block - Why Elkaza */}
                             <ul className="text-sm text-[var(--muted)] space-y-2">
                                 <li className="flex items-center gap-2">
                                     <CheckCircle className="w-4 h-4 text-[var(--primary)]" />
-                                    <span>Über 10 Jahre Erfahrung in Enterprise-IT & Security</span>
+                                    <span>Konzeptphase: keine Auftragsannahme über diese Website</span>
                                 </li>
                                 <li className="flex items-center gap-2">
                                     <CheckCircle className="w-4 h-4 text-[var(--primary)]" />
-                                    <span>Zertifiziert (Cisco, Microsoft, Fortinet)</span>
+                                    <span>Geplanter Fokus: KMU, Microsoft-Umgebungen, Open Source und Dokumentation</span>
                                 </li>
                                 <li className="flex items-center gap-2">
                                     <CheckCircle className="w-4 h-4 text-[var(--primary)]" />
-                                    <span><span className="font-medium text-[var(--text)]">Antwortzeit &lt; 4 Stunden</span> bei Managed Services</span>
+                                    <span>Preise, SLAs und Kontaktweg werden erst vor kommerzieller Aktivierung ergänzt</span>
                                 </li>
                             </ul>
                         </div>
@@ -128,7 +125,7 @@ export default function LeistungenClient() {
                     <div className="mb-6 max-w-3xl">
                         <h2 className="text-2xl font-semibold text-[var(--text)]">Welcher Einstieg passt?</h2>
                         <p className="mt-2 text-sm leading-relaxed text-[var(--text-secondary)]">
-                            Wenn Sie noch nicht wissen, welcher Service richtig ist, starten Sie hier. Die drei Wege decken die häufigsten Situationen ab.
+                            Wenn das Angebot später aktiviert wird, könnten diese drei Einstiegspunkte die häufigsten Situationen abdecken.
                         </p>
                     </div>
                     <div className="grid gap-4 md:grid-cols-3">
@@ -144,7 +141,7 @@ export default function LeistungenClient() {
                                 <h3 className="text-lg font-semibold text-[var(--text)] group-hover:text-[var(--primary)]">{path.title}</h3>
                                 <p className="mt-2 flex-1 text-sm leading-relaxed text-[var(--text-secondary)]">{path.text}</p>
                                 <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[var(--primary)]">
-                                    Ansehen <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                                    Konzept ansehen <ArrowRight className="h-4 w-4" aria-hidden="true" />
                                 </span>
                             </Link>
                         ))}
@@ -178,12 +175,12 @@ export default function LeistungenClient() {
                         </div>
                         <div>
                             <h3 className="font-semibold text-[var(--text)] mb-3 flex items-center gap-2">
-                                <Sparkles className="w-5 h-5 text-[var(--primary)]" /> Ihr Vorteil
+                            <Sparkles className="w-5 h-5 text-[var(--primary)]" /> Geplanter Nutzen
                             </h3>
                             <ul className="space-y-2 text-sm text-[var(--text-secondary)]">
-                                <li className="flex gap-2"><div className="w-1.5 h-1.5 rounded-full bg-[var(--primary)] mt-1.5" />Ein Ansprechpartner für alles Technische</li>
-                                <li className="flex gap-2"><div className="w-1.5 h-1.5 rounded-full bg-[var(--primary)] mt-1.5" />Security-Basics ohne Komplexitäts-Monster</li>
-                                <li className="flex gap-2"><div className="w-1.5 h-1.5 rounded-full bg-[var(--primary)] mt-1.5" />Planbare IT-Kosten</li>
+                                <li className="flex gap-2"><div className="w-1.5 h-1.5 rounded-full bg-[var(--primary)] mt-1.5" />Ein klarer Ansprechpartner für technische Fragen</li>
+                                <li className="flex gap-2"><div className="w-1.5 h-1.5 rounded-full bg-[var(--primary)] mt-1.5" />Security-Basics ohne unnötige Komplexität</li>
+                                <li className="flex gap-2"><div className="w-1.5 h-1.5 rounded-full bg-[var(--primary)] mt-1.5" />Planbare Modelle statt Ad-hoc-Betrieb</li>
                             </ul>
                         </div>
                     </div>
@@ -263,12 +260,12 @@ export default function LeistungenClient() {
                         <ShieldCheck className="w-4 h-4" /> Unsere Empfehlung
                     </div>
                     <h2 className="text-2xl md:text-3xl font-semibold text-[var(--text)] mb-4">
-                        Starten Sie mit Security Baseline
+                        Geplanter Start: Security Baseline
                     </h2>
                     <p className="text-[var(--text-secondary)] mb-6">
-                        Die meisten erfolgreichen Angriffe nutzen einfache Lücken wie fehlende Updates oder schwache Passwörter. Wir schließen diese Tore zuerst: MFA, Patch-Management und sichere Backups bilden das Fundament jeder stabilen IT.
+                        Viele Risiken entstehen durch fehlende MFA, unklare Zugriffsrechte, ungeprüfte Backups oder veraltete Systeme. Die Security Baseline ist als strukturierter Einstieg gedacht, um genau diese Grundlagen sichtbar und priorisierbar zu machen.
                     </p>
-                    <CTA href="/leistungen/security-baseline">Mit Security Baseline starten</CTA>
+                    <CTA href="/leistungen/security-baseline">Security Baseline ansehen</CTA>
                 </div>
             </section>
 
@@ -286,17 +283,17 @@ export default function LeistungenClient() {
                         <div className="p-6 rounded-xl bg-[var(--surface)] border border-[var(--border)] relative z-10">
                             <span className="text-4xl font-bold text-[var(--primary-light)] absolute top-4 right-4 opacity-50">2</span>
                             <h3 className="text-lg font-semibold text-[var(--text)] mb-2">Konzept</h3>
-                            <p className="text-sm text-[var(--text-secondary)]">Sie erhalten einen klaren Plan mit priorisierten Maßnahmen. Sie entscheiden, was wir umsetzen.</p>
+                            <p className="text-sm text-[var(--text-secondary)]">Ein späteres Angebot würde einen klaren Plan mit priorisierten Maßnahmen enthalten.</p>
                         </div>
                         <div className="p-6 rounded-xl bg-[var(--surface)] border border-[var(--border)] relative z-10">
                             <span className="text-4xl font-bold text-[var(--primary-light)] absolute top-4 right-4 opacity-50">3</span>
                             <h3 className="text-lg font-semibold text-[var(--text)] mb-2">Umsetzung</h3>
-                            <p className="text-sm text-[var(--text-secondary)]">Wir implementieren die Lösungen – minimaler Impact auf Ihren laufenden Betrieb.</p>
+                            <p className="text-sm text-[var(--text-secondary)]">Umsetzung wäre erst nach einem klaren Angebot und abgestimmtem Umfang möglich.</p>
                         </div>
                         <div className="p-6 rounded-xl bg-[var(--surface)] border border-[var(--border)] relative z-10">
                             <span className="text-4xl font-bold text-[var(--primary-light)] absolute top-4 right-4 opacity-50">4</span>
                             <h3 className="text-lg font-semibold text-[var(--text)] mb-2">Betrieb</h3>
-                            <p className="text-sm text-[var(--text-secondary)]">Übergabe an Ihr Team oder laufende Betreuung durch uns (Managed Services).</p>
+                            <p className="text-sm text-[var(--text-secondary)]">Übergabe, Dokumentation oder laufende Betreuung sind als mögliche Modelle skizziert.</p>
                         </div>
                     </div>
                 </div>
@@ -305,34 +302,37 @@ export default function LeistungenClient() {
             {/* Case Studies */}
             <section className="py-12 md:py-16 bg-[var(--surface)]">
                 <div className="max-w-[1140px] mx-auto px-6">
-                    <h2 className="text-2xl font-semibold text-[var(--text)] mb-8 text-center">Erfolgsbeispiele aus der Praxis</h2>
+                    <h2 className="text-2xl font-semibold text-[var(--text)] mb-3 text-center">Illustrative Szenarien</h2>
+                    <p className="mx-auto mb-8 max-w-2xl text-center text-sm text-[var(--muted)]">
+                        Die folgenden Beispiele sind fiktive Szenarien zur Erklärung der geplanten Arbeitsweise; sie sind keine Kundenreferenzen.
+                    </p>
                     <div className="grid md:grid-cols-2 gap-6">
                         {/* Case 1 */}
                         <div className="p-6 rounded-xl bg-[var(--bg)] border border-[var(--border)]">
                             <div className="flex items-center gap-2 mb-4">
-                                <span className="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs font-semibold">Rechtsanwaltskanzlei (Wien)</span>
+                                <span className="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs font-semibold">Beispiel: Kanzlei in Wien</span>
                             </div>
                             <h3 className="text-lg font-semibold text-[var(--text)] mb-2">Situation</h3>
                             <p className="text-sm text-[var(--text-secondary)] mb-3">VPN-Verbindung war langsam und instabil. Sorge vor Ransomware und Datenverlust bei sensiblen Klienten-Akten.</p>
-                            <h3 className="text-lg font-semibold text-[var(--text)] mb-2">Lösung & Ergebnis</h3>
+                            <h3 className="text-lg font-semibold text-[var(--text)] mb-2">Möglicher Ansatz</h3>
                             <ul className="text-sm text-[var(--text-secondary)] space-y-1">
-                                <li className="flex gap-2"><CheckCircle className="w-4 h-4 text-[var(--primary)] mt-0.5" /> Netzwerk segmentiert (Gäste vs. Intern)</li>
-                                <li className="flex gap-2"><CheckCircle className="w-4 h-4 text-[var(--primary)] mt-0.5" /> Robuste Firewall & MFA eingeführt</li>
-                                <li className="flex gap-2"><CheckCircle className="w-4 h-4 text-[var(--primary)] mt-0.5" /> <strong>Ergebnis:</strong> Schneller Fernzugriff und ruhiges Gewissen dank Immutable Backups.</li>
+                                <li className="flex gap-2"><CheckCircle className="w-4 h-4 text-[var(--primary)] mt-0.5" /> Netzwerksegmentierung planen</li>
+                                <li className="flex gap-2"><CheckCircle className="w-4 h-4 text-[var(--primary)] mt-0.5" /> Firewall-Regeln, MFA und Backup-Konzept prüfen</li>
+                                <li className="flex gap-2"><CheckCircle className="w-4 h-4 text-[var(--primary)] mt-0.5" /> <strong>Zielbild:</strong> stabilerer Fernzugriff und nachvollziehbare Wiederherstellung.</li>
                             </ul>
                         </div>
                         {/* Case 2 */}
                         <div className="p-6 rounded-xl bg-[var(--bg)] border border-[var(--border)]">
                             <div className="flex items-center gap-2 mb-4">
-                                <span className="px-2 py-1 bg-green-100 text-green-700 rounded text-xs font-semibold">Marketing-Agentur (Remote)</span>
+                                <span className="px-2 py-1 bg-green-100 text-green-700 rounded text-xs font-semibold">Beispiel: Remote-Team</span>
                             </div>
                             <h3 className="text-lg font-semibold text-[var(--text)] mb-2">Situation</h3>
                             <p className="text-sm text-[var(--text-secondary)] mb-3">Onboarding neuer Mitarbeiter dauerte Tage. Zugriffsrechte waren chaotisch verteilt (&quot;Wildwuchs&quot;).</p>
-                            <h3 className="text-lg font-semibold text-[var(--text)] mb-2">Lösung & Ergebnis</h3>
+                            <h3 className="text-lg font-semibold text-[var(--text)] mb-2">Möglicher Ansatz</h3>
                             <ul className="text-sm text-[var(--text-secondary)] space-y-1">
-                                <li className="flex gap-2"><CheckCircle className="w-4 h-4 text-[var(--primary)] mt-0.5" /> Microsoft 365 Tenant gehärtet & aufgeräumt</li>
-                                <li className="flex gap-2"><CheckCircle className="w-4 h-4 text-[var(--primary)] mt-0.5" /> Automatisches Device-Setup (Mac & Windows)</li>
-                                <li className="flex gap-2"><CheckCircle className="w-4 h-4 text-[var(--primary)] mt-0.5" /> <strong>Ergebnis:</strong> Neue Laptops sind in 30 Minuten einsatzbereit. Safe Offboarding per Knopfdruck.</li>
+                                <li className="flex gap-2"><CheckCircle className="w-4 h-4 text-[var(--primary)] mt-0.5" /> Microsoft 365 Berechtigungen und Richtlinien prüfen</li>
+                                <li className="flex gap-2"><CheckCircle className="w-4 h-4 text-[var(--primary)] mt-0.5" /> Standardisiertes Device-Setup entwerfen</li>
+                                <li className="flex gap-2"><CheckCircle className="w-4 h-4 text-[var(--primary)] mt-0.5" /> <strong>Zielbild:</strong> schnelleres Onboarding und kontrolliertes Offboarding.</li>
                             </ul>
                         </div>
                     </div>
@@ -377,10 +377,10 @@ export default function LeistungenClient() {
             {/* Final CTA */}
             <section className="py-12 md:py-16 bg-[var(--bg)]">
                 <div className="max-w-[1140px] mx-auto px-6 text-center">
-                    <h2 className="text-2xl font-semibold text-[var(--text)] mb-4">Bereit für professionelle IT?</h2>
-                    <p className="text-[var(--text-secondary)] mb-6">Lassen Sie uns herausfinden, ob wir zusammenpassen. Ein kurzes Gespräch kostet nichts.</p>
+                    <h2 className="text-2xl font-semibold text-[var(--text)] mb-4">Projektstatus ansehen</h2>
+                    <p className="text-[var(--text-secondary)] mb-6">Derzeit ist noch kein Kontakt- oder Auftragskanal aktiv. Die Seite dokumentiert den Planungsstand.</p>
                     <CTA href="/kontakt">Projektstatus ansehen</CTA>
-                    <p className="text-sm text-[var(--muted)] mt-4">Kein Verkaufsdruck. Nur Beratung.</p>
+                    <p className="text-sm text-[var(--muted)] mt-4">Keine Auftragsannahme über diese Website.</p>
                 </div>
             </section>
         </main>

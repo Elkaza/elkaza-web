@@ -48,18 +48,18 @@ export const siteContent = {
   // Process Steps
   process: {
     de: [
-      { step: 1, title: "Kennenlernen", desc: "15 Min Call: Passen wir zusammen?" },
-      { step: 2, title: "Analyse", desc: "Status-Quo Check & Quick-Wins." },
-      { step: 3, title: "Konzept", desc: "Roadmap für Sicherheit & Stabilität." },
-      { step: 4, title: "Umsetzung", desc: "Wir setzen die Lösungen um." },
-      { step: 5, title: "Betrieb", desc: "Laufende Betreuung & Updates." },
+      { step: 1, title: "Status", desc: "Derzeit Projekt in Vorbereitung." },
+      { step: 2, title: "Analyse", desc: "Geplanter Blick auf Ist-Stand, Risiken und Quick-Wins." },
+      { step: 3, title: "Konzept", desc: "Mögliche Roadmap für Sicherheit und Stabilität." },
+      { step: 4, title: "Umsetzung", desc: "Später nur nach rechtlich klarem Angebot." },
+      { step: 5, title: "Betrieb", desc: "Laufende Betreuung ist als mögliches Modell skizziert." },
     ],
     en: [
-      { step: 1, title: "Discovery", desc: "15 min call: Are we a match?" },
-      { step: 2, title: "Analysis", desc: "Status quo check & quick wins." },
-      { step: 3, title: "Concept", desc: "Roadmap for security & stability." },
-      { step: 4, title: "Implementation", desc: "We implement the solutions." },
-      { step: 5, title: "Operations", desc: "Ongoing support & updates." },
+      { step: 1, title: "Status", desc: "Project currently in preparation." },
+      { step: 2, title: "Analysis", desc: "Planned review of current state, risks, and quick wins." },
+      { step: 3, title: "Concept", desc: "Possible roadmap for security and stability." },
+      { step: 4, title: "Implementation", desc: "Later only after a clear legal offer." },
+      { step: 5, title: "Operations", desc: "Ongoing support is sketched as a possible model." },
     ],
   },
 
@@ -147,8 +147,8 @@ export const siteContent = {
   services: {
     de: {
       overview: {
-        title: "Unsere Leistungen",
-        subtitle: "Zehn Bereiche, ein Ziel: verlässliche IT-Infrastruktur.",
+        title: "Geplante Leistungsbereiche",
+        subtitle: "Zehn mögliche Bereiche, ein Ziel: verlässliche IT-Infrastruktur.",
       },
       items: [
         {
@@ -409,8 +409,8 @@ export const siteContent = {
     },
     en: {
       overview: {
-        title: "Our Services",
-        subtitle: "Ten areas, one goal: reliable IT infrastructure.",
+        title: "Planned service areas",
+        subtitle: "Ten possible areas, one goal: reliable IT infrastructure.",
       },
       items: [
         {
@@ -562,7 +562,7 @@ export const siteContent = {
             "Backup verification",
             "Incident response runbooks",
             "Monthly reporting",
-            "Dedicated contact person",
+            "Defined responsibility model",
           ],
         },
         {
@@ -675,17 +675,17 @@ export const siteContent = {
   packages: {
     de: {
       title: "Pakete",
-      subtitle: "Klare Leistungen, faire Preise.",
+      subtitle: "Geplante Modelle ohne aktuelles Angebot.",
       custom: {
         title: "Individuell / Enterprise",
-        desc: "Sie brauchen mehr? Dedizierte Teams, 24/7 SLA oder Compliance-Support (ISO, TISAX)?",
-        cta: "Individuelles Angebot anfordern",
+        desc: "Mögliche spätere Erweiterungen könnten dedizierte Betreuung, Compliance-Unterstützung oder größere Infrastrukturprojekte umfassen.",
+        cta: "Projektstatus ansehen",
         href: "/kontakt",
       },
       faq: [
-        { q: "Wie wird abgerechnet?", a: "Starter & Growth sind Fixpreis-Projekte. Managed Services werden monatlich abgerechnet, kündbar zum Monatsende." },
-        { q: "Wie schnell ist die Reaktion?", a: "Im Managed-Paket garantieren wir < 4 Stunden Reaktionszeit bei kritischen Problemen. Für Projekte gelten vereinbarte Meilensteine." },
-        { q: "Was zählt als Notfall?", a: "Ausfall kritischer Systeme (Server, Firewall, komplettes Netzwerk). Einzelne User-Probleme werden priorisiert behandelt." },
+        { q: "Sind Preise und Pakete bereits verbindlich?", a: "Nein. Die Pakete zeigen nur eine mögliche spätere Struktur. Preise, Umfang und Vertragsbedingungen sind noch nicht festgelegt." },
+        { q: "Gibt es schon Reaktionszeiten?", a: "Nein. Reaktionszeiten und Servicezeiten werden derzeit nicht zugesichert und würden erst in einem späteren Angebot definiert." },
+        { q: "Kann ich aktuell ein Paket buchen?", a: "Nein. Während der Vorbereitungsphase werden über diese Website keine Aufträge angenommen." },
       ],
       items: [
         {
@@ -697,7 +697,7 @@ export const siteContent = {
           priceNote: "einmalig",
           duration: "1-2 Wochen",
           description:
-            "Bestandsaufnahme Ihrer IT-Infrastruktur mit konkreten Handlungsempfehlungen.",
+            "Mögliches Modell für eine strukturierte Bestandsaufnahme mit priorisierten Empfehlungen.",
           features: [
             "Netzwerk-Audit (WLAN, LAN, Firewall)",
             "Security-Quickcheck (MFA, Backups)",
@@ -709,7 +709,7 @@ export const siteContent = {
 
             "Nicht enthalten: Technische Umsetzung / Fixes",
           ],
-          cta: "Assessment anfragen",
+          cta: "Konzept ansehen",
           popular: false,
         },
         {
@@ -721,7 +721,7 @@ export const siteContent = {
           priceNote: "projektbasiert",
           duration: "2-6 Wochen",
           description:
-            "Wir setzen die wichtigsten Verbesserungen direkt um (Done-For-You).",
+            "Mögliches Modell für spätere Umsetzung klar priorisierter Verbesserungen.",
           features: [
             "VLAN-Segmentierung & Firewall-Härtung",
             "Wi-Fi-Optimierung (Abdeckung & Security)",
@@ -733,7 +733,7 @@ export const siteContent = {
 
             "Nicht enthalten: Laufender Support",
           ],
-          cta: "15-Min Erstgespräch",
+          cta: "Konzept ansehen",
           popular: true,
         },
         {
@@ -745,7 +745,7 @@ export const siteContent = {
           priceNote: "pro Monat",
           duration: "fortlaufend (mtl. kündbar)",
           description:
-            "Wir kümmern uns dauerhaft im Hintergrund um Ihre Infrastruktur.",
+            "Mögliches Modell für laufende Betreuung mit klaren Abläufen und Dokumentation.",
           features: [
             "Monitoring-Konzept (Netzwerk & Server)",
             "Patch-Management (OS & 3rd Party)",
@@ -757,24 +757,24 @@ export const siteContent = {
 
             "Nicht enthalten: Hardware-Kosten",
           ],
-          cta: "Angebot anfordern",
+          cta: "Konzept ansehen",
           popular: false,
         },
       ],
     },
     en: {
       title: "Packages",
-      subtitle: "Clear services, fair prices.",
+      subtitle: "Planned models without a current offer.",
       custom: {
         title: "Custom / Enterprise",
-        desc: "Need more? Dedicated teams, 24/7 SLA, or compliance support (ISO, TISAX)?",
-        cta: "Request Custom Quote",
+        desc: "Possible later extensions could include dedicated support, compliance assistance, or larger infrastructure projects.",
+        cta: "View project status",
         href: "/en/contact",
       },
       faq: [
-        { q: "How is billing handled?", a: "Starter & Growth are fixed-price projects. Managed Services are billed monthly, cancelable at month-end." },
-        { q: "What is the response time?", a: "In the Managed package, we guarantee < 4 hours response time for critical issues. Projects follow agreed milestones." },
-        { q: "What counts as an emergency?", a: "Outage of critical systems (Server, Firewall, complete network). Individual user issues are prioritized." },
+        { q: "Are packages and prices already binding?", a: "No. The packages only show a possible later structure. Prices, scope, and contract terms are not fixed yet." },
+        { q: "Are response times defined already?", a: "No. Response and service hours are not currently guaranteed and would only be defined in a later offer." },
+        { q: "Can I order a package now?", a: "No. During the preparation phase, no orders are accepted through this website." },
       ],
       items: [
         {
@@ -786,7 +786,7 @@ export const siteContent = {
           priceNote: "one-time",
           duration: "1-2 weeks",
           description:
-            "Inventory of your IT infrastructure with concrete recommendations.",
+            "Possible model for a structured current-state review with prioritized recommendations.",
           features: [
             "Network audit",
             "Security quick check",
@@ -800,7 +800,7 @@ export const siteContent = {
 
             "Not included: Implementation / Fixes",
           ],
-          cta: "Request Assessment",
+          cta: "View concept",
           popular: false,
         },
         {
@@ -812,7 +812,7 @@ export const siteContent = {
           priceNote: "project-based",
           duration: "2-6 weeks",
           description:
-            "We implement the most important improvements directly.",
+            "Possible model for later implementation of clearly prioritized improvements.",
           features: [
             "Everything from Starter",
             "VLAN segmentation",
@@ -827,7 +827,7 @@ export const siteContent = {
 
             "Not included: Ongoing Support",
           ],
-          cta: "Discuss Project",
+          cta: "View concept",
           popular: true,
         },
         {
@@ -839,21 +839,21 @@ export const siteContent = {
           priceNote: "per month",
           duration: "ongoing",
           description:
-            "We take care of your infrastructure continuously.",
+            "Possible model for ongoing support with clear routines and documentation.",
           features: [
             "Monitoring concept",
             "Patch management",
             "Backup verification",
-            "Incident response (SLA)",
+            "Incident response model",
             "Monthly reporting",
-            "Dedicated contact person",
+            "Defined responsibility model",
             "Add-on: Endpoint monitoring + patch compliance",
 
             "---",
 
             "Not included: Hardware costs",
           ],
-          cta: "Request Quote",
+          cta: "View concept",
           popular: false,
         },
       ],

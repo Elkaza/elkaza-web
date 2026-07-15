@@ -58,22 +58,21 @@ const entryPaths = [
 const processSteps = [
   { icon: Search, name: "Assess", desc: "We capture the current state.", time: "1-2 weeks" },
   { icon: Settings, name: "Implement", desc: "We make the changes.", time: "2-6 weeks" },
-  { icon: Headphones, name: "Run", desc: "Handover to your team.", time: "Ongoing" },
+  { icon: Headphones, name: "Run", desc: "Handover or possible operations model.", time: "Later phase" },
 ];
 
 const deliverables = [
   { icon: FileText, name: "Documentation", desc: "Every change documented." },
   { icon: BookOpen, name: "Knowledge Transfer", desc: "Training for your team." },
   { icon: Presentation, name: "Final Report", desc: "Summary and recommendations." },
-  { icon: MessageSquare, name: "Support", desc: "Questions after project? Available." },
+  { icon: MessageSquare, name: "Handover", desc: "Clear next steps and responsibilities." },
 ];
 
 const faqs = [
-  { q: "How much downtime will there be?", a: "Most changes run in the background. Planned maintenance windows are coordinated with you." },
-  { q: "What access do you need?", a: "Admin access to relevant systems. Temporary, documented, removed after project end." },
-  { q: "Do we need to buy specific tools?", a: "We work with what you have. If investments make sense, we discuss upfront." },
-  { q: "Who owns the outcome?", a: "You do. All documentation, configs, and scripts belong to your company." },
-  { q: "What about confidentiality?", a: "NDA available. All data stays with you. We take no copies." },
+  { q: "Can these services be ordered already?", a: "No. This page documents the current planning stage. No offers are issued and no orders are accepted at the moment." },
+  { q: "Why are the areas described anyway?", a: "The descriptions make the planned focus transparent: networking, security, access, backups, and documented operations." },
+  { q: "Are the scenarios customer references?", a: "No. They are illustrative examples and not real customer projects." },
+  { q: "When will pricing and contact details be added?", a: "Only after legal and operational readiness, including complete provider identification and an active contact channel." },
 ];
 
 export default function ServicesEnPage() {
@@ -88,9 +87,9 @@ export default function ServicesEnPage() {
       {/* Hero */}
       <section className="py-12 md:py-20 hero-gradient-enhanced">
         <div className="max-w-[1140px] mx-auto px-4 sm:px-6">
-          <h1 className="text-4xl md:text-5xl font-bold text-[var(--text)] mb-4">Services</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-[var(--text)] mb-4">Planned service areas</h1>
           <p className="max-w-2xl text-lg leading-relaxed text-[var(--text-secondary)] mb-8 md:text-xl">
-            IT infrastructure and security for growing SMBs. Clearly defined projects with measurable outcomes.
+            A preview of possible future models for networking, security, access, backups, and documented IT operations.
           </p>
           <div className="flex flex-wrap gap-4">
             <CTA href="/en/contact">View project status</CTA>
@@ -99,7 +98,7 @@ export default function ServicesEnPage() {
             </Link>
           </div>
           <p className="mt-6 text-sm text-[var(--muted)] font-medium">
-            Clear deliverables, documented handover, and a roadmap you can execute.
+            Project in preparation. No services are currently offered and no orders are accepted.
           </p>
         </div>
       </section>
@@ -109,7 +108,7 @@ export default function ServicesEnPage() {
           <div className="mb-6 max-w-3xl">
             <h2 className="text-2xl font-semibold text-[var(--text)]">Which entry point fits?</h2>
             <p className="mt-2 text-sm leading-relaxed text-[var(--text-secondary)]">
-              If you are not sure which service is right, start here. These three paths cover the most common situations.
+              If the offer is activated later, these three paths could cover the most common entry points.
             </p>
           </div>
           <div className="grid gap-4 md:grid-cols-3">
@@ -125,7 +124,7 @@ export default function ServicesEnPage() {
                 <h3 className="text-lg font-semibold text-[var(--text)] group-hover:text-[var(--primary)]">{path.title}</h3>
                 <p className="mt-2 flex-1 text-sm leading-relaxed text-[var(--text-secondary)]">{path.text}</p>
                 <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[var(--primary)]">
-                  View <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  View concept <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </span>
               </Link>
             ))}
@@ -213,15 +212,15 @@ export default function ServicesEnPage() {
             <ShieldCheck className="w-4 h-4" /> Our Recommendation
           </div>
           <h2 className="text-2xl md:text-3xl font-semibold text-[var(--text)] mb-4">
-            Start with Security Baseline
+            Planned start: Security Baseline
           </h2>
           <p className="text-[var(--text-secondary)] mb-4">
-            Most SMBs benefit from securing the basics first: MFA, patching, backups. This closes the most common baseline gaps. After that, you know where you stand.
+            Many risks start with missing MFA, unclear access rights, untested backups, or outdated systems. Security Baseline is framed as a structured way to make these foundations visible and prioritizable.
           </p>
           <p className="text-sm text-[var(--primary)] font-medium mb-6">
             Baseline first → then Zero Trust / Managed Ops / Ransomware Resilience.
           </p>
-          <CTA href="/en/services/security-baseline">Start with Security Baseline</CTA>
+          <CTA href="/en/services/security-baseline">View Security Baseline</CTA>
         </div>
       </section>
 
@@ -283,10 +282,10 @@ export default function ServicesEnPage() {
       {/* Final CTA */}
       <section className="py-12 md:py-16 bg-[var(--surface)]">
         <div className="max-w-[1140px] mx-auto px-6 text-center">
-          <h2 className="text-2xl font-semibold text-[var(--text)] mb-4">Ready for stable IT?</h2>
-          <p className="text-[var(--text-secondary)] mb-6">Let us discuss what you need in a 30-minute call.</p>
+          <h2 className="text-2xl font-semibold text-[var(--text)] mb-4">View project status</h2>
+          <p className="text-[var(--text-secondary)] mb-6">No contact or order channel is active yet. This page documents the planning status.</p>
           <CTA href="/en/contact">View project status</CTA>
-          <p className="text-sm text-[var(--muted)] mt-4">No obligation. No sales pressure.</p>
+          <p className="text-sm text-[var(--muted)] mt-4">No orders are accepted through this website.</p>
         </div>
       </section>
     </main>

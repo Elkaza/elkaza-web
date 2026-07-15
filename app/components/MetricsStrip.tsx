@@ -8,16 +8,16 @@ interface MetricsStripProps {
 
 const metrics = {
     de: [
-        { icon: Briefcase, value: "50+", label: "Projekte abgeschlossen" },
-        { icon: Activity, value: "99.9%", label: "Verfügbarkeit erreicht" },
-        { icon: Clock, value: "<4h", label: "Reaktionszeit" },
-        { icon: Users, value: "30+", label: "Zufriedene Kunden" },
+        { icon: Briefcase, value: "10", label: "Geplante Leistungsbereiche" },
+        { icon: Activity, value: "24/7", label: "Monitoring als Zielbild" },
+        { icon: Clock, value: "2026", label: "Konzeptphase" },
+        { icon: Users, value: "KMU", label: "Geplanter Fokus" },
     ],
     en: [
-        { icon: Briefcase, value: "50+", label: "Projects delivered" },
-        { icon: Activity, value: "99.9%", label: "Uptime achieved" },
-        { icon: Clock, value: "<4h", label: "Response time" },
-        { icon: Users, value: "30+", label: "Satisfied clients" },
+        { icon: Briefcase, value: "10", label: "Planned service areas" },
+        { icon: Activity, value: "24/7", label: "Monitoring target model" },
+        { icon: Clock, value: "2026", label: "Concept phase" },
+        { icon: Users, value: "SME", label: "Planned focus" },
     ],
 };
 

@@ -53,14 +53,14 @@ export default function Home() {
       <section className="py-12 md:py-14 bg-[var(--surface)]">
         <div className="max-w-[1140px] mx-auto px-6">
           <h2 className="text-2xl md:text-3xl font-bold text-[var(--text)] mb-2">
-            Unsere Leistungen
+            Geplante Leistungsbereiche
           </h2>
           <p className="text-[var(--text-secondary)] mb-2">
-            <strong>Startpunkt für die meisten: Security Baseline.</strong>
+            <strong>Geplanter Startpunkt: Security Baseline.</strong>
           </p>
           <p className="mb-8 max-w-3xl text-sm leading-relaxed text-[var(--text-secondary)]">
-            Wählen Sie zuerst den passenden Einstieg: Netzwerk stabilisieren, Security-Basis schaffen,
-            Zugriffe absichern oder wiederkehrende IT-Aufgaben automatisieren.
+            Diese Bereiche zeigen, wie ein späteres Angebot aufgebaut sein könnte: Netzwerk stabilisieren,
+            Security-Basis schaffen, Zugriffe absichern oder wiederkehrende IT-Aufgaben automatisieren.
           </p>
           <CoreServices locale="de" items={siteContent.services.de.items} />
         </div>
@@ -71,14 +71,14 @@ export default function Home() {
         <div className="max-w-[800px] mx-auto px-6 text-center">
           <div className="p-6 rounded-xl border-2 border-[var(--primary)] bg-[var(--elevated)]">
             <h3 className="text-xl font-semibold text-[var(--text)] mb-3">
-              Empfohlener Einstieg: Security Baseline
+              Geplanter Einstieg: Security Baseline
             </h3>
             <p className="text-sm text-[var(--text-secondary)] mb-4">
               <strong>Für wen:</strong> KMUs ohne eigenes Security-Team.<br />
-              <strong>Dauer:</strong> 3-6 Wochen.<br />
-              <strong>Am Ende:</strong> MFA aktiv, Backups getestet, Dokumentation übergeben.
+              <strong>Möglicher Umfang:</strong> MFA, Patch-Stand, Backups und Zugriffsrechte.<br />
+              <strong>Status:</strong> Konzept in Vorbereitung, derzeit kein Angebot.
             </p>
-            <CTA href="/leistungen/security-baseline">Security Baseline starten</CTA>
+            <CTA href="/leistungen/security-baseline">Security Baseline ansehen</CTA>
           </div>
         </div>
       </section>
@@ -87,7 +87,7 @@ export default function Home() {
       <section className="py-12 md:py-14 bg-[var(--surface)]">
         <div className="max-w-[1140px] mx-auto px-6">
           <h2 className="text-2xl md:text-3xl font-bold text-[var(--text)] mb-8 md:text-center">
-            So läuft’s ab
+            So wäre der Ablauf geplant
           </h2>
           <div className="flex flex-wrap justify-center gap-6">
             {process.map((step, i) => (
@@ -110,7 +110,7 @@ export default function Home() {
                 {whyUs.title}
               </h2>
               <p className="text-[var(--text-secondary)] text-lg mb-2">{whyUs.lead}</p>
-              <p className="text-[var(--muted)] mb-6">Wir liefern Lösungen, die funktionieren, nicht nur Konzepte.</p>
+              <p className="text-[var(--muted)] mb-6">Der Fokus liegt auf nachvollziehbaren, dokumentierten und betreibbaren Lösungen.</p>
               <ul className="space-y-3">
                 {whyUs.bullets.map((bullet, i) => (
                   <li key={i} className="flex items-start gap-3">
@@ -185,7 +185,7 @@ export default function Home() {
       <section className="py-10 md:py-12 bg-[var(--surface)]">
         <div className="max-w-[1140px] mx-auto px-6">
           <h2 className="text-xl font-semibold text-[var(--text)] mb-4 text-center">
-            Was Sie bei jedem Projekt erhalten
+            Was in späteren Projekten enthalten sein soll
           </h2>
           <div className="flex flex-wrap justify-center gap-4 text-sm text-[var(--text-secondary)]">
             <span className="flex items-center gap-2"><Check className="w-4 h-4 text-[var(--primary)]" />Dokumentation</span>
@@ -204,11 +204,11 @@ export default function Home() {
       <section className="py-12 md:py-14 bg-[var(--surface)]">
         <div className="max-w-[1140px] mx-auto px-6 text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-[var(--text)] mb-5">
-            Bereit für stabile Infrastruktur?
+            Projektstatus ansehen
           </h2>
           <CTA href="/kontakt">Projektstatus ansehen</CTA>
           <p className="mt-3 text-sm text-[var(--muted)]">
-            Sie erhalten eine klare Empfehlung – auch wenn wir nicht zusammenarbeiten.
+            Derzeit werden keine Aufträge angenommen; die Seite dokumentiert den aktuellen Planungsstand.
           </p>
         </div>
       </section>

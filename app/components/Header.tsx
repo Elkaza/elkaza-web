@@ -6,15 +6,15 @@ import { Menu, X } from "lucide-react";
 
 export default function Header() {
   const deItems = [
-    { href: "/leistungen", label: "Leistungen" },
+    { href: "/leistungen", label: "Konzepte" },
     { href: "/pakete", label: "Pakete" },
-    { href: "/referenzen", label: "Referenzen" },
+    { href: "/referenzen", label: "Szenarien" },
     { href: "/kontakt", label: "Kontakt" },
   ];
   const enItems = [
-    { href: "/en/services", label: "Services" },
+    { href: "/en/services", label: "Concepts" },
     { href: "/en/packages", label: "Packages" },
-    { href: "/en/case-studies", label: "Case Studies" },
+    { href: "/en/case-studies", label: "Scenarios" },
     { href: "/en/contact", label: "Contact" },
   ];
 

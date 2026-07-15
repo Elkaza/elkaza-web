@@ -1,8 +1,8 @@
 import LeistungenClient from "./LeistungenClient";
 
 export const metadata = {
-  title: "Unsere Leistungen – Netzwerk & Security aus Wien | Elkaza",
-  description: "Von Security Baseline bis Managed Operations: Wir sorgen für stabile Netzwerke und sichere IT-Umgebungen für KMUs in Wien und Umgebung.",
+  title: "Geplante Leistungsbereiche – Netzwerk & Security aus Wien | Elkaza",
+  description: "Unverbindlicher Überblick über mögliche zukünftige Leistungsbereiche: Security Baseline, Netzwerk, Zugänge, Backups und dokumentierter IT-Betrieb.",
   alternates: { canonical: "/leistungen" },
 };
 
