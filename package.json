@@ -12,6 +12,7 @@
     "dev:3002": "next dev -p 3002",
     "start:3002": "node scripts/serve-static-export.mjs out 3002",
     "analyze": "ANALYZE=true next build",
+    "verify:production": "node scripts/verify-production.mjs",
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui",
     "test:e2e:debug": "playwright test --debug",
