@@ -135,7 +135,7 @@ export default function HomeEN() {
       <section className="py-12 md:py-14 bg-[var(--bg)]">
         <div className="max-w-[1140px] mx-auto px-6">
           <h2 className="text-2xl md:text-3xl font-bold text-[var(--text)] mb-6">
-            Illustrative Scenarios
+            Engineering Case Studies
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {caseStudies.items.slice(0, 2).map((cs) => (

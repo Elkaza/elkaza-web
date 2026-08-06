@@ -112,7 +112,7 @@ export default function AboutEn() {
             <GraduationCap className="mb-4 h-7 w-7 text-[var(--primary)]" aria-hidden="true" />
             <h2 className="text-2xl font-bold text-[var(--text)]">About the founder</h2>
             <p className="mt-3 text-sm leading-relaxed text-[var(--text-secondary)]">
-              Dipl.-Ing. Mohamed Elkaza combines business informatics, enterprise architecture, and practical implementation. Projects are led directly and close to the client, with a strong focus on technical quality and clear communication.
+              MSc Business Informatics, TU Wien — ongoing, master’s thesis in progress. Projects are led directly and close to the client, with a strong focus on technical quality and clear communication.
             </p>
           </div>
 

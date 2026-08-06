@@ -112,7 +112,7 @@ export default function UeberUnsPage() {
             <GraduationCap className="mb-4 h-7 w-7 text-[var(--primary)]" aria-hidden="true" />
             <h2 className="text-2xl font-bold text-[var(--text)]">Über den Gründer</h2>
             <p className="mt-3 text-sm leading-relaxed text-[var(--text-secondary)]">
-              Dipl.-Ing. Mohamed Elkaza verbindet Wirtschaftsinformatik, Enterprise Architecture und praktische Umsetzung. Projekte werden direkt und nah am Kunden geführt, mit einem starken Fokus auf technische Qualität und klare Kommunikation.
+              MSc Wirtschaftsinformatik, TU Wien — laufend, Masterarbeit in Arbeit. Projekte werden direkt und nah am Kunden geführt, mit einem starken Fokus auf technische Qualität und klare Kommunikation.
             </p>
           </div>
 

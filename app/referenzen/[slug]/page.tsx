@@ -34,7 +34,7 @@ export default async function ReferenzDetailPage({
         <main>
             <section className="py-10 md:py-14 hero-gradient-enhanced">
                 <div className="max-w-4xl mx-auto px-6">
-                    <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-[var(--primary)]">Illustratives Szenario - keine Kundenreferenz</p>
+                    <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-[var(--primary)]">Technische Fallstudie - keine Kundenreferenz</p>
                     <span className="text-xs font-semibold text-[var(--primary-foreground)] bg-[var(--primary)] px-3 py-1 rounded-full">
                         {cs.tag}
                     </span>

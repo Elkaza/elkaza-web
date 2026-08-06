@@ -39,6 +39,8 @@ export default function StickySectionNav({ locale, sections }: StickySectionNavP
         }
     };
 
+    const labelPrefix = locale === "de" ? "Abschnitte" : "Sections";
+
     return (
         <nav
             className={`bg-[var(--bg)] border-b border-[var(--border)] transition-all duration-200 ${isSticky ? "fixed top-0 left-0 right-0 z-40 shadow-sm" : ""
@@ -47,6 +49,7 @@ export default function StickySectionNav({ locale, sections }: StickySectionNavP
         >
             <div className="max-w-[1140px] mx-auto px-6">
                 <div className="flex items-center gap-1 overflow-x-auto py-3 scrollbar-hide">
+                    <span className="mr-2 text-sm font-semibold text-[var(--text)]">{labelPrefix}</span>
                     {sections.map((section) => (
                         <button
                             key={section.id}

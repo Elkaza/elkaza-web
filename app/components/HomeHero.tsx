@@ -8,6 +8,7 @@ const heroDetails = {
     eyebrow: "Elkaza Consulting",
     audience: "Für KMU in Wien und Österreich",
     note: "Unverbindliche Projektvorschau. Derzeit kein Angebot.",
+    languages: "Deutsch B2 · Englisch C1",
     caseStudyLabel: "Pakete ansehen",
     caseStudyHref: "/pakete",
     panelTitle: "Der erste Schritt",
@@ -35,6 +36,7 @@ const heroDetails = {
     eyebrow: "Elkaza Consulting",
     audience: "For SMEs in Vienna and Austria",
     note: "Non-binding project preview. No current offer.",
+    languages: "German B2 · English C1",
     caseStudyLabel: "View packages",
     caseStudyHref: "/en/packages",
     panelTitle: "The first step",
@@ -91,6 +93,7 @@ export default function HomeHero({ locale }: HomeHeroProps) {
 
           <div className="mt-5 flex flex-col gap-3 text-sm text-[var(--muted)] sm:flex-row sm:items-center">
             <span>{details.note}</span>
+            <span className="font-medium text-[var(--text)]">{details.languages}</span>
             <Link
               href={details.caseStudyHref}
               className="inline-flex items-center gap-1 font-semibold text-[var(--primary)] hover:text-[var(--primary-hover)]"

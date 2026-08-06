@@ -4,6 +4,19 @@ import type { Locale } from "@/lib/siteContent";
 
 export default function PrelaunchContactPage({ locale }: { locale: Locale }) {
   const isEnglish = locale === "en";
+  const roleChips = isEnglish
+    ? [
+        "Full-time role",
+        "Part-time role",
+        "Junior or professional technical role",
+        "Master’s thesis cooperation",
+      ]
+    : [
+        "Vollzeitposition",
+        "Teilzeitposition",
+        "Technische Junior- oder Professional-Position",
+        "Masterarbeitskooperation",
+      ];
 
   return (
     <main>
@@ -26,6 +39,16 @@ export default function PrelaunchContactPage({ locale }: { locale: Locale }) {
           >
             {isEnglish ? "Back to homepage" : "Zurück zur Startseite"}
           </Link>
+          <div className="mt-6 flex flex-wrap justify-center gap-2">
+            {roleChips.map((chip) => (
+              <span
+                key={chip}
+                className="rounded-full border border-[var(--border)] bg-[var(--surface)] px-3 py-1 text-sm font-medium text-[var(--text)]"
+              >
+                {chip}
+              </span>
+            ))}
+          </div>
         </div>
       </section>
     </main>
