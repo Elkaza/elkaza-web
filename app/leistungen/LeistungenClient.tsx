@@ -302,9 +302,9 @@ export default function LeistungenClient() {
             {/* Case Studies */}
             <section className="py-12 md:py-16 bg-[var(--surface)]">
                 <div className="max-w-[1140px] mx-auto px-6">
-                    <h2 className="text-2xl font-semibold text-[var(--text)] mb-3 text-center">Illustrative Szenarien</h2>
+                    <h2 className="text-2xl font-semibold text-[var(--text)] mb-3 text-center">Technische Fallstudien</h2>
                     <p className="mx-auto mb-8 max-w-2xl text-center text-sm text-[var(--muted)]">
-                        Die folgenden Beispiele sind fiktive Szenarien zur Erklärung der geplanten Arbeitsweise; sie sind keine Kundenreferenzen.
+                        Die folgenden Beispiele sind beispielhafte technische Szenarien zur Erklärung der geplanten Arbeitsweise; sie sind keine Kundenreferenzen.
                     </p>
                     <div className="grid md:grid-cols-2 gap-6">
                         {/* Case 1 */}
