@@ -60,14 +60,10 @@ export default async function ReferenzDetailPage({
                             <p className="text-[var(--text-secondary)] font-medium text-[var(--primary)]">{cs.result}</p>
                         </div>
 
-                        <div className="border-t border-[var(--border)] py-5">
-                            <span className="font-bold text-[var(--text)]">Mögliche Werkzeuge:</span>
-                            <span className="ml-2 text-[var(--muted)]">{cs.tools}</span>
-                        </div>
                     </div>
 
                     <p className="mb-6 mt-6 text-sm text-[var(--muted)]">
-                        Dieses Szenario dient nur zur Erklärung der geplanten Arbeitsweise. Derzeit werden keine Anfragen oder Aufträge angenommen.
+                        Dieses Szenario ist fiktiv und keine Kundenreferenz. Derzeit werden keine Anfragen oder Aufträge angenommen.
                     </p>
 
                     <CTA href="/kontakt">Projektstatus ansehen</CTA>

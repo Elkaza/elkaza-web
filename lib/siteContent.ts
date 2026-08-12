@@ -176,7 +176,7 @@ export const siteContent = {
           slug: "security-baseline",
           title: "Security Baseline",
           shortDescription:
-            "Start hier: MFA, Patchen, Backups – die Basis für alles Weitere.",
+            "Geplanter Schwerpunkt: Zugänge, MFA, Patch-Stand, Backups und Wiederherstellbarkeit.",
           forWhom: [
             "Unternehmen ohne dediziertes Security-Team",
             "Teams, die Grundlagen absichern wollen",
@@ -252,7 +252,7 @@ export const siteContent = {
           slug: "automation",
           title: "Automation & Platform Engineering",
           shortDescription:
-            "Infrastructure as Code, Config-Automatisierung, standardisierte Deployments.",
+            "Automatisierung wiederkehrender Konfigurationen und Deployments.",
           forWhom: [
             "Wachsende Teams mit wiederkehrenden Aufgaben",
             "Firmen, die Konsistenz über Umgebungen benötigen",
@@ -438,7 +438,7 @@ export const siteContent = {
           slug: "security-baseline",
           title: "Security Baseline",
           shortDescription:
-            "Start here: Practical security for SMEs (MFA, patching, backups) – the foundation.",
+            "Planned focus: access, MFA, patch status, backups, and recovery readiness.",
           forWhom: [
             "Companies without dedicated security teams",
             "Teams looking to secure the basics",
@@ -514,7 +514,7 @@ export const siteContent = {
           slug: "automation",
           title: "Automation & Platform Engineering",
           shortDescription:
-            "Infrastructure as Code, config automation, standardized deployments.",
+            "Automation of recurring configuration and deployment tasks.",
           forWhom: [
             "Growing teams with recurring tasks",
             "Firms needing consistency across environments",
@@ -871,7 +871,6 @@ export const siteContent = {
           approach: "Möglich wären Bestandsaufnahme, Segmentierungskonzept, Review der Firewall-Regeln und aktualisierte Netzwerkdokumentation.",
           result: "Ein nachvollziehbar segmentiertes Netzwerk mit klar dokumentierten Zugängen und Verbesserungsprioritäten.",
           metrics: "",
-          tools: "Fortinet Box, Ubiquiti UniFi, Microsoft Azure",
         },
         {
           slug: "security-baseline-dienstleister",
@@ -882,7 +881,6 @@ export const siteContent = {
           approach: "Möglich wären ein Zugriffs- und MFA-Review, die Prüfung von Patch-Abläufen sowie ein dokumentierter Backup-Restore-Test.",
           result: "Eine priorisierte Security-Baseline mit geklärten Zugängen, Restore-Nachweisen und nächsten Schritten.",
           metrics: "",
-          tools: "Microsoft 365 Premium, Veeam Backup, Bitwarden",
         },
         {
           slug: "zero-trust-finanzberatung",
@@ -893,7 +891,6 @@ export const siteContent = {
           approach: "Möglich wären ein Identitäts-Review, rollenbasierte Berechtigungen und dokumentierte Regeln für externe Zugriffe.",
           result: "Ein nachvollziehbares Zielbild für Rollen, privilegierte Konten und externe Zugriffe.",
           metrics: "",
-          tools: "Microsoft Entra ID, Conditional Access, Azure PIM",
         },
         {
           slug: "ransomware-resilience-produktion",
@@ -904,7 +901,6 @@ export const siteContent = {
           approach: "Möglich wären ein Architektur-Review, getrennte Sicherungskopien, ein geplanter Restore-Test und ein einfaches Runbook.",
           result: "Ein dokumentiertes Zielbild für Sicherung, Wiederherstellung und Zuständigkeiten.",
           metrics: "",
-          tools: "Veeam, Air-gapped backup storage, Azure Backup",
         },
         {
           slug: "m365-sicherheit-compliance",
@@ -915,7 +911,6 @@ export const siteContent = {
           approach: "Möglich wären ein Review der Freigaben, Rollen und Protokollierung sowie priorisierte Konfigurationsänderungen.",
           result: "Ein dokumentiertes Zielbild für interne und externe Freigaben mit klaren Verantwortlichkeiten.",
           metrics: "",
-          tools: "Microsoft 365, Purview, Conditional Access",
         },
       ],
     },
@@ -932,7 +927,6 @@ export const siteContent = {
           approach: "A possible approach would combine an inventory, segmentation concept, firewall-rule review, and updated network documentation.",
           result: "A clearly segmented network with documented access paths and prioritized improvements.",
           metrics: "",
-          tools: "Fortinet Box, Ubiquiti UniFi, Microsoft Azure",
         },
         {
           slug: "security-baseline-it-service",
@@ -943,7 +937,6 @@ export const siteContent = {
           approach: "A possible approach would review access and MFA, examine patch routines, and document a backup-restore test.",
           result: "A prioritized security baseline with clarified access, restore evidence, and practical next steps.",
           metrics: "",
-          tools: "Microsoft 365 Premium, Veeam Backup, Bitwarden",
         },
         {
           slug: "zero-trust-fintech",
@@ -954,7 +947,6 @@ export const siteContent = {
           approach: "A possible approach would review identities, define role-based permissions, and document rules for external access.",
           result: "A clear target state for roles, privileged accounts, and external access.",
           metrics: "",
-          tools: "Microsoft Entra ID, Conditional Access, Azure PIM",
         },
         {
           slug: "ransomware-recovery-manufacturing",
@@ -965,7 +957,6 @@ export const siteContent = {
           approach: "A possible approach would review the architecture, separate backup copies, plan a restore test, and prepare a simple runbook.",
           result: "A documented target state for backup, recovery, and ownership.",
           metrics: "",
-          tools: "Veeam, air-gapped backup, Azure Backup",
         },
         {
           slug: "m365-security-audit",
@@ -976,7 +967,6 @@ export const siteContent = {
           approach: "A possible approach would review sharing, roles, and logging, then prioritize configuration changes.",
           result: "A documented target state for internal and external sharing with clear ownership.",
           metrics: "",
-          tools: "Microsoft 365, Purview, Conditional Access",
         },
       ],
     },

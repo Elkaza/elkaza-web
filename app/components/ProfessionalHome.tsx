@@ -14,7 +14,7 @@ const copy = {
       ["Gewachsene Abläufe", "Wiederkehrende Aufgaben und Systemänderungen hängen von Einzelwissen ab."],
     ],
     areasTitle: "Drei geplante Leistungsbereiche",
-    areasLead: "Der vorgesehene Startpunkt sind klar begrenzte Assessments und Projektarbeit. Derzeit besteht noch kein Angebot.",
+    areasLead: "Geplant sind klar begrenzte Assessments und Projektarbeit. Ein Angebot besteht noch nicht.",
     areas: [
       ["IT & Security Baseline", "Ist-Stand, MFA und Zugänge, Backup-/Restore-Bereitschaft, Patch-Grundlagen, Roadmap und Dokumentation.", ShieldCheck, "/leistungen/security-baseline"],
       ["Infrastruktur & Zugänge", "Netzwerk, Remote-Zugriff, Segmentierung sowie System-, Zugangs- und Infrastruktur-Dokumentation.", Network, "/leistungen/networking"],
@@ -25,15 +25,14 @@ const copy = {
     processTitle: "So könnte ein Assessment später ablaufen",
     finalStepTitle: "Spätere Umsetzung",
     finalStepText: "Umsetzung erst nach kommerzieller Aktivierung und auf Basis eines klaren Umfangs.",
-    founderEyebrow: "Founder-led",
     founderTitle: "Mohamed Elkaza",
     founderRole: "Founder / Technical Lead",
-    founderText: "Mohamed entwickelt Elkaza mit technischem Hintergrund in IT-Infrastruktur, Netzwerken, Security-Grundlagen und Automatisierung.",
+    founderText: "Mohamed Elkaza entwickelt Elkaza in Wien. Sein technischer Schwerpunkt liegt auf IT-Infrastruktur, Netzwerken und Automatisierung.",
     location: "Wien, Österreich",
     portfolio: "Technisches Portfolio",
     scenariosEyebrow: "Keine Kundenreferenzen",
     scenariosTitle: "Beispielszenarien",
-    scenariosLead: "Fiktive Situationen zur Erklärung möglicher Ansätze und Zielbilder.",
+    scenariosLead: "Fiktive Situationen, mögliche Ansätze und Zielbilder. Keine Kundenreferenzen.",
     labels: ["Situation", "Möglicher Ansatz", "Zielbild"],
     allScenarios: "Alle Beispielszenarien",
     statusTitle: "Projekt in Vorbereitung",
@@ -48,7 +47,7 @@ const copy = {
       ["Processes built around individuals", "Recurring tasks and system changes depend on knowledge held by one person."],
     ],
     areasTitle: "Three planned service areas",
-    areasLead: "The intended starting model is clearly bounded assessment and project work. No offer is currently available.",
+    areasLead: "The plan is to begin with clearly bounded assessments and project work. No offer is currently available.",
     areas: [
       ["IT & Security Baseline", "Current-state review, MFA and access, backup/restore readiness, patch fundamentals, roadmap, and documentation.", ShieldCheck, "/en/services/security-baseline"],
       ["Infrastructure & Access", "Networking, remote access, segmentation, and clear system, access, and infrastructure documentation.", Network, "/en/services/networking"],
@@ -59,15 +58,14 @@ const copy = {
     processTitle: "How a future assessment could work",
     finalStepTitle: "Later implementation",
     finalStepText: "Implementation only after commercial activation and with a clearly defined scope.",
-    founderEyebrow: "Founder-led",
     founderTitle: "Mohamed Elkaza",
     founderRole: "Founder / Technical Lead",
-    founderText: "Mohamed is developing Elkaza with a technical background in IT infrastructure, networking, security fundamentals, and automation.",
+    founderText: "Mohamed Elkaza is developing Elkaza in Vienna, with a technical focus on IT infrastructure, networking, and automation.",
     location: "Vienna, Austria",
     portfolio: "Technical portfolio",
     scenariosEyebrow: "Not customer references",
     scenariosTitle: "Illustrative scenarios",
-    scenariosLead: "Fictional situations explaining possible approaches and target states.",
+    scenariosLead: "Fictional situations, possible approaches, and target states. Not customer references.",
     labels: ["Situation", "Possible approach", "Target state"],
     allScenarios: "All illustrative scenarios",
     statusTitle: "Project in preparation",
@@ -144,8 +142,7 @@ export default function ProfessionalHome({ locale }: { locale: Locale }) {
         <div className="mx-auto grid max-w-[960px] gap-8 px-6 sm:grid-cols-[180px_1fr] sm:items-center md:gap-12">
           <Image src="/images/mohamed-elkaza.jpg" alt="Mohamed Elkaza" width={768} height={1024} priority sizes="(max-width: 639px) 160px, 180px" className="aspect-[3/4] w-40 rounded-xl object-cover object-top sm:w-[180px]" />
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--primary)]">{c.founderEyebrow}</p>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-[var(--text)]">{c.founderTitle}</h2>
+            <h2 className="text-3xl font-bold tracking-tight text-[var(--text)]">{c.founderTitle}</h2>
             <p className="mt-1 font-medium text-[var(--text-secondary)]">{c.founderRole}</p>
             <p className="mt-4 max-w-[60ch] leading-relaxed text-[var(--text-secondary)]">{c.founderText}</p>
             <p className="mt-4 flex items-center gap-2 text-sm text-[var(--muted)]"><MapPin className="h-4 w-4" aria-hidden="true" />{c.location}</p>

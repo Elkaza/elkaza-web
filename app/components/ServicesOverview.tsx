@@ -5,19 +5,19 @@ import { siteContent, type Locale } from "@/lib/siteContent";
 const copy = {
   de: {
     title: "Geplante IT-Leistungsbereiche",
-    lead: "Elkaza ist ein Projekt in Vorbereitung. Als künftiger Startpunkt sind klar begrenzte Assessments und Projektarbeit für kleine und mittlere Unternehmen vorgesehen.",
+    lead: "Geplant sind klar begrenzte Assessments und Projektarbeit für kleine und mittlere Unternehmen.",
     primary: "Primärer Fokus für einen möglichen Start",
     roadmap: "Themen zur späteren Validierung",
-    roadmapText: "Die folgenden Themen bleiben als Quellmaterial und mögliche spätere Vertiefungen erhalten. Sie sind nicht Teil eines validierten Startangebots.",
+    roadmapText: "Diese Themen sind nicht Teil des geplanten Startangebots. Sie können später einzeln geprüft werden.",
     status: "Derzeit werden keine Dienstleistungen angeboten und keine Aufträge angenommen.",
     statusLink: "Projektstatus ansehen",
   },
   en: {
     title: "Planned IT service areas",
-    lead: "Elkaza is a project in preparation. The intended future starting point is clearly bounded assessment and project work for small and medium-sized businesses.",
+    lead: "The plan is to begin with clearly bounded assessments and project work for small and medium-sized businesses.",
     primary: "Primary focus for a possible launch",
     roadmap: "Topics for later validation",
-    roadmapText: "The following topics remain available as source material and possible later specialisms. They are not part of a validated launch offer.",
+    roadmapText: "These topics are not part of the planned launch offer. They may be evaluated individually later.",
     status: "No services are currently offered and no orders are accepted.",
     statusLink: "View project status",
   },

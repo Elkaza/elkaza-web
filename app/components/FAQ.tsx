@@ -17,13 +17,7 @@ export default function FAQ({ items, locale }: FAQProps) {
         <h2 className="mb-2 text-3xl font-bold tracking-tight text-[var(--text)]">
           {locale === "de" ? "Häufig gestellte Fragen" : "Frequently Asked Questions"}
         </h2>
-        <p className="mb-8 text-[var(--text-secondary)]">
-          {locale === "de"
-            ? "Antworten auf Ihre wichtigsten Fragen"
-            : "Answers to your most important questions"}
-        </p>
-
-        <div className="border-t border-[var(--border)]">
+        <div className="mt-8 border-t border-[var(--border)]">
           {items.map((item, idx) => (
             <details
               key={item.q}

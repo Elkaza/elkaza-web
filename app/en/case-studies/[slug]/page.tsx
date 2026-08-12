@@ -60,14 +60,10 @@ export default async function CaseStudyDetailEnPage({
               <p className="text-[var(--text-secondary)] font-medium text-[var(--primary)]">{cs.result}</p>
             </div>
 
-            <div className="border-t border-[var(--border)] py-5">
-              <span className="font-bold text-[var(--text)]">Possible tools:</span>
-              <span className="ml-2 text-[var(--muted)]">{cs.tools}</span>
-            </div>
           </div>
 
           <p className="mb-6 mt-6 text-sm text-[var(--muted)]">
-            This scenario only explains the planned working model. No inquiries or orders are currently accepted.
+            This scenario is fictional and not a customer reference. No inquiries or orders are currently accepted.
           </p>
 
           <CTA href="/en/contact">View project status</CTA>

@@ -5,12 +5,11 @@ import type { Locale } from "@/lib/siteContent";
 
 const copy = {
   de: {
-    eyebrow: "Founder-led · Projekt in Vorbereitung",
     title: "Mohamed Elkaza",
     role: "Founder / Technical Lead",
-    lead: "Mohamed entwickelt Elkaza in Wien als mögliches künftiges IT-Services-Projekt für kleine und mittlere Unternehmen.",
+    lead: "Mohamed Elkaza entwickelt Elkaza in Wien. Sein technischer Schwerpunkt liegt auf IT-Infrastruktur, Netzwerken und Automatisierung.",
     background: "Technischer Hintergrund",
-    text: "Der fachliche Hintergrund verbindet Wirtschaftsinformatik mit praktischen Themen aus IT-Infrastruktur, Netzwerken, Security-Grundlagen, Linux, Docker und Automatisierung. Der geplante Ansatz setzt auf klar begrenzte Assessments, nachvollziehbare Prioritäten und saubere Dokumentation.",
+    text: "Der technische Hintergrund umfasst Wirtschaftsinformatik, IT-Infrastruktur, Netzwerke, Linux, Docker und Automatisierung.",
     scope: "Realistischer Startumfang",
     scopeText: "Vorgesehen sind zunächst kleine Assessment- und Projektumfänge. Ein Team, Partnernetzwerk, laufender Managed Service oder garantierte Servicezeiten werden nicht behauptet.",
     portfolio: "Technisches Portfolio auf elkaza.org",
@@ -19,12 +18,11 @@ const copy = {
     location: "Wien, Österreich",
   },
   en: {
-    eyebrow: "Founder-led · Project in preparation",
     title: "Mohamed Elkaza",
     role: "Founder / Technical Lead",
-    lead: "Mohamed is developing Elkaza in Vienna as a possible future IT-services project for small and medium-sized businesses.",
+    lead: "Mohamed Elkaza is developing Elkaza in Vienna, with a technical focus on IT infrastructure, networking, and automation.",
     background: "Technical background",
-    text: "His background combines business informatics with practical work across IT infrastructure, networking, security fundamentals, Linux, Docker, and automation. The planned approach emphasizes bounded assessments, understandable priorities, and clear documentation.",
+    text: "His technical background covers business informatics, IT infrastructure, networking, Linux, Docker, and automation.",
     scope: "Realistic initial scope",
     scopeText: "The intended starting point is small assessment and project engagements. No team, partner network, ongoing managed service, or guaranteed service hours are claimed.",
     portfolio: "Technical portfolio at elkaza.org",
@@ -42,8 +40,7 @@ export default function FounderAbout({ locale }: { locale: Locale }) {
         <div className="mx-auto grid max-w-[960px] gap-8 px-6 sm:grid-cols-[220px_1fr] sm:items-center md:gap-14">
           <Image src="/images/mohamed-elkaza.jpg" alt="Mohamed Elkaza" width={768} height={1024} priority sizes="(max-width: 639px) 180px, 220px" className="aspect-[3/4] w-44 rounded-xl object-cover object-top sm:w-[220px]" />
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--primary)]">{c.eyebrow}</p>
-            <h1 className="mt-3 text-[2.5rem] font-bold leading-tight tracking-tight text-[var(--text)] md:text-5xl">{c.title}</h1>
+            <h1 className="text-[2.5rem] font-bold leading-tight tracking-tight text-[var(--text)] md:text-5xl">{c.title}</h1>
             <p className="mt-2 text-xl font-medium text-[var(--text-secondary)]">{c.role}</p>
             <p className="mt-5 max-w-[60ch] text-lg leading-relaxed text-[var(--text-secondary)]">{c.lead}</p>
             <p className="mt-4 flex items-center gap-2 text-sm text-[var(--muted)]"><MapPin className="h-4 w-4" aria-hidden="true" />{c.location}</p>

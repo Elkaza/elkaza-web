@@ -17,7 +17,7 @@ export default function ReferenzenPage() {
                 <div className="max-w-[1140px] mx-auto px-6">
                     <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-[var(--primary)]">Illustrativ · keine Kundenreferenzen</p>
                     <h1 className="mb-3 text-[2.5rem] font-bold leading-tight tracking-tight text-[var(--text)] md:text-5xl">Beispielszenarien</h1>
-                    <p className="text-lg text-[var(--text-secondary)] max-w-3xl">Fiktive Situationen zur Erklärung einer möglichen späteren Arbeitsweise.</p>
+                    <p className="text-lg text-[var(--text-secondary)] max-w-3xl">Fiktive Situationen, mögliche Ansätze und Zielbilder. Keine Kundenreferenzen.</p>
                 </div>
             </section>
 
@@ -47,9 +47,6 @@ export default function ReferenzenPage() {
                                         <span className="font-semibold text-[var(--text)]">Zielbild:</span>
                                         <span>{cs.result}</span>
                                     </div>
-                                </div>
-                                <div className="mt-4 pt-3 border-t border-[var(--border)] text-xs text-[var(--muted)]">
-                                    <span className="font-medium">Tools:</span> {cs.tools}
                                 </div>
                             </Link>
                         ))}

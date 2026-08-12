@@ -17,7 +17,7 @@ export default function CaseStudiesEnPage() {
         <div className="max-w-[1140px] mx-auto px-6">
           <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-[var(--primary)]">Illustrative · not customer references</p>
           <h1 className="mb-3 text-[2.5rem] font-bold leading-tight tracking-tight text-[var(--text)] md:text-5xl">Illustrative Scenarios</h1>
-          <p className="text-lg text-[var(--text-secondary)] max-w-3xl">Fictional situations explaining a possible future working model.</p>
+          <p className="text-lg text-[var(--text-secondary)] max-w-3xl">Fictional situations, possible approaches, and target states. Not customer references.</p>
         </div>
       </section>
 
@@ -47,9 +47,6 @@ export default function CaseStudiesEnPage() {
                     <span className="font-semibold text-[var(--text)]">Target state:</span>
                     <span>{cs.result}</span>
                   </div>
-                </div>
-                <div className="mt-4 pt-3 border-t border-[var(--border)] text-xs text-[var(--muted)]">
-                  <span className="font-medium">Tools:</span> {cs.tools}
                 </div>
               </Link>
             ))}

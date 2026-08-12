@@ -1,6 +1,6 @@
 import CTA from "@/app/components/CTA";
 
-const mockDb: Record<string, { title: string; context?: string; situation: string; approach: string; targetState: string; tech: string[] }> = {
+const mockDb: Record<string, { title: string; context?: string; situation: string; approach: string; targetState: string }> = {
   "logistik-automation": {
     title: "Beispiel: Automatisierung in der Logistik",
     context: "Fiktives Logistik-KMU",
@@ -10,7 +10,6 @@ const mockDb: Record<string, { title: string; context?: string; situation: strin
       "Ein möglicher Ansatz wäre, PDF-Rechnungen strukturiert auszulesen, relevante Felder zu validieren und den Übergabeprozess an die Buchhaltung zu dokumentieren.",
     targetState:
       "Weniger manuelle Erfassung, nachvollziehbare Validierung und klarere Übergabe zwischen Betrieb und Buchhaltung.",
-    tech: ["Next.js", "TypeScript", "Gemini"],
   },
 };
 
@@ -22,7 +21,6 @@ export default async function CaseStudyDetail(props: { params: Promise<{ slug: s
     situation: "Noch keine Details hinterlegt.",
     approach: "",
     targetState: "",
-    tech: [],
   };
 
   return (
@@ -56,12 +54,6 @@ export default async function CaseStudyDetail(props: { params: Promise<{ slug: s
             </div>
           )}
 
-          {data.tech.length > 0 && (
-            <div>
-              <h2 className="text-2xl font-semibold text-[var(--text)] mb-3">Mögliche Werkzeuge</h2>
-              <p className="text-[var(--text-secondary)]">{data.tech.join(", ")}</p>
-            </div>
-          )}
         </div>
       </section>
 
