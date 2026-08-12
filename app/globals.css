@@ -37,6 +37,12 @@
   --warning: #F59E0B;
   --error: #EF4444;
 
+  /* Informational pre-launch status */
+  --status-bg: #FFFBEB;
+  --status-border: #FDE68A;
+  --status-text: #78350F;
+  --status-muted: #92400E;
+
   /* Accent variations */
   --accent-purple: #A855F7;
   --accent-pink: #EC4899;
@@ -85,6 +91,12 @@
   --primary-foreground: #FFFFFF;
   --primary-light: #1E1B4B;
   --accent: #22D3EE;
+
+  /* Informational pre-launch status */
+  --status-bg: #171A24;
+  --status-border: #3F3526;
+  --status-text: #FDE68A;
+  --status-muted: #D6C7A8;
 
   /* Shadows: use subtle glows instead */
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.4);
@@ -172,7 +184,7 @@ body {
    ============================================ */
 
 .hero-gradient {
-  background: linear-gradient(180deg, var(--hero-from) 0%, var(--hero-to) 100%);
+  background: var(--bg);
 }
 
 /* ============================================
@@ -189,7 +201,6 @@ body {
 
 .card:hover {
   border-color: var(--border-hover);
-  box-shadow: var(--shadow-md);
 }
 
 .card:focus-within {

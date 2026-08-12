@@ -6,11 +6,17 @@ export default function PrelaunchNotice() {
   const pathname = usePathname() || "/";
   const isEnglish = pathname === "/en" || pathname.startsWith("/en/");
   return (
-    <div className="border-b border-amber-300 bg-amber-50 text-amber-950 dark:border-amber-700 dark:bg-amber-950 dark:text-amber-100" role="status">
-      <div className="mx-auto max-w-[1140px] px-4 py-2.5 text-center text-sm font-medium sm:px-6">
-        {isEnglish
-          ? "Project in preparation: No services are currently offered and no orders are accepted through this website."
-          : "Projekt in Vorbereitung: Derzeit werden über diese Website keine Dienstleistungen angeboten oder Aufträge angenommen."}
+    <div className="border-b border-[var(--status-border)] bg-[var(--status-bg)] text-[var(--status-text)]" role="status">
+      <div className="mx-auto flex max-w-[1140px] items-start justify-center gap-2 px-4 py-2 text-sm sm:items-center sm:px-6">
+        <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-amber-500 sm:mt-0" aria-hidden="true" />
+        <p>
+          <strong className="font-semibold">{isEnglish ? "Project in preparation" : "Projekt in Vorbereitung"}</strong>
+          <span className="text-[var(--status-muted)]">
+            {isEnglish
+              ? " · No services or orders currently accepted."
+              : " · Derzeit keine Dienstleistungen oder Aufträge."}
+          </span>
+        </p>
       </div>
     </div>
   );

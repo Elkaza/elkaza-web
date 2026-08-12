@@ -32,43 +32,41 @@ export default async function ReferenzDetailPage({
 
     return (
         <main>
-            <section className="py-10 md:py-14 hero-gradient-enhanced">
+            <section className="hero-gradient-enhanced py-14 md:py-20">
                 <div className="max-w-4xl mx-auto px-6">
                     <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-[var(--primary)]">Beispielszenario · keine Kundenreferenz</p>
-                    <span className="text-xs font-semibold text-[var(--primary-foreground)] bg-[var(--primary)] px-3 py-1 rounded-full">
-                        {cs.tag}
-                    </span>
-                    <h1 className="text-4xl font-bold text-[var(--text)] mt-4 mb-3">{cs.title}</h1>
+                    <p className="text-sm font-medium text-[var(--muted)]">{cs.tag}</p>
+                    <h1 className="mt-4 mb-3 text-[2.5rem] font-bold leading-tight tracking-tight text-[var(--text)] md:text-5xl">{cs.title}</h1>
                     <p className="text-xl text-[var(--text-secondary)]">{cs.result}</p>
                 </div>
             </section>
 
             <section className="py-10 md:py-14 bg-[var(--surface)]">
                 <div className="max-w-4xl mx-auto px-6">
-                    <div className="space-y-6">
-                        <div>
+                    <div className="border-t border-[var(--border)]">
+                        <div className="py-7">
                             <h2 className="text-xl font-bold text-[var(--text)] mb-2">Situation</h2>
                             <p className="text-[var(--text-secondary)]">{cs.context}</p>
                             <p className="text-[var(--text-secondary)] mt-1">{cs.problem}</p>
                         </div>
 
-                        <div>
+                        <div className="border-t border-[var(--border)] py-7">
                             <h2 className="text-xl font-bold text-[var(--text)] mb-2">Möglicher Ansatz</h2>
                             <p className="text-[var(--text-secondary)]">{cs.approach}</p>
                         </div>
 
-                        <div>
+                        <div className="border-t border-[var(--border)] py-7">
                             <h2 className="text-xl font-bold text-[var(--text)] mb-2">Zielbild</h2>
                             <p className="text-[var(--text-secondary)] font-medium text-[var(--primary)]">{cs.result}</p>
                         </div>
 
-                        <div className="pt-4 border-t border-[var(--border)]">
+                        <div className="border-t border-[var(--border)] py-5">
                             <span className="font-bold text-[var(--text)]">Mögliche Werkzeuge:</span>
                             <span className="ml-2 text-[var(--muted)]">{cs.tools}</span>
                         </div>
                     </div>
 
-                    <p className="text-[var(--muted)] text-sm mb-6">
+                    <p className="mb-6 mt-6 text-sm text-[var(--muted)]">
                         Dieses Szenario dient nur zur Erklärung der geplanten Arbeitsweise. Derzeit werden keine Anfragen oder Aufträge angenommen.
                     </p>
 

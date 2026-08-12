@@ -1,5 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ClipboardCheck, MapPin, Network, ShieldCheck, Workflow } from "lucide-react";
+import { ArrowRight, MapPin, Network, ShieldCheck, Workflow } from "lucide-react";
 import FAQ from "@/app/components/FAQ";
 import HomeHero from "@/app/components/HomeHero";
 import { siteContent, type Locale } from "@/lib/siteContent";
@@ -20,13 +21,19 @@ const copy = {
       ["Automatisierung & dokumentierter Betrieb", "Wiederkehrende Aufgaben, Linux/Docker wo passend, Monitoring-Konzepte, Runbooks und Deployment-Dokumentation.", Workflow, "/leistungen/automation"],
     ],
     areaLink: "Konzept ansehen",
+    processEyebrow: "Geplanter Ablauf",
     processTitle: "So könnte ein Assessment später ablaufen",
-    founderTitle: "Wer hinter Elkaza steht",
-    founderText: "Mohamed Elkaza entwickelt Elkaza als mögliches künftiges IT-Services-Projekt für KMU. Der technische Hintergrund umfasst Wirtschaftsinformatik, IT-Infrastruktur, Netzwerke, Security-Grundlagen und Automatisierung.",
+    finalStepTitle: "Spätere Umsetzung",
+    finalStepText: "Umsetzung erst nach kommerzieller Aktivierung und auf Basis eines klaren Umfangs.",
+    founderEyebrow: "Founder-led",
+    founderTitle: "Mohamed Elkaza",
+    founderRole: "Founder / Technical Lead",
+    founderText: "Mohamed entwickelt Elkaza mit technischem Hintergrund in IT-Infrastruktur, Netzwerken, Security-Grundlagen und Automatisierung.",
     location: "Wien, Österreich",
-    portfolio: "Technisches Portfolio und Projekte",
+    portfolio: "Technisches Portfolio",
+    scenariosEyebrow: "Keine Kundenreferenzen",
     scenariosTitle: "Beispielszenarien",
-    scenariosLead: "Fiktive Situationen zur Erklärung möglicher Ansätze und Zielbilder – keine Kundenreferenzen.",
+    scenariosLead: "Fiktive Situationen zur Erklärung möglicher Ansätze und Zielbilder.",
     labels: ["Situation", "Möglicher Ansatz", "Zielbild"],
     allScenarios: "Alle Beispielszenarien",
     statusTitle: "Projekt in Vorbereitung",
@@ -48,13 +55,19 @@ const copy = {
       ["Automation & Documented Operations", "Recurring tasks, Linux/Docker where appropriate, monitoring concepts, runbooks, and deployment documentation.", Workflow, "/en/services/automation"],
     ],
     areaLink: "View concept",
+    processEyebrow: "Planned workflow",
     processTitle: "How a future assessment could work",
-    founderTitle: "Who is behind Elkaza",
-    founderText: "Mohamed Elkaza is developing Elkaza as a possible future IT-services project for SMEs. His technical background covers business informatics, IT infrastructure, networking, security fundamentals, and automation.",
+    finalStepTitle: "Later implementation",
+    finalStepText: "Implementation only after commercial activation and with a clearly defined scope.",
+    founderEyebrow: "Founder-led",
+    founderTitle: "Mohamed Elkaza",
+    founderRole: "Founder / Technical Lead",
+    founderText: "Mohamed is developing Elkaza with a technical background in IT infrastructure, networking, security fundamentals, and automation.",
     location: "Vienna, Austria",
-    portfolio: "Technical portfolio and projects",
-    scenariosTitle: "Illustrative Scenarios",
-    scenariosLead: "Fictional situations explaining possible approaches and target states – not customer references.",
+    portfolio: "Technical portfolio",
+    scenariosEyebrow: "Not customer references",
+    scenariosTitle: "Illustrative scenarios",
+    scenariosLead: "Fictional situations explaining possible approaches and target states.",
     labels: ["Situation", "Possible approach", "Target state"],
     allScenarios: "All illustrative scenarios",
     statusTitle: "Project in preparation",
@@ -74,45 +87,106 @@ export default function ProfessionalHome({ locale }: { locale: Locale }) {
     <main>
       <HomeHero locale={locale} />
 
-      <section className="bg-[var(--surface)] py-12 md:py-16">
+      <section className="bg-[var(--surface)] py-16 md:py-24">
         <div className="mx-auto max-w-[1140px] px-6">
-          <h2 className="text-2xl font-bold text-[var(--text)] md:text-3xl">{c.problemsTitle}</h2>
-          <div className="mt-7 grid gap-5 md:grid-cols-3">
-            {c.problems.map(([title, text]) => <article key={title} className="rounded-xl border border-[var(--border)] bg-[var(--bg)] p-5"><h3 className="font-semibold text-[var(--text)]">{title}</h3><p className="mt-2 text-sm leading-relaxed text-[var(--text-secondary)]">{text}</p></article>)}
+          <h2 className="max-w-3xl text-3xl font-bold tracking-tight text-[var(--text)]">{c.problemsTitle}</h2>
+          <div className="mt-9 grid border-t border-[var(--border)] md:grid-cols-3">
+            {c.problems.map(([title, text], index) => (
+              <article key={title} className={`py-6 md:px-7 ${index > 0 ? "border-t border-[var(--border)] md:border-l md:border-t-0" : "md:pl-0"}`}>
+                <p className="text-xs font-semibold tabular-nums text-[var(--primary)]">0{index + 1}</p>
+                <h3 className="mt-3 text-lg font-semibold text-[var(--text)]">{title}</h3>
+                <p className="mt-2 max-w-[38ch] leading-relaxed text-[var(--text-secondary)]">{text}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-[var(--bg)] py-12 md:py-16">
+      <section className="bg-[var(--bg)] py-16 md:py-24">
         <div className="mx-auto max-w-[1140px] px-6">
-          <h2 className="text-2xl font-bold text-[var(--text)] md:text-3xl">{c.areasTitle}</h2>
-          <p className="mt-3 max-w-3xl text-[var(--text-secondary)]">{c.areasLead}</p>
-          <div className="mt-7 grid gap-5 md:grid-cols-3">
-            {c.areas.map(([title, text, Icon, href]) => <Link key={title} href={href} className="group rounded-xl border border-[var(--border)] bg-[var(--surface)] p-5 hover:border-[var(--primary)]"><Icon className="h-6 w-6 text-[var(--primary)]" aria-hidden="true"/><h3 className="mt-4 font-semibold text-[var(--text)]">{title}</h3><p className="mt-2 text-sm leading-relaxed text-[var(--text-secondary)]">{text}</p><span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-[var(--primary)]">{c.areaLink}<ArrowRight className="h-4 w-4"/></span></Link>)}
+          <h2 className="text-3xl font-bold tracking-tight text-[var(--text)]">{c.areasTitle}</h2>
+          <p className="mt-4 max-w-[65ch] text-[var(--text-secondary)]">{c.areasLead}</p>
+          <div className="mt-9 grid gap-5 md:grid-cols-3">
+            {c.areas.map(([title, text, Icon, href]) => (
+              <Link key={title} href={href} className="group flex flex-col rounded-xl border border-[var(--border)] bg-[var(--surface)] p-6 transition-colors hover:border-[var(--border-hover)]">
+                <Icon className="h-6 w-6 text-[var(--primary)]" aria-hidden="true" />
+                <h3 className="mt-5 text-lg font-semibold leading-snug text-[var(--text)]">{title}</h3>
+                <p className="mt-3 flex-1 leading-relaxed text-[var(--text-secondary)]">{text}</p>
+                <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--primary)]">{c.areaLink}<ArrowRight className="h-4 w-4" aria-hidden="true" /></span>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-[var(--surface)] py-12 md:py-16">
-        <div className="mx-auto max-w-[960px] px-6">
-          <h2 className="text-2xl font-bold text-[var(--text)] md:text-3xl">{c.processTitle}</h2>
-          <ol className="mt-7 grid gap-5 md:grid-cols-3">{process.map((step) => <li key={step.step} className="rounded-xl border border-[var(--border)] p-5"><ClipboardCheck className="h-5 w-5 text-[var(--primary)]"/><h3 className="mt-3 font-semibold text-[var(--text)]">{step.step}. {step.title}</h3><p className="mt-2 text-sm text-[var(--text-secondary)]">{step.desc}</p></li>)}</ol>
+      <section className="bg-[var(--surface)] py-16 md:py-24">
+        <div className="mx-auto max-w-[1140px] px-6">
+          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--primary)]">{c.processEyebrow}</p>
+          <h2 className="mt-3 text-3xl font-bold tracking-tight text-[var(--text)]">{c.processTitle}</h2>
+          <ol className="mt-10 grid border-t border-[var(--border)] md:grid-cols-4">
+            {process.map((step, index) => (
+              <li key={step.step} className={`relative py-6 md:px-6 ${index > 0 ? "border-t border-[var(--border)] md:border-l md:border-t-0" : "md:pl-0"}`}>
+                <span className="text-sm font-semibold tabular-nums text-[var(--primary)]">0{step.step}</span>
+                <h3 className="mt-3 font-semibold text-[var(--text)]">{step.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-[var(--text-secondary)]">{step.desc}</p>
+              </li>
+            ))}
+            <li className="border-t border-[var(--border)] py-6 md:border-l md:border-t-0 md:px-6">
+              <span className="text-sm font-semibold tabular-nums text-[var(--primary)]">04</span>
+              <h3 className="mt-3 font-semibold text-[var(--text)]">{c.finalStepTitle}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-[var(--text-secondary)]">{c.finalStepText}</p>
+            </li>
+          </ol>
         </div>
       </section>
 
-      <section className="bg-[var(--bg)] py-12 md:py-16">
-        <div className="mx-auto grid max-w-[960px] gap-8 px-6 md:grid-cols-[180px_1fr] md:items-center">
-          <div className="flex aspect-square items-center justify-center rounded-2xl border border-[var(--border)] bg-[var(--surface)] text-5xl font-bold text-[var(--primary)]" aria-label="Mohamed Elkaza">ME</div>
-          <div><h2 className="text-2xl font-bold text-[var(--text)] md:text-3xl">{c.founderTitle}</h2><p className="mt-4 leading-relaxed text-[var(--text-secondary)]">{c.founderText}</p><p className="mt-4 flex items-center gap-2 text-sm text-[var(--muted)]"><MapPin className="h-4 w-4"/>{c.location}</p><a className="mt-4 inline-flex items-center gap-1 font-semibold text-[var(--primary)]" href="https://elkaza.org">{c.portfolio}<ArrowRight className="h-4 w-4"/></a></div>
+      <section className="bg-[var(--bg)] py-16 md:py-24">
+        <div className="mx-auto grid max-w-[960px] gap-8 px-6 sm:grid-cols-[180px_1fr] sm:items-center md:gap-12">
+          <Image src="/images/mohamed-elkaza.jpg" alt="Mohamed Elkaza" width={768} height={1024} priority sizes="(max-width: 639px) 160px, 180px" className="aspect-[3/4] w-40 rounded-xl object-cover object-top sm:w-[180px]" />
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--primary)]">{c.founderEyebrow}</p>
+            <h2 className="mt-3 text-3xl font-bold tracking-tight text-[var(--text)]">{c.founderTitle}</h2>
+            <p className="mt-1 font-medium text-[var(--text-secondary)]">{c.founderRole}</p>
+            <p className="mt-4 max-w-[60ch] leading-relaxed text-[var(--text-secondary)]">{c.founderText}</p>
+            <p className="mt-4 flex items-center gap-2 text-sm text-[var(--muted)]"><MapPin className="h-4 w-4" aria-hidden="true" />{c.location}</p>
+            <a className="mt-4 inline-flex items-center gap-1.5 font-semibold text-[var(--primary)]" href="https://elkaza.org">{c.portfolio}<ArrowRight className="h-4 w-4" aria-hidden="true" /></a>
+          </div>
         </div>
       </section>
 
-      <section className="bg-[var(--surface)] py-12 md:py-16">
-        <div className="mx-auto max-w-[1140px] px-6"><h2 className="text-2xl font-bold text-[var(--text)] md:text-3xl">{c.scenariosTitle}</h2><p className="mt-3 text-[var(--text-secondary)]">{c.scenariosLead}</p><div className="mt-7 grid gap-5 md:grid-cols-2">{scenarios.map((item) => <Link key={item.slug} href={`${base}/${item.slug}`} className="rounded-xl border border-[var(--border)] bg-[var(--bg)] p-5 hover:border-[var(--primary)]"><h3 className="font-semibold text-[var(--text)]">{item.title}</h3>{[[c.labels[0], item.problem],[c.labels[1],item.approach],[c.labels[2],item.result]].map(([label,text]) => <p key={label} className="mt-3 text-sm leading-relaxed text-[var(--text-secondary)]"><strong className="text-[var(--text)]">{label}:</strong> {text}</p>)}</Link>)}</div><Link href={base} className="mt-6 inline-flex items-center gap-1 font-semibold text-[var(--primary)]">{c.allScenarios}<ArrowRight className="h-4 w-4"/></Link></div>
+      <section className="bg-[var(--surface)] py-16 md:py-24">
+        <div className="mx-auto max-w-[1140px] px-6">
+          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--primary)]">{c.scenariosEyebrow}</p>
+          <h2 className="mt-3 text-3xl font-bold tracking-tight text-[var(--text)]">{c.scenariosTitle}</h2>
+          <p className="mt-3 text-[var(--text-secondary)]">{c.scenariosLead}</p>
+          <div className="mt-8 grid gap-5 md:grid-cols-2">
+            {scenarios.map((item) => (
+              <Link key={item.slug} href={`${base}/${item.slug}`} className="group rounded-xl border border-[var(--border)] bg-[var(--bg)] p-6 transition-colors hover:border-[var(--border-hover)]">
+                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--primary)]">{locale === "de" ? "Beispielszenario" : "Illustrative scenario"}</p>
+                <h3 className="mt-3 text-lg font-semibold text-[var(--text)]">{item.title}</h3>
+                {[[c.labels[0], item.problem], [c.labels[1], item.approach], [c.labels[2], item.result]].map(([label, text]) => (
+                  <div key={label} className="mt-4 grid gap-1 text-sm leading-relaxed sm:grid-cols-[120px_1fr]">
+                    <strong className="text-[var(--text)]">{label}</strong><span className="text-[var(--text-secondary)]">{text}</span>
+                  </div>
+                ))}
+              </Link>
+            ))}
+          </div>
+          <Link href={base} className="mt-6 inline-flex items-center gap-1.5 font-semibold text-[var(--primary)]">{c.allScenarios}<ArrowRight className="h-4 w-4" aria-hidden="true" /></Link>
+        </div>
       </section>
 
-      <section className="bg-[var(--bg)] py-12 text-center md:py-16"><div className="mx-auto max-w-2xl px-6"><h2 className="text-2xl font-bold text-[var(--text)]">{c.statusTitle}</h2><p className="mt-3 text-[var(--text-secondary)]">{c.statusText}</p><Link href={statusHref} className="mt-6 inline-flex rounded-lg bg-[var(--primary)] px-5 py-3 font-semibold text-[var(--primary-foreground)]">{c.statusLink}</Link></div></section>
-      <FAQ items={siteContent.faqs[locale].items} locale={locale} />
+      <section className="border-y border-[var(--status-border)] bg-[var(--status-bg)] py-12">
+        <div className="mx-auto flex max-w-[960px] flex-col gap-5 px-6 md:flex-row md:items-center md:justify-between">
+          <div className="max-w-2xl">
+            <div className="flex items-center gap-2"><span className="h-2 w-2 rounded-full bg-amber-500" aria-hidden="true" /><h2 className="text-xl font-semibold text-[var(--status-text)]">{c.statusTitle}</h2></div>
+            <p className="mt-2 text-sm leading-relaxed text-[var(--status-muted)]">{c.statusText}</p>
+          </div>
+          <Link href={statusHref} className="shrink-0 font-semibold text-[var(--primary)]">{c.statusLink} →</Link>
+        </div>
+      </section>
+
+      <FAQ items={siteContent.faqs[locale].items.slice(0, 4)} locale={locale} />
     </main>
   );
 }

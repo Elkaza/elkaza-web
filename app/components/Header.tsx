@@ -11,16 +11,16 @@ export default function Header() {
   const pathname = usePathname() || "/";
   const isEnglish = pathname === "/en" || pathname.startsWith("/en/");
   const deItems = [
-    { href: "/leistungen", label: "Konzepte" },
-    { href: "/pakete", label: "Pakete" },
+    { href: "/leistungen", label: "Leistungen" },
     { href: "/referenzen", label: "Szenarien" },
-    { href: "/kontakt", label: "Kontakt" },
+    { href: "/ueber-uns", label: "Über Elkaza" },
+    { href: "/kontakt", label: "Status / Kontakt" },
   ];
   const enItems = [
-    { href: "/en/services", label: "Concepts" },
-    { href: "/en/packages", label: "Packages" },
+    { href: "/en/services", label: "Services" },
     { href: "/en/case-studies", label: "Scenarios" },
-    { href: "/en/contact", label: "Contact" },
+    { href: "/en/about", label: "About" },
+    { href: "/en/contact", label: "Status / Contact" },
   ];
 
   const renderNavItems = (items: typeof deItems, className = "site-nav-link") =>
@@ -31,23 +31,23 @@ export default function Header() {
     ));
 
   return (
-    <header className="border-b border-[var(--border)] bg-[var(--surface)]/95 backdrop-blur-md sticky top-0 z-50">
-      <div className="max-w-[1140px] mx-auto px-6 py-4 flex items-center justify-between">
+    <header className="sticky top-0 z-50 border-b border-[var(--border)] bg-[var(--surface)]">
+      <div className="mx-auto flex max-w-[1140px] items-center justify-between px-4 py-3 sm:px-6">
         <div>
           <Link href={isEnglish ? "/en" : "/"} className="flex items-center gap-3 group">
-            <Image src="/logo-mark.svg" alt="Elkaza" width={36} height={36} className="rounded-lg" />
+            <Image src="/logo-mark.svg" alt="" aria-hidden="true" width={36} height={36} className="rounded-lg" />
             <span className="text-lg font-semibold text-[var(--primary)] group-hover:text-[var(--primary-hover)] transition-colors">
               Elkaza
             </span>
           </Link>
         </div>
 
-        <nav aria-label="Primary navigation" className="hidden md:flex items-center gap-8 text-sm font-medium">
+        <nav aria-label="Primary navigation" className="hidden items-center gap-7 text-sm font-medium lg:flex">
           {renderNavItems(isEnglish ? enItems : deItems)}
         </nav>
 
         <div className="flex items-center gap-3">
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             <LanguageSwitcher />
           </div>
           <ThemeToggle />
@@ -56,7 +56,7 @@ export default function Header() {
             data-mobile-menu-toggle
             aria-controls="mobile-navigation"
             aria-expanded="false"
-            className="md:hidden p-2.5 text-[var(--muted)] hover:text-[var(--text)] rounded-lg hover:bg-[var(--elevated)] transition-colors"
+            className="rounded-lg p-2.5 text-[var(--muted)] transition-colors hover:bg-[var(--surface-muted)] hover:text-[var(--text)] lg:hidden"
             aria-label="Menü öffnen"
           >
             <Menu data-mobile-menu-icon="open" className="w-6 h-6" aria-hidden="true" />
@@ -69,7 +69,7 @@ export default function Header() {
         id="mobile-navigation"
         hidden
         aria-label="Mobile navigation"
-        className="md:hidden border-t border-[var(--border)] bg-[var(--surface)] px-6 py-4 space-y-1"
+        className="space-y-1 border-t border-[var(--border)] bg-[var(--surface)] px-6 py-4 lg:hidden"
       >
         {renderNavItems(isEnglish ? enItems : deItems, "mobile-nav-link")}
         <div className="pt-3 border-t border-[var(--border)]">

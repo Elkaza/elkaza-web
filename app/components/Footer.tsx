@@ -13,13 +13,13 @@ export default function Footer() {
         <FooterLegalLinks />
       </div>
 
-      {/* Contact Info Row */}
       <div className="border-t border-[var(--border)] bg-[var(--bg)]">
-        <div className="max-w-[1140px] mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center text-xs text-[var(--muted)]">
-          <div>
+        <div className="mx-auto flex max-w-[1140px] flex-col gap-2 px-6 py-4 text-xs text-[var(--muted)] md:flex-row md:items-center md:justify-between">
+          <div className="flex items-center gap-2">
+            <span className="h-1.5 w-1.5 rounded-full bg-amber-500" aria-hidden="true" />
             {isEnglish ? "Project in preparation" : "Projekt in Vorbereitung"}
           </div>
-          <div className="mt-2 md:mt-0">
+          <div>
             {isEnglish ? "Vienna, Austria" : "Wien, Österreich"}
           </div>
         </div>
