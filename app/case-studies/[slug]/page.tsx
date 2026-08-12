@@ -1,15 +1,15 @@
 import CTA from "@/app/components/CTA";
 
-const mockDb: Record<string, { title: string; client?: string; challenge: string; solution: string; result: string; tech: string[] }> = {
+const mockDb: Record<string, { title: string; context?: string; situation: string; approach: string; targetState: string; tech: string[] }> = {
   "logistik-automation": {
     title: "Beispiel: Automatisierung in der Logistik",
-    client: "Fiktives Logistik-KMU",
-    challenge:
+    context: "Fiktives Logistik-KMU",
+    situation:
       "Ein fiktives Logistikunternehmen verarbeitet viele Frachtrechnungen manuell. Das Beispiel zeigt, wie wiederkehrende Datenerfassung analysiert werden könnte.",
-    solution:
+    approach:
       "Ein möglicher Ansatz wäre, PDF-Rechnungen strukturiert auszulesen, relevante Felder zu validieren und den Übergabeprozess an die Buchhaltung zu dokumentieren.",
-    result:
-      "Zielbild: weniger manuelle Erfassung, nachvollziehbare Validierung und klarere Übergabe zwischen Betrieb und Buchhaltung.",
+    targetState:
+      "Weniger manuelle Erfassung, nachvollziehbare Validierung und klarere Übergabe zwischen Betrieb und Buchhaltung.",
     tech: ["Next.js", "TypeScript", "Gemini"],
   },
 };
@@ -18,10 +18,10 @@ export default async function CaseStudyDetail(props: { params: Promise<{ slug: s
   const resolved = await props.params;
   const slug = resolved.slug;
   const data = mockDb[slug] || {
-    title: "Case Study",
-    challenge: "Noch keine Details hinterlegt.",
-    solution: "",
-    result: "",
+    title: "Beispielszenario",
+    situation: "Noch keine Details hinterlegt.",
+    approach: "",
+    targetState: "",
     tech: [],
   };
 
@@ -30,35 +30,35 @@ export default async function CaseStudyDetail(props: { params: Promise<{ slug: s
       <section className="py-10 md:py-14 hero-gradient-enhanced">
         <div className="max-w-3xl mx-auto px-6">
           <h1 className="text-4xl font-bold text-[var(--text)] mb-2">{data.title}</h1>
-          <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-[var(--primary)]">Technische Fallstudie - keine Kundenreferenz</p>
-          {data.client && <p className="text-[var(--muted)]">Kontext: {data.client}</p>}
+          <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-[var(--primary)]">Beispielszenario · keine Kundenreferenz</p>
+          {data.context && <p className="text-[var(--muted)]">Kontext: {data.context}</p>}
         </div>
       </section>
 
       <section className="py-10 md:py-14 bg-[var(--surface)]">
         <div className="max-w-3xl mx-auto px-6 space-y-8">
           <div>
-            <h2 className="text-2xl font-semibold text-[var(--text)] mb-3">Herausforderung</h2>
-            <p className="text-[var(--text-secondary)] leading-relaxed">{data.challenge}</p>
+            <h2 className="text-2xl font-semibold text-[var(--text)] mb-3">Situation</h2>
+            <p className="text-[var(--text-secondary)] leading-relaxed">{data.situation}</p>
           </div>
 
-          {data.solution && (
+          {data.approach && (
             <div>
-              <h2 className="text-2xl font-semibold text-[var(--text)] mb-3">Lösung</h2>
-              <p className="text-[var(--text-secondary)] leading-relaxed">{data.solution}</p>
+              <h2 className="text-2xl font-semibold text-[var(--text)] mb-3">Möglicher Ansatz</h2>
+              <p className="text-[var(--text-secondary)] leading-relaxed">{data.approach}</p>
             </div>
           )}
 
-          {data.result && (
+          {data.targetState && (
             <div>
-              <h2 className="text-2xl font-semibold text-[var(--text)] mb-3">Ergebnis</h2>
-              <p className="text-[var(--text-secondary)] leading-relaxed">{data.result}</p>
+              <h2 className="text-2xl font-semibold text-[var(--text)] mb-3">Zielbild</h2>
+              <p className="text-[var(--text-secondary)] leading-relaxed">{data.targetState}</p>
             </div>
           )}
 
           {data.tech.length > 0 && (
             <div>
-              <h2 className="text-2xl font-semibold text-[var(--text)] mb-3">Tech Stack</h2>
+              <h2 className="text-2xl font-semibold text-[var(--text)] mb-3">Mögliche Werkzeuge</h2>
               <p className="text-[var(--text-secondary)]">{data.tech.join(", ")}</p>
             </div>
           )}

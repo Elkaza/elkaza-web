@@ -4,7 +4,7 @@ import { createLocalizedMetadata } from "@/lib/metadata";
 
 export const metadata = createLocalizedMetadata({
     title: "Managed Operations - Elkaza Consulting",
-    description: "We handle your IT. Proactive monitoring, patching, and incident response.",
+    description: "Unvalidated future concept for possible ongoing support. No current offer, SLA, or guaranteed response time.",
     path: "/en/services/managed-ops",
 });
 
@@ -26,7 +26,7 @@ export default function ManagedOpsPage() {
                 "Organizations that don't want to leave security to chance",
             ]}
             outcomes={[
-                "Stable systems and fast response to issues",
+                "Incident and escalation model still to be defined",
                 "Security updates always installed promptly",
                 "Transparent costs instead of overtime chaos",
                 "One contact who knows your environment",

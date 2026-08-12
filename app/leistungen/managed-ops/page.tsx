@@ -4,7 +4,7 @@ import { createLocalizedMetadata } from "@/lib/metadata";
 
 export const metadata = createLocalizedMetadata({
     title: "Managed Operations - Elkaza Consulting",
-    description: "Wir kümmern uns um Ihre IT. Proaktives Monitoring, Patching und Incident Response.",
+    description: "Nicht validiertes Zukunftskonzept für mögliche laufende Betreuung. Derzeit kein Angebot, keine SLAs und keine zugesicherten Reaktionszeiten.",
     path: "/leistungen/managed-ops",
 });
 
@@ -26,7 +26,7 @@ export default function ManagedOpsPage() {
                 "Organisationen, die Sicherheit nicht dem Zufall überlassen wollen",
             ]}
             outcomes={[
-                "Stabile Systeme und schnelle Reaktion bei Problemen",
+                "Noch zu definierendes Störungs- und Eskalationsmodell",
                 "Sicherheitsupdates immer zeitnah installiert",
                 "Transparente Kosten statt Überstunden-Chaos",
                 "Ein Ansprechpartner, der Ihre Umgebung kennt",

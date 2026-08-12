@@ -4,6 +4,7 @@ import Footer from "@/app/components/Footer";
 import BackToTop from "@/app/components/BackToTop";
 import SiteInteractivity from "@/app/components/SiteInteractivity";
 import PrelaunchNotice from "@/app/components/PrelaunchNotice";
+import SkipLink from "@/app/components/SkipLink";
 import Script from "next/script";
 import { SITE_IS_PRELAUNCH } from "@/lib/siteStatus";
 
@@ -127,10 +128,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             strategy="afterInteractive"
           />
         )}
-        <a href="#content" className="skip-link">
-          <span className="locale-de-only">Zum Inhalt springen</span>
-          <span className="locale-en-only">Skip to content</span>
-        </a>
+        <SkipLink />
         <Header />
         <PrelaunchNotice />
 

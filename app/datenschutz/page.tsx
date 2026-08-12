@@ -13,7 +13,7 @@ export default function DatenschutzPage() {
     <main>
       <section className="py-10 md:py-14 hero-gradient-enhanced">
         <div className="max-w-[1140px] mx-auto px-6">
-          <h1 className="text-4xl font-bold text-[var(--text)]">Datenschutzerklärung</h1>
+          <h1 className="break-words text-4xl font-bold text-[var(--text)]">Datenschutzerklärung</h1>
         </div>
       </section>
 

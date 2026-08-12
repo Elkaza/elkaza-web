@@ -1,8 +1,8 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Technische Fallstudien - Elkaza",
-  description: "Beispielhafte technische Fallstudien zur Veranschaulichung möglicher Umsetzungen. Keine Kundenreferenzen.",
+  title: "Beispielszenarien - Elkaza",
+  description: "Illustrative Situationen, mögliche Ansätze und Zielbilder. Keine Kundenreferenzen.",
 };
 
 const mockCases = [
@@ -14,8 +14,8 @@ export default function CaseStudiesPage() {
     <main>
       <section className="py-10 md:py-14 hero-gradient-enhanced">
         <div className="max-w-[1140px] mx-auto px-6">
-          <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-[var(--primary)]">Keine Kundenreferenzen</p>
-          <h1 className="text-4xl font-bold text-[var(--text)]">Technische Fallstudien</h1>
+          <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-[var(--primary)]">Illustrativ · keine Kundenreferenzen</p>
+          <h1 className="text-4xl font-bold text-[var(--text)]">Beispielszenarien</h1>
           <p className="mt-3 max-w-2xl text-lg text-[var(--text-secondary)]">
             Beispielhafte technische Szenarien, die mögliche Probleme, Vorgehensweisen und Zielbilder erklären.
           </p>

@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
   return createLocalizedMetadata({
     title: `${cs.title} - Elkaza Consulting`,
-    description: `Illustrative scenario, not a customer reference. ${cs.context}: ${cs.result}`,
+    description: `Illustrative scenario, not a customer reference. ${cs.context}`,
     path: `/en/case-studies/${slug}`,
   });
 }
@@ -34,7 +34,7 @@ export default async function CaseStudyDetailEnPage({
     <main>
       <section className="py-10 md:py-14 hero-gradient-enhanced">
         <div className="max-w-4xl mx-auto px-6">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-[var(--primary)]">Engineering case study - not a customer reference</p>
+          <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-[var(--primary)]">Illustrative scenario · not a customer reference</p>
           <span className="text-xs font-semibold text-[var(--primary-foreground)] bg-[var(--primary)] px-3 py-1 rounded-full">
             {cs.tag}
           </span>
@@ -47,23 +47,23 @@ export default async function CaseStudyDetailEnPage({
         <div className="max-w-4xl mx-auto px-6">
           <div className="space-y-6">
             <div>
-              <h2 className="text-xl font-bold text-[var(--text)] mb-2">Context & Problem</h2>
+              <h2 className="text-xl font-bold text-[var(--text)] mb-2">Situation</h2>
               <p className="text-[var(--text-secondary)]">{cs.context}</p>
               <p className="text-[var(--text-secondary)] mt-1">{cs.problem}</p>
             </div>
 
             <div>
-              <h2 className="text-xl font-bold text-[var(--text)] mb-2">Solution</h2>
+              <h2 className="text-xl font-bold text-[var(--text)] mb-2">Possible approach</h2>
               <p className="text-[var(--text-secondary)]">{cs.approach}</p>
             </div>
 
             <div>
-              <h2 className="text-xl font-bold text-[var(--text)] mb-2">Results</h2>
+              <h2 className="text-xl font-bold text-[var(--text)] mb-2">Target state</h2>
               <p className="text-[var(--text-secondary)] font-medium text-[var(--primary)]">{cs.result}</p>
             </div>
 
             <div className="pt-4 border-t border-[var(--border)]">
-              <span className="font-bold text-[var(--text)]">Tools Used:</span>
+              <span className="font-bold text-[var(--text)]">Possible tools:</span>
               <span className="ml-2 text-[var(--muted)]">{cs.tools}</span>
             </div>
           </div>

@@ -1,24 +1,20 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function FooterLegalLinks() {
+  const pathname = usePathname() || "/";
+  const isEnglish = pathname === "/en" || pathname.startsWith("/en/");
   return (
     <nav className="flex items-center gap-6" aria-label="Legal">
-      <span className="locale-de-only inline-flex items-center gap-6">
-        <Link href="/impressum" className="hover:text-[var(--link)] transition-colors">
-          Impressum
+      <span className="inline-flex items-center gap-6">
+        <Link href={isEnglish ? "/en/imprint" : "/impressum"} className="hover:text-[var(--link)] transition-colors">
+          {isEnglish ? "Imprint" : "Impressum"}
         </Link>
         <span className="hidden md:inline">/</span>
-        <Link href="/datenschutz" className="hover:text-[var(--link)] transition-colors">
-          Datenschutz
-        </Link>
-      </span>
-      <span className="locale-en-only inline-flex items-center gap-6">
-        <Link href="/en/imprint" className="hover:text-[var(--link)] transition-colors">
-          Imprint
-        </Link>
-        <span className="hidden md:inline">/</span>
-        <Link href="/en/privacy" className="hover:text-[var(--link)] transition-colors">
-          Privacy
+        <Link href={isEnglish ? "/en/privacy" : "/datenschutz"} className="hover:text-[var(--link)] transition-colors">
+          {isEnglish ? "Privacy" : "Datenschutz"}
         </Link>
       </span>
     </nav>

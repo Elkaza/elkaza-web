@@ -1,5 +1,4 @@
 import {
-    Building2,
     Check,
     Clock,
     FileText,
@@ -36,15 +35,15 @@ interface ServicePageTemplateProps {
 const labels = {
     de: {
         forWhom: "Für wen?",
-        whatYouGet: "Was Sie bekommen",
-        whatWeDo: "Was wir tun",
-        deliverables: "Ergebnisse",
-        tools: "Tools & Stack",
+        whatYouGet: "Mögliches Zielbild",
+        whatWeDo: "Vorgesehener Umfang",
+        deliverables: "Mögliche Dokumentation",
+        tools: "Mögliche Werkzeuge",
         exampleOutcomes: "Beispiel-Ergebnisse (illustrativ)",
         before: "Vorher",
         after: "Nachher",
         result: "Ergebnis",
-        process: "Prozess",
+        process: "Möglicher Ablauf",
         faq: "Häufige Fragen",
         timeline: "Typische Dauer",
         deliverablesLabel: "Ergebnisse",
@@ -53,15 +52,15 @@ const labels = {
     },
     en: {
         forWhom: "Who it's for",
-        whatYouGet: "What you get",
-        whatWeDo: "What we do",
-        deliverables: "Deliverables",
-        tools: "Tools & Stack",
+        whatYouGet: "Possible target state",
+        whatWeDo: "Intended scope",
+        deliverables: "Possible documentation",
+        tools: "Possible tools",
         exampleOutcomes: "Example outcomes (illustrative)",
         before: "Before",
         after: "After",
         result: "Result",
-        process: "Process",
+        process: "Possible process",
         faq: "FAQ",
         timeline: "Typical timeline",
         deliverablesLabel: "Deliverables",
@@ -97,7 +96,6 @@ export default function ServicePageTemplate({
     included,
     deliverables,
     tools,
-    exampleOutcomes,
     process,
     faqs,
     trustNote,
@@ -117,8 +115,10 @@ export default function ServicePageTemplate({
                             <Icon className="h-6 w-6" aria-hidden="true" />
                         </div>
                         <h1 className="max-w-3xl text-4xl font-bold tracking-tight text-[var(--text)] md:text-5xl">{title}</h1>
-                        <p className="mt-5 max-w-2xl text-lg leading-relaxed text-[var(--text-secondary)] md:text-xl">{promise}</p>
-                        <div className="mt-6 flex flex-wrap items-center gap-3 text-sm text-[var(--text-secondary)]">
+                        <p className="mt-5 max-w-2xl text-lg leading-relaxed text-[var(--text-secondary)] md:text-xl">
+                            {SITE_IS_PRELAUNCH ? (locale === "de" ? "Möglicher künftiger Fokus: " : "Possible future focus: ") : ""}{promise}
+                        </p>
+                        {!SITE_IS_PRELAUNCH && <div className="mt-6 flex flex-wrap items-center gap-3 text-sm text-[var(--text-secondary)]">
                             <span className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--surface)] px-3 py-1.5">
                                 <Clock className="h-4 w-4 text-[var(--primary)]" aria-hidden="true" />
                                 {l.timeline}: {timeline}
@@ -127,7 +127,7 @@ export default function ServicePageTemplate({
                                 <FileText className="h-4 w-4 text-[var(--primary)]" aria-hidden="true" />
                                 {deliverablesCount} {l.deliverablesLabel}
                             </span>
-                        </div>
+                        </div>}
                         <div className="mt-7">
                             <CTA href={SITE_IS_PRELAUNCH ? (locale === "de" ? "/kontakt" : "/en/contact") : ctaHref}>
                                 {SITE_IS_PRELAUNCH ? l.statusCta : ctaAction}
@@ -195,39 +195,6 @@ export default function ServicePageTemplate({
                 </div>
             </section>
 
-            <section className="bg-[var(--surface)] py-12 md:py-16">
-                <div className="mx-auto max-w-[1140px] px-4 sm:px-6">
-                    <h2 className="mb-2 text-center text-2xl font-semibold text-[var(--text)]">{l.exampleOutcomes}</h2>
-                    <p className="mb-8 text-center text-sm text-[var(--muted)]">
-                        {locale === "de" ? "Basierend auf typischen Projektverläufen." : "Based on typical project scenarios."}
-                    </p>
-                    <div className="grid gap-5 md:grid-cols-2">
-                        {exampleOutcomes.map((ex, i) => (
-                            <div key={i} className="rounded-xl border border-[var(--border)] bg-[var(--elevated)] p-5 sm:p-6">
-                                <div className="mb-4 flex items-center gap-2 text-[var(--muted)]">
-                                    <Building2 className="h-4 w-4" aria-hidden="true" />
-                                    <span className="text-sm">{ex.context}</span>
-                                </div>
-                                <div className="space-y-3 text-sm">
-                                    <div>
-                                        <span className="font-semibold text-[var(--text)]">{l.before}:</span>{" "}
-                                        <span className="text-[var(--text-secondary)]">{ex.before}</span>
-                                    </div>
-                                    <div>
-                                        <span className="font-semibold text-[var(--text)]">{l.after}:</span>{" "}
-                                        <span className="text-[var(--text-secondary)]">{ex.after}</span>
-                                    </div>
-                                    <div className="rounded-lg border border-[var(--border)] bg-[var(--bg)] p-3">
-                                        <span className="font-semibold text-[var(--primary)]">{l.result}:</span>{" "}
-                                        <span className="font-medium text-[var(--text)]">{ex.result}</span>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
             <section className="bg-[var(--bg)] py-12 md:py-16">
                 <div className="mx-auto max-w-[1140px] px-4 sm:px-6">
                     <h2 className="mb-8 text-center text-2xl font-semibold text-[var(--text)]">{l.process}</h2>
@@ -255,7 +222,10 @@ export default function ServicePageTemplate({
                         <h2 className="text-2xl font-semibold text-[var(--text)]">{l.faq}</h2>
                     </div>
                     <div className="mx-auto max-w-3xl space-y-4">
-                        {faqs.map((faq, i) => (
+                        {(SITE_IS_PRELAUNCH ? [{
+                            q: locale === "de" ? "Ist dieses Leistungskonzept bereits buchbar?" : "Can this service concept be ordered?",
+                            a: locale === "de" ? "Nein. Diese Seite bewahrt Quellmaterial für eine mögliche Zukunfts-Roadmap. Umfang, Liefermodell, Zeitplan und Vertragsbedingungen sind nicht validiert." : "No. This page preserves source material for a possible future roadmap. Scope, delivery model, timeline, and contract terms have not been validated.",
+                        }] : faqs).map((faq, i) => (
                             <div key={i} className="rounded-xl border border-[var(--border)] bg-[var(--bg)] p-5">
                                 <h3 className="mb-2 text-base font-semibold text-[var(--text)]">{faq.q}</h3>
                                 <p className="text-sm leading-relaxed text-[var(--text-secondary)]">{faq.a}</p>

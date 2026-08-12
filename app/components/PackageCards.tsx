@@ -23,10 +23,15 @@ const cardGuidance: Record<Locale, Record<string, string>> = {
 export default function PackageCards({ locale }: PackageCardsProps) {
     const content = siteContent.packages[locale];
     const contactPath = locale === "de" ? "/kontakt" : "/en/contact";
+    const managedFuture = SITE_IS_PRELAUNCH ? content.items.find((pkg) => pkg.name === "Managed") : undefined;
+    const visiblePackages = SITE_IS_PRELAUNCH
+        ? content.items.filter((pkg) => pkg.name !== "Managed")
+        : content.items;
 
     return (
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
-            {content.items.map((pkg) => (
+        <>
+        <div className={`grid grid-cols-1 gap-5 ${SITE_IS_PRELAUNCH ? "mx-auto max-w-4xl md:grid-cols-2" : "md:grid-cols-3"}`}>
+            {visiblePackages.map((pkg) => (
                 <div
                     key={pkg.name}
                     className={`card-enhanced relative flex min-w-0 flex-col overflow-visible rounded-xl p-5 sm:p-6 ${pkg.popular
@@ -109,5 +114,19 @@ export default function PackageCards({ locale }: PackageCardsProps) {
                 </div>
             ))}
         </div>
+        {managedFuture && (
+            <div className="mx-auto mt-8 max-w-4xl rounded-xl border border-dashed border-[var(--border)] bg-[var(--bg)] p-5">
+                <p className="text-xs font-semibold uppercase tracking-wide text-[var(--muted)]">
+                    {locale === "de" ? "Nicht validiertes Zukunftsmodell" : "Unvalidated future model"}
+                </p>
+                <h3 className="mt-2 text-lg font-bold text-[var(--text)]">Managed Operations</h3>
+                <p className="mt-2 text-sm leading-relaxed text-[var(--text-secondary)]">
+                    {locale === "de"
+                        ? "Eine laufende Betreuung ist nur als mögliche spätere Roadmap skizziert. Betriebsumfang, Kapazität, Servicezeiten, Reaktionsziele und SLA-Modell sind nicht definiert."
+                        : "Ongoing support is only outlined as a possible later roadmap model. Operational scope, capacity, service hours, response targets, and an SLA model have not been defined."}
+                </p>
+            </div>
+        )}
+        </>
     );
 }

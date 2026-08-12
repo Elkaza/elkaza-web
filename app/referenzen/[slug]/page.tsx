@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
     return createLocalizedMetadata({
         title: `${cs.title} - Elkaza Consulting`,
-        description: `Illustratives Szenario, keine Kundenreferenz. ${cs.context}: ${cs.result}`,
+        description: `Illustratives Szenario, keine Kundenreferenz. ${cs.context}`,
         path: `/referenzen/${slug}`,
     });
 }
@@ -34,7 +34,7 @@ export default async function ReferenzDetailPage({
         <main>
             <section className="py-10 md:py-14 hero-gradient-enhanced">
                 <div className="max-w-4xl mx-auto px-6">
-                    <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-[var(--primary)]">Technische Fallstudie - keine Kundenreferenz</p>
+                    <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-[var(--primary)]">Beispielszenario · keine Kundenreferenz</p>
                     <span className="text-xs font-semibold text-[var(--primary-foreground)] bg-[var(--primary)] px-3 py-1 rounded-full">
                         {cs.tag}
                     </span>
@@ -47,23 +47,23 @@ export default async function ReferenzDetailPage({
                 <div className="max-w-4xl mx-auto px-6">
                     <div className="space-y-6">
                         <div>
-                            <h2 className="text-xl font-bold text-[var(--text)] mb-2">Ausgangslage</h2>
+                            <h2 className="text-xl font-bold text-[var(--text)] mb-2">Situation</h2>
                             <p className="text-[var(--text-secondary)]">{cs.context}</p>
                             <p className="text-[var(--text-secondary)] mt-1">{cs.problem}</p>
                         </div>
 
                         <div>
-                            <h2 className="text-xl font-bold text-[var(--text)] mb-2">Lösung</h2>
+                            <h2 className="text-xl font-bold text-[var(--text)] mb-2">Möglicher Ansatz</h2>
                             <p className="text-[var(--text-secondary)]">{cs.approach}</p>
                         </div>
 
                         <div>
-                            <h2 className="text-xl font-bold text-[var(--text)] mb-2">Ergebnisse</h2>
+                            <h2 className="text-xl font-bold text-[var(--text)] mb-2">Zielbild</h2>
                             <p className="text-[var(--text-secondary)] font-medium text-[var(--primary)]">{cs.result}</p>
                         </div>
 
                         <div className="pt-4 border-t border-[var(--border)]">
-                            <span className="font-bold text-[var(--text)]">Eingesetzte Tools:</span>
+                            <span className="font-bold text-[var(--text)]">Mögliche Werkzeuge:</span>
                             <span className="ml-2 text-[var(--muted)]">{cs.tools}</span>
                         </div>
                     </div>

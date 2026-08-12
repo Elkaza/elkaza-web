@@ -3,8 +3,8 @@ import { siteContent } from "@/lib/siteContent";
 import { createLocalizedMetadata } from "@/lib/metadata";
 
 export const metadata = createLocalizedMetadata({
-    title: "Technische Fallstudien - Elkaza",
-    description: "Beispielhafte technische Fallstudien zur Veranschaulichung möglicher Umsetzungen. Keine Kundenreferenzen.",
+    title: "Beispielszenarien - Elkaza",
+    description: "Illustrative Situationen, mögliche Ansätze und Zielbilder. Keine Kundenreferenzen.",
     path: "/referenzen",
 });
 
@@ -15,9 +15,9 @@ export default function ReferenzenPage() {
         <main>
             <section className="py-10 md:py-14 hero-gradient-enhanced">
                 <div className="max-w-[1140px] mx-auto px-6">
-                    <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-[var(--primary)]">Keine Kundenreferenzen</p>
-                    <h1 className="text-4xl font-bold text-[var(--text)] mb-3">Technische Fallstudien</h1>
-                    <p className="text-lg text-[var(--text-secondary)] max-w-3xl">Beispielhafte technische Szenarien, die mögliche Probleme, Vorgehensweisen und Zielbilder erklären.</p>
+                    <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-[var(--primary)]">Illustrativ · keine Kundenreferenzen</p>
+                    <h1 className="text-4xl font-bold text-[var(--text)] mb-3">Beispielszenarien</h1>
+                    <p className="text-lg text-[var(--text-secondary)] max-w-3xl">Fiktive Situationen zur Erklärung einer möglichen späteren Arbeitsweise.</p>
                 </div>
             </section>
 
@@ -40,15 +40,15 @@ export default function ReferenzenPage() {
 
                                 <div className="space-y-2 text-sm text-[var(--text-secondary)]">
                                     <div className="flex gap-2">
-                                        <span className="font-semibold text-[var(--text)] min-w-[70px]">Problem:</span>
+                                        <span className="font-semibold text-[var(--text)] min-w-[130px]">Situation:</span>
                                         <span>{cs.problem}</span>
                                     </div>
                                     <div className="flex gap-2">
-                                        <span className="font-semibold text-[var(--text)] min-w-[70px]">Lösung:</span>
+                                        <span className="font-semibold text-[var(--text)] min-w-[130px]">Möglicher Ansatz:</span>
                                         <span>{cs.approach}</span>
                                     </div>
                                     <div className="flex gap-2">
-                                        <span className="font-semibold text-[var(--text)] min-w-[70px]">Ergebnis:</span>
+                                        <span className="font-semibold text-[var(--text)] min-w-[130px]">Zielbild:</span>
                                         <span>{cs.result}</span>
                                     </div>
                                 </div>

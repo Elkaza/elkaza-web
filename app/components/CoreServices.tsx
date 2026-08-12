@@ -17,17 +17,31 @@ interface CoreServicesProps {
     basePath?: string;
 }
 
-// Define core 4 services for initial view
-const CORE_SERVICES = ["security-baseline", "networking", "zero-trust", "automation"];
+// The pre-launch positioning intentionally keeps three areas primary.
+const CORE_SERVICES = ["security-baseline", "networking", "automation"];
 
 export default function CoreServices({ locale, items, basePath }: CoreServicesProps) {
     const path = basePath || (locale === "de" ? "/leistungen" : "/en/services");
 
-    const coreItems = items.filter(s => CORE_SERVICES.includes(s.slug));
+    const coreItems = items
+        .filter(s => CORE_SERVICES.includes(s.slug))
+        .sort((a, b) => CORE_SERVICES.indexOf(a.slug) - CORE_SERVICES.indexOf(b.slug));
     const additionalItems = items.filter(s => !CORE_SERVICES.includes(s.slug));
 
     const recommendedSlug = "security-baseline";
     const recommendedLabel = locale === "de" ? "Empfohlener Einstieg" : "Recommended start";
+    const primaryTitles: Record<Locale, Record<string, string>> = {
+        de: {
+            "security-baseline": "IT & Security Baseline",
+            networking: "Infrastruktur & Zugänge",
+            automation: "Automatisierung & dokumentierter Betrieb",
+        },
+        en: {
+            "security-baseline": "IT & Security Baseline",
+            networking: "Infrastructure & Access",
+            automation: "Automation & Documented Operations",
+        },
+    };
 
     // Icon mapping
     const iconMap: Record<string, ElementType> = {
@@ -72,7 +86,7 @@ export default function CoreServices({ locale, items, basePath }: CoreServicesPr
 
     return (
         <>
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
                 {coreItems.map((service) => {
                     const isRecommended = service.slug === recommendedSlug || service.recommended;
                     const Icon = iconMap[service.slug] || Shield;
@@ -85,7 +99,7 @@ export default function CoreServices({ locale, items, basePath }: CoreServicesPr
                             href={`${path}/${service.slug}`}
                             className={`group flex min-w-0 flex-col rounded-xl border-2 p-5 transition-all duration-200 ${
                                 isRecommended
-                                    ? `border-[var(--primary)] ${bgClass} ring-2 ring-[var(--primary)]/20 shadow-md hover:shadow-lg hover:ring-[var(--primary)]/30`
+                                    ? `border-[var(--primary)] bg-[var(--surface)] ring-2 ring-[var(--primary)]/20 shadow-md hover:shadow-lg hover:ring-[var(--primary)]/30`
                                     : `border-[var(--border)] bg-[var(--surface)] hover:border-[var(--primary)] hover:shadow-[var(--shadow-lg)]`
                             }`}
                         >
@@ -102,7 +116,7 @@ export default function CoreServices({ locale, items, basePath }: CoreServicesPr
                             </div>
 
                             <h3 className="mb-2 text-base font-bold leading-snug text-[var(--text)] transition-colors group-hover:text-[var(--primary)] lg:text-sm">
-                                {service.title}
+                                {primaryTitles[locale][service.slug] ?? service.title}
                             </h3>
 
                             {service.shortDescription && (
@@ -127,7 +141,7 @@ export default function CoreServices({ locale, items, basePath }: CoreServicesPr
                         href={path}
                         className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border-2 border-[var(--primary)] text-[var(--primary)] font-semibold hover:bg-[var(--primary-light)] transition-colors"
                     >
-                        {locale === "de" ? "Alle Services anzeigen" : "View all services"} ({items.length})
+                        {locale === "de" ? "Weitere Zukunftsthemen" : "Future roadmap topics"}
                     </Link>
                 </div>
             )}
