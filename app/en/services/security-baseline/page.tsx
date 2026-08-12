@@ -3,7 +3,7 @@ import ServicePageTemplate from "@/app/components/ServicePageTemplate";
 import { createLocalizedMetadata } from "@/lib/metadata";
 
 export const metadata = createLocalizedMetadata({
-    title: "Security Baseline - Elkaza Consulting",
+    title: "Security Baseline - Elkaza",
     description: "Practical security for SMBs: MFA, patching, backups, clear access rights.",
     path: "/en/services/security-baseline",
 });

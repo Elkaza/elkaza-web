@@ -3,7 +3,7 @@ import ServicePageTemplate from "@/app/components/ServicePageTemplate";
 import { createLocalizedMetadata } from "@/lib/metadata";
 
 export const metadata = createLocalizedMetadata({
-    title: "Automation & Platform Engineering - Elkaza Consulting",
+    title: "Automation & Platform Engineering - Elkaza",
     description: "Less manual work. Fewer errors. Terraform, Ansible, CI/CD.",
     path: "/en/services/automation",
 });

@@ -13,7 +13,7 @@ export function generateMetadata() {
   const canonical = `${base}/`;
   return {
     metadataBase: new URL(base),
-    title: "Elkaza Consulting - Networking, Security & Automation",
+    title: "Elkaza - Networking, Security & Automation",
     description:
       "Stabile IT-Infrastruktur fuer wachsende Teams: Netzwerk, Security und Automatisierung aus einer Hand.",
     icons: {
@@ -27,7 +27,7 @@ export function generateMetadata() {
     appleWebApp: {
       capable: true,
       statusBarStyle: "black-translucent",
-      title: "Elkaza Consulting",
+      title: "Elkaza",
     },
     formatDetection: {
       telephone: false,
@@ -35,10 +35,10 @@ export function generateMetadata() {
     alternates: { canonical, languages: { "de-AT": `${base}/`, en: `${base}/en/` } },
     openGraph: {
       url: canonical,
-      siteName: "Elkaza Consulting",
+      siteName: "Elkaza",
       locale: "de_AT",
       type: "website",
-      images: [{ url: `${base}/opengraph-image.png`, width: 1200, height: 630, alt: "Elkaza Consulting" }],
+      images: [{ url: `${base}/opengraph-image.png`, width: 1200, height: 630, alt: "Elkaza" }],
     },
     twitter: { card: "summary_large_image", images: [`${base}/opengraph-image.png`] },
     robots: { index: false, follow: false, noarchive: true },
@@ -84,7 +84,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 {
                   "@type": "Organization",
                   "@id": "https://elkaza.at/#organization",
-                  name: "Elkaza Consulting",
+                  name: "Elkaza",
                   url: "https://elkaza.at",
                   logo: "https://elkaza.at/logo.png",
                   description: "IT-Infrastruktur, Sicherheit und Automatisierung für KMU in Wien und Österreich.",
@@ -95,7 +95,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 {
                   "@type": "LocalBusiness",
                   "@id": "https://elkaza.at/#localbusiness",
-                  name: "Elkaza Consulting",
+                  name: "Elkaza",
                   url: "https://elkaza.at",
                   email: "office@elkaza.at",
                   address: {
@@ -110,7 +110,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   "@type": "WebSite",
                   "@id": "https://elkaza.at/#website",
                   url: "https://elkaza.at",
-                  name: "Elkaza Consulting",
+                  name: "Elkaza",
                   publisher: { "@id": "https://elkaza.at/#organization" },
                   inLanguage: ["de-AT", "en"],
                 },

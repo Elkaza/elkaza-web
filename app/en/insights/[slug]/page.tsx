@@ -6,7 +6,7 @@ const mockPosts: Record<string, { title: string; date: string; content: string; 
     title: "AI Strategy for SMEs: start pragmatically",
     date: "2025-11-01",
     content: "Start with clear use cases and measurable goals...",
-    author: "Elkaza Consulting",
+    author: "Elkaza",
   },
 };
 
@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
   return {
     ...createLocalizedMetadata({
-    title: `${post.title} - Elkaza Consulting`,
+    title: `${post.title} - Elkaza`,
     description: post.content,
     path: `/en/insights/${slug}`,
     }),

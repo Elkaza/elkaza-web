@@ -3,7 +3,7 @@ import ServicePageTemplate from "@/app/components/ServicePageTemplate";
 import { createLocalizedMetadata } from "@/lib/metadata";
 
 export const metadata = createLocalizedMetadata({
-    title: "Managed Operations - Elkaza Consulting",
+    title: "Managed Operations - Elkaza",
     description: "Unvalidated future concept for possible ongoing support. No current offer, SLA, or guaranteed response time.",
     path: "/en/services/managed-ops",
 });

@@ -3,7 +3,7 @@ import ServicePageTemplate from "@/app/components/ServicePageTemplate";
 import { createLocalizedMetadata } from "@/lib/metadata";
 
 export const metadata = createLocalizedMetadata({
-    title: "Network & Infrastructure - Elkaza Consulting",
+    title: "Network & Infrastructure - Elkaza",
     description: "Stable connections, clean segmentation, secure remote access for growing teams.",
     path: "/en/services/networking",
 });

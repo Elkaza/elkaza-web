@@ -4,14 +4,14 @@ import { siteContent, type Locale } from "@/lib/siteContent";
 
 const details = {
   de: {
-    eyebrow: "Elkaza Consulting · Wien, Österreich",
+    eyebrow: "Elkaza · Wien, Österreich",
     services: "Geplante Leistungen",
     scenarios: "Beispielszenarien",
     servicesHref: "/leistungen",
     scenariosHref: "/referenzen",
   },
   en: {
-    eyebrow: "Elkaza Consulting · Vienna, Austria",
+    eyebrow: "Elkaza · Vienna, Austria",
     services: "Planned services",
     scenarios: "Illustrative scenarios",
     servicesHref: "/en/services",

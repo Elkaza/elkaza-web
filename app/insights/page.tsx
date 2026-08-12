@@ -3,7 +3,7 @@ import { createLocalizedMetadata } from "@/lib/metadata";
 
 export const metadata = {
   ...createLocalizedMetadata({
-  title: "Insights – Elkaza Consulting",
+  title: "Insights – Elkaza",
   description: "Strategie, KI und digitale Produkte – praxisnah erklärt.",
     path: "/insights",
   }),

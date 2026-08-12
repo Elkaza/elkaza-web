@@ -3,7 +3,7 @@ import ServicePageTemplate from "@/app/components/ServicePageTemplate";
 import { createLocalizedMetadata } from "@/lib/metadata";
 
 export const metadata = createLocalizedMetadata({
-    title: "Secure AI Adoption - Elkaza Consulting",
+    title: "Secure AI Adoption - Elkaza",
     description: "KI im Unternehmen sicher nutzen. Copilot Readiness, Datenklassifizierung und Policies.",
     path: "/leistungen/ai-adoption",
 });

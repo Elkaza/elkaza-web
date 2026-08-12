@@ -3,7 +3,7 @@ import ServicePageTemplate from "@/app/components/ServicePageTemplate";
 import { createLocalizedMetadata } from "@/lib/metadata";
 
 export const metadata = createLocalizedMetadata({
-    title: "Zero Trust & Identity - Elkaza Consulting",
+    title: "Zero Trust & Identity - Elkaza",
     description: "Modern access protection: MFA, SSO, Conditional Access. Trust no device blindly.",
     path: "/en/services/zero-trust",
 });

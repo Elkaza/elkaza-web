@@ -2,7 +2,7 @@ import CTA from "@/app/components/CTA";
 import { createLocalizedMetadata } from "@/lib/metadata";
 
 export const metadata = createLocalizedMetadata({
-  title: "AI & Automation - Elkaza Consulting",
+  title: "AI & Automation - Elkaza",
   description: "Practical AI and automation that save time, improve quality, and scale with your business.",
   path: "/en/services/ai-automation",
 });

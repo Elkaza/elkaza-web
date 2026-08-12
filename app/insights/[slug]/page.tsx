@@ -6,7 +6,7 @@ const mockPosts: Record<string, { title: string; date: string; content: string; 
     title: "KI-Strategie für KMUs: pragmatisch starten",
     date: "2025-11-01",
     content: "Beginnen Sie mit klaren Use-Cases und messbaren Zielen...",
-    author: "Elkaza Consulting",
+    author: "Elkaza",
   },
 };
 
@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
   return {
     ...createLocalizedMetadata({
-    title: `${post.title} - Elkaza Consulting`,
+    title: `${post.title} - Elkaza`,
     description: post.content,
     path: `/insights/${slug}`,
     }),

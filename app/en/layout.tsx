@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Elkaza Consulting - Networking, Security & Automation",
+  title: "Elkaza - Networking, Security & Automation",
   description: "Stable IT infrastructure for growing teams: networking, security, and automation from a single source.",
 };
 

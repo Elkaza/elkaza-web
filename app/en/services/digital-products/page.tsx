@@ -2,7 +2,7 @@ import CTA from "@/app/components/CTA";
 import { createLocalizedMetadata } from "@/lib/metadata";
 
 export const metadata = createLocalizedMetadata({
-  title: "Digital Products & Platforms - Elkaza Consulting",
+  title: "Digital Products & Platforms - Elkaza",
   description: "Maintainable digital products and scalable platforms designed around real business requirements.",
   path: "/en/services/digital-products",
 });

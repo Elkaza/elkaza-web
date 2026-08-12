@@ -3,7 +3,7 @@ import ServicePageTemplate from "@/app/components/ServicePageTemplate";
 import { createLocalizedMetadata } from "@/lib/metadata";
 
 export const metadata = createLocalizedMetadata({
-    title: "Cloud & SaaS Security - Elkaza Consulting",
+    title: "Cloud & SaaS Security - Elkaza",
     description: "Secure in the cloud. M365, AWS and SaaS configured correctly. Beat Shadow IT.",
     path: "/en/services/cloud-saas-security",
 });

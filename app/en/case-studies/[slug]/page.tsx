@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!cs) notFound();
 
   return createLocalizedMetadata({
-    title: `${cs.title} - Elkaza Consulting`,
+    title: `${cs.title} - Elkaza`,
     description: `Illustrative scenario, not a customer reference. ${cs.context}`,
     path: `/en/case-studies/${slug}`,
   });

@@ -95,7 +95,7 @@ export function generateServiceMetadata(props: ServiceMetadataProps): Metadata {
           alt: title,
         },
       ],
-      siteName: 'Elkaza Consulting',
+      siteName: 'Elkaza',
       locale: locale === 'en' ? 'en_US' : 'de_AT',
     },
     twitter: {
@@ -158,7 +158,7 @@ export function generateServiceSchema(props: ServiceMetadataProps) {
     },
     provider: {
       '@type': 'Organization',
-      name: 'Elkaza Consulting',
+      name: 'Elkaza',
       url: 'https://elkaza.at',
       logo: 'https://elkaza.at/logo.png',
     },

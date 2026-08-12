@@ -3,7 +3,7 @@ import ServicePageTemplate from "@/app/components/ServicePageTemplate";
 import { createLocalizedMetadata } from "@/lib/metadata";
 
 export const metadata = createLocalizedMetadata({
-    title: "NIS2 / Compliance Readiness - Elkaza Consulting",
+    title: "NIS2 / Compliance Readiness - Elkaza",
     description: "Keine Angst vor dem Audit. Pragmatische Compliance, Dokumentation und Prozesse.",
     path: "/leistungen/nis2-compliance",
 });

@@ -2,7 +2,7 @@ import CTA from "@/app/components/CTA";
 import { createLocalizedMetadata } from "@/lib/metadata";
 
 export const metadata = createLocalizedMetadata({
-  title: "Digital Strategy & Consulting - Elkaza Consulting",
+  title: "Digital Strategy & Consulting - Elkaza",
   description: "Clear technology roadmaps that prioritize investments, align stakeholders, and reduce delivery risk.",
   path: "/en/services/digital-strategy",
 });

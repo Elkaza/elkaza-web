@@ -3,7 +3,7 @@ import ServicePageTemplate from "@/app/components/ServicePageTemplate";
 import { createLocalizedMetadata } from "@/lib/metadata";
 
 export const metadata = createLocalizedMetadata({
-    title: "Ransomware Resilience - Elkaza Consulting",
+    title: "Ransomware Resilience - Elkaza",
     description: "Nicht ob, sondern wann. Unveränderbare Backups, Notfallpläne und Wiederherstellungstests.",
     path: "/leistungen/ransomware-resilience",
 });
